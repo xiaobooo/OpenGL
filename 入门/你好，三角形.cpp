@@ -157,8 +157,7 @@ int main()
 
 		glUseProgram(shaderProgram);
 		glBindVertexArray(VAO);
-
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 
 		glfwSwapBuffers(window);//函数检查有没有触发什么事件、更新窗口状态，并调用对应的回调函数
 		glfwPollEvents();//函数会交换颜色缓冲）,在这一迭代中被用来绘制，并且将会作为输出显示在屏幕上。
