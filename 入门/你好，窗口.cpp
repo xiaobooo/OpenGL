@@ -26,8 +26,8 @@ int main()
 	//创建一个窗口对象，这个窗口对象存放了所有和窗口相关的数据
 
 	GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
-
 	//窗口的宽和高作为它的前两个参数。第三个参数表示这个窗口的名称（标题）
+	
 	if (window == NULL)
 	{
 		std::cout << "Failed to create GLFW window" << std::endl;
