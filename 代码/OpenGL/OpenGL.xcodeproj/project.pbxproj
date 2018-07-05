@@ -10,15 +10,35 @@
 		3E3C2E8C20EA4A9D001D1341 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E8B20EA4A9D001D1341 /* libglfw.dylib */; };
 		3E3C2E8E20EA4AA5001D1341 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E8D20EA4AA5001D1341 /* libGLEW.dylib */; };
 		3E3C2EB420EB0F11001D1341 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2EB320EB0F11001D1341 /* main.cpp */; };
-		3E3C2EB920EB104E001D1341 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2EB820EB104E001D1341 /* libGLEW.dylib */; };
-		3E3C2EBB20EB1051001D1341 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2EBA20EB1050001D1341 /* libglfw.dylib */; };
 		3E3C2EBC20EB105C001D1341 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED6BD6F20E611C800F158A2 /* OpenGL.framework */; };
 		3E3C2EC420EB142B001D1341 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2EC320EB142B001D1341 /* main.cpp */; };
-		3E3C2EC820EB14CE001D1341 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2EBA20EB1050001D1341 /* libglfw.dylib */; };
-		3E3C2EC920EB14D4001D1341 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2EB820EB104E001D1341 /* libGLEW.dylib */; };
 		3E3C2ECA20EB14DC001D1341 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED6BD6F20E611C800F158A2 /* OpenGL.framework */; };
 		3E3C2ECC20EB2780001D1341 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2ECB20EB277F001D1341 /* glad.c */; };
 		3E3C2ECE20EB3391001D1341 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2ECD20EB3391001D1341 /* glad.c */; };
+		3E3C2ED620EB6566001D1341 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2ED520EB6566001D1341 /* main.cpp */; };
+		3E3C2EDA20EB657C001D1341 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED6BD6F20E611C800F158A2 /* OpenGL.framework */; };
+		3E3C2EDE20EB660E001D1341 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2EDD20EB660E001D1341 /* glad.c */; };
+		3E3C2EF920EC7499001D1341 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E8B20EA4A9D001D1341 /* libglfw.dylib */; };
+		3E3C2EFA20EC74A9001D1341 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E8D20EA4AA5001D1341 /* libGLEW.dylib */; };
+		3E3C2EFB20EC75AC001D1341 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E8D20EA4AA5001D1341 /* libGLEW.dylib */; };
+		3E3C2EFC20EC75BE001D1341 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E8B20EA4A9D001D1341 /* libglfw.dylib */; };
+		3E3C2EFD20EC75E6001D1341 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E8B20EA4A9D001D1341 /* libglfw.dylib */; };
+		3E3C2EFE20EC75F3001D1341 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E8D20EA4AA5001D1341 /* libGLEW.dylib */; };
+		3E3C2F3320ECBBF1001D1341 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2F3220ECBBF1001D1341 /* main.cpp */; };
+		3E3C2F3820ECBC5E001D1341 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2F3720ECBC5D001D1341 /* glad.c */; };
+		3E3C2F3920ECBC74001D1341 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED6BD6F20E611C800F158A2 /* OpenGL.framework */; };
+		3E3C2F3A20ECBC83001D1341 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2EF720EC7367001D1341 /* libglfw.dylib */; };
+		3E3C2F3B20ECBC94001D1341 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2EF520EC735D001D1341 /* libGLEW.dylib */; };
+		3E3C2F4920EDB7DE001D1341 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2F4820EDB7DE001D1341 /* main.cpp */; };
+		3E3C2F4D20EDB80E001D1341 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2EF520EC735D001D1341 /* libGLEW.dylib */; };
+		3E3C2F4E20EDB811001D1341 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2EF720EC7367001D1341 /* libglfw.dylib */; };
+		3E3C2F4F20EDB81A001D1341 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED6BD6F20E611C800F158A2 /* OpenGL.framework */; };
+		3E3C2F5120EDB866001D1341 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2F5020EDB866001D1341 /* glad.c */; };
+		3E3C2F5F20EDC0F0001D1341 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2F5E20EDC0F0001D1341 /* main.cpp */; };
+		3E3C2F6320EDC132001D1341 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2EF520EC735D001D1341 /* libGLEW.dylib */; };
+		3E3C2F6420EDC139001D1341 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2EF720EC7367001D1341 /* libglfw.dylib */; };
+		3E3C2F6620EDC15B001D1341 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2F6520EDC15B001D1341 /* glad.c */; };
+		3E3C2F6720EDC18A001D1341 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED6BD6F20E611C800F158A2 /* OpenGL.framework */; };
 		3ED6BD6620E603D900F158A2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3ED6BD6520E603D900F158A2 /* main.cpp */; };
 		3ED6BD6E20E611BF00F158A2 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED6BD6D20E611BF00F158A2 /* GLUT.framework */; };
 		3ED6BD7020E611C800F158A2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED6BD6F20E611C800F158A2 /* OpenGL.framework */; };
@@ -43,6 +63,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		3E3C2ED120EB6566001D1341 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		3E3C2F2E20ECBBF1001D1341 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		3E3C2F4420EDB7DE001D1341 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		3E3C2F5A20EDC0F0001D1341 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		3ED6BD6020E603D900F158A2 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -59,12 +115,36 @@
 		3E3C2E8D20EA4AA5001D1341 /* libGLEW.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.dylib; path = ../../../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.dylib; sourceTree = "<group>"; };
 		3E3C2EB120EB0F11001D1341 /* FirstWindow */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FirstWindow; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3C2EB320EB0F11001D1341 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		3E3C2EB820EB104E001D1341 /* libGLEW.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.dylib; path = ../../OpenGL/libGLEW.dylib; sourceTree = "<group>"; };
-		3E3C2EBA20EB1050001D1341 /* libglfw.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.dylib; path = ../../OpenGL/libglfw.dylib; sourceTree = "<group>"; };
 		3E3C2EC120EB142B001D1341 /* Triangle */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Triangle; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3C2EC320EB142B001D1341 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E3C2ECB20EB277F001D1341 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glad.c; path = ../../../OpenGL/glad/src/glad.c; sourceTree = "<group>"; };
 		3E3C2ECD20EB3391001D1341 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glad.c; path = ../../../OpenGL/glad/src/glad.c; sourceTree = "<group>"; };
+		3E3C2ED320EB6566001D1341 /* Shader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Shader; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E3C2ED520EB6566001D1341 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E3C2EDD20EB660E001D1341 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glad.c; path = ../../../OpenGL/glad/src/glad.c; sourceTree = "<group>"; };
+		3E3C2EF520EC735D001D1341 /* libGLEW.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.dylib; path = ../../OpenGL/libGLEW.dylib; sourceTree = "<group>"; };
+		3E3C2EF720EC7367001D1341 /* libglfw.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.dylib; path = ../../OpenGL/libglfw.dylib; sourceTree = "<group>"; };
+		3E3C2F3020ECBBF1001D1341 /* Texture2.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Texture2.0; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E3C2F3220ECBBF1001D1341 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E3C2F3720ECBC5D001D1341 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glad.c; path = ../../../OpenGL/glad.c; sourceTree = "<group>"; };
+		3E3C2F3D20ECC853001D1341 /* 4.2.texture.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 4.2.texture.fs; sourceTree = "<group>"; };
+		3E3C2F3F20ECC8B0001D1341 /* 4.2.texture.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 4.2.texture.vs; sourceTree = "<group>"; };
+		3E3C2F4020ECD276001D1341 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
+		3E3C2F4120ECD281001D1341 /* awesomeface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awesomeface.png; sourceTree = "<group>"; };
+		3E3C2F4620EDB7DE001D1341 /* Transform */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Transform; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E3C2F4820EDB7DE001D1341 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E3C2F5020EDB866001D1341 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		3E3C2F5320EDB994001D1341 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
+		3E3C2F5420EDB994001D1341 /* awesomeface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awesomeface.png; sourceTree = "<group>"; };
+		3E3C2F5620EDBA55001D1341 /* 5.1.transform.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 5.1.transform.fs; sourceTree = "<group>"; };
+		3E3C2F5720EDBA66001D1341 /* 5.1.transform.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 5.1.transform.vs; sourceTree = "<group>"; };
+		3E3C2F5C20EDC0F0001D1341 /* Texture3.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Texture3.0; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E3C2F5E20EDC0F0001D1341 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E3C2F6520EDC15B001D1341 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		3E3C2F6920EDC242001D1341 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
+		3E3C2F6A20EDC242001D1341 /* awesomeface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awesomeface.png; sourceTree = "<group>"; };
+		3E3C2F6C20EDC249001D1341 /* 4.3.texture.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 4.3.texture.vs; sourceTree = "<group>"; };
+		3E3C2F6D20EDC249001D1341 /* 4.3.texture.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 4.3.texture.fs; sourceTree = "<group>"; };
 		3ED6BD6220E603D900F158A2 /* OpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ED6BD6520E603D900F158A2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3ED6BD6D20E611BF00F158A2 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
@@ -77,8 +157,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E3C2EBC20EB105C001D1341 /* OpenGL.framework in Frameworks */,
-				3E3C2EB920EB104E001D1341 /* libGLEW.dylib in Frameworks */,
-				3E3C2EBB20EB1051001D1341 /* libglfw.dylib in Frameworks */,
+				3E3C2EFB20EC75AC001D1341 /* libGLEW.dylib in Frameworks */,
+				3E3C2EFC20EC75BE001D1341 /* libglfw.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,8 +167,48 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E3C2ECA20EB14DC001D1341 /* OpenGL.framework in Frameworks */,
-				3E3C2EC820EB14CE001D1341 /* libglfw.dylib in Frameworks */,
-				3E3C2EC920EB14D4001D1341 /* libGLEW.dylib in Frameworks */,
+				3E3C2EFD20EC75E6001D1341 /* libglfw.dylib in Frameworks */,
+				3E3C2EFE20EC75F3001D1341 /* libGLEW.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E3C2ED020EB6566001D1341 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E3C2EDA20EB657C001D1341 /* OpenGL.framework in Frameworks */,
+				3E3C2EF920EC7499001D1341 /* libglfw.dylib in Frameworks */,
+				3E3C2EFA20EC74A9001D1341 /* libGLEW.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E3C2F2D20ECBBF1001D1341 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E3C2F3920ECBC74001D1341 /* OpenGL.framework in Frameworks */,
+				3E3C2F3A20ECBC83001D1341 /* libglfw.dylib in Frameworks */,
+				3E3C2F3B20ECBC94001D1341 /* libGLEW.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E3C2F4320EDB7DE001D1341 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E3C2F4F20EDB81A001D1341 /* OpenGL.framework in Frameworks */,
+				3E3C2F4D20EDB80E001D1341 /* libGLEW.dylib in Frameworks */,
+				3E3C2F4E20EDB811001D1341 /* libglfw.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E3C2F5920EDC0F0001D1341 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E3C2F6720EDC18A001D1341 /* OpenGL.framework in Frameworks */,
+				3E3C2F6320EDC132001D1341 /* libGLEW.dylib in Frameworks */,
+				3E3C2F6420EDC139001D1341 /* libglfw.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,12 +243,88 @@
 			path = Triangle;
 			sourceTree = "<group>";
 		};
+		3E3C2ED420EB6566001D1341 /* Shader */ = {
+			isa = PBXGroup;
+			children = (
+				3E3C2EDD20EB660E001D1341 /* glad.c */,
+				3E3C2ED520EB6566001D1341 /* main.cpp */,
+			);
+			path = Shader;
+			sourceTree = "<group>";
+		};
+		3E3C2F3120ECBBF1001D1341 /* Texture2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				3E3C2F3F20ECC8B0001D1341 /* 4.2.texture.vs */,
+				3E3C2F3D20ECC853001D1341 /* 4.2.texture.fs */,
+				3E3C2F4120ECD281001D1341 /* awesomeface.png */,
+				3E3C2F3720ECBC5D001D1341 /* glad.c */,
+				3E3C2F4020ECD276001D1341 /* container.jpg */,
+				3E3C2F3220ECBBF1001D1341 /* main.cpp */,
+			);
+			path = Texture2.0;
+			sourceTree = "<group>";
+		};
+		3E3C2F4720EDB7DE001D1341 /* Transform */ = {
+			isa = PBXGroup;
+			children = (
+				3E3C2F5720EDBA66001D1341 /* 5.1.transform.vs */,
+				3E3C2F5620EDBA55001D1341 /* 5.1.transform.fs */,
+				3E3C2F5220EDB994001D1341 /* image */,
+				3E3C2F5020EDB866001D1341 /* glad.c */,
+				3E3C2F4820EDB7DE001D1341 /* main.cpp */,
+			);
+			path = Transform;
+			sourceTree = "<group>";
+		};
+		3E3C2F5220EDB994001D1341 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				3E3C2F5320EDB994001D1341 /* container.jpg */,
+				3E3C2F5420EDB994001D1341 /* awesomeface.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		3E3C2F5D20EDC0F0001D1341 /* Texture3.0 */ = {
+			isa = PBXGroup;
+			children = (
+				3E3C2F6B20EDC249001D1341 /* shader */,
+				3E3C2F6820EDC242001D1341 /* image */,
+				3E3C2F6520EDC15B001D1341 /* glad.c */,
+				3E3C2F5E20EDC0F0001D1341 /* main.cpp */,
+			);
+			path = Texture3.0;
+			sourceTree = "<group>";
+		};
+		3E3C2F6820EDC242001D1341 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				3E3C2F6920EDC242001D1341 /* container.jpg */,
+				3E3C2F6A20EDC242001D1341 /* awesomeface.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		3E3C2F6B20EDC249001D1341 /* shader */ = {
+			isa = PBXGroup;
+			children = (
+				3E3C2F6C20EDC249001D1341 /* 4.3.texture.vs */,
+				3E3C2F6D20EDC249001D1341 /* 4.3.texture.fs */,
+			);
+			path = shader;
+			sourceTree = "<group>";
+		};
 		3ED6BD5920E603D900F158A2 = {
 			isa = PBXGroup;
 			children = (
 				3ED6BD6420E603D900F158A2 /* OpenGL */,
 				3E3C2EB220EB0F11001D1341 /* FirstWindow */,
 				3E3C2EC220EB142B001D1341 /* Triangle */,
+				3E3C2ED420EB6566001D1341 /* Shader */,
+				3E3C2F3120ECBBF1001D1341 /* Texture2.0 */,
+				3E3C2F4720EDB7DE001D1341 /* Transform */,
+				3E3C2F5D20EDC0F0001D1341 /* Texture3.0 */,
 				3ED6BD6320E603D900F158A2 /* Products */,
 				3ED6BD6C20E611BF00F158A2 /* Frameworks */,
 			);
@@ -140,6 +336,10 @@
 				3ED6BD6220E603D900F158A2 /* OpenGL */,
 				3E3C2EB120EB0F11001D1341 /* FirstWindow */,
 				3E3C2EC120EB142B001D1341 /* Triangle */,
+				3E3C2ED320EB6566001D1341 /* Shader */,
+				3E3C2F3020ECBBF1001D1341 /* Texture2.0 */,
+				3E3C2F4620EDB7DE001D1341 /* Transform */,
+				3E3C2F5C20EDC0F0001D1341 /* Texture3.0 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,9 +356,9 @@
 		3ED6BD6C20E611BF00F158A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3E3C2EBA20EB1050001D1341 /* libglfw.dylib */,
+				3E3C2EF720EC7367001D1341 /* libglfw.dylib */,
 				3E3C2E8D20EA4AA5001D1341 /* libGLEW.dylib */,
-				3E3C2EB820EB104E001D1341 /* libGLEW.dylib */,
+				3E3C2EF520EC735D001D1341 /* libGLEW.dylib */,
 				3E3C2E8B20EA4A9D001D1341 /* libglfw.dylib */,
 				3ED6BD6F20E611C800F158A2 /* OpenGL.framework */,
 				3ED6BD6D20E611BF00F158A2 /* GLUT.framework */,
@@ -203,6 +403,74 @@
 			productReference = 3E3C2EC120EB142B001D1341 /* Triangle */;
 			productType = "com.apple.product-type.tool";
 		};
+		3E3C2ED220EB6566001D1341 /* Shader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E3C2ED920EB6566001D1341 /* Build configuration list for PBXNativeTarget "Shader" */;
+			buildPhases = (
+				3E3C2ECF20EB6566001D1341 /* Sources */,
+				3E3C2ED020EB6566001D1341 /* Frameworks */,
+				3E3C2ED120EB6566001D1341 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Shader;
+			productName = Shader;
+			productReference = 3E3C2ED320EB6566001D1341 /* Shader */;
+			productType = "com.apple.product-type.tool";
+		};
+		3E3C2F2F20ECBBF1001D1341 /* Texture2.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E3C2F3420ECBBF1001D1341 /* Build configuration list for PBXNativeTarget "Texture2.0" */;
+			buildPhases = (
+				3E3C2F2C20ECBBF1001D1341 /* Sources */,
+				3E3C2F2D20ECBBF1001D1341 /* Frameworks */,
+				3E3C2F2E20ECBBF1001D1341 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Texture2.0;
+			productName = Texture2.0;
+			productReference = 3E3C2F3020ECBBF1001D1341 /* Texture2.0 */;
+			productType = "com.apple.product-type.tool";
+		};
+		3E3C2F4520EDB7DE001D1341 /* Transform */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E3C2F4C20EDB7DE001D1341 /* Build configuration list for PBXNativeTarget "Transform" */;
+			buildPhases = (
+				3E3C2F4220EDB7DE001D1341 /* Sources */,
+				3E3C2F4320EDB7DE001D1341 /* Frameworks */,
+				3E3C2F4420EDB7DE001D1341 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Transform;
+			productName = Transform;
+			productReference = 3E3C2F4620EDB7DE001D1341 /* Transform */;
+			productType = "com.apple.product-type.tool";
+		};
+		3E3C2F5B20EDC0F0001D1341 /* Texture3.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E3C2F6220EDC0F0001D1341 /* Build configuration list for PBXNativeTarget "Texture3.0" */;
+			buildPhases = (
+				3E3C2F5820EDC0F0001D1341 /* Sources */,
+				3E3C2F5920EDC0F0001D1341 /* Frameworks */,
+				3E3C2F5A20EDC0F0001D1341 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Texture3.0;
+			productName = Texture3.0;
+			productReference = 3E3C2F5C20EDC0F0001D1341 /* Texture3.0 */;
+			productType = "com.apple.product-type.tool";
+		};
 		3ED6BD6120E603D900F158A2 /* OpenGL */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3ED6BD6920E603D900F158A2 /* Build configuration list for PBXNativeTarget "OpenGL" */;
@@ -238,6 +506,18 @@
 					3E3C2EC020EB142B001D1341 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					3E3C2ED220EB6566001D1341 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					3E3C2F2F20ECBBF1001D1341 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					3E3C2F4520EDB7DE001D1341 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					3E3C2F5B20EDC0F0001D1341 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 					3ED6BD6120E603D900F158A2 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -258,6 +538,10 @@
 				3ED6BD6120E603D900F158A2 /* OpenGL */,
 				3E3C2EB020EB0F11001D1341 /* FirstWindow */,
 				3E3C2EC020EB142B001D1341 /* Triangle */,
+				3E3C2ED220EB6566001D1341 /* Shader */,
+				3E3C2F2F20ECBBF1001D1341 /* Texture2.0 */,
+				3E3C2F4520EDB7DE001D1341 /* Transform */,
+				3E3C2F5B20EDC0F0001D1341 /* Texture3.0 */,
 			);
 		};
 /* End PBXProject section */
@@ -280,6 +564,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3E3C2ECF20EB6566001D1341 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E3C2ED620EB6566001D1341 /* main.cpp in Sources */,
+				3E3C2EDE20EB660E001D1341 /* glad.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E3C2F2C20ECBBF1001D1341 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E3C2F3320ECBBF1001D1341 /* main.cpp in Sources */,
+				3E3C2F3820ECBC5E001D1341 /* glad.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E3C2F4220EDB7DE001D1341 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E3C2F4920EDB7DE001D1341 /* main.cpp in Sources */,
+				3E3C2F5120EDB866001D1341 /* glad.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E3C2F5820EDC0F0001D1341 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E3C2F5F20EDC0F0001D1341 /* main.cpp in Sources */,
+				3E3C2F6620EDC15B001D1341 /* glad.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3ED6BD5E20E603D900F158A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -297,7 +617,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = /usr/local/include;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/local/Cellar/glew/2.1.0/lib,
+					/usr/local/Cellar/glfw/3.2.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -307,7 +631,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = /usr/local/include;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/local/Cellar/glew/2.1.0/lib,
+					/usr/local/Cellar/glfw/3.2.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -320,7 +648,11 @@
 					/usr/local/include,
 					/Users/boone/Desktop/CODE/OpenGL/glad/include,
 				);
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/local/Cellar/glfw/3.2.1/lib,
+					/usr/local/Cellar/glew/2.1.0/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -333,6 +665,106 @@
 					/usr/local/include,
 					/Users/boone/Desktop/CODE/OpenGL/glad/include,
 				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/local/Cellar/glfw/3.2.1/lib,
+					/usr/local/Cellar/glew/2.1.0/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3E3C2ED720EB6566001D1341 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/Users/boone/Desktop/CODE/OpenGL/glad/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/local/Cellar/glfw/3.2.1/lib,
+					/usr/local/Cellar/glew/2.1.0/lib,
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3E3C2ED820EB6566001D1341 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/Users/boone/Desktop/CODE/OpenGL/glad/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/local/Cellar/glfw/3.2.1/lib,
+					/usr/local/Cellar/glew/2.1.0/lib,
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3E3C2F3520ECBBF1001D1341 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3E3C2F3620ECBBF1001D1341 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3E3C2F4A20EDB7DE001D1341 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3E3C2F4B20EDB7DE001D1341 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3E3C2F6020EDC0F0001D1341 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3E3C2F6120EDC0F0001D1341 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -443,6 +875,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -498,6 +931,42 @@
 			buildConfigurations = (
 				3E3C2EC620EB142B001D1341 /* Debug */,
 				3E3C2EC720EB142B001D1341 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E3C2ED920EB6566001D1341 /* Build configuration list for PBXNativeTarget "Shader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E3C2ED720EB6566001D1341 /* Debug */,
+				3E3C2ED820EB6566001D1341 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E3C2F3420ECBBF1001D1341 /* Build configuration list for PBXNativeTarget "Texture2.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E3C2F3520ECBBF1001D1341 /* Debug */,
+				3E3C2F3620ECBBF1001D1341 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E3C2F4C20EDB7DE001D1341 /* Build configuration list for PBXNativeTarget "Transform" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E3C2F4A20EDB7DE001D1341 /* Debug */,
+				3E3C2F4B20EDB7DE001D1341 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E3C2F6220EDC0F0001D1341 /* Build configuration list for PBXNativeTarget "Texture3.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E3C2F6020EDC0F0001D1341 /* Debug */,
+				3E3C2F6120EDC0F0001D1341 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,3 +1,10 @@
+//
+//  main.cpp
+//  Texture3.0
+//
+//  Created by boone on 2018/7/5.
+//  Copyright © 2018年 boone. All rights reserved.
+//
 #define STB_IMAGE_IMPLEMENTATION
 
 #include <glad/glad.h>
@@ -50,7 +57,7 @@ int main()
     
     // build and compile our shader zprogram
     // ------------------------------------
-    Shader ourShader("4.2.texture.vs", "4.2.texture.fs");
+    Shader ourShader("/Users/boone/Desktop/CODE/Xcode/OpenGL/Texture3.0/shader/4.3.texture.vs", "/Users/boone/Desktop/CODE/Xcode/OpenGL/Texture3.0/shader/4.3.texture.fs");
     
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -106,7 +113,7 @@ int main()
     int width, height, nrChannels;
     stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis.
     // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
-    unsigned char *data = stbi_load("resources/textures/container.jpg", &width, &height, &nrChannels, 0);
+    unsigned char *data = stbi_load("/Users/boone/Desktop/CODE/Xcode/OpenGL/Texture3.0/image/container.jpg", &width, &height, &nrChannels, 0);
     if (data)
     {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
@@ -128,7 +135,7 @@ int main()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     // load image, create texture and generate mipmaps
-    data = stbi_load("resources/textures/awesomeface.png", &width, &height, &nrChannels, 0);
+    data = stbi_load("/Users/boone/Desktop/CODE/Xcode/OpenGL/Texture3.0/image/awesomeface.png", &width, &height, &nrChannels, 0);
     if (data)
     {
         // note that the awesomeface.png has transparency and thus an alpha channel, so make sure to tell OpenGL the data type is of GL_RGBA
