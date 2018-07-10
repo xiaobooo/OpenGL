@@ -42,7 +42,7 @@ void fileOutput()
         if(size>0)
         {
             //-------------------------------------------------------------------------------------------------------------------------
-            vertices.push_back((float)pcm_In/10000);
+            vertices.push_back((float)pcm_In/30000);
         }
     }
     
@@ -67,8 +67,8 @@ void drawLint()
     //绘制波形图
     for(vector<float>::iterator it = istart; it != iend; it++ )    //用迭代器的方式输出容器对象的值
     {
-        xstart=xstart+0.0033;
-        xend=xstart+0.0033;
+        xstart=xstart+0.00066;
+        xend=xstart+0.00066;
         
         glVertex2f(xstart,temp);
         glVertex2f(xend,*it);
@@ -76,8 +76,8 @@ void drawLint()
     }
     
     //进行下一次绘制的起点和终点
-    istart+=60;    //通过更改每次前进的数字可以实现波形振动频率的改变
-    iend+=60;
+    istart+=6000;    //通过更改每次前进的数字可以实现波形振动频率的改变
+    iend+=6000;
     
     glEnd();
 }
@@ -86,7 +86,7 @@ int main(void)
 {
     fileOutput();
     istart = vertices.begin();
-    iend = vertices.begin()+600;
+    iend = vertices.begin()+6000;
     
     GLFWwindow* window;
     
