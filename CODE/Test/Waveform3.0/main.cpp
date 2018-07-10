@@ -31,7 +31,7 @@ void fileOutput()
         if(size>0)
         {
             //-------------------------------------------------------------------------------------------------------------------------
-            vertices.push_back((float)pcm_In/1000);
+            vertices.push_back((float)pcm_In/10000);
         }
     }
     
@@ -65,8 +65,8 @@ void drawLint()
     }
     
     //进行下一次绘制的起点和终点
-    istart++;
-    iend++;
+    istart+=60;
+    iend+=60;
     
     glEnd();
 }
