@@ -76,8 +76,8 @@ void drawLint()
     }
     
     //进行下一次绘制的起点和终点
-    istart+=6;
-    iend+=6;
+    istart+=20;    //通过更改每次前进的数字可以实现波形振动频率的改变
+    iend+=20;
     
     glEnd();
 }
