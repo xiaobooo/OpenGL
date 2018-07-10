@@ -13,11 +13,8 @@
 		3E3C2EBC20EB105C001D1341 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED6BD6F20E611C800F158A2 /* OpenGL.framework */; };
 		3E3C2EC420EB142B001D1341 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2EC320EB142B001D1341 /* main.cpp */; };
 		3E3C2ECA20EB14DC001D1341 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED6BD6F20E611C800F158A2 /* OpenGL.framework */; };
-		3E3C2ECC20EB2780001D1341 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2ECB20EB277F001D1341 /* glad.c */; };
-		3E3C2ECE20EB3391001D1341 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2ECD20EB3391001D1341 /* glad.c */; };
 		3E3C2ED620EB6566001D1341 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2ED520EB6566001D1341 /* main.cpp */; };
 		3E3C2EDA20EB657C001D1341 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED6BD6F20E611C800F158A2 /* OpenGL.framework */; };
-		3E3C2EDE20EB660E001D1341 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2EDD20EB660E001D1341 /* glad.c */; };
 		3E3C2EF920EC7499001D1341 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E8B20EA4A9D001D1341 /* libglfw.dylib */; };
 		3E3C2EFA20EC74A9001D1341 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E8D20EA4AA5001D1341 /* libGLEW.dylib */; };
 		3E3C2EFB20EC75AC001D1341 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E8D20EA4AA5001D1341 /* libGLEW.dylib */; };
@@ -25,7 +22,6 @@
 		3E3C2EFD20EC75E6001D1341 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E8B20EA4A9D001D1341 /* libglfw.dylib */; };
 		3E3C2EFE20EC75F3001D1341 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E8D20EA4AA5001D1341 /* libGLEW.dylib */; };
 		3E3C2F3320ECBBF1001D1341 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2F3220ECBBF1001D1341 /* main.cpp */; };
-		3E3C2F3820ECBC5E001D1341 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2F3720ECBC5D001D1341 /* glad.c */; };
 		3E3C2F3920ECBC74001D1341 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED6BD6F20E611C800F158A2 /* OpenGL.framework */; };
 		3E3C2F3A20ECBC83001D1341 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2EF720EC7367001D1341 /* libglfw.dylib */; };
 		3E3C2F3B20ECBC94001D1341 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2EF520EC735D001D1341 /* libGLEW.dylib */; };
@@ -39,6 +35,11 @@
 		3E3C2F6420EDC139001D1341 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2EF720EC7367001D1341 /* libglfw.dylib */; };
 		3E3C2F6620EDC15B001D1341 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2F6520EDC15B001D1341 /* glad.c */; };
 		3E3C2F6720EDC18A001D1341 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED6BD6F20E611C800F158A2 /* OpenGL.framework */; };
+		3E3C2FB520F336A2001D1341 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2FB420F336A2001D1341 /* glad.c */; };
+		3E3C2FB720F336E2001D1341 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2FB620F336E2001D1341 /* glad.c */; };
+		3E3C2FB920F33706001D1341 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2FB820F33706001D1341 /* glad.c */; };
+		3E3C2FBB20F3370F001D1341 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2FBA20F3370F001D1341 /* glad.c */; };
+		3E3C2FBD20F33718001D1341 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C2FBC20F33717001D1341 /* glad.c */; };
 		3ED6BD6620E603D900F158A2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3ED6BD6520E603D900F158A2 /* main.cpp */; };
 		3ED6BD6E20E611BF00F158A2 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED6BD6D20E611BF00F158A2 /* GLUT.framework */; };
 		3ED6BD7020E611C800F158A2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED6BD6F20E611C800F158A2 /* OpenGL.framework */; };
@@ -117,16 +118,12 @@
 		3E3C2EB320EB0F11001D1341 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E3C2EC120EB142B001D1341 /* Triangle */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Triangle; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3C2EC320EB142B001D1341 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		3E3C2ECB20EB277F001D1341 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glad.c; path = ../../../OpenGL/glad/src/glad.c; sourceTree = "<group>"; };
-		3E3C2ECD20EB3391001D1341 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glad.c; path = ../../../OpenGL/glad/src/glad.c; sourceTree = "<group>"; };
 		3E3C2ED320EB6566001D1341 /* Shader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Shader; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3C2ED520EB6566001D1341 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		3E3C2EDD20EB660E001D1341 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glad.c; path = ../../../OpenGL/glad/src/glad.c; sourceTree = "<group>"; };
 		3E3C2EF520EC735D001D1341 /* libGLEW.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.dylib; path = ../../OpenGL/libGLEW.dylib; sourceTree = "<group>"; };
 		3E3C2EF720EC7367001D1341 /* libglfw.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.dylib; path = ../../OpenGL/libglfw.dylib; sourceTree = "<group>"; };
 		3E3C2F3020ECBBF1001D1341 /* Texture2.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Texture2.0; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3C2F3220ECBBF1001D1341 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		3E3C2F3720ECBC5D001D1341 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glad.c; path = ../../../OpenGL/glad.c; sourceTree = "<group>"; };
 		3E3C2F3D20ECC853001D1341 /* 4.2.texture.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 4.2.texture.fs; sourceTree = "<group>"; };
 		3E3C2F3F20ECC8B0001D1341 /* 4.2.texture.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 4.2.texture.vs; sourceTree = "<group>"; };
 		3E3C2F4020ECD276001D1341 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
@@ -145,6 +142,11 @@
 		3E3C2F6A20EDC242001D1341 /* awesomeface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awesomeface.png; sourceTree = "<group>"; };
 		3E3C2F6C20EDC249001D1341 /* 4.3.texture.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 4.3.texture.vs; sourceTree = "<group>"; };
 		3E3C2F6D20EDC249001D1341 /* 4.3.texture.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 4.3.texture.fs; sourceTree = "<group>"; };
+		3E3C2FB420F336A2001D1341 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		3E3C2FB620F336E2001D1341 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		3E3C2FB820F33706001D1341 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		3E3C2FBA20F3370F001D1341 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		3E3C2FBC20F33717001D1341 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		3ED6BD6220E603D900F158A2 /* OpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ED6BD6520E603D900F158A2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3ED6BD6D20E611BF00F158A2 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
@@ -229,6 +231,7 @@
 		3E3C2EB220EB0F11001D1341 /* FirstWindow */ = {
 			isa = PBXGroup;
 			children = (
+				3E3C2FBA20F3370F001D1341 /* glad.c */,
 				3E3C2EB320EB0F11001D1341 /* main.cpp */,
 			);
 			path = FirstWindow;
@@ -237,7 +240,7 @@
 		3E3C2EC220EB142B001D1341 /* Triangle */ = {
 			isa = PBXGroup;
 			children = (
-				3E3C2ECB20EB277F001D1341 /* glad.c */,
+				3E3C2FB820F33706001D1341 /* glad.c */,
 				3E3C2EC320EB142B001D1341 /* main.cpp */,
 			);
 			path = Triangle;
@@ -246,7 +249,7 @@
 		3E3C2ED420EB6566001D1341 /* Shader */ = {
 			isa = PBXGroup;
 			children = (
-				3E3C2EDD20EB660E001D1341 /* glad.c */,
+				3E3C2FB620F336E2001D1341 /* glad.c */,
 				3E3C2ED520EB6566001D1341 /* main.cpp */,
 			);
 			path = Shader;
@@ -255,10 +258,10 @@
 		3E3C2F3120ECBBF1001D1341 /* Texture2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				3E3C2FB420F336A2001D1341 /* glad.c */,
 				3E3C2F3F20ECC8B0001D1341 /* 4.2.texture.vs */,
 				3E3C2F3D20ECC853001D1341 /* 4.2.texture.fs */,
 				3E3C2F4120ECD281001D1341 /* awesomeface.png */,
-				3E3C2F3720ECBC5D001D1341 /* glad.c */,
 				3E3C2F4020ECD276001D1341 /* container.jpg */,
 				3E3C2F3220ECBBF1001D1341 /* main.cpp */,
 			);
@@ -347,7 +350,7 @@
 		3ED6BD6420E603D900F158A2 /* OpenGL */ = {
 			isa = PBXGroup;
 			children = (
-				3E3C2ECD20EB3391001D1341 /* glad.c */,
+				3E3C2FBC20F33717001D1341 /* glad.c */,
 				3ED6BD6520E603D900F158A2 /* main.cpp */,
 			);
 			path = OpenGL;
@@ -552,6 +555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E3C2EB420EB0F11001D1341 /* main.cpp in Sources */,
+				3E3C2FBB20F3370F001D1341 /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,7 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E3C2EC420EB142B001D1341 /* main.cpp in Sources */,
-				3E3C2ECC20EB2780001D1341 /* glad.c in Sources */,
+				3E3C2FB920F33706001D1341 /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,7 +573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E3C2ED620EB6566001D1341 /* main.cpp in Sources */,
-				3E3C2EDE20EB660E001D1341 /* glad.c in Sources */,
+				3E3C2FB720F336E2001D1341 /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,7 +582,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E3C2F3320ECBBF1001D1341 /* main.cpp in Sources */,
-				3E3C2F3820ECBC5E001D1341 /* glad.c in Sources */,
+				3E3C2FB520F336A2001D1341 /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,7 +609,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ED6BD6620E603D900F158A2 /* main.cpp in Sources */,
-				3E3C2ECE20EB3391001D1341 /* glad.c in Sources */,
+				3E3C2FBD20F33718001D1341 /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

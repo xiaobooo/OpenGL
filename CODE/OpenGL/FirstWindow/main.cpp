@@ -16,6 +16,7 @@ const unsigned int WID =700;
 
 const unsigned int HEI = 700;
 
+
 void frame_buffer_size_callback(GLFWwindow* window, int width, int height){
     glViewport(0, 0, width, height);
 }
