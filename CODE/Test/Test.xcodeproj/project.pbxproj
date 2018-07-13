@@ -31,7 +31,19 @@
 		3E3C2FD920F44557001D1341 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2F9720EF632D001D1341 /* libGLEW.dylib */; };
 		3E3C2FDA20F4455A001D1341 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2F9920EF6330001D1341 /* libglfw.dylib */; };
 		3E6E535020F5E109007BF30B /* basstest.nib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6E534F20F5E108007BF30B /* basstest.nib */; };
-		3ED6BD5320E5D96100F158A2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3ED6BD5220E5D96100F158A2 /* main.cpp */; };
+		3E6E53DF20F759E1007BF30B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E6E53DE20F759E1007BF30B /* main.cpp */; };
+		3E6E53E320F75A49007BF30B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E5B20E9B744001D1341 /* OpenGL.framework */; };
+		3E6E53E520F75A57007BF30B /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6E53E420F75A57007BF30B /* libGLEW.dylib */; };
+		3E6E53E720F75A60007BF30B /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6E53E620F75A60007BF30B /* libglfw.dylib */; };
+		3E6E53F020F83D41007BF30B /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E6E53EF20F83D41007BF30B /* glad.c */; };
+		3E6E53F820F843F6007BF30B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E6E53F620F843F6007BF30B /* main.cpp */; };
+		3E6E53F920F844BE007BF30B /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E5920E9B73B001D1341 /* GLUT.framework */; };
+		3E6E540120F847E2007BF30B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E6E540020F847E2007BF30B /* main.cpp */; };
+		3E6E540520F847F0007BF30B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E5B20E9B744001D1341 /* OpenGL.framework */; };
+		3E6E540620F847F6007BF30B /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E5920E9B73B001D1341 /* GLUT.framework */; };
+		3E6E540720F847FF007BF30B /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6E53E420F75A57007BF30B /* libGLEW.dylib */; };
+		3E6E540820F84804007BF30B /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6E53E620F75A60007BF30B /* libglfw.dylib */; };
+		3E6E540A20F84861007BF30B /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E6E540920F84861007BF30B /* glad.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -89,6 +101,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		3E6E53DA20F759E1007BF30B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		3E6E53FC20F847E2007BF30B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		3ED6BD4D20E5D96100F158A2 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -120,8 +150,18 @@
 		3E3C2FD120F4453C001D1341 /* Waveform4.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Waveform4.0; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3C2FD320F4453C001D1341 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E6E534F20F5E108007BF30B /* basstest.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = basstest.nib; path = "../../../../CODE/OpenGL/bass24-osx/basstest/basstest.nib"; sourceTree = "<group>"; };
+		3E6E53DC20F759E1007BF30B /* Waveform5.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Waveform5.0; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E6E53DE20F759E1007BF30B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E6E53E420F75A57007BF30B /* libGLEW.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.dylib; path = ../../../../CODE/OpenGL/libGLEW.dylib; sourceTree = "<group>"; };
+		3E6E53E620F75A60007BF30B /* libglfw.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.dylib; path = ../../../../CODE/OpenGL/libglfw.dylib; sourceTree = "<group>"; };
+		3E6E53EF20F83D41007BF30B /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		3E6E53F320F843F6007BF30B /* glad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glad.h; sourceTree = "<group>"; };
+		3E6E53F520F843F6007BF30B /* khrplatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = khrplatform.h; sourceTree = "<group>"; };
+		3E6E53F620F843F6007BF30B /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E6E53FE20F847E2007BF30B /* Spectrum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Spectrum; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E6E540020F847E2007BF30B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E6E540920F84861007BF30B /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		3ED6BD4F20E5D96100F158A2 /* Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Test; sourceTree = BUILT_PRODUCTS_DIR; };
-		3ED6BD5220E5D96100F158A2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +220,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3E6E53D920F759E1007BF30B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E6E53F920F844BE007BF30B /* GLUT.framework in Frameworks */,
+				3E6E53E320F75A49007BF30B /* OpenGL.framework in Frameworks */,
+				3E6E53E520F75A57007BF30B /* libGLEW.dylib in Frameworks */,
+				3E6E53E720F75A60007BF30B /* libglfw.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E6E53FB20F847E2007BF30B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E6E540620F847F6007BF30B /* GLUT.framework in Frameworks */,
+				3E6E540520F847F0007BF30B /* OpenGL.framework in Frameworks */,
+				3E6E540720F847FF007BF30B /* libGLEW.dylib in Frameworks */,
+				3E6E540820F84804007BF30B /* libglfw.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3ED6BD4C20E5D96100F158A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -198,6 +260,8 @@
 		3E3C2E5820E9B73A001D1341 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E6E53E620F75A60007BF30B /* libglfw.dylib */,
+				3E6E53E420F75A57007BF30B /* libGLEW.dylib */,
 				3E6E534F20F5E108007BF30B /* basstest.nib */,
 				3E3C2F9920EF6330001D1341 /* libglfw.dylib */,
 				3E3C2F9720EF632D001D1341 /* libGLEW.dylib */,
@@ -257,6 +321,39 @@
 			path = Waveform4.0;
 			sourceTree = "<group>";
 		};
+		3E6E53DD20F759E1007BF30B /* Waveform5.0 */ = {
+			isa = PBXGroup;
+			children = (
+				3E6E53DE20F759E1007BF30B /* main.cpp */,
+			);
+			path = Waveform5.0;
+			sourceTree = "<group>";
+		};
+		3E6E53F220F843F6007BF30B /* glad */ = {
+			isa = PBXGroup;
+			children = (
+				3E6E53F320F843F6007BF30B /* glad.h */,
+			);
+			path = glad;
+			sourceTree = "<group>";
+		};
+		3E6E53F420F843F6007BF30B /* KHR */ = {
+			isa = PBXGroup;
+			children = (
+				3E6E53F520F843F6007BF30B /* khrplatform.h */,
+			);
+			path = KHR;
+			sourceTree = "<group>";
+		};
+		3E6E53FF20F847E2007BF30B /* Spectrum */ = {
+			isa = PBXGroup;
+			children = (
+				3E6E540920F84861007BF30B /* glad.c */,
+				3E6E540020F847E2007BF30B /* main.cpp */,
+			);
+			path = Spectrum;
+			sourceTree = "<group>";
+		};
 		3ED6BD4620E5D96000F158A2 = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +364,8 @@
 				3E3C2FAB20F32BF1001D1341 /* Waveform2.0 */,
 				3E3C2FC420F35B68001D1341 /* Waveform3.0 */,
 				3E3C2FD220F4453C001D1341 /* Waveform4.0 */,
+				3E6E53DD20F759E1007BF30B /* Waveform5.0 */,
+				3E6E53FF20F847E2007BF30B /* Spectrum */,
 				3ED6BD5020E5D96100F158A2 /* Products */,
 				3E3C2E5820E9B73A001D1341 /* Frameworks */,
 			);
@@ -282,6 +381,8 @@
 				3E3C2FAA20F32BF1001D1341 /* Waveform2.0 */,
 				3E3C2FC320F35B68001D1341 /* Waveform3.0 */,
 				3E3C2FD120F4453C001D1341 /* Waveform4.0 */,
+				3E6E53DC20F759E1007BF30B /* Waveform5.0 */,
+				3E6E53FE20F847E2007BF30B /* Spectrum */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -289,7 +390,10 @@
 		3ED6BD5120E5D96100F158A2 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				3ED6BD5220E5D96100F158A2 /* main.cpp */,
+				3E6E53F220F843F6007BF30B /* glad */,
+				3E6E53F420F843F6007BF30B /* KHR */,
+				3E6E53F620F843F6007BF30B /* main.cpp */,
+				3E6E53EF20F83D41007BF30B /* glad.c */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -399,6 +503,40 @@
 			productReference = 3E3C2FD120F4453C001D1341 /* Waveform4.0 */;
 			productType = "com.apple.product-type.tool";
 		};
+		3E6E53DB20F759E1007BF30B /* Waveform5.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E6E53E220F759E1007BF30B /* Build configuration list for PBXNativeTarget "Waveform5.0" */;
+			buildPhases = (
+				3E6E53D820F759E1007BF30B /* Sources */,
+				3E6E53D920F759E1007BF30B /* Frameworks */,
+				3E6E53DA20F759E1007BF30B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Waveform5.0;
+			productName = Waveform5.0;
+			productReference = 3E6E53DC20F759E1007BF30B /* Waveform5.0 */;
+			productType = "com.apple.product-type.tool";
+		};
+		3E6E53FD20F847E2007BF30B /* Spectrum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E6E540220F847E2007BF30B /* Build configuration list for PBXNativeTarget "Spectrum" */;
+			buildPhases = (
+				3E6E53FA20F847E2007BF30B /* Sources */,
+				3E6E53FB20F847E2007BF30B /* Frameworks */,
+				3E6E53FC20F847E2007BF30B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Spectrum;
+			productName = Spectrum;
+			productReference = 3E6E53FE20F847E2007BF30B /* Spectrum */;
+			productType = "com.apple.product-type.tool";
+		};
 		3ED6BD4E20E5D96100F158A2 /* Test */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3ED6BD5620E5D96100F158A2 /* Build configuration list for PBXNativeTarget "Test" */;
@@ -443,6 +581,12 @@
 					3E3C2FD020F4453C001D1341 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					3E6E53DB20F759E1007BF30B = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					3E6E53FD20F847E2007BF30B = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 					3ED6BD4E20E5D96100F158A2 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -467,6 +611,8 @@
 				3E3C2FA920F32BF1001D1341 /* Waveform2.0 */,
 				3E3C2FC220F35B68001D1341 /* Waveform3.0 */,
 				3E3C2FD020F4453C001D1341 /* Waveform4.0 */,
+				3E6E53DB20F759E1007BF30B /* Waveform5.0 */,
+				3E6E53FD20F847E2007BF30B /* Spectrum */,
 			);
 		};
 /* End PBXProject section */
@@ -520,11 +666,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3E6E53D820F759E1007BF30B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E6E53DF20F759E1007BF30B /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E6E53FA20F847E2007BF30B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E6E540120F847E2007BF30B /* main.cpp in Sources */,
+				3E6E540A20F84861007BF30B /* glad.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3ED6BD4B20E5D96100F158A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3ED6BD5320E5D96100F158A2 /* main.cpp in Sources */,
+				3E6E53F020F83D41007BF30B /* glad.c in Sources */,
+				3E6E53F820F843F6007BF30B /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +802,46 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3E6E53E020F759E1007BF30B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3E6E53E120F759E1007BF30B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3E6E540320F847E2007BF30B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /Users/boone/Desktop/Github/OpenGL/CODE/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3E6E540420F847E2007BF30B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /Users/boone/Desktop/Github/OpenGL/CODE/include;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -825,6 +1029,24 @@
 			buildConfigurations = (
 				3E3C2FD620F4453C001D1341 /* Debug */,
 				3E3C2FD720F4453C001D1341 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E6E53E220F759E1007BF30B /* Build configuration list for PBXNativeTarget "Waveform5.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E6E53E020F759E1007BF30B /* Debug */,
+				3E6E53E120F759E1007BF30B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E6E540220F847E2007BF30B /* Build configuration list for PBXNativeTarget "Spectrum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E6E540320F847E2007BF30B /* Debug */,
+				3E6E540420F847E2007BF30B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
