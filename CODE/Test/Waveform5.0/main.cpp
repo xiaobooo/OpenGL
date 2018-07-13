@@ -57,12 +57,12 @@ void drawLint()
 {
     usleep(44100);    //实现延时
     
-    glClearColor (0.8, 0.8, 0.8, 0.8);
+    glClearColor (0, 0, 0, 0.8);
     glClear (GL_COLOR_BUFFER_BIT);
     
     glLineWidth(9);//设置线段宽度
     glBegin(GL_LINES);
-    glColor3f(0.5,0.5,0.6);
+    glColor3f(0.9,0.3,0.3);
     
     float xstart=-1.0;
     
@@ -71,7 +71,7 @@ void drawLint()
     //绘制波形图
     for(vector<float>::iterator it = istart; it != iend; it++ )    //用迭代器的方式输出容器对象的值
     {
-        xstart=xstart+0.00633;
+        xstart=xstart+0.01;
         glVertex2f(xstart,0);
         glVertex2f(xstart,*it);
     }
