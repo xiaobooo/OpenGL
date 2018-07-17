@@ -73,7 +73,7 @@ void drawLint()
     {
         xstart=xstart+0.016;
         glVertex2f(xstart,0);
-        glVertex2f(xstart,*it+0.3);
+        glVertex2f(xstart,*it+0.1);
     }
     
     //进行下一次绘制的起点和终点

@@ -310,14 +310,9 @@ vertices[] =
 {
     { 0.0f, -0.5f ,0.0f },
     { 0.0f, 0.5f ,0.0f }
-    /*{ -0.1f, -0.5f ,0.0f    },
-     { 0.1f,  -0.5f ,0.0f    },
-     {  0.1f,  0.5f ,0.0f    },
-     { 0.1f,   0.5f , 0.0f    },
-     { -0.1f,   0.5f , 0.0f    },
-     { -0.1f,   -0.5f , 0.0f }*/
 };
 
+//顶点着色器
 static const char* vertex_shader_text =
 "#version 330 core\n"
 "\n"
@@ -332,6 +327,7 @@ static const char* vertex_shader_text =
 "    gl_Position = ortho * world * model * vec4( vposition, 1);\n"
 "}\n";
 
+//片段着色器
 static const char* fragment_shader_text =
 "#version 330 core\n"
 "\n"
@@ -343,6 +339,7 @@ static const char* fragment_shader_text =
 "{\n"
 "    color = Ucolor; \n"
 "}\n";
+
 
 static float world_x = 0.0f;
 static float world_y = 0.0f;
