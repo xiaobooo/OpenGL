@@ -6,24 +6,11 @@
 //  Copyright © 2018年 boone. All rights reserved.
 //
 
-#ifdef _MSC_VER
-#define _CRT_SECURE_NO_WARNINGS
-#endif // _MSC_VER
-
-
-
-//
-//  main.cpp
-//  Waveform3.0
-//
-//  Created by boone on 2018/7/9.
-//  Copyright © 2018年 boone. All rights reserved.
-//
-
 
 #define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"     //PCM源文件
+
 #define SHAPE_N 160
-#define SPACE    0.3f
+#define SPACE    0.2f
 
 #include <iostream>
 #include <vector>
@@ -70,14 +57,11 @@ static const struct
 }
 vertices[] =
 {
-    { -0.1f, -0.5f ,0.0f    },
-    { 0.1f,  -0.5f ,0.0f    },
-    {  0.1f,  0.5f ,0.0f    },
-    { 0.1f,   0.5f , 0.0f    },
-    { -0.1f,   0.5f , 0.0f    },
-    { -0.1f,   -0.5f , 0.0f }
+    { 0.0f, -0.5f ,0.0f },
+    { 0.0f, 0.5f ,0.0f }
 };
 
+//顶点着色器
 static const char* vertex_shader_text =
 "#version 330 core\n"
 "\n"
@@ -92,6 +76,7 @@ static const char* vertex_shader_text =
 "    gl_Position = ortho * world * model * vec4( vposition, 1);\n"
 "}\n";
 
+//片段着色器
 static const char* fragment_shader_text =
 "#version 330 core\n"
 "\n"
@@ -103,6 +88,7 @@ static const char* fragment_shader_text =
 "{\n"
 "    color = Ucolor; \n"
 "}\n";
+
 
 static float world_x = 0.0f;
 static float world_y = 0.0f;
@@ -134,17 +120,22 @@ int main(void)
     printf("%d\n", vs.size());
     
     GLFWwindow* window;
-    GLuint vertex_buffer, vertex_shader, fragment_shader, program;
+    GLuint vertex_buffer,vertex_array, vertex_shader, fragment_shader, program;
     
     glfwSetErrorCallback(error_callback);
     
     if (!glfwInit())
         exit(EXIT_FAILURE);
     
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+#ifdef __APPLE__
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // uncomment this statement to fix compilation on OS X
+#endif
     
-    window = glfwCreateWindow(600, 480, "example", NULL, NULL);
+    
+    window = glfwCreateWindow(800, 800, "Audio Spectrum", NULL, NULL);
     if (!window)
     {
         glfwTerminate();
@@ -158,6 +149,10 @@ int main(void)
     glfwSwapInterval(1);
     
     // NOTE: OpenGL error checks have been omitted for brevity
+    
+    
+    glGenVertexArrays(1, &vertex_array);
+    glBindVertexArray(vertex_array);
     
     glGenBuffers(1, &vertex_buffer);
     glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
@@ -204,7 +199,7 @@ int main(void)
     while (!glfwWindowShouldClose(window))
     {
         glClear(GL_COLOR_BUFFER_BIT);
-        glBindVertexArray(vertex_buffer);
+        //glBindVertexArray(vertex_buffer);
         
         glm::mat4 world_mat;
         world_mat = glm::translate(world_mat, glm::vec3(world_x, world_y, 3.0f));
@@ -229,7 +224,7 @@ int main(void)
             glUniformMatrix4fv(model, 1, GL_FALSE, glm::value_ptr(model_mat));
             
             
-            glDrawArrays(GL_TRIANGLES, 0, sizeof(vertices) / sizeof(float) / 3);
+            glDrawArrays(GL_LINES, 0, sizeof(vertices) / sizeof(float) / 3);
         }
         
         if (isGo)
