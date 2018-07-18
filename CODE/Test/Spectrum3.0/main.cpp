@@ -19,9 +19,9 @@
 
 using namespace std;
 
-vector<float> vertices;    //用于存储pcm文件解析出的数据
-vector<float>::iterator istart;   //指向每次绘图的的数据起点
-vector<float>::iterator iend;     //指向每次绘图的数据终点
+vector<double> vertices;    //用于存储pcm文件解析出的数据
+vector<double>::iterator istart;   //指向每次绘图的的数据起点
+vector<double>::iterator iend;     //指向每次绘图的数据终点
 int n;       //记录pcm文件中数据个数
 
 //回调函数、窗口调整大小时调用
@@ -78,7 +78,7 @@ void drawLint()
     //testing-------------------------------------------------------------------------------------------------------------------
     
     //绘制波形图
-    for(vector<float>::iterator it = istart; it != iend; it++ )    //用迭代器的方式输出容器对象的值
+    for(vector<double>::iterator it = istart; it != iend; it++ )    //用迭代器的方式输出容器对象的值
     {
         xstart=xstart+0.016;
         glVertex2f(xstart,0);
@@ -98,6 +98,17 @@ int main()
     
     Complex* inarr =new Complex[n];
     Complex* outarr =new Complex[n];
+    
+    int i=0;
+    for(vector<double>::iterator it = vertices.begin(); it != vertices.end(); it++ )    //用迭代器的方式输出容器对象的值
+    {
+        inarr[i++].real=*it;
+    }
+    
+    FFT(inarr, outarr, n);
+    for (int j=0; j<n; j++) {
+        cout<<outarr[j].real<<endl;
+    }
     
     istart = vertices.begin();
     iend = vertices.begin()+3000;
