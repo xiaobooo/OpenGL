@@ -17,6 +17,7 @@
 		3E217C6020FEE9A000F1FD50 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6E53E620F75A60007BF30B /* libglfw.dylib */; };
 		3E217C6520FEEA8A00F1FD50 /* Complex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E217C6120FEEA8A00F1FD50 /* Complex.cpp */; };
 		3E217C6620FEEA8A00F1FD50 /* FFT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E217C6220FEEA8A00F1FD50 /* FFT.cpp */; };
+		3E217C7320FF5F9300F1FD50 /* test2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E217C7220FF5F9300F1FD50 /* test2.cpp */; };
 		3E3C2E5A20E9B73B001D1341 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E5920E9B73B001D1341 /* GLUT.framework */; };
 		3E3C2E5C20E9B744001D1341 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E5B20E9B744001D1341 /* OpenGL.framework */; };
 		3E3C2EAA20EA54D2001D1341 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2EA920EA54D2001D1341 /* libGLEW.dylib */; };
@@ -167,6 +168,7 @@
 		3E217C6220FEEA8A00F1FD50 /* FFT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FFT.cpp; sourceTree = "<group>"; };
 		3E217C6320FEEA8A00F1FD50 /* FFT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFT.h; sourceTree = "<group>"; };
 		3E217C6420FEEA8A00F1FD50 /* Complex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Complex.h; sourceTree = "<group>"; };
+		3E217C7220FF5F9300F1FD50 /* test2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test2.cpp; sourceTree = "<group>"; };
 		3E3C2E5920E9B73B001D1341 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		3E3C2E5B20E9B744001D1341 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		3E3C2EA920EA54D2001D1341 /* libGLEW.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.dylib; path = ../../../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.dylib; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 			children = (
 				3E6E53F620F843F6007BF30B /* main.cpp */,
 				3E6E53EF20F83D41007BF30B /* glad.c */,
+				3E217C7220FF5F9300F1FD50 /* test2.cpp */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -809,6 +812,7 @@
 			files = (
 				3E6E53F020F83D41007BF30B /* glad.c in Sources */,
 				3E6E53F820F843F6007BF30B /* main.cpp in Sources */,
+				3E217C7320FF5F9300F1FD50 /* test2.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

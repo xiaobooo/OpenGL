@@ -144,7 +144,12 @@ int main(void)
 
     glDeleteShader(fragmentShader);
     
+    unsigned int VBO;
     
+    glGenBuffers(1, &VBO);
+  
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
     //循环渲染直至用户关闭窗口
     while (!glfwWindowShouldClose(window))
     {
