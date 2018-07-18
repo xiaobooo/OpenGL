@@ -47,7 +47,7 @@ void fileOutput()
             if(pcm_In<0){
                 pcm_In=-pcm_In;
             }
-            vertices.push_back((float)pcm_In/30000);
+            vertices.push_back((float)pcm_In/15000);
         }
     }
     
@@ -74,7 +74,7 @@ void drawLint()
     {
         xstart=xstart+0.016;
         glVertex2f(xstart,0);
-        glVertex2f(xstart,*it+0.01);
+        glVertex2f(xstart,*it+0.001);
     }
     
     //进行下一次绘制的起点和终点

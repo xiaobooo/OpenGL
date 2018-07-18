@@ -75,7 +75,7 @@ void FFT(Complex *TD, Complex *FD, int r)
         
     for (int j=0; j<r; j++) {
         if (TD[j].real<0.1) {
-            FD[j].real=TD[j].real+0.1;
+            FD[j].real=TD[j].real+0.001;
         }else if (TD[j].real>1.0){
             FD[j].real=1.0;
         }else{

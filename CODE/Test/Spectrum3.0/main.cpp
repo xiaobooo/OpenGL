@@ -20,8 +20,8 @@
 using namespace std;
 
 vector<double> vertices;    //用于存储pcm文件解析出的数据
-vector<double>::iterator istart;   //指向每次绘图的的数据起点
-vector<double>::iterator iend;     //指向每次绘图的数据终点
+int istart;   //指向每次绘图的的数据起点
+int iend;     //指向每次绘图的数据终点
 int n;       //记录pcm文件中数据个数
 
 //回调函数、窗口调整大小时调用
@@ -51,18 +51,18 @@ void fileOutput()
             if(pcm_In<0){
                 pcm_In=-pcm_In;
             }
-            vertices.push_back((float)pcm_In/30000);
+            vertices.push_back((float)pcm_In/15000);
         }
         i++;
     }
     
     n=i;
-    cout<<"数据个数： "<<n<<endl;
+//    cout<<"数据个数： "<<n<<endl;
     
     fclose(fp);
 }
 
-void drawLint()
+void drawLint(Complex* outarr)
 {
     usleep(44100);    //实现延时
     
@@ -78,11 +78,11 @@ void drawLint()
     //testing-------------------------------------------------------------------------------------------------------------------
     
     //绘制波形图
-    for(vector<double>::iterator it = istart; it != iend; it++ )    //用迭代器的方式输出容器对象的值
+    for(int k = istart; k <= iend; k++ )    //用迭代器的方式输出容器对象的值
     {
         xstart=xstart+0.016;
         glVertex2f(xstart,0);
-        glVertex2f(xstart,*it+0.01);
+        glVertex2f(xstart,outarr[k].real);
     }
     
     //进行下一次绘制的起点和终点
@@ -105,13 +105,15 @@ int main()
         inarr[i++].real=*it;
     }
     
-    FFT(inarr, outarr, n);
-    for (int j=0; j<n; j++) {
-        cout<<outarr[j].real<<endl;
-    }
+    FFT(inarr, outarr, n);     //傅里叶变换 时域转换为频域
+//    
+//    for (int j=0; j<n; j++) {
+//        cout<<outarr[j].real<<endl;
+//    }
     
-    istart = vertices.begin();
-    iend = vertices.begin()+3000;
+    //初始化绘图的起点终点
+    istart = 0;
+    iend = 3000;
     
     GLFWwindow* window;
     
@@ -136,9 +138,9 @@ int main()
         pressInput(window);
         
         //绘图
-        if (iend<=vertices.end()) {
+        if (iend<=n) {
             // sleep(0.003);
-            drawLint();
+            drawLint(outarr);
         }
         
         //交换颜色缓冲
