@@ -191,8 +191,6 @@
 		3E6E53E420F75A57007BF30B /* libGLEW.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.dylib; path = ../../../../CODE/OpenGL/libGLEW.dylib; sourceTree = "<group>"; };
 		3E6E53E620F75A60007BF30B /* libglfw.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.dylib; path = ../../../../CODE/OpenGL/libglfw.dylib; sourceTree = "<group>"; };
 		3E6E53EF20F83D41007BF30B /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
-		3E6E53F320F843F6007BF30B /* glad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glad.h; sourceTree = "<group>"; };
-		3E6E53F520F843F6007BF30B /* khrplatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = khrplatform.h; sourceTree = "<group>"; };
 		3E6E53F620F843F6007BF30B /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E6E53FE20F847E2007BF30B /* Spectrum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Spectrum; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E6E540020F847E2007BF30B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -405,22 +403,6 @@
 			path = Waveform5.0;
 			sourceTree = "<group>";
 		};
-		3E6E53F220F843F6007BF30B /* glad */ = {
-			isa = PBXGroup;
-			children = (
-				3E6E53F320F843F6007BF30B /* glad.h */,
-			);
-			path = glad;
-			sourceTree = "<group>";
-		};
-		3E6E53F420F843F6007BF30B /* KHR */ = {
-			isa = PBXGroup;
-			children = (
-				3E6E53F520F843F6007BF30B /* khrplatform.h */,
-			);
-			path = KHR;
-			sourceTree = "<group>";
-		};
 		3E6E53FF20F847E2007BF30B /* Spectrum */ = {
 			isa = PBXGroup;
 			children = (
@@ -470,8 +452,6 @@
 		3ED6BD5120E5D96100F158A2 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				3E6E53F220F843F6007BF30B /* glad */,
-				3E6E53F420F843F6007BF30B /* KHR */,
 				3E6E53F620F843F6007BF30B /* main.cpp */,
 				3E6E53EF20F83D41007BF30B /* glad.c */,
 			);
