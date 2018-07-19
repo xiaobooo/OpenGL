@@ -6,8 +6,8 @@
 //  Copyright © 2018年 boone. All rights reserved.
 //
 
-#define OLD_FILE_PATH "/Users/boone/Desktop/Music/16k.pcm"
-//#define VOL_FILE_PATH "/Users/boone/Desktop/Music/vol.txt"
+#define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"
+#define VOL_FILE_PATH "/Users/boone/Desktop/Music/Seve.txt"
 
 #include <iostream>
 
@@ -61,7 +61,7 @@ void pcm_volume_control(int volume)
     int size = 0;
     
     FILE *fp = fopen(OLD_FILE_PATH, "rb+");
-   // FILE *fp_vol = fopen(VOL_FILE_PATH, "wb+");
+    FILE *fp_vol = fopen(VOL_FILE_PATH, "wb+");
     
     while(!feof(fp))
     {
@@ -69,12 +69,12 @@ void pcm_volume_control(int volume)
         if(size>0)
         {
             volume_adjust(&s16In, &s16Out, volume);
- //           fwrite(&s16Out, 2, 1, fp_vol);
+            fwrite(&s16Out, 2, 1, fp_vol);
         }
     }
     
     fclose(fp);
- //   fclose(fp_vol);
+    fclose(fp_vol);
 }
 
 int main(void)
