@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <vector>
+#include <cmath>
 #include <unistd.h>
 
 using namespace std;
@@ -71,7 +72,11 @@ void drawLint(Complex* outarr)
     
     glLineWidth(9);//设置线段宽度
     glBegin(GL_LINES);
-    glColor3f(0.9,0.3,0.3);
+    
+    //she
+    float timeValue = glfwGetTime();
+    float redValue = sin(timeValue) / 2.0f + 0.5f;
+    glColor3f(redValue,0.5,0.5);
     
     float xstart=-1.0;
     

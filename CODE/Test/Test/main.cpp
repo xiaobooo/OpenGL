@@ -19,14 +19,6 @@
 
 using namespace std;
 
-const char *fragmentShaderSource = "#version 330 core\n"
-"out vec4 FragColor;\n"
-"uniform vec4 ourColor;\n"
-"void main()\n"
-"{\n"
-"   FragColor = ourColor;\n"
-"}\n\0";
-
 vector<float> vertices;    //用于存储pcm文件解析出的数据
 vector<float>::iterator istart;   //指向每次绘图的的数据起点
 vector<float>::iterator iend;     //指向每次绘图的数据终点
@@ -70,7 +62,10 @@ void drawLint()
     
     glLineWidth(9);//设置线段宽度
     glBegin(GL_LINES);
-  //  glColor3f(0.9,0.3,0.3);
+    
+    float timeValue = glfwGetTime();
+    float redValue = sin(timeValue) / 2.0f + 0.6f;
+    glColor3f(redValue,0.9,0.9);
     
     float xstart=-1.0;
     
@@ -112,43 +107,6 @@ int main(void)
     }
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-    
-    // build and compile our shader program
-    // ------------------------------------
-    // vertex shader
-    int success;
-    char infoLog[512];
-    
-    // fragment shader
-    int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
-    glCompileShader(fragmentShader);
-    // check for shader compile errors
-    glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
-    if (!success)
-    {
-        glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
-    }
-    // link shaders
-    int shaderProgram = glCreateProgram();
-
-    glAttachShader(shaderProgram, fragmentShader);
-    glLinkProgram(shaderProgram);
-    // check for linking errors
-    glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
-    if (!success) {
-        glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
-    }
-
-    glDeleteShader(fragmentShader);
-    
-    unsigned int VBO;
-    
-    glGenBuffers(1, &VBO);
-  
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
 
     //循环渲染直至用户关闭窗口
     while (!glfwWindowShouldClose(window))
@@ -159,15 +117,6 @@ int main(void)
         glClearColor (0, 0, 0, 0.8);
         glClear (GL_COLOR_BUFFER_BIT);
         
-        // be sure to activate the shader before any calls to glUniform
-        glUseProgram(shaderProgram);
-        
-        // update shader uniform
-        float timeValue = glfwGetTime();
-        float greenValue = sin(timeValue) / 2.0f + 0.5f;
-        int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
-        glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
-
         //绘图
         if (iend<=vertices.end()) {
             // sleep(0.003);
