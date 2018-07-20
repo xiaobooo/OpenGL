@@ -1,27 +1,29 @@
-
 //
 //  main.cpp
-//  Waveform3.0
+//  Spectrum3.0
 //
-//  Created by boone on 2018/7/9.
+//  Created by boone on 2018/7/18.
 //  Copyright © 2018年 boone. All rights reserved.
 //
+
 
 
 #define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"     //PCM源文件
 
 #include <GLFW/glfw3.h>
+#include "FFT.h"
 
 #include <iostream>
-#include <cmath>
 #include <vector>
+#include <cmath>
 #include <unistd.h>
 
 using namespace std;
 
-vector<float> vertices;    //用于存储pcm文件解析出的数据
-vector<float>::iterator istart;   //指向每次绘图的的数据起点
-vector<float>::iterator iend;     //指向每次绘图的数据终点
+vector<double> vertices;    //用于存储pcm文件解析出的数据
+int istart;   //指向每次绘图的的数据起点
+int iend;     //指向每次绘图的数据终点
+int n;       //记录pcm文件中数据个数
 
 //回调函数、窗口调整大小时调用
 void framebuffer_size_callback(GLFWwindow* window, int width, int height){
@@ -40,6 +42,7 @@ void fileOutput()
     int size = 0;
     FILE *fp = fopen(OLD_FILE_PATH, "rb+");     //为读写打开一个二进制文件 即pcm文件
     
+    int i=0;
     while(!feof(fp))
     {
         size = fread(&pcm_In, 2, 1, fp);     //pcm中每个数据大小为2字节，每次读取1个数据
@@ -51,32 +54,40 @@ void fileOutput()
             }
             vertices.push_back((float)pcm_In/15000);
         }
+        i++;
     }
+    
+    n=i;
+    //    cout<<"数据个数： "<<n<<endl;
     
     fclose(fp);
 }
 
-void drawLint()
+void drawLint(Complex* outarr)
 {
     usleep(44100);    //实现延时
+    
+    glClearColor (0, 0, 0, 0.8);
+    glClear (GL_COLOR_BUFFER_BIT);
     
     glLineWidth(9);//设置线段宽度
     glBegin(GL_LINES);
     
+    //she
     float timeValue = glfwGetTime();
-    float redValue = sin(timeValue) / 2.0f + 0.6f;
-    glColor3f(redValue,0.9,0.9);
+    float redValue = sin(timeValue) / 2.0f + 0.5f;
+    glColor3f(redValue,0.5,0.5);
     
     float xstart=-1.0;
     
     //testing-------------------------------------------------------------------------------------------------------------------
     
     //绘制波形图
-    for(vector<float>::iterator it = istart; it != iend; it++ )    //用迭代器的方式输出容器对象的值
+    for(int k = istart; k <= iend; k++ )    //用迭代器的方式输出容器对象的值
     {
         xstart=xstart+0.016;
         glVertex2f(xstart,0);
-        glVertex2f(xstart,*it+0.003);
+        glVertex2f(xstart,outarr[k].real);
     }
     
     //进行下一次绘制的起点和终点
@@ -86,11 +97,28 @@ void drawLint()
     glEnd();
 }
 
-int main(void)
+int main()
 {
     fileOutput();
-    istart = vertices.begin();
-    iend = vertices.begin()+3000;
+    
+    Complex* inarr =new Complex[n];
+    Complex* outarr =new Complex[n];
+    
+    int i=0;
+    for(vector<double>::iterator it = vertices.begin(); it != vertices.end(); it++ )    //用迭代器的方式输出容器对象的值
+    {
+        inarr[i++].real=*it;
+    }
+    
+    FFT(inarr, outarr, n);     //傅里叶变换 时域转换为频域
+    //
+    //    for (int j=0; j<n; j++) {
+    //        cout<<outarr[j].real<<endl;
+    //    }
+    
+    //初始化绘图的起点终点
+    istart = 0;
+    iend = 3000;
     
     GLFWwindow* window;
     
@@ -107,20 +135,17 @@ int main(void)
     }
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-
+    
     //循环渲染直至用户关闭窗口
     while (!glfwWindowShouldClose(window))
     {
         //检测按键，判断是否退出
         pressInput(window);
         
-        glClearColor (0, 0, 0, 0.8);
-        glClear (GL_COLOR_BUFFER_BIT);
-        
         //绘图
-        if (iend<=vertices.end()) {
+        if (iend<=n) {
             // sleep(0.003);
-            drawLint();
+            drawLint(outarr);
         }
         
         //交换颜色缓冲
@@ -134,3 +159,4 @@ int main(void)
     
     return 0;
 }
+
