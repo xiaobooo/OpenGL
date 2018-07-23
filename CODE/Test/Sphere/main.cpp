@@ -20,9 +20,26 @@ vector<float> vertices;    //用于存储pcm文件解析出的数据
 vector<float>::iterator istart;   //指向每次绘图的的数据起点
 vector<float>::iterator iend;     //指向每次绘图的数据终点
 
-const int n = 1000;
-GLfloat R = 0.6f;
-const GLfloat pi = 3.1415926536f;
+#ifndef PI
+#define PI 3.1415926//这个不用解释了
+#endif
+#ifndef PI2
+#define PI2 6.2831853//2PI
+#endif
+
+class Sphere {
+private:
+    GLuint* vboId;
+    GLuint vert,texcoord;
+    GLfloat* verts;//保存顶点与法向量的指针
+    GLfloat* texcoords;//保存纹理坐标的指针
+    int vertNum;
+public:
+    Sphere(int m,int n);//m是纵向细分程度,n是横向细分程度
+    ~Sphere();
+    void render();//渲染球体!
+};
+
 
 
 //回调函数、窗口调整大小时调用

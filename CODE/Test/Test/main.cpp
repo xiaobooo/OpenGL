@@ -21,9 +21,10 @@ vector<float> vertices;    //用于存储pcm文件解析出的数据
 vector<float>::iterator istart;   //指向每次绘图的的数据起点
 vector<float>::iterator iend;     //指向每次绘图的数据终点
 
-const int n = 1000;
-GLfloat R = 0.5f;
-const GLfloat pi = 3.1415926536f;
+//const int n = 1000;
+//const GLfloat R = 0.6f;
+//const GLfloat pi = 3.1415926536f;
+int len=0;
 
 
 //回调函数、窗口调整大小时调用
@@ -43,6 +44,7 @@ void fileOutput()
     int size = 0;
     FILE *fp = fopen(OLD_FILE_PATH, "rb+");     //为读写打开一个二进制文件 即pcm文件
     
+    int i=0;
     while(!feof(fp))
     {
         size = fread(&pcm_In, 2, 1, fp);     //pcm中每个数据大小为2字节，每次读取1个数据
@@ -54,44 +56,50 @@ void fileOutput()
             }
             vertices.push_back((float)pcm_In/15000);
         }
+        i++;
     }
+    
+    len=i;
     
     fclose(fp);
 }
 
 void drawLint()
 {
-    usleep(44100);    //实现延时
+    usleep(99900);    //实现延时
     
-    glClearColor (0, 0, 0, 0.8);
+    glClearColor (0.8, 0.8, 0.8, 0.8);
     glClear (GL_COLOR_BUFFER_BIT);
     
     glLineWidth(3);//设置线段宽度
     glBegin(GL_LINES);
-    glColor3f(0.9,0.3,0.3);
     
-    float xstart=-1.0;
+    //设置颜色动态变化
+    float timeValue = glfwGetTime();
+    float redValue = sin(timeValue) / 2.0f +0.5f;
+    glColor3f(redValue,0.1,0.6);
     
     //testing-------------------------------------------------------------------------------------------------------------------
     
+    float xstart=-1.0;
     //绘制波形图
-//    for(vector<float>::iterator it = istart; it != iend; it++ )    //用迭代器的方式输出容器对象的值
+        for(vector<float>::iterator it = istart; it != iend; it+=2 )    //用迭代器的方式输出容器对象的值
+        {
+            xstart=xstart+0.016;
+            glVertex2f(xstart,0);
+            glVertex2f(xstart,*it+0.001);
+        }
+    
+    //圆形频谱图
+//    vector<float>::iterator it = istart;
+//
+//    for (int i = 0; i < n; i++)
 //    {
-//        xstart=xstart+0.016;
-//        glVertex2f(xstart,0);
-//        glVertex2f(xstart,*it+0.001);
+//        glVertex2f((R)*cos(2*pi/n*i), (R)*sin(2*pi/n*i));
+//        glVertex2f((R+*it)*cos(2*pi/n*i), (R+*it)*sin(2*pi/n*i));
+//
+//        it+=2;
 //    }
-    
-    vector<float>::iterator it = istart;
-    
-    R=0.5f;
-    for (int i = 0; i < n; i++)
-    {
-        glVertex2f(R*cos(2*pi/n*i), R*sin(2*pi/n*i));
-        glVertex2f((R+0.1)*cos(2*pi/n*i), (R+0.1)*sin(2*pi/n*i)+*it);
-        
-        it++;
-    }
     
     //进行下一次绘制的起点和终点
     istart+=1000;    //通过更改每次前进的数字可以实现波形振动频率的改变
@@ -105,6 +113,23 @@ int main(void)
     fileOutput();
     istart = vertices.begin();
     iend = vertices.begin()+3000;
+    
+    float* ver =new float[3*len];
+    
+    float xstart=-1.0;
+    
+    int i=0;
+    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it++ )    //用迭代器的方式输出容器对象的值
+    {
+        ver[i++]=xstart;
+//        ver[i++]=*it;
+//        ver[i++]=0.0f;
+        xstart=xstart+0.002;
+    }
+    
+    for (int j=0; j<3*len; j++) {
+        cout<<ver[j]<<endl;
+    }
     
     GLFWwindow* window;
     
@@ -133,7 +158,7 @@ int main(void)
             // sleep(0.003);
             drawLint();
         }
-        
+
         //交换颜色缓冲
         glfwSwapBuffers(window);
         

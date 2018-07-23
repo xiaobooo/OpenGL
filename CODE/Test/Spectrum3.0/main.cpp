@@ -6,8 +6,6 @@
 //  Copyright © 2018年 boone. All rights reserved.
 //
 
-
-
 #define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"     //PCM源文件
 
 #include <GLFW/glfw3.h>
@@ -83,11 +81,12 @@ void drawLint(Complex* outarr)
     //testing-------------------------------------------------------------------------------------------------------------------
     
     //绘制波形图
-    for(int k = istart; k <= iend; k++ )    //用迭代器的方式输出容器对象的值
+    for(int k = istart; k <= iend;  )    //用迭代器的方式输出容器对象的值
     {
         xstart=xstart+0.016;
         glVertex2f(xstart,0);
         glVertex2f(xstart,outarr[k].real);
+        k+=2;
     }
     
     //进行下一次绘制的起点和终点
