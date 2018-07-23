@@ -1,11 +1,10 @@
 //
 //  main.cpp
-//  Spectrum3.0
+//  Sphere
 //
-//  Created by boone on 2018/7/18.
+//  Created by boone on 2018/7/23.
 //  Copyright © 2018年 boone. All rights reserved.
 //
-
 #define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"     //PCM源文件
 
 #include <GLFW/glfw3.h>
@@ -22,7 +21,7 @@ vector<float>::iterator istart;   //指向每次绘图的的数据起点
 vector<float>::iterator iend;     //指向每次绘图的数据终点
 
 const int n = 1000;
-GLfloat R = 0.5f;
+GLfloat R = 0.6f;
 const GLfloat pi = 3.1415926536f;
 
 
@@ -52,7 +51,7 @@ void fileOutput()
             if(pcm_In<0){
                 pcm_In=-pcm_In;
             }
-            vertices.push_back((float)pcm_In/15000);
+            vertices.push_back((float)pcm_In/50000);
         }
     }
     
@@ -61,42 +60,25 @@ void fileOutput()
 
 void drawLint()
 {
-    usleep(44100);    //实现延时
+    usleep(99900);    //实现延时
     
     glClearColor (0, 0, 0, 0.8);
     glClear (GL_COLOR_BUFFER_BIT);
     
     glLineWidth(3);//设置线段宽度
     glBegin(GL_LINES);
-    glColor3f(0.9,0.3,0.3);
     
-    float xstart=-1.0;
+    //设置颜色动态变化
+    float timeValue = glfwGetTime();
+    float redValue = sin(timeValue) / 2.0f +0.5f;
+    glColor3f(redValue,0.1,0.6);
     
     //testing-------------------------------------------------------------------------------------------------------------------
-    
-    //绘制波形图
-//    for(vector<float>::iterator it = istart; it != iend; it++ )    //用迭代器的方式输出容器对象的值
-//    {
-//        xstart=xstart+0.016;
-//        glVertex2f(xstart,0);
-//        glVertex2f(xstart,*it+0.001);
-//    }
-    
-    vector<float>::iterator it = istart;
-    
-    R=0.5f;
     for (int i = 0; i < n; i++)
     {
         glVertex2f(R*cos(2*pi/n*i), R*sin(2*pi/n*i));
-        glVertex2f((R+0.1)*cos(2*pi/n*i), (R+0.1)*sin(2*pi/n*i)+*it);
-        
-        it++;
     }
-    
-    //进行下一次绘制的起点和终点
-    istart+=1000;    //通过更改每次前进的数字可以实现波形振动频率的改变
-    iend+=1000;
-    
+
     glEnd();
 }
 
@@ -129,10 +111,7 @@ int main(void)
         pressInput(window);
         
         //绘图
-        if (iend<=vertices.end()) {
-            // sleep(0.003);
-            drawLint();
-        }
+        drawLint();
         
         //交换颜色缓冲
         glfwSwapBuffers(window);
@@ -145,5 +124,3 @@ int main(void)
     
     return 0;
 }
-
-

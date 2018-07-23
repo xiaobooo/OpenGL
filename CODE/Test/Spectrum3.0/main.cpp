@@ -73,7 +73,7 @@ void drawLint(Complex* outarr)
     glLineWidth(9);//设置线段宽度
     glBegin(GL_LINES);
     
-    //she
+    //设置颜色动态变化
     float timeValue = glfwGetTime();
     float redValue = sin(timeValue) / 2.0f + 0.5f;
     glColor3f(redValue,0.5,0.5);
