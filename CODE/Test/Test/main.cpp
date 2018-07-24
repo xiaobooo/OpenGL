@@ -78,7 +78,7 @@ void drawLine()
     //testing-------------------------------------------------------------------------------------------------------------------
     
     //绘制波形图
-    for(vector<float>::iterator it = istart; it != iend; it++ )    //用迭代器的方式输出容器对象的值
+    for(vector<float>::iterator it = istart; it != iend; it+=2)    //用迭代器的方式输出容器对象的值
     {
         xstart=xstart+0.016;
         glVertex2f(xstart,0);
@@ -117,9 +117,10 @@ int main()
         }
     }
     
-    for (int j=0; j<6*n; j++) {
-        cout<<arr[j]<<endl;
-    }
+//    for (int j=0; j<6*n; j++) {
+//        cout<<arr[j]<<endl;
+//    }
+//
     
     //初始化绘图的起点终点
     istart = vertices.begin();
