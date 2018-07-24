@@ -1,10 +1,11 @@
 //
-//  test2.cpp
-//  Test
+//  main.cpp
+//  Circular2.0
 //
-//  Created by boone on 2018/7/18.
+//  Created by boone on 2018/7/24.
 //  Copyright © 2018年 boone. All rights reserved.
 //
+
 #define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"     //PCM源文件
 
 #include <glad/glad.h>
@@ -21,6 +22,11 @@ using namespace std;
 vector<float> vertices;    //用于存储pcm文件解析出的数据
 int istart=0;
 int n;       //记录pcm文件中数据个数
+
+int NUM=1000;  //一个圆周上分布频谱的个数
+float PI=3.1415926f;
+float R=0.6f;  //半径
+
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
@@ -103,20 +109,20 @@ int main()
     float* arr = new float[6*n];
     
     int i=0;
-    float xstart=-1.0;
+    int j=0;
     for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it++ )    //用迭代器的方式输出容器对象的值
     {
-        arr[i++]=xstart;     //每次频谱线绘制的起点  在x轴上
+        arr[i++]=R*cos(2*PI/NUM*j);     //圆上的点
+        arr[i++]=R*sin(2*PI/NUM*j);
         arr[i++]=0.0f;
+        
+        arr[i++]=(R+*it)*cos(2*PI/NUM*j);     //由圆向外延伸的终点，表示频谱
+        arr[i++]=(R+*it)*sin(2*PI/NUM*j);
         arr[i++]=0.0f;
-
-        arr[i++]=xstart;     //终点，文件中解析出的音量数据
-        arr[i++]=*it;
-        arr[i++]=0.0f;
-
-        xstart=xstart+0.004;
-        if (xstart>1.0) {
-            xstart=-1.0;
+        
+        j++;
+        if (j>NUM) {
+            j=0;     //循环存储N个圆形频谱
         }
     }
     
@@ -127,11 +133,12 @@ int main()
     //first 绑定顶点数组对象 second 设置顶点缓冲区 third 配置顶点属性
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-//    cout<<sizeof(arr)<<endl;   //使用float*简历数组导致下面一行代码不能使用sizeof(arr) 需要手动设置大小 4*数字长度  这里注释的为注释
+    //    cout<<sizeof(arr)<<endl;   //使用float*简历数组导致下面一行代码不能使用sizeof(arr) 需要手动设置大小 4*数字长度  这里注释的为注释
     glBufferData(GL_ARRAY_BUFFER, 24*n, arr, GL_STATIC_DRAW);
     
     //告诉OpenGL该如何解析顶点数据
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    //VAO开启状态
     glEnableVertexAttribArray(0);
     
     // 调用到GL_ARRAY_BUFFER注册的VBO作为顶点属性的绑定顶点缓冲对象，这样我们就可以安全地解除绑定。
@@ -150,7 +157,7 @@ int main()
         
         // 渲染
         // ------
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClearColor(0.8f, 0.8f, 0.8f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         
         // 频谱图绘制
@@ -159,7 +166,7 @@ int main()
         glBindVertexArray(VAO); // VAO只需绑定一次即可
         
         if (istart<6*n) {   //到达终点之前每次绘制一帧的频谱图
-             drawLine();
+            drawLine();
         }
         
         // glBindVertexArray(0); // 不需要每次都解除绑定
@@ -202,9 +209,9 @@ void drawLine()
 {
     usleep(44100);   //通过延时实现频谱的显示频率
     
-    for (int i=istart; i<1000+istart; i=i+2) {
+    for (int i=istart; i<2000+istart; i=i+2) {
         glDrawArrays(GL_LINES, i, 2);
     }
     
-    istart+=1000;
+    istart+=2000;
 }

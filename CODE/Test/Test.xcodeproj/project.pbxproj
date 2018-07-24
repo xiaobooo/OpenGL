@@ -11,17 +11,17 @@
 		3E15302B2105B17E0086BBEE /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E5B20E9B744001D1341 /* OpenGL.framework */; };
 		3E15302C2105B18F0086BBEE /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6E53E420F75A57007BF30B /* libGLEW.dylib */; };
 		3E15302D2105B1930086BBEE /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6E53E620F75A60007BF30B /* libglfw.dylib */; };
-		3E1530352105C0AE0086BBEE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E1530342105C0AE0086BBEE /* main.cpp */; };
-		3E1530392105C0DD0086BBEE /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E5B20E9B744001D1341 /* OpenGL.framework */; };
-		3E15303A2105C0E70086BBEE /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6E53E420F75A57007BF30B /* libGLEW.dylib */; };
-		3E15303B2105C0EB0086BBEE /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6E53E620F75A60007BF30B /* libglfw.dylib */; };
-		3E15303C2105C1C50086BBEE /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E5920E9B73B001D1341 /* GLUT.framework */; };
 		3E15303D2106C5370086BBEE /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E6E53EF20F83D41007BF30B /* glad.c */; };
 		3E1530502107085E0086BBEE /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E5B20E9B744001D1341 /* OpenGL.framework */; };
 		3E153051210708710086BBEE /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6E53E420F75A57007BF30B /* libGLEW.dylib */; };
 		3E153052210708750086BBEE /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6E53E620F75A60007BF30B /* libglfw.dylib */; };
 		3E153057210708C80086BBEE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E153053210708C70086BBEE /* main.cpp */; };
 		3E15305A210709280086BBEE /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E153059210709280086BBEE /* glad.c */; };
+		3E15306221070FE70086BBEE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E15306121070FE70086BBEE /* main.cpp */; };
+		3E15306621070FF30086BBEE /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E5B20E9B744001D1341 /* OpenGL.framework */; };
+		3E15306721070FFD0086BBEE /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6E53E420F75A57007BF30B /* libGLEW.dylib */; };
+		3E153068210710000086BBEE /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6E53E620F75A60007BF30B /* libglfw.dylib */; };
+		3E15306C210710820086BBEE /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E15306B210710820086BBEE /* glad.c */; };
 		3E217C4C20FEE7AB00F1FD50 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E217C4B20FEE7AB00F1FD50 /* main.cpp */; };
 		3E217C5020FEE7D500F1FD50 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E5B20E9B744001D1341 /* OpenGL.framework */; };
 		3E217C5120FEE7E600F1FD50 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6E53E420F75A57007BF30B /* libGLEW.dylib */; };
@@ -80,7 +80,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
-		3E1530302105C0AE0086BBEE /* CopyFiles */ = {
+		3E153047210708520086BBEE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -89,7 +89,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
-		3E153047210708520086BBEE /* CopyFiles */ = {
+		3E15305D21070FE70086BBEE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -204,13 +204,16 @@
 		3E15301F2105A4170086BBEE /* spectrum.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.vs; sourceTree = "<group>"; };
 		3E1530242105B1500086BBEE /* Circular */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Circular; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1530262105B1500086BBEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		3E1530322105C0AE0086BBEE /* Sphere */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sphere; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E1530342105C0AE0086BBEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E153049210708520086BBEE /* Spectrum4.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Spectrum4.0; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E153053210708C70086BBEE /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E153055210708C80086BBEE /* spectrum.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.fs; sourceTree = "<group>"; };
 		3E153056210708C80086BBEE /* spectrum.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.vs; sourceTree = "<group>"; };
 		3E153059210709280086BBEE /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glad.c; path = ../../../../../CODE/OpenGL/glad.c; sourceTree = "<group>"; };
+		3E15305F21070FE70086BBEE /* Circular2.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Circular2.0; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E15306121070FE70086BBEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E153069210710600086BBEE /* spectrum.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.vs; sourceTree = "<group>"; };
+		3E15306A210710600086BBEE /* spectrum.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.fs; sourceTree = "<group>"; };
+		3E15306B210710820086BBEE /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		3E217C4920FEE7AB00F1FD50 /* Spectrum2.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Spectrum2.0; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E217C4B20FEE7AB00F1FD50 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E217C5720FEE98100F1FD50 /* Spectrum3.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Spectrum3.0; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,17 +264,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E15302F2105C0AE0086BBEE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E15303C2105C1C50086BBEE /* GLUT.framework in Frameworks */,
-				3E1530392105C0DD0086BBEE /* OpenGL.framework in Frameworks */,
-				3E15303A2105C0E70086BBEE /* libGLEW.dylib in Frameworks */,
-				3E15303B2105C0EB0086BBEE /* libglfw.dylib in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3E153046210708520086BBEE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -279,6 +271,16 @@
 				3E1530502107085E0086BBEE /* OpenGL.framework in Frameworks */,
 				3E153051210708710086BBEE /* libGLEW.dylib in Frameworks */,
 				3E153052210708750086BBEE /* libglfw.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E15305C21070FE70086BBEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E15306621070FF30086BBEE /* OpenGL.framework in Frameworks */,
+				3E15306721070FFD0086BBEE /* libGLEW.dylib in Frameworks */,
+				3E153068210710000086BBEE /* libglfw.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,14 +404,6 @@
 			path = Circular;
 			sourceTree = "<group>";
 		};
-		3E1530332105C0AE0086BBEE /* Sphere */ = {
-			isa = PBXGroup;
-			children = (
-				3E1530342105C0AE0086BBEE /* main.cpp */,
-			);
-			path = Sphere;
-			sourceTree = "<group>";
-		};
 		3E15304A210708520086BBEE /* Spectrum4.0 */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +413,17 @@
 				3E153056210708C80086BBEE /* spectrum.vs */,
 			);
 			path = Spectrum4.0;
+			sourceTree = "<group>";
+		};
+		3E15306021070FE70086BBEE /* Circular2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				3E15306A210710600086BBEE /* spectrum.fs */,
+				3E15306B210710820086BBEE /* glad.c */,
+				3E153069210710600086BBEE /* spectrum.vs */,
+				3E15306121070FE70086BBEE /* main.cpp */,
+			);
+			path = Circular2.0;
 			sourceTree = "<group>";
 		};
 		3E217C4A20FEE7AB00F1FD50 /* Spectrum2.0 */ = {
@@ -538,7 +543,7 @@
 				3E217C5820FEE98100F1FD50 /* Spectrum3.0 */,
 				3E15304A210708520086BBEE /* Spectrum4.0 */,
 				3E1530252105B1500086BBEE /* Circular */,
-				3E1530332105C0AE0086BBEE /* Sphere */,
+				3E15306021070FE70086BBEE /* Circular2.0 */,
 				3ED6BD5020E5D96100F158A2 /* Products */,
 				3E3C2E5820E9B73A001D1341 /* Frameworks */,
 			);
@@ -559,8 +564,8 @@
 				3E217C4920FEE7AB00F1FD50 /* Spectrum2.0 */,
 				3E217C5720FEE98100F1FD50 /* Spectrum3.0 */,
 				3E1530242105B1500086BBEE /* Circular */,
-				3E1530322105C0AE0086BBEE /* Sphere */,
 				3E153049210708520086BBEE /* Spectrum4.0 */,
+				3E15305F21070FE70086BBEE /* Circular2.0 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -596,23 +601,6 @@
 			productReference = 3E1530242105B1500086BBEE /* Circular */;
 			productType = "com.apple.product-type.tool";
 		};
-		3E1530312105C0AE0086BBEE /* Sphere */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3E1530362105C0AE0086BBEE /* Build configuration list for PBXNativeTarget "Sphere" */;
-			buildPhases = (
-				3E15302E2105C0AE0086BBEE /* Sources */,
-				3E15302F2105C0AE0086BBEE /* Frameworks */,
-				3E1530302105C0AE0086BBEE /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Sphere;
-			productName = Sphere;
-			productReference = 3E1530322105C0AE0086BBEE /* Sphere */;
-			productType = "com.apple.product-type.tool";
-		};
 		3E153048210708520086BBEE /* Spectrum4.0 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E15304D210708520086BBEE /* Build configuration list for PBXNativeTarget "Spectrum4.0" */;
@@ -628,6 +616,23 @@
 			name = Spectrum4.0;
 			productName = Spectrum4.0;
 			productReference = 3E153049210708520086BBEE /* Spectrum4.0 */;
+			productType = "com.apple.product-type.tool";
+		};
+		3E15305E21070FE70086BBEE /* Circular2.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E15306321070FE70086BBEE /* Build configuration list for PBXNativeTarget "Circular2.0" */;
+			buildPhases = (
+				3E15305B21070FE70086BBEE /* Sources */,
+				3E15305C21070FE70086BBEE /* Frameworks */,
+				3E15305D21070FE70086BBEE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Circular2.0;
+			productName = Circular2.0;
+			productReference = 3E15305F21070FE70086BBEE /* Circular2.0 */;
 			productType = "com.apple.product-type.tool";
 		};
 		3E217C4820FEE7AB00F1FD50 /* Spectrum2.0 */ = {
@@ -829,10 +834,10 @@
 					3E1530232105B1500086BBEE = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
-					3E1530312105C0AE0086BBEE = {
+					3E153048210708520086BBEE = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
-					3E153048210708520086BBEE = {
+					3E15305E21070FE70086BBEE = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 					3E217C4820FEE7AB00F1FD50 = {
@@ -894,8 +899,8 @@
 				3E217C4820FEE7AB00F1FD50 /* Spectrum2.0 */,
 				3E217C5620FEE98100F1FD50 /* Spectrum3.0 */,
 				3E1530232105B1500086BBEE /* Circular */,
-				3E1530312105C0AE0086BBEE /* Sphere */,
 				3E153048210708520086BBEE /* Spectrum4.0 */,
+				3E15305E21070FE70086BBEE /* Circular2.0 */,
 			);
 		};
 /* End PBXProject section */
@@ -909,20 +914,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E15302E2105C0AE0086BBEE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E1530352105C0AE0086BBEE /* main.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3E153045210708520086BBEE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3E153057210708C80086BBEE /* main.cpp in Sources */,
 				3E15305A210709280086BBEE /* glad.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E15305B21070FE70086BBEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E15306221070FE70086BBEE /* main.cpp in Sources */,
+				3E15306C210710820086BBEE /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1041,26 +1047,6 @@
 			};
 			name = Release;
 		};
-		3E1530372105C0AE0086BBEE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = /usr/local/include;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		3E1530382105C0AE0086BBEE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = /usr/local/include;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		3E15304E210708520086BBEE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1072,6 +1058,26 @@
 			name = Debug;
 		};
 		3E15304F210708520086BBEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3E15306421070FE70086BBEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3E15306521070FE70086BBEE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -1414,20 +1420,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3E1530362105C0AE0086BBEE /* Build configuration list for PBXNativeTarget "Sphere" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3E1530372105C0AE0086BBEE /* Debug */,
-				3E1530382105C0AE0086BBEE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		3E15304D210708520086BBEE /* Build configuration list for PBXNativeTarget "Spectrum4.0" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3E15304E210708520086BBEE /* Debug */,
 				3E15304F210708520086BBEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E15306321070FE70086BBEE /* Build configuration list for PBXNativeTarget "Circular2.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E15306421070FE70086BBEE /* Debug */,
+				3E15306521070FE70086BBEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

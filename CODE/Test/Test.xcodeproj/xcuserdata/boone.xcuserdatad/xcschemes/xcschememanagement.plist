@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
+		<key>Circular2.0.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
 		<key>PCM1.0.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -37,12 +42,12 @@
 		<key>Spectrum4.0.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>12</integer>
 		</dict>
 		<key>Sphere.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>13</integer>
 		</dict>
 		<key>Test.xcscheme</key>
 		<dict>

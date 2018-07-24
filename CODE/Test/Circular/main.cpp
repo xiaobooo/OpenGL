@@ -22,7 +22,7 @@ vector<float>::iterator istart;   //指向每次绘图的的数据起点
 vector<float>::iterator iend;     //指向每次绘图的数据终点
 
 const int n = 1000;
-GLfloat R = 0.6f;
+const GLfloat R = 0.6f;
 const GLfloat pi = 3.1415926536f;
 
 
