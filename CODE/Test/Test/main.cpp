@@ -6,26 +6,23 @@
 //  Copyright © 2018年 boone. All rights reserved.
 //
 
+
 #define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"     //PCM源文件
 
 #include <GLFW/glfw3.h>
+#include "FFT.h"
 
 #include <iostream>
 #include <vector>
-#include <unistd.h>
 #include <cmath>
+#include <unistd.h>
 
 using namespace std;
 
 vector<float> vertices;    //用于存储pcm文件解析出的数据
 vector<float>::iterator istart;   //指向每次绘图的的数据起点
 vector<float>::iterator iend;     //指向每次绘图的数据终点
-
-//const int n = 1000;
-//const GLfloat R = 0.6f;
-//const GLfloat pi = 3.1415926536f;
-int len=0;
-
+int n;       //记录pcm文件中数据个数
 
 //回调函数、窗口调整大小时调用
 void framebuffer_size_callback(GLFWwindow* window, int width, int height){
@@ -59,77 +56,74 @@ void fileOutput()
         i++;
     }
     
-    len=i;
+    n=i;
+    //    cout<<"数据个数： "<<n<<endl;
     
     fclose(fp);
 }
 
-void drawLint()
+void drawLine()
 {
-    usleep(99900);    //实现延时
+    usleep(44100);    //实现延时
     
-    glClearColor (0.8, 0.8, 0.8, 0.8);
+    glClearColor (0, 0, 0, 0.8);
     glClear (GL_COLOR_BUFFER_BIT);
     
-    glLineWidth(3);//设置线段宽度
+    glLineWidth(9);//设置线段宽度
     glBegin(GL_LINES);
+    glColor3f(0.9,0.3,0.3);
     
-    //设置颜色动态变化
-    float timeValue = glfwGetTime();
-    float redValue = sin(timeValue) / 2.0f +0.5f;
-    glColor3f(redValue,0.1,0.6);
+    float xstart=-1.0;
     
     //testing-------------------------------------------------------------------------------------------------------------------
     
-    float xstart=-1.0;
     //绘制波形图
-        for(vector<float>::iterator it = istart; it != iend; it+=2 )    //用迭代器的方式输出容器对象的值
-        {
-            xstart=xstart+0.016;
-            glVertex2f(xstart,0);
-            glVertex2f(xstart,*it+0.001);
-        }
-    
-    //圆形频谱图
-//    vector<float>::iterator it = istart;
-//
-//    for (int i = 0; i < n; i++)
-//    {
-//        glVertex2f((R)*cos(2*pi/n*i), (R)*sin(2*pi/n*i));
-//        glVertex2f((R+*it)*cos(2*pi/n*i), (R+*it)*sin(2*pi/n*i));
-//
-//        it+=2;
-//    }
+    for(vector<float>::iterator it = istart; it != iend; it++ )    //用迭代器的方式输出容器对象的值
+    {
+        xstart=xstart+0.016;
+        glVertex2f(xstart,0);
+        glVertex2f(xstart,*it+0.001);
+    }
     
     //进行下一次绘制的起点和终点
-    istart+=1000;    //通过更改每次前进的数字可以实现波形振动频率的改变
-    iend+=1000;
+    istart+=1111;    //通过更改每次前进的数字可以实现波形振动频率的改变
+    iend+=1111;
     
     glEnd();
 }
 
-int main(void)
+int main()
 {
     fileOutput();
-    istart = vertices.begin();
-    iend = vertices.begin()+3000;
     
-    float* ver =new float[3*len];
-    
-    float xstart=-1.0;
+    //将数据传入顶点坐标数组 VAO
+    float* arr = new float[6*n];
     
     int i=0;
+    float xstart=-1.0;
     for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it++ )    //用迭代器的方式输出容器对象的值
     {
-        ver[i++]=xstart;
-//        ver[i++]=*it;
-//        ver[i++]=0.0f;
+        arr[i++]=xstart;     //每次频谱线绘制的起点  在x轴上
+        arr[i++]=0.0f;
+        arr[i++]=0.0f;
+        
+        arr[i++]=xstart;     //终点，文件中解析出的音量数据
+        arr[i++]=*it;
+        arr[i++]=0.0f;
+        
         xstart=xstart+0.002;
+        if (xstart>1.0) {
+            xstart=-1.0;
+        }
     }
     
-    for (int j=0; j<3*len; j++) {
-        cout<<ver[j]<<endl;
+    for (int j=0; j<6*n; j++) {
+        cout<<arr[j]<<endl;
     }
+    
+    //初始化绘图的起点终点
+    istart = vertices.begin();
+    iend = vertices.begin()+3000;
     
     GLFWwindow* window;
     
@@ -154,11 +148,10 @@ int main(void)
         pressInput(window);
         
         //绘图
-        if (iend<=vertices.end()) {
+        if (iend<=vertices.end()){
             // sleep(0.003);
-            drawLint();
+            drawLine();
         }
-
         //交换颜色缓冲
         glfwSwapBuffers(window);
         
@@ -170,5 +163,4 @@ int main(void)
     
     return 0;
 }
-
 
