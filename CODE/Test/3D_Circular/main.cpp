@@ -10,6 +10,12 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <stb_image.h>
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #include <learnopengl/shader.h>
 
 #include <iostream>
@@ -116,8 +122,8 @@ int main()
         arr[i++]=R*sin(2*PI/NUM*j);
         arr[i++]=0.0f;
         
-        arr[i++]=(R+*it)*cos(2*PI/NUM*j);     //由圆向外延伸的终点，表示频谱
-        arr[i++]=(R+*it)*sin(2*PI/NUM*j);
+        arr[i++]=R*cos(2*PI/NUM*j);     //由圆向外延伸的终点，表示频谱
+        arr[i++]=R*sin(2*PI/NUM*j)+*it;
         arr[i++]=0.0f;
         
         j++;
