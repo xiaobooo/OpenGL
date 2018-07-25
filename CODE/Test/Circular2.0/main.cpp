@@ -170,11 +170,6 @@ int main()
         //-------
         ourShader.use();    //启用着色器程序
         
-        // 更新uniform颜色
-        float timeValue = glfwGetTime();
-        float greenValue = sin(timeValue) / 2.0f + 1.0f;
-        glUniform4f(0, 0.0f, greenValue, 0.0f, 1.0f);
-        
         glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
         if (istart<6*n) {   //到达终点之前每次绘制一帧的频谱图
             drawLine();
@@ -218,9 +213,11 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 //绘制频谱
 void drawLine()
 {
-    usleep(44100);   //通过延时实现频谱的显示频率
-    
+    usleep(99900);   //通过延时实现频谱的显示频率
+    float temp = 0.0;
     for (int i=istart; i<2000+istart; i=i+2) {
+        glUniform4f(0.0f, 0.0f,temp, 0.0f, 1.0f);
+        temp=temp+0.001;
         glDrawArrays(GL_LINES, i, 2);
     }
     

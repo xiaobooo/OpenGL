@@ -104,7 +104,7 @@ int main()
     
     int i=0;
     float xstart=-1.0;
-    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it++ )    //用迭代器的方式输出容器对象的值
+    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
     {
         arr[i++]=xstart;     //每次频谱线绘制的起点  在x轴上
         arr[i++]=0.0f;
@@ -150,16 +150,16 @@ int main()
         
         // 渲染
         // ------
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClearColor(0.8f, 0.8f, 0.8f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         
         // 频谱图绘制
         //-------
         ourShader.use();
-        // 更新uniform颜色
-        float timeValue = glfwGetTime();
-        float greenValue = sin(timeValue) / 2.0f + 1.0f;
-        glUniform4f(0, 0.0f, greenValue, 0.0f, 1.0f);
+//        // 更新uniform颜色
+//        float timeValue = glfwGetTime();
+//        float greenValue = sin(timeValue) / 2.0f + 1.0f;
+//        glUniform4f(0, 0.0f, greenValue, 0.0f, 1.0f);
         
         glBindVertexArray(VAO); // VAO只需绑定一次即可
         
@@ -206,7 +206,10 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 void drawLine()
 {
     usleep(44100);   //通过延时实现频谱的显示频率
+    float temp = 0.0f;
     for (int i=istart; i<1000+istart; i=i+2) {
+        glUniform4f(0.0f, 0.0f,temp, 0.0f, 1.0f);
+        temp=temp+0.002;
         glDrawArrays(GL_LINES, i, 2);
     }
     istart+=1000;

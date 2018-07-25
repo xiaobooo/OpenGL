@@ -225,12 +225,6 @@ int main()
         // be sure to activate the shader before any calls to glUniform
         glUseProgram(shaderProgram);
         
-        // update shader uniform
-        float timeValue = glfwGetTime();
-        float greenValue = sin(timeValue) / 2.0f + 0.5f;
-        int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
-        glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
-        
         // 频谱图绘制
         //-------
         //ourShader.use();    //启用着色器程序
@@ -248,7 +242,7 @@ int main()
         glfwPollEvents();
     }
     
-    // 绘制完成后释放资源
+    // 绘制完成后释放资源  
     // ------------------------------------------------------------------------
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
