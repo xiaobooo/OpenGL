@@ -229,6 +229,7 @@ void drawLine()
             redValue=redValue-0.002;
             yellowValue=yellowValue+0.002;
         }
+        
         glDrawArrays(GL_LINES, i, 2);
     }
     
