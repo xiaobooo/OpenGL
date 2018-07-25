@@ -110,7 +110,7 @@ int main()
     
     int i=0;
     int j=0;
-    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it++ )    //用迭代器的方式输出容器对象的值
+    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
     {
         arr[i++]=R*cos(2*PI/NUM*j);     //圆上的点
         arr[i++]=R*sin(2*PI/NUM*j);
