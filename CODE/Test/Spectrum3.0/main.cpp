@@ -72,17 +72,26 @@ void drawLint(Complex* outarr)
     glBegin(GL_LINES);
     
     //设置颜色动态变化
-    float timeValue = glfwGetTime();
-    float redValue = sin(timeValue) / 2.0f + 0.5f;
-    glColor3f(redValue,0.5,0.5);
+//    float timeValue = glfwGetTime();
+//    float redValue = sin(timeValue) / 2.0f + 0.5f;
     
     float xstart=-1.0;
     
     //testing-------------------------------------------------------------------------------------------------------------------
-    
+    float redValue = 0.0f;
+    float yellowValue = 1.0f;
     //绘制波形图
     for(int k = istart; k <= iend;  )    //用迭代器的方式输出容器对象的值
     {
+        glColor3f( redValue, 1.0f, yellowValue);
+        if (k<=(istart+iend)/2) {
+            redValue=redValue+0.01;
+            yellowValue=yellowValue-0.01;
+        }else{
+            redValue=redValue-0.01;
+            yellowValue=yellowValue+0.01;
+        }
+        
         xstart=xstart+0.016;
         glVertex2f(xstart,0);
         glVertex2f(xstart,outarr[k].real);
