@@ -53,7 +53,7 @@ void fileOutput()
             if(pcm_In<0){
                 pcm_In=-pcm_In;
             }
-            vertices.push_back((float)pcm_In/15000);
+            vertices.push_back((float)pcm_In/30000);
         }
         i++;
     }
@@ -102,7 +102,7 @@ int main()
     
     // 构建并编译着色器程序
     // ------------------------------------
-    Shader ourShader("/Users/boone/Desktop/CODE/Xcode/OpenGL/Test/spectrum.vs", "/Users/boone/Desktop/CODE/Xcode/OpenGL/Test/spectrum.fs");
+    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Test/Circular2.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Test/Circular2.0/spectrum.fs");
     
     // 设置顶点数据（和缓冲区）并配置顶点属性
     // ------------------------------------------------------------------
@@ -151,12 +151,9 @@ int main()
     glEnableVertexAttribArray(0);
     
     //解绑缓存着色器
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    //glBindBuffer(GL_ARRAY_BUFFER, 0);
     // 解绑顶点着色器，绑定和解绑的顺序很重要！！！
-    glBindVertexArray(0);
-    
-    // 取消注释此调用以线框多边形绘制。
-    //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    glBindVertexArray(VAO);
     
     // 循环渲染
     // -----------
@@ -172,8 +169,13 @@ int main()
         // 频谱图绘制
         //-------
         ourShader.use();    //启用着色器程序
-        glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
         
+        // 更新uniform颜色
+        float timeValue = glfwGetTime();
+        float greenValue = sin(timeValue) / 2.0f + 1.0f;
+        glUniform4f(0, 0.0f, greenValue, 0.0f, 1.0f);
+        
+        glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
         if (istart<6*n) {   //到达终点之前每次绘制一帧的频谱图
             drawLine();
         }

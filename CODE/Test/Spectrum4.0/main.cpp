@@ -96,7 +96,7 @@ int main()
     
     // 构建并编译着色器程序
     // ------------------------------------
-    Shader ourShader("/Users/boone/Desktop/CODE/Xcode/OpenGL/Test/spectrum.vs", "/Users/boone/Desktop/CODE/Xcode/OpenGL/Test/spectrum.fs");
+    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Test/Spectrum4.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Test/Spectrum4.0/spectrum.fs");
     
     // 设置顶点数据（和缓冲区）并配置顶点属性
     // ------------------------------------------------------------------
@@ -156,6 +156,11 @@ int main()
         // 频谱图绘制
         //-------
         ourShader.use();
+        // 更新uniform颜色
+        float timeValue = glfwGetTime();
+        float greenValue = sin(timeValue) / 2.0f + 1.0f;
+        glUniform4f(0, 0.0f, greenValue, 0.0f, 1.0f);
+        
         glBindVertexArray(VAO); // VAO只需绑定一次即可
         
         if (istart<6*n) {   //到达终点之前每次绘制一帧的频谱图
@@ -201,10 +206,8 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 void drawLine()
 {
     usleep(44100);   //通过延时实现频谱的显示频率
-    
     for (int i=istart; i<1000+istart; i=i+2) {
         glDrawArrays(GL_LINES, i, 2);
     }
-    
     istart+=1000;
 }
