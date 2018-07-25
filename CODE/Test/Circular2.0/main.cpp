@@ -214,10 +214,21 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 void drawLine()
 {
     usleep(99900);   //通过延时实现频谱的显示频率
-    float temp = 0.0;
+    
+    //颜色随机设置
+    float redValue = 0.0f;
+    float yellowValue = 1.0f;
+    
     for (int i=istart; i<2000+istart; i=i+2) {
-        glUniform4f(0.0f, 0.0f,temp, 0.0f, 1.0f);
-        temp=temp+0.001;
+        glUniform4f(0, redValue, 1.0f, yellowValue, 1.0f);
+        
+        if (i<=1000+istart) {
+            redValue=redValue+0.002;
+            yellowValue=yellowValue-0.002;
+        }else{
+            redValue=redValue-0.002;
+            yellowValue=yellowValue+0.002;
+        }
         glDrawArrays(GL_LINES, i, 2);
     }
     
