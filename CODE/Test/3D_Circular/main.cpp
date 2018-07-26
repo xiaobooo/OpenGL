@@ -31,7 +31,7 @@ int n;       //记录pcm文件中数据个数
 
 int NUM=1000;  //一个圆周上分布频谱的个数
 float PI=3.1415926f;
-float R=0.6f;  //半径
+float R=0.3f;  //半径
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
@@ -115,6 +115,11 @@ int main()
     int j=0;
     for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
     {
+        if (R<1.0) {
+            R=R+0.003f;
+        }else{
+            R=0.3;
+        }
         arr[i++]=R*cos(2*PI/NUM*j);     //圆上的点
         arr[i++]=R*sin(2*PI/NUM*j);
         arr[i++]=0.0f;
@@ -166,7 +171,7 @@ int main()
         
         // 渲染
         // ------
-        glClearColor(0.8f, 0.8f, 0.8f, 1.0f);
+        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         
         // 频谱图绘制
@@ -224,6 +229,16 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     //高度将显著大于视网膜显示器上指定的高度。
     glViewport(0, 0, width, height);
     
+    GLfloat ratio=(GLfloat)width/(GLfloat)height;
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    if(width<=height)//保持形状不变
+        glOrtho(-15.0,15.0,-15.0/ratio,15.0/ratio,0.0,0.0);
+    else
+        glOrtho(-15.0*ratio,15.0*ratio,-15.0,15.0,0.0,0.0);
+    
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
 }
 //绘制频谱
 void drawLine()
