@@ -106,7 +106,7 @@ int main()
     }
     // 构建并编译着色器程序
     // ------------------------------------
-    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Test/Circular2.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Test/Circular2.0/spectrum.fs");
+    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Test/Spectrum4.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Test/Spectrum4.0/spectrum.fs");
     
     // 设置顶点数据（和缓冲区）并配置顶点属性
     // ------------------------------------------------------------------
@@ -117,9 +117,9 @@ int main()
     for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
     {
         if (R<1.0) {
-            R=R+0.003f;
+            R=R+0.0009f;
         }else{
-            R=0.2;
+            R=0.1;
         }
         arr[i++]=R*cos(2*PI/NUM*j);     //圆上的点
         arr[i++]=R*sin(2*PI/NUM*j);
@@ -176,7 +176,15 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
         
         // 频谱图绘制
-        ourShader.use();    //启用着色器程序
+        // create transformations
+        glm::mat4 transform;
+        transform = glm::translate(transform, glm::vec3(0.5f, -0.5f, 0.0f));
+        transform = glm::rotate(transform, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+        
+        // get matrix's uniform location and set matrix
+        ourShader.use();
+        unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
+        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transform));
         
         // create transformations
         glm::mat4 model;
