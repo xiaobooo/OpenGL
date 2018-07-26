@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
+		<key>3D_Circular2.0.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
 		<key>Circular.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
