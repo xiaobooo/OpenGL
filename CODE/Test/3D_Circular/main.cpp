@@ -16,7 +16,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include <learnopengl/shader.h>
+#include <learnopengl/shader_m.h>
 
 #include <iostream>
 #include <vector>
@@ -32,7 +32,6 @@ int n;       //记录pcm文件中数据个数
 int NUM=1000;  //一个圆周上分布频谱的个数
 float PI=3.1415926f;
 float R=0.6f;  //半径
-
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
@@ -104,8 +103,6 @@ int main()
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
     }
-    
-    
     // 构建并编译着色器程序
     // ------------------------------------
     Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Test/Circular2.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Test/Circular2.0/spectrum.fs");
@@ -173,18 +170,29 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
         
         // 频谱图绘制
-        //-------
         ourShader.use();    //启用着色器程序
+        
+        // create transformations
+        glm::mat4 model;
+        glm::mat4 view;
+        glm::mat4 projection;
+        model = glm::rotate(model, glm::radians(55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        view  = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+        projection = glm::perspective(glm::radians(90.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+        // retrieve the matrix uniform locations
+        unsigned int modelLoc = glGetUniformLocation(ourShader.ID, "model");
+        unsigned int viewLoc  = glGetUniformLocation(ourShader.ID, "view");
+        // pass them to the shaders (3 different ways)
+        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, &view[0][0]);
+        // note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
+        ourShader.setMat4("projection", projection);
         
         glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
         if (istart<6*n) {   //到达终点之前每次绘制一帧的频谱图
             drawLine();
         }
-        
-        // glBindVertexArray(0); // 不需要每次都解除绑定
-        
-        // glfw: 交换缓冲区和轮询IO事件（按下/释放键，鼠标移动等）
-        // -------------------------------------------------------------------------------
+
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
