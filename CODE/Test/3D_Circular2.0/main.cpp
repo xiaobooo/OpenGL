@@ -9,6 +9,7 @@
 #include <iostream>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 800;
@@ -190,6 +191,11 @@ int main()
     // glfw: 清除先前分配的所有GLFW资源
     // ------------------------------------------------------------------
     glfwTerminate();
+=======
+int main(int argc, const char * argv[]) {
+    // insert code here...
+    std::cout << "Hello, World!\n";
+>>>>>>> parent of 0a19a75... update
 =======
 int main(int argc, const char * argv[]) {
     // insert code here...
