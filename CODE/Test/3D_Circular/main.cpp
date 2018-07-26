@@ -223,6 +223,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     //确保视口与新窗口尺寸匹配；注意宽度和
     //高度将显著大于视网膜显示器上指定的高度。
     glViewport(0, 0, width, height);
+    
 }
 //绘制频谱
 void drawLine()

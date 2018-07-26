@@ -165,10 +165,8 @@ int main()
         // ------
         glClearColor(0.8f, 0.8f, 0.8f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-        
-        // 频谱图绘制
-        //-------
-        ourShader.use();    //启用着色器程序
+
+        ourShader.use();
         
         glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
         if (istart<6*n) {   //到达终点之前每次绘制一帧的频谱图
