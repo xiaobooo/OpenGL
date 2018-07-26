@@ -6,38 +6,9 @@
 //  Copyright © 2018年 boone. All rights reserved.
 //
 
-
-#define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"     //PCM源文件
-
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include <stb_image.h>
-
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
-
-#include <learnopengl/shader_m.h>
-
 #include <iostream>
-#include <vector>
-#include <cmath>
-#include <unistd.h>
 
-using namespace std;
-
-vector<float> vertices;    //用于存储pcm文件解析出的数据
-int istart=0;
-int n;       //记录pcm文件中数据个数
-
-int NUM=1000;  //一个圆周上分布频谱的个数
-float PI=3.1415926f;
-float R=0.1f;  //半径
-
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void processInput(GLFWwindow *window);
-void drawLine();
-
+<<<<<<< HEAD
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 800;
@@ -219,46 +190,10 @@ int main()
     // glfw: 清除先前分配的所有GLFW资源
     // ------------------------------------------------------------------
     glfwTerminate();
+=======
+int main(int argc, const char * argv[]) {
+    // insert code here...
+    std::cout << "Hello, World!\n";
+>>>>>>> parent of 0a19a75... update
     return 0;
-}
-
-// glfw:对相应的按键作出相应的响应
-// ---------------------------------------------------------------------------------------------------------
-void processInput(GLFWwindow *window)
-{
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
-}
-
-// glfw: 每当窗口大小改变时，调用该回调函数
-// ---------------------------------------------------------------------------------------------
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-    //确保视口与新窗口尺寸匹配；注意宽度和
-    //高度将显著大于视网膜显示器上指定的高度。
-    glViewport(0, 0, width, height);
-}
-//绘制频谱
-void drawLine()
-{
-    usleep(99900);   //通过延时实现频谱的显示频率
-    
-    //颜色随机设置
-    float redValue = 0.0f;
-    float yellowValue = 1.0f;
-    
-    for (int i=istart; i<2000+istart; i=i+2) {
-        glUniform4f(0, redValue, 1.0f, yellowValue, 1.0f);
-        
-        if (i<=1000+istart) {
-            redValue=redValue+0.002;
-            yellowValue=yellowValue-0.002;
-        }else{
-            redValue=redValue-0.002;
-            yellowValue=yellowValue+0.002;
-        }
-        glDrawArrays(GL_LINES, i, 2);
-    }
-    
-    istart+=2000;
 }
