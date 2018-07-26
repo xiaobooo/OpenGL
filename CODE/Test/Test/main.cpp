@@ -9,7 +9,13 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <learnopengl/shader.h>
+#include <stb_image.h>
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
+#include <learnopengl/shader_m.h>
 
 #include <iostream>
 #include <vector>
@@ -24,8 +30,7 @@ int n;       //记录pcm文件中数据个数
 
 int NUM=1000;  //一个圆周上分布频谱的个数
 float PI=3.1415926f;
-float R=0.6f;  //半径
-
+float R=0.3f;  //半径
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
@@ -34,21 +39,6 @@ void drawLine();
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 800;
-
-const char *vertexShaderSource ="#version 330 core\n"
-"layout (location = 0) in vec3 aPos;\n"
-"void main()\n"
-"{\n"
-"   gl_Position = vec4(aPos, 1.0);\n"
-"}\0";
-
-const char *fragmentShaderSource = "#version 330 core\n"
-"out vec4 FragColor;\n"
-"uniform vec4 ourColor;\n"
-"void main()\n"
-"{\n"
-"   FragColor = ourColor;\n"
-"}\n\0";
 
 //PCM文件数据解码保存到数组中
 void fileOutput()
@@ -112,50 +102,9 @@ int main()
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
     }
-    
-    // build and compile our shader program
+    // 构建并编译着色器程序
     // ------------------------------------
-    // vertex shader
-    int vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
-    glCompileShader(vertexShader);
-    // check for shader compile errors
-    int success;
-    char infoLog[512];
-    glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
-    if (!success)
-    {
-        glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
-    }
-    // fragment shader
-    int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
-    glCompileShader(fragmentShader);
-    // check for shader compile errors
-    glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
-    if (!success)
-    {
-        glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
-    }
-    // link shaders
-    int shaderProgram = glCreateProgram();
-    glAttachShader(shaderProgram, vertexShader);
-    glAttachShader(shaderProgram, fragmentShader);
-    glLinkProgram(shaderProgram);
-    // check for linking errors
-    glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
-    if (!success) {
-        glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
-    }
-    glDeleteShader(vertexShader);
-    glDeleteShader(fragmentShader);
-    
-//    // 构建并编译着色器程序
-//    // ------------------------------------
-//    Shader ourShader("/Users/boone/Desktop/CODE/Xcode/OpenGL/Test/spectrum.vs", "/Users/boone/Desktop/CODE/Xcode/OpenGL/Test/spectrum.fs");
+    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Test/Test/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Test/Test/spectrum.fs");
     
     // 设置顶点数据（和缓冲区）并配置顶点属性
     // ------------------------------------------------------------------
@@ -163,14 +112,19 @@ int main()
     
     int i=0;
     int j=0;
-    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it++ )    //用迭代器的方式输出容器对象的值
+    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
     {
+        if (R<1.0) {
+            R=R+0.003f;
+        }else{
+            R=0.3;
+        }
         arr[i++]=R*cos(2*PI/NUM*j);     //圆上的点
         arr[i++]=R*sin(2*PI/NUM*j);
         arr[i++]=0.0f;
         
-        arr[i++]=(R+*it)*cos(2*PI/NUM*j);     //由圆向外延伸的终点，表示频谱
-        arr[i++]=(R+*it)*sin(2*PI/NUM*j);
+        arr[i++]=R*cos(2*PI/NUM*j);     //由圆向外延伸的终点，表示频谱
+        arr[i++]=R*sin(2*PI/NUM*j)+*it;
         arr[i++]=0.0f;
         
         j++;
@@ -204,12 +158,9 @@ int main()
     glEnableVertexAttribArray(0);
     
     //解绑缓存着色器
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    //glBindBuffer(GL_ARRAY_BUFFER, 0);
     // 解绑顶点着色器，绑定和解绑的顺序很重要！！！
-    glBindVertexArray(0);
-    
-    // 取消注释此调用以线框多边形绘制。
-    //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    glBindVertexArray(VAO);
     
     // 循环渲染
     // -----------
@@ -219,30 +170,38 @@ int main()
         
         // 渲染
         // ------
-        glClearColor(0.8f, 0.8f, 0.8f, 1.0f);
+        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         
-        // be sure to activate the shader before any calls to glUniform
-        glUseProgram(shaderProgram);
-        
         // 频谱图绘制
-        //-------
-        //ourShader.use();    //启用着色器程序
+        ourShader.use();    //启用着色器程序
+        
+        // create transformations
+        glm::mat4 model;
+        glm::mat4 view;
+        glm::mat4 projection;
+        model = glm::rotate(model, glm::radians(55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        view  = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+        projection = glm::perspective(glm::radians(90.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+        // retrieve the matrix uniform locations
+        unsigned int modelLoc = glGetUniformLocation(ourShader.ID, "model");
+        unsigned int viewLoc  = glGetUniformLocation(ourShader.ID, "view");
+        // pass them to the shaders (3 different ways)
+        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, &view[0][0]);
+        // note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
+        ourShader.setMat4("projection", projection);
         
         glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
         if (istart<6*n) {   //到达终点之前每次绘制一帧的频谱图
             drawLine();
         }
         
-        // glBindVertexArray(0); // 不需要每次都解除绑定
-        
-        // glfw: 交换缓冲区和轮询IO事件（按下/释放键，鼠标移动等）
-        // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
     
-    // 绘制完成后释放资源  
+    // 绘制完成后释放资源
     // ------------------------------------------------------------------------
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
@@ -268,13 +227,37 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     //确保视口与新窗口尺寸匹配；注意宽度和
     //高度将显著大于视网膜显示器上指定的高度。
     glViewport(0, 0, width, height);
+    
+    GLfloat ratio=(GLfloat)width/(GLfloat)height;
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    if(width<=height)//保持形状不变
+        glOrtho(-15.0,15.0,-15.0/ratio,15.0/ratio,0.0,0.0);
+    else
+        glOrtho(-15.0*ratio,15.0*ratio,-15.0,15.0,0.0,0.0);
+    
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
 }
 //绘制频谱
 void drawLine()
 {
-    usleep(44100);   //通过延时实现频谱的显示频率
+    usleep(99900);   //通过延时实现频谱的显示频率
+    
+    //颜色随机设置
+    float redValue = 0.0f;
+    float yellowValue = 1.0f;
     
     for (int i=istart; i<2000+istart; i=i+2) {
+        glUniform4f(0, redValue, 1.0f, yellowValue, 1.0f);
+        
+        if (i<=1000+istart) {
+            redValue=redValue+0.002;
+            yellowValue=yellowValue-0.002;
+        }else{
+            redValue=redValue-0.002;
+            yellowValue=yellowValue+0.002;
+        }
         glDrawArrays(GL_LINES, i, 2);
     }
     
