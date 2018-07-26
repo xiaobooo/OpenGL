@@ -1,7 +1,9 @@
 #version 330 core
+out vec4 FragColor;
 
-uniform float u_time;
+uniform vec4 ourColor; // 在OpenGL程序代码中设定这个变量
 
-void main() {
-    gl_FragColor = vec4(abs(sin(u_time)),0.0,0.0,1.0);
+void main()
+{
+    FragColor = ourColor;
 }
