@@ -6,10 +6,32 @@
 //  Copyright © 2018年 boone. All rights reserved.
 //
 
-#include <iostream>
+#define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"     //PCM源文件
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+#include <learnopengl/shader.h>
+
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <unistd.h>
+
+using namespace std;
+
+vector<float> vertices;    //用于存储pcm文件解析出的数据
+int istart=0;
+int n;       //记录pcm文件中数据个数
+
+int NUM=1000;  //一个圆周上分布频谱的个数
+float PI=3.1415926f;
+float R=0.6f;  //半径
+
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+void processInput(GLFWwindow *window);
+void drawLine();
+
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 800;
@@ -76,9 +98,11 @@ int main()
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
     }
+    
+    
     // 构建并编译着色器程序
     // ------------------------------------
-    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Test/Spectrum4.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Test/Spectrum4.0/spectrum.fs");
+    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Test/Circular2.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Test/Circular2.0/spectrum.fs");
     
     // 设置顶点数据（和缓冲区）并配置顶点属性
     // ------------------------------------------------------------------
@@ -89,10 +113,11 @@ int main()
     for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
     {
         if (R<1.0) {
-            R=R+0.0009f;
+            R=R+0.00003f;
         }else{
-            R=0.1;
+            R=0.3;
         }
+        
         arr[i++]=R*cos(2*PI/NUM*j);     //圆上的点
         arr[i++]=R*sin(2*PI/NUM*j);
         arr[i++]=0.0f;
@@ -147,38 +172,17 @@ int main()
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         
-        // 频谱图绘制
-        // create transformations
-        glm::mat4 transform;
-        transform = glm::translate(transform, glm::vec3(0.5f, -0.5f, 0.0f));
-        transform = glm::rotate(transform, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
-        
-        // get matrix's uniform location and set matrix
         ourShader.use();
-        unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
-        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transform));
-        
-        // create transformations
-        glm::mat4 model;
-        glm::mat4 view;
-        glm::mat4 projection;
-        model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
-        view  = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
-        projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
-        // retrieve the matrix uniform locations
-        unsigned int modelLoc = glGetUniformLocation(ourShader.ID, "model");
-        unsigned int viewLoc  = glGetUniformLocation(ourShader.ID, "view");
-        // pass them to the shaders (3 different ways)
-        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, &view[0][0]);
-        // note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
-        ourShader.setMat4("projection", projection);
         
         glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
         if (istart<6*n) {   //到达终点之前每次绘制一帧的频谱图
             drawLine();
         }
         
+        // glBindVertexArray(0); // 不需要每次都解除绑定
+        
+        // glfw: 交换缓冲区和轮询IO事件（按下/释放键，鼠标移动等）
+        // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
@@ -191,15 +195,47 @@ int main()
     // glfw: 清除先前分配的所有GLFW资源
     // ------------------------------------------------------------------
     glfwTerminate();
-=======
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
->>>>>>> parent of 0a19a75... update
-=======
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
->>>>>>> parent of 0a19a75... update
     return 0;
+}
+
+// glfw:对相应的按键作出相应的响应
+// ---------------------------------------------------------------------------------------------------------
+void processInput(GLFWwindow *window)
+{
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+}
+
+// glfw: 每当窗口大小改变时，调用该回调函数
+// ---------------------------------------------------------------------------------------------
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+    //确保视口与新窗口尺寸匹配；注意宽度和
+    //高度将显著大于视网膜显示器上指定的高度。
+    glViewport(0, 0, width, height);
+}
+//绘制频谱
+void drawLine()
+{
+    usleep(99900);   //通过延时实现频谱的显示频率
+    
+    //颜色随机设置
+    float redValue = 0.0f;
+    float yellowValue = 1.0f;
+    
+    for (int i=istart; i<2000+istart; i=i+2) {
+        glUniform4f(0, redValue, 1.0f, yellowValue, 1.0f);
+        
+        if (i<=1000+istart) {
+            redValue=redValue+0.002;
+            yellowValue=yellowValue-0.002;
+        }else{
+            redValue=redValue-0.002;
+            yellowValue=yellowValue+0.002;
+        }
+        
+        glDrawArrays(GL_LINES, i, 2);
+    }
+    
+    istart+=2000;
 }
