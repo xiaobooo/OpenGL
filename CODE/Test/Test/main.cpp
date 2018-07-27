@@ -5,6 +5,8 @@
 //  Created by boone on 2018/7/18.
 //  Copyright © 2018年 boone. All rights reserved.
 //
+
+/*
 #define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"     //PCM源文件
 
 #include <glad/glad.h>
@@ -246,4 +248,100 @@ void drawLine()
     }
     
     istart+=2000;
+}
+*/
+
+
+#include <GLFW/glfw3.h>
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+void drawLint()
+{
+    glClearColor (0.8, 0.8, 0.8, 0.8);
+    glClear (GL_COLOR_BUFFER_BIT);
+    
+    glLineWidth(9);//设置线段宽度
+    glBegin(GL_LINES);
+    glColor3f(1.0,0.0,0.0);
+    
+  
+    const GLdouble twoPi = 6.283185;
+    const GLint a = 175;
+    
+    GLfloat r, theta, dtheta = 1.0 / float(a);
+    GLfloat x0 = 200, y0 = 250;
+    
+
+    float xstart=-1.0;
+    float ystart=0.0;
+    float xend=0.0;
+    float yend=0.0;
+    
+    glColor3f(0.0,0.0,0.0);
+    
+    xstart = x0;
+    ystart = y0;
+    
+    theta = dtheta;
+    
+    while(theta < twoPi)
+    {
+         r = (a / 20.0) * theta;
+        
+        xend = x0 + r * cos(theta);
+        yend = y0 + r * sin(theta);
+        
+        //绘制折线
+        glVertex2f(xstart,ystart);
+        glVertex2f(xend,yend);
+        
+        xstart = xend;
+        ystart = yend;
+        theta += dtheta;
+    }
+
+
+    glEnd();
+}
+
+int main(void)
+{
+    GLFWwindow* window;
+    
+    /* Initialize the library */
+    if (!glfwInit())
+        return -1;
+    
+    /* Create a windowed mode window and its OpenGL context */
+    window = glfwCreateWindow(800, 800, "Visualize Music ", NULL, NULL);
+    if (!window)
+    {
+        glfwTerminate();
+        return -1;
+    }
+    
+    /* Make the window's context current */
+    glfwMakeContextCurrent(window);
+    
+    /* Loop until the user closes the window */
+    while (!glfwWindowShouldClose(window))
+    {
+        
+        /*your draw*/
+        // drawPoint();
+        drawLint();
+        
+        /* Swap front and back buffers */
+        glfwSwapBuffers(window);
+        
+        /* Poll for and process events */
+        glfwPollEvents();
+    }
+    
+    glfwTerminate();
+    return 0;
 }
