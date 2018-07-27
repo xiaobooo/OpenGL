@@ -134,9 +134,7 @@ int main()
     }
     
     unsigned int VBO, VAO;
-    // glGenVertexArrays() 创建一个顶点数组对象
-    // 第一个参数：需要创建的缓存数量
-    // 第二个参数：存储单一ID或多个ID的GLuint变量或数组的地址。
+
     glGenVertexArrays(1, &VAO);
     // glGenBuffers() 创建一个缓存对象并且返回缓存对象的标示符。
     glGenBuffers(1, &VBO);
@@ -145,13 +143,9 @@ int main()
     glBindVertexArray(VAO);
     // glBindBuffer()有2个参数：target与buffer
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    
-    //    cout<<sizeof(arr)<<endl;   //使用float*简历数组导致下面一行代码不能使用sizeof(arr) 需要手动设置大小 4*数字长度  这里注释的为注释
-    // 当缓存初始化之后，使用glBufferData()将顶点数据拷贝到缓存对象
+
     glBufferData(GL_ARRAY_BUFFER, 24*n, arr, GL_STATIC_DRAW);
-    
-    //设置顶点属性指针，告诉OpenGL该如何解析顶点数据
-    //          顶点属性位置 顶点属性大小 数据的类型 是否被标准化 步长             偏移
+
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     
     //以顶点属性位置值作为参数，启用顶点属性；顶点属性默认是禁用的
