@@ -198,17 +198,6 @@ void processInput(GLFWwindow *window)
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
-    
-    GLfloat ratio=(GLfloat)width/(GLfloat)height;
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    if(width<=height)//保持形状不变
-        glOrtho(-15.0,15.0,-15.0/ratio,15.0/ratio,0.0,0.0);
-    else
-        glOrtho(-15.0*ratio,15.0*ratio,-15.0,15.0,0.0,0.0);
-    
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
 }
 //绘制频谱
 void drawLine()
