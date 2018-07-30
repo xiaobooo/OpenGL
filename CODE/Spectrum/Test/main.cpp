@@ -234,7 +234,7 @@ void drawLine()
         glDrawArrays(GL_LINES, i, 2);
     }
     
-    //波形频谱 
+    //波形频谱
     for (int i=istart+1; i<2000+istart; i=i+2) {
         glUniform4f(0, redValue, 1.0f, yellowValue, 1.0f);
         
