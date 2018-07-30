@@ -1,10 +1,11 @@
 //
 //  main.cpp
-//  Circular2.0
+//  Test
 //
-//  Created by boone on 2018/7/24.
+//  Created by boone on 2018/7/30.
 //  Copyright © 2018年 boone. All rights reserved.
 //
+
 
 #define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"     //PCM源文件
 
@@ -109,24 +110,21 @@ int main()
     float* arr = new float[6*n];
     
     int i=0;
-    int j=0;
     float xstart=-1.0;
-    
     for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
     {
-        arr[i++]=R*cos(2*PI/NUM*j);     //圆上的点
-        arr[i++]=R*sin(2*PI/NUM*j);
+        arr[i++]=xstart;
         arr[i++]=0.0f;
-
-        arr[i++]=(R+*it)*cos(2*PI/NUM*j);     //由圆向外延伸的终点，表示频谱
-        arr[i++]=(R+*it)*sin(2*PI/NUM*j);
         arr[i++]=0.0f;
         
-        j++;
-        if (j>NUM) {
-            j=0;     //循环存储N个圆形频谱
+        arr[i++]=xstart;
+        arr[i++]=*it;
+        arr[i++]=0.0f;
+        
+        xstart=xstart+0.006;
+        if (xstart>1.0) {
+            xstart=-1.0;
         }
-       
     }
     
     unsigned int VBO, VAO;
@@ -149,7 +147,7 @@ int main()
     //设置顶点属性指针，告诉OpenGL该如何解析顶点数据
     //          顶点属性位置 顶点属性大小 数据的类型 是否被标准化 步长             偏移
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-
+    
     //以顶点属性位置值作为参数，启用顶点属性；顶点属性默认是禁用的
     glEnableVertexAttribArray(0);
     
@@ -168,7 +166,7 @@ int main()
         // ------
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-
+        
         ourShader.use();
         
         glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
@@ -212,6 +210,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     glViewport(0, 0, width, height);
 }
 //绘制频谱
+//绘制频谱
 void drawLine()
 {
     usleep(99900);   //通过延时实现频谱的显示频率
@@ -220,7 +219,23 @@ void drawLine()
     float redValue = 0.0f;
     float yellowValue = 1.0f;
     
+    //柱状频谱
     for (int i=istart; i<2000+istart; i=i+2) {
+        glUniform4f(0, redValue, 1.0f, yellowValue, 1.0f);
+        
+        if (i<=1000+istart) {
+            redValue=redValue+0.002;
+            yellowValue=yellowValue-0.002;
+        }else{
+            redValue=redValue-0.002;
+            yellowValue=yellowValue+0.002;
+        }
+        
+        glDrawArrays(GL_LINES, i, 2);
+    }
+    
+    //波形频谱 
+    for (int i=istart+1; i<2000+istart; i=i+2) {
         glUniform4f(0, redValue, 1.0f, yellowValue, 1.0f);
         
         if (i<=1000+istart) {

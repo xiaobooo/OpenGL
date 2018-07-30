@@ -63,7 +63,7 @@ void fileOutput()
 
 void drawLint(Complex* outarr)
 {
-    usleep(44100);    //实现延时
+    usleep(99900);    //实现延时
     
     glClearColor (0, 0, 0, 0.8);
     glClear (GL_COLOR_BUFFER_BIT);
