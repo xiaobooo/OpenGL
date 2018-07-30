@@ -39,7 +39,7 @@ float lastFrame = 0.0f;
 
 // lighting
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
-
+ 
 int main()
 {
     // glfw: initialize and configure
@@ -177,6 +177,8 @@ int main()
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
+        
+        
         // be sure to activate shader when setting uniforms/drawing objects
         lightingShader.use();
         lightingShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
@@ -201,6 +203,9 @@ int main()
         lampShader.use();
         lampShader.setMat4("projection", projection);
         lampShader.setMat4("view", view);
+        
+      //  glm::vec3 lightPos(0.5f, 0.5f, 2.0f);
+        
         model = glm::mat4();
         model = glm::translate(model, lightPos);
         model = glm::scale(model, glm::vec3(0.2f)); // a smaller cube

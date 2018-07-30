@@ -183,7 +183,7 @@ int main()
         glfwPollEvents();
     }
     
-    // 绘制完成后释放资源
+    // 绘制完成后释放资源 
     // ------------------------------------------------------------------------
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
