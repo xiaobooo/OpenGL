@@ -16,6 +16,7 @@
 		3E1530FB210F09750086BBEE /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530E8210EF5CA0086BBEE /* OpenGL.framework */; };
 		3E1530FC210F09810086BBEE /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530EA210EF5E00086BBEE /* libGLEW.dylib */; };
 		3E1530FD210F09840086BBEE /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530EC210EF5E30086BBEE /* libglfw.dylib */; };
+		3E153103210F0B070086BBEE /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E153102210F0B070086BBEE /* glad.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,6 +49,11 @@
 		3E1530EE210EF5F20086BBEE /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		3E1530F4210F096B0086BBEE /* Light_Color */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Light_Color; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1530F6210F096B0086BBEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E1530FE210F09FF0086BBEE /* 1.lamp.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 1.lamp.fs; sourceTree = "<group>"; };
+		3E1530FF210F0A000086BBEE /* 1.colors.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 1.colors.vs; sourceTree = "<group>"; };
+		3E153100210F0A000086BBEE /* 1.colors.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 1.colors.fs; sourceTree = "<group>"; };
+		3E153101210F0A000086BBEE /* 1.lamp.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 1.lamp.vs; sourceTree = "<group>"; };
+		3E153102210F0B070086BBEE /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,11 @@
 		3E1530F5210F096B0086BBEE /* Light_Color */ = {
 			isa = PBXGroup;
 			children = (
+				3E153100210F0A000086BBEE /* 1.colors.fs */,
+				3E1530FF210F0A000086BBEE /* 1.colors.vs */,
+				3E1530FE210F09FF0086BBEE /* 1.lamp.fs */,
+				3E153101210F0A000086BBEE /* 1.lamp.vs */,
+				3E153102210F0B070086BBEE /* glad.c */,
 				3E1530F6210F096B0086BBEE /* main.cpp */,
 			);
 			path = Light_Color;
@@ -207,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E1530F7210F096B0086BBEE /* main.cpp in Sources */,
+				3E153103210F0B070086BBEE /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
