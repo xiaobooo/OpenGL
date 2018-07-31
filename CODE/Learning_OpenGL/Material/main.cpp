@@ -212,7 +212,7 @@ int main()
         glm::mat4 model;
         lightingShader.setMat4("model", model);
         
-        // render the cube
+        // render the cube 
         glBindVertexArray(cubeVAO);
         glDrawArrays(GL_TRIANGLES, 0, 36);
         
