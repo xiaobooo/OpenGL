@@ -20,20 +20,21 @@
 
 #include <iostream>
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void mouse_callback(GLFWwindow* window, double xpos, double ypos);
-void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);     //窗口大小改变时视口调整
+void mouse_callback(GLFWwindow* window, double xpos, double ypos);    //鼠标移动时位置调整
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);    //滚动时视图调整
 void processInput(GLFWwindow *window);
-unsigned int loadTexture(const char *path);
+unsigned int loadTexture(const char *path);   //加载纹理照片
 
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 // camera
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));    //摄像机位置 后面可以进行修改
 float lastX = SCR_WIDTH / 2.0f;
-float lastY = SCR_HEIGHT / 2.0f;
+float lastY = SCR_HEIGHT / 2.0f;       //通过之前的位置与现在的位置之差实现视图的转变
+
 bool firstMouse = true;
 
 // timing
@@ -41,7 +42,7 @@ float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
 // lighting
-glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+glm::vec3 lightPos(1.2f, 1.0f, 2.0f);    //光源所在位置
 
 int main()
 {
@@ -145,15 +146,15 @@ int main()
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     
     glBindVertexArray(cubeVAO);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);   //每一个顶点对应的有八个数据 三个座位顶点 三个座位法向量 两个为纹理坐标 所以步长为8 最后一个参数为位移量 从第一位开始所以为0
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));    //从第三位开始 偏移为3
     glEnableVertexAttribArray(1);
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));    //第六位开始 偏移为6
     glEnableVertexAttribArray(2);
     
     // second, configure the light's VAO (VBO stays the same; the vertices are the same for the light object which is also a 3D cube)
-    unsigned int lightVAO;
+    unsigned int lightVAO;     //光源单独创建一个VAO 防止物体做变换时光源随之受到影响 虽然公用一组顶点数据 只需要改变model矩阵  即可实现两个立方体分离
     glGenVertexArrays(1, &lightVAO);
     glBindVertexArray(lightVAO);
     
@@ -195,7 +196,7 @@ int main()
         lightingShader.use();
         lightingShader.setVec3("light.position", lightPos);
         lightingShader.setVec3("viewPos", camera.Position);
-        
+  
         // light properties
         lightingShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
         lightingShader.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f);
