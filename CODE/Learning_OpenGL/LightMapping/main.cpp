@@ -5,6 +5,7 @@
 //  Created by boone on 2018/7/31.
 //  Copyright © 2018年 boone. All rights reserved.
 //
+#define STB_IMAGE_IMPLEMENTATION
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -86,8 +87,8 @@ int main()
     
     // build and compile our shader zprogram
     // ------------------------------------
-    Shader lightingShader("4.1.lighting_maps.vs", "4.1.lighting_maps.fs");
-    Shader lampShader("4.1.lamp.vs", "4.1.lamp.fs");
+    Shader lightingShader("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/LightMapping/4.1.lighting_maps.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/LightMapping/4.1.lighting_maps.fs");
+    Shader lampShader("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/LightMapping/4.1.lamp.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/LightMapping/4.1.lamp.fs");
     
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -163,7 +164,7 @@ int main()
     
     // load textures (we now use a utility function to keep the code more organized)
     // -----------------------------------------------------------------------------
-    unsigned int diffuseMap = loadTexture(FileSystem::getPath("resources/textures/container2.png").c_str());
+    unsigned int diffuseMap = loadTexture("/Users/boone/Desktop/boxiao/pic/timg.jpeg");
     
     // shader configuration
     // --------------------

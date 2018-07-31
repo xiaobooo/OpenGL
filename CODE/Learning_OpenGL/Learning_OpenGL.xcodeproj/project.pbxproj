@@ -113,6 +113,10 @@
 		3E153130211052030086BBEE /* LightMapping */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LightMapping; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E153132211052040086BBEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E1531382110523F0086BBEE /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		3E15313C211053EA0086BBEE /* 4.1.lighting_maps.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 4.1.lighting_maps.vs; sourceTree = "<group>"; };
+		3E15313D211053EA0086BBEE /* 4.1.lighting_maps.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 4.1.lighting_maps.fs; sourceTree = "<group>"; };
+		3E15313E211053EA0086BBEE /* 4.1.lamp.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 4.1.lamp.fs; sourceTree = "<group>"; };
+		3E15313F211053EA0086BBEE /* 4.1.lamp.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 4.1.lamp.vs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +259,10 @@
 		3E153131211052040086BBEE /* LightMapping */ = {
 			isa = PBXGroup;
 			children = (
+				3E15313E211053EA0086BBEE /* 4.1.lamp.fs */,
+				3E15313F211053EA0086BBEE /* 4.1.lamp.vs */,
+				3E15313D211053EA0086BBEE /* 4.1.lighting_maps.fs */,
+				3E15313C211053EA0086BBEE /* 4.1.lighting_maps.vs */,
 				3E1531382110523F0086BBEE /* glad.c */,
 				3E153132211052040086BBEE /* main.cpp */,
 			);
