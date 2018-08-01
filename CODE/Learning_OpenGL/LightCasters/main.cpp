@@ -40,6 +40,9 @@ bool firstMouse = true;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
+// lighting
+glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+
 int main()
 {
     // glfw: initialize and configure
@@ -82,10 +85,10 @@ int main()
     // -----------------------------
     glEnable(GL_DEPTH_TEST);
     
-    // build and compile shaders
-    // -------------------------
-    Shader lightingShader("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/LightCasters/5.1.light_casters.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/LightCasters/5.1.light_casters.fs");
-    Shader lampShader("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/LightCasters/5.1.lamp.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/LightCasters/5.1.lamp.fs");
+    // build and compile our shader zprogram
+    // ------------------------------------
+    Shader lightingShader("/Users/boone/Desktop/CODE/LearnOpenGL-master/src/2.lighting/5.2.light_casters_point/5.2.light_casters.vs", "/Users/boone/Desktop/CODE/LearnOpenGL-master/src/2.lighting/5.2.light_casters_point/5.2.light_casters.fs");
+    Shader lampShader("/Users/boone/Desktop/CODE/LearnOpenGL-master/src/2.lighting/5.2.light_casters_point/5.2.lamp.vs", "/Users/boone/Desktop/CODE/LearnOpenGL-master/src/2.lighting/5.2.light_casters_point/5.2.lamp.fs");
     
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -174,8 +177,8 @@ int main()
     
     // load textures (we now use a utility function to keep the code more organized)
     // -----------------------------------------------------------------------------
-    unsigned int diffuseMap = loadTexture("/Users/boone/Desktop/boxiao/pic/awesomeface.png");
-    unsigned int specularMap = loadTexture("/Users/boone/Desktop/boxiao/pic/timg.jpeg");
+    unsigned int diffuseMap = loadTexture("/Users/boone/Desktop/boxiao/pic/timg.jpeg");
+    unsigned int specularMap = loadTexture("/Users/boone/Desktop/boxiao/pic/awesomeface.png");
     
     // shader configuration
     // --------------------
@@ -205,13 +208,16 @@ int main()
         
         // be sure to activate shader when setting uniforms/drawing objects
         lightingShader.use();
-        lightingShader.setVec3("light.direction", -0.2f, -1.0f, -0.3f);
+        lightingShader.setVec3("light.position", lightPos);
         lightingShader.setVec3("viewPos", camera.Position);
         
         // light properties
         lightingShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
         lightingShader.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f);
         lightingShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
+        lightingShader.setFloat("light.constant", 1.0f);
+        lightingShader.setFloat("light.linear", 0.022f);
+        lightingShader.setFloat("light.quadratic", 0.0019f);
         
         // material properties
         lightingShader.setFloat("material.shininess", 32.0f);
@@ -233,10 +239,6 @@ int main()
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, specularMap);
         
-        // render the cube
-        // glBindVertexArray(cubeVAO);
-        // glDrawArrays(GL_TRIANGLES, 0, 36);*/
-        
         // render containers
         glBindVertexArray(cubeVAO);
         for (unsigned int i = 0; i < 10; i++)
@@ -252,17 +254,17 @@ int main()
         }
         
         
-        // a lamp object is weird when we only have a directional light, don't render the light object
-        // lampShader.use();
-        // lampShader.setMat4("projection", projection);
-        // lampShader.setMat4("view", view);
-        // model = glm::mat4();
-        // model = glm::translate(model, lightPos);
-        // model = glm::scale(model, glm::vec3(0.2f)); // a smaller cube
-        // lampShader.setMat4("model", model);
+        // also draw the lamp object
+        lampShader.use();
+        lampShader.setMat4("projection", projection);
+        lampShader.setMat4("view", view);
+        model = glm::mat4();
+        model = glm::translate(model, lightPos);
+        model = glm::scale(model, glm::vec3(0.2f)); // a smaller cube
+        lampShader.setMat4("model", model);
         
-        // glBindVertexArray(lightVAO);
-        // glDrawArrays(GL_TRIANGLES, 0, 36);
+        glBindVertexArray(lightVAO);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
         
         
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
@@ -308,7 +310,6 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);
 }
-
 
 // glfw: whenever the mouse moves, this callback is called
 // -------------------------------------------------------
