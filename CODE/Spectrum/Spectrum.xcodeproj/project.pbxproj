@@ -86,10 +86,12 @@
 		3E153150211154860086BBEE /* spectrum.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.fs; sourceTree = "<group>"; };
 		3E153151211154860086BBEE /* spectrum.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.vs; sourceTree = "<group>"; };
 		3E15315621115C720086BBEE /* LightSpectrum2.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LightSpectrum2.0; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E15315821115C720086BBEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E15315821115C720086BBEE /* main.cpp */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E15316021115CA70086BBEE /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		3E15316221118B530086BBEE /* colors.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = colors.fs; sourceTree = "<group>"; };
 		3E15316321118B530086BBEE /* colors.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = colors.vs; sourceTree = "<group>"; };
+		3E15316421118FDF0086BBEE /* lamp.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lamp.vs; sourceTree = "<group>"; };
+		3E15316521118FDF0086BBEE /* lamp.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lamp.fs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,8 @@
 		3E15315721115C720086BBEE /* LightSpectrum2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				3E15316521118FDF0086BBEE /* lamp.fs */,
+				3E15316421118FDF0086BBEE /* lamp.vs */,
 				3E15316221118B530086BBEE /* colors.fs */,
 				3E15316321118B530086BBEE /* colors.vs */,
 				3E15316021115CA70086BBEE /* glad.c */,

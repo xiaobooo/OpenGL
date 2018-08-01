@@ -108,8 +108,13 @@ int main()
     }
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetCursorPosCallback(window, mouse_callback);
+    glfwSetScrollCallback(window, scroll_callback);
     
-    // glad: 家在所有OpenGL函数指针
+    // tell GLFW to capture our mouse
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    
+    // glad: 加载所有OpenGL函数指针
     // ---------------------------------------
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
@@ -117,11 +122,14 @@ int main()
         return -1;
     }
     
-    
+     // configure global opengl state
+     // -----------------------------
+     glEnable(GL_DEPTH_TEST);
+     
     // 构建并编译着色器程序
     // ------------------------------------
-    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum/spectrum.fs");
-    
+    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/colors.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/colors.fs");
+    Shader lampShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/lamp.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/lamp.fs");
     // 设置顶点数据（和缓冲区）并配置顶点属性
     // ------------------------------------------------------------------
     float* arr = new float[6*n];
@@ -145,16 +153,55 @@ int main()
         }
         
     }
+     
+     float lamp_vertices[] = {
+          -0.5f, -0.5f, -0.5f,
+          0.5f, -0.5f, -0.5f,
+          0.5f,  0.5f, -0.5f,
+          0.5f,  0.5f, -0.5f,
+          -0.5f,  0.5f, -0.5f,
+          -0.5f, -0.5f, -0.5f,
+          
+          -0.5f, -0.5f,  0.5f,
+          0.5f, -0.5f,  0.5f,
+          0.5f,  0.5f,  0.5f,
+          0.5f,  0.5f,  0.5f,
+          -0.5f,  0.5f,  0.5f,
+          -0.5f, -0.5f,  0.5f,
+          
+          -0.5f,  0.5f,  0.5f,
+          -0.5f,  0.5f, -0.5f,
+          -0.5f, -0.5f, -0.5f,
+          -0.5f, -0.5f, -0.5f,
+          -0.5f, -0.5f,  0.5f,
+          -0.5f,  0.5f,  0.5f,
+          
+          0.5f,  0.5f,  0.5f,
+          0.5f,  0.5f, -0.5f,
+          0.5f, -0.5f, -0.5f,
+          0.5f, -0.5f, -0.5f,
+          0.5f, -0.5f,  0.5f,
+          0.5f,  0.5f,  0.5f,
+          
+          -0.5f, -0.5f, -0.5f,
+          0.5f, -0.5f, -0.5f,
+          0.5f, -0.5f,  0.5f,
+          0.5f, -0.5f,  0.5f,
+          -0.5f, -0.5f,  0.5f,
+          -0.5f, -0.5f, -0.5f,
+          
+          -0.5f,  0.5f, -0.5f,
+          0.5f,  0.5f, -0.5f,
+          0.5f,  0.5f,  0.5f,
+          0.5f,  0.5f,  0.5f,
+          -0.5f,  0.5f,  0.5f,
+          -0.5f,  0.5f, -0.5f,
+     };
     
     unsigned int VBO, VAO;
-    // glGenVertexArrays() 创建一个顶点数组对象
-    // 第一个参数：需要创建的缓存数量
-    // 第二个参数：存储单一ID或多个ID的GLuint变量或数组的地址。
     glGenVertexArrays(1, &VAO);
-    // glGenBuffers() 创建一个缓存对象并且返回缓存对象的标示符。
     glGenBuffers(1, &VBO);
     
-    // 顶点对象创建之后，在使用缓存对象之前，需要将缓存对象连接到相应的缓存上。
     glBindVertexArray(VAO);
     // glBindBuffer()有2个参数：target与buffer
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
@@ -179,14 +226,31 @@ int main()
     // -----------
     while (!glfwWindowShouldClose(window))
     {
+        // per-frame time logic
+        // --------------------
+        float currentFrame = glfwGetTime();
+        deltaTime = currentFrame - lastFrame;
+        lastFrame = currentFrame;
+
         processInput(window);
         
         // 渲染
         // ------
-        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClearColor(0.8f, 0.8f, 0.8f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
         ourShader.use();
+     //   ourShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
+        
+        // view/projection transformations
+        glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+        glm::mat4 view = camera.GetViewMatrix();
+        ourShader.setMat4("projection", projection);
+        ourShader.setMat4("view", view);
+        
+        // world transformation
+        glm::mat4 model;
+        ourShader.setMat4("model", model);
         
         glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
         if (istart<6*n) {   //到达终点之前每次绘制一帧的频谱图
@@ -216,10 +280,18 @@ int main()
 // ---------------------------------------------------------------------------------------------------------
 void processInput(GLFWwindow *window)
 {
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
+     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+          glfwSetWindowShouldClose(window, true);
+     
+     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+          camera.ProcessKeyboard(FORWARD, deltaTime);
+     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+          camera.ProcessKeyboard(BACKWARD, deltaTime);
+     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+          camera.ProcessKeyboard(LEFT, deltaTime);
+     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+          camera.ProcessKeyboard(RIGHT, deltaTime);
 }
-
 // glfw: 每当窗口大小改变时，调用该回调函数
 // ---------------------------------------------------------------------------------------------
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
@@ -228,6 +300,31 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     //高度将显著大于视网膜显示器上指定的高度。
     glViewport(0, 0, width, height);
 }
+void mouse_callback(GLFWwindow* window, double xpos, double ypos)
+{
+     if (firstMouse)
+     {
+          lastX = xpos;
+          lastY = ypos;
+          firstMouse = false;
+     }
+     
+     float xoffset = xpos - lastX;
+     float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
+     
+     lastX = xpos;
+     lastY = ypos;
+     
+     camera.ProcessMouseMovement(xoffset, yoffset);
+}
+
+// glfw: whenever the mouse scroll wheel scrolls, this callback is called
+// ----------------------------------------------------------------------
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+{
+     camera.ProcessMouseScroll(yoffset);
+}
+
 //绘制频谱
 void drawLine()
 {
