@@ -17,6 +17,11 @@
 		3E1530CD210EA1930086BBEE /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530C9210EA1250086BBEE /* libglfw.dylib */; };
 		3E1530CF210EA2420086BBEE /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E1530CE210EA2410086BBEE /* glad.c */; };
 		3E1530D1210EA24A0086BBEE /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E1530D0210EA24A0086BBEE /* glad.c */; };
+		3E153147211153840086BBEE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E153146211153840086BBEE /* main.cpp */; };
+		3E15314B211153BD0086BBEE /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530C5210EA1120086BBEE /* OpenGL.framework */; };
+		3E15314C211153CC0086BBEE /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530C7210EA1220086BBEE /* libGLEW.dylib */; };
+		3E15314D211153D00086BBEE /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530C9210EA1250086BBEE /* libglfw.dylib */; };
+		3E15314F2111541B0086BBEE /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E15314E2111541B0086BBEE /* glad.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +35,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		3E1530BB210EA0EF0086BBEE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		3E153142211153840086BBEE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -52,6 +66,11 @@
 		3E1530D0210EA24A0086BBEE /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		3E1530D2210EA2890086BBEE /* spectrum.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.fs; sourceTree = "<group>"; };
 		3E1530D3210EA2890086BBEE /* spectrum.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.vs; sourceTree = "<group>"; };
+		3E153144211153840086BBEE /* LightSpectrum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LightSpectrum; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E153146211153840086BBEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E15314E2111541B0086BBEE /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		3E153150211154860086BBEE /* spectrum.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.fs; sourceTree = "<group>"; };
+		3E153151211154860086BBEE /* spectrum.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.vs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +94,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3E153141211153840086BBEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E15314B211153BD0086BBEE /* OpenGL.framework in Frameworks */,
+				3E15314C211153CC0086BBEE /* libGLEW.dylib in Frameworks */,
+				3E15314D211153D00086BBEE /* libglfw.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,6 +112,7 @@
 			children = (
 				3E1530BE210EA0EF0086BBEE /* Test */,
 				3E1530B1210EA0CE0086BBEE /* Spectrum */,
+				3E153145211153840086BBEE /* LightSpectrum */,
 				3E1530B0210EA0CE0086BBEE /* Products */,
 				3E1530C4210EA1110086BBEE /* Frameworks */,
 			);
@@ -93,6 +123,7 @@
 			children = (
 				3E1530AF210EA0CE0086BBEE /* Spectrum */,
 				3E1530BD210EA0EF0086BBEE /* Test */,
+				3E153144211153840086BBEE /* LightSpectrum */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +156,17 @@
 				3E1530C5210EA1120086BBEE /* OpenGL.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E153145211153840086BBEE /* LightSpectrum */ = {
+			isa = PBXGroup;
+			children = (
+				3E153150211154860086BBEE /* spectrum.fs */,
+				3E153151211154860086BBEE /* spectrum.vs */,
+				3E15314E2111541B0086BBEE /* glad.c */,
+				3E153146211153840086BBEE /* main.cpp */,
+			);
+			path = LightSpectrum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +206,23 @@
 			productReference = 3E1530BD210EA0EF0086BBEE /* Test */;
 			productType = "com.apple.product-type.tool";
 		};
+		3E153143211153840086BBEE /* LightSpectrum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E15314A211153840086BBEE /* Build configuration list for PBXNativeTarget "LightSpectrum" */;
+			buildPhases = (
+				3E153140211153840086BBEE /* Sources */,
+				3E153141211153840086BBEE /* Frameworks */,
+				3E153142211153840086BBEE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LightSpectrum;
+			productName = LightSpectrum;
+			productReference = 3E153144211153840086BBEE /* LightSpectrum */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,6 +236,9 @@
 						CreatedOnToolsVersion = 9.4.1;
 					};
 					3E1530BC210EA0EF0086BBEE = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					3E153143211153840086BBEE = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
@@ -195,6 +257,7 @@
 			targets = (
 				3E1530AE210EA0CE0086BBEE /* Spectrum */,
 				3E1530BC210EA0EF0086BBEE /* Test */,
+				3E153143211153840086BBEE /* LightSpectrum */,
 			);
 		};
 /* End PBXProject section */
@@ -215,6 +278,15 @@
 			files = (
 				3E1530C0210EA0EF0086BBEE /* main.cpp in Sources */,
 				3E1530CF210EA2420086BBEE /* glad.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E153140211153840086BBEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E153147211153840086BBEE /* main.cpp in Sources */,
+				3E15314F2111541B0086BBEE /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +442,26 @@
 			};
 			name = Release;
 		};
+		3E153148211153840086BBEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3E153149211153840086BBEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -396,6 +488,15 @@
 			buildConfigurations = (
 				3E1530C2210EA0EF0086BBEE /* Debug */,
 				3E1530C3210EA0EF0086BBEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E15314A211153840086BBEE /* Build configuration list for PBXNativeTarget "LightSpectrum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E153148211153840086BBEE /* Debug */,
+				3E153149211153840086BBEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
