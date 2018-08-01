@@ -47,7 +47,7 @@ float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
 // lighting
-glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
 
 //draw
 vector<float> vertices;    //用于存储pcm文件解析出的数据
@@ -124,11 +124,15 @@ int main()
     
      // configure global opengl state
      // -----------------------------
+     glEnable(GL_MULTISAMPLE); // Enabled by default on some drivers, but not all so always enable to make sure
+     glEnable (GL_LINE_SMOOTH);//启用线抗锯齿,边缘会降低其alpha值
+     glEnable (GL_BLEND);//启用混合
      glEnable(GL_DEPTH_TEST);
      
     // 构建并编译着色器程序
     // ------------------------------------
-    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/colors.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/colors.fs");
+    //Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/colors.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/colors.fs");
+     Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/lamp.vs","/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/lamp.fs");
     Shader lampShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/lamp.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/lamp.fs");
     // 设置顶点数据（和缓冲区）并配置顶点属性
     // ------------------------------------------------------------------
@@ -201,27 +205,29 @@ int main()
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
-    
-    glBindVertexArray(VAO);
-    // glBindBuffer()有2个参数：target与buffer
+
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    
-    //    cout<<sizeof(arr)<<endl;   //使用float*简历数组导致下面一行代码不能使用sizeof(arr) 需要手动设置大小 4*数字长度  这里注释的为注释
-    // 当缓存初始化之后，使用glBufferData()将顶点数据拷贝到缓存对象
     glBufferData(GL_ARRAY_BUFFER, 24*n, arr, GL_STATIC_DRAW);
     
-    //设置顶点属性指针，告诉OpenGL该如何解析顶点数据
-    //          顶点属性位置 顶点属性大小 数据的类型 是否被标准化 步长             偏移
+     glBindVertexArray(VAO);
+     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-    
-    //以顶点属性位置值作为参数，启用顶点属性；顶点属性默认是禁用的
     glEnableVertexAttribArray(0);
     
-    //解绑缓存着色器
-    //glBindBuffer(GL_ARRAY_BUFFER, 0);
-    // 解绑顶点着色器，绑定和解绑的顺序很重要！！！
-    glBindVertexArray(VAO);
-    
+     //lamp
+     //---------------------------------------
+     unsigned int lightVBO,lightVAO;
+     glGenVertexArrays(1, &lightVAO);
+     glGenBuffers(1,&lightVBO);
+     
+     glBindBuffer(GL_ARRAY_BUFFER,lightVBO);
+     glBufferData(GL_ARRAY_BUFFER,sizeof(lamp_vertices),lamp_vertices,GL_STATIC_DRAW);
+     
+     glBindVertexArray(lightVAO);
+     
+     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+     glEnableVertexAttribArray(0);
+     
     // 循环渲染
     // -----------
     while (!glfwWindowShouldClose(window))
@@ -236,12 +242,13 @@ int main()
         
         // 渲染
         // ------
-        glClearColor(0.8f, 0.8f, 0.8f, 1.0f);
+        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
         ourShader.use();
-     //   ourShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
-        
+        ourShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
+        ourShader.setVec3("lightColor",  1.0f, 1.0f, 1.0f);
+         
         // view/projection transformations
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
         glm::mat4 view = camera.GetViewMatrix();
@@ -257,10 +264,20 @@ int main()
             drawLine();
         }
         
-        // glBindVertexArray(0); // 不需要每次都解除绑定
+         // also draw the lamp object
+         lampShader.use();
+         lampShader.setMat4("projection", projection);
+         lampShader.setMat4("view", view);
+         
+         model = glm::mat4();
+         model = glm::translate(model, lightPos);
+         model = glm::scale(model, glm::vec3(0.2f)); // a smaller cube
+         lampShader.setMat4("model", model);
+         
+         glBindVertexArray(lightVAO);
+         glDrawArrays(GL_TRIANGLES, 0, 36);
         
-        // glfw: 交换缓冲区和轮询IO事件（按下/释放键，鼠标移动等）
-        // -------------------------------------------------------------------------------
+         
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
