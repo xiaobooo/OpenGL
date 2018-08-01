@@ -5,6 +5,7 @@
 //  Created by boone on 2018/8/1.
 //  Copyright © 2018年 boone. All rights reserved.
 //
+#define STB_IMAGE_IMPLEMENTATION
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -83,8 +84,8 @@ int main()
     
     // build and compile shaders
     // -------------------------
-    Shader lightingShader("5.1.light_casters.vs", "5.1.light_casters.fs");
-    Shader lampShader("5.1.lamp.vs", "5.1.lamp.fs");
+    Shader lightingShader("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/LightCasters/5.1.light_casters.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/LightCasters/5.1.light_casters.fs");
+    Shader lampShader("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/LightCasters/5.1.lamp.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/LightCasters/5.1.lamp.fs");
     
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -173,8 +174,8 @@ int main()
     
     // load textures (we now use a utility function to keep the code more organized)
     // -----------------------------------------------------------------------------
-    unsigned int diffuseMap = loadTexture(FileSystem::getPath("resources/textures/container2.png").c_str());
-    unsigned int specularMap = loadTexture(FileSystem::getPath("resources/textures/container2_specular.png").c_str());
+    unsigned int diffuseMap = loadTexture("/Users/boone/Desktop/boxiao/pic/awesomeface.png");
+    unsigned int specularMap = loadTexture("/Users/boone/Desktop/boxiao/pic/timg.jpeg");
     
     // shader configuration
     // --------------------
