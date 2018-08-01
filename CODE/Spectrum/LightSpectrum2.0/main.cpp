@@ -11,7 +11,13 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <learnopengl/shader.h>
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
+#include <learnopengl/shader_m.h>
+#include <learnopengl/camera.h>
 
 #include <iostream>
 #include <vector>
@@ -20,22 +26,33 @@
 
 using namespace std;
 
-vector<float> vertices;    //用于存储pcm文件解析出的数据
-int istart=0;
-int n;       //记录pcm文件中数据个数
-
-int NUM=1000;  //一个圆周上分布频谱的个数
-float PI=3.1415926f;
-float R=0.6f;  //半径
-
-
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void processInput(GLFWwindow *window);
 void drawLine();
 
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 800;
+
+// camera
+Camera camera(glm::vec3(1.0f, 1.0f, 3.0f));
+float lastX = SCR_WIDTH / 2.0f;
+float lastY = SCR_HEIGHT / 2.0f;
+bool firstMouse = true;
+
+// timing
+float deltaTime = 0.0f;
+float lastFrame = 0.0f;
+
+// lighting
+glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+
+//draw
+vector<float> vertices;    //用于存储pcm文件解析出的数据
+int istart=0;
+int n;       //记录pcm文件中数据个数
 
 //PCM文件数据解码保存到数组中
 void fileOutput()
@@ -223,8 +240,8 @@ void drawLine()
     for (int i=istart; i<2000+istart; i+=2) {
         glUniform4f(0, redValue, 1.0f, yellowValue, 1.0f);
         
-        redValue=redValue+0.0005;
-        yellowValue=yellowValue-0.0005;
+        redValue=redValue+0.001;
+        yellowValue=yellowValue-0.001;
         
         glDrawArrays(GL_LINES, i, 2);
     }
