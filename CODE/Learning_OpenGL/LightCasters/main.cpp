@@ -5,8 +5,8 @@
 //  Created by boone on 2018/8/1.
 //  Copyright © 2018年 boone. All rights reserved.
 //
-#define STB_IMAGE_IMPLEMENTATION
 
+#define STB_IMAGE_IMPLEMENTATION
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <stb_image.h>
@@ -39,9 +39,6 @@ bool firstMouse = true;
 // timing
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
-
-// lighting
-glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
 int main()
 {
@@ -87,8 +84,8 @@ int main()
     
     // build and compile our shader zprogram
     // ------------------------------------
-    Shader lightingShader("/Users/boone/Desktop/CODE/LearnOpenGL-master/src/2.lighting/5.2.light_casters_point/5.2.light_casters.vs", "/Users/boone/Desktop/CODE/LearnOpenGL-master/src/2.lighting/5.2.light_casters_point/5.2.light_casters.fs");
-    Shader lampShader("/Users/boone/Desktop/CODE/LearnOpenGL-master/src/2.lighting/5.2.light_casters_point/5.2.lamp.vs", "/Users/boone/Desktop/CODE/LearnOpenGL-master/src/2.lighting/5.2.light_casters_point/5.2.lamp.fs");
+    Shader lightingShader("/Users/boone/Desktop/CODE/LearnOpenGL-master/src/2.lighting/5.4.light_casters_spot_soft/5.4.light_casters.vs", "/Users/boone/Desktop/CODE/LearnOpenGL-master/src/2.lighting/5.4.light_casters_spot_soft/5.4.light_casters.fs");
+    Shader lampShader("/Users/boone/Desktop/CODE/LearnOpenGL-master/src/2.lighting/5.4.light_casters_spot_soft/5.4.lamp.vs", "/Users/boone/Desktop/CODE/LearnOpenGL-master/src/2.lighting/5.4.light_casters_spot_soft/5.4.lamp.fs");
     
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -208,16 +205,21 @@ int main()
         
         // be sure to activate shader when setting uniforms/drawing objects
         lightingShader.use();
-        lightingShader.setVec3("light.position", lightPos);
+        lightingShader.setVec3("light.position", camera.Position);
+        lightingShader.setVec3("light.direction", camera.Front);
+        lightingShader.setFloat("light.cutOff", glm::cos(glm::radians(12.5f)));
+        lightingShader.setFloat("light.outerCutOff", glm::cos(glm::radians(17.5f)));
         lightingShader.setVec3("viewPos", camera.Position);
         
         // light properties
-        lightingShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
-        lightingShader.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f);
+        lightingShader.setVec3("light.ambient", 0.1f, 0.1f, 0.1f);
+        // we configure the diffuse intensity slightly higher; the right lighting conditions differ with each lighting method and environment.
+        // each environment and lighting type requires some tweaking to get the best out of your environment.
+        lightingShader.setVec3("light.diffuse", 0.8f, 0.8f, 0.8f);
         lightingShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
         lightingShader.setFloat("light.constant", 1.0f);
-        lightingShader.setFloat("light.linear", 0.022f);
-        lightingShader.setFloat("light.quadratic", 0.0019f);
+        lightingShader.setFloat("light.linear", 0.09f);
+        lightingShader.setFloat("light.quadratic", 0.032f);
         
         // material properties
         lightingShader.setFloat("material.shininess", 32.0f);
@@ -253,18 +255,17 @@ int main()
             glDrawArrays(GL_TRIANGLES, 0, 36);
         }
         
+        // again, a lamp object is weird when we only have a spot light, don't render the light object
+        // lampShader.use();
+        // lampShader.setMat4("projection", projection);
+        // lampShader.setMat4("view", view);
+        // model = glm::mat4();
+        // model = glm::translate(model, lightPos);
+        // model = glm::scale(model, glm::vec3(0.2f)); // a smaller cube
+        // lampShader.setMat4("model", model);
         
-        // also draw the lamp object
-        lampShader.use();
-        lampShader.setMat4("projection", projection);
-        lampShader.setMat4("view", view);
-        model = glm::mat4();
-        model = glm::translate(model, lightPos);
-        model = glm::scale(model, glm::vec3(0.2f)); // a smaller cube
-        lampShader.setMat4("model", model);
-        
-        glBindVertexArray(lightVAO);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
+        // glBindVertexArray(lightVAO);
+        // glDrawArrays(GL_TRIANGLES, 0, 36);
         
         
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
