@@ -98,7 +98,7 @@ int main()
     // load textures
     // -------------
     unsigned int woodTexture = loadTexture("/Users/boone/Desktop/boxiao/pic/awesomeface.png", true); // note that we're loading the texture as an SRGB texture
-    unsigned int containerTexture = loadTexture(FileSystem::getPath("resources/textures/container2.png").c_str(), true); // note that we're loading the texture as an SRGB texture
+    unsigned int containerTexture = loadTexture("/Users/boone/Desktop/boxiao/pic/timg.jpeg", true); // note that we're loading the texture as an SRGB texture
     
     // configure (floating point) framebuffers
     // ---------------------------------------
