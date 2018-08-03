@@ -7,3 +7,12 @@
 //
 
 
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout<<"wuge"<<endl;
+    return 0;
+}

@@ -392,7 +392,7 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
     camera.ProcessMouseScroll(yoffset);
 }
 
-// utility function for loading a 2D texture from file 
+// utility function for loading a 2D texture from file
 // ---------------------------------------------------
 unsigned int loadTexture(char const * path)
 {
