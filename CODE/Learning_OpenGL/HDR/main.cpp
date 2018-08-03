@@ -9,7 +9,7 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <stb_image.h>
+//#include <stb_image.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -90,12 +90,12 @@ int main()
     
     // build and compile shaders
     // -------------------------
-    Shader shader("6.lighting.vs", "6.lighting.fs");
-    Shader hdrShader("6.hdr.vs", "6.hdr.fs");
+    Shader shader("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/HDR/6.lighting.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/HDR/6.lighting.fs");
+    Shader hdrShader("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/HDR/6.hdr.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/HDR/6.hdr.fs");
     
     // load textures
     // -------------
-    unsigned int woodTexture = loadTexture(FileSystem::getPath("resources/textures/wood.png").c_str(), true); // note that we're loading the texture as an SRGB texture
+    unsigned int woodTexture = loadTexture("/Users/boone/Desktop/boxiao/pic/awesomeface.png", true); // note that we're loading the texture as an SRGB texture
     
     // configure floating point framebuffer
     // ------------------------------------

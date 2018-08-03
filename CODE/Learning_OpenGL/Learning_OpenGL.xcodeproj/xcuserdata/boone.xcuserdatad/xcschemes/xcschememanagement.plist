@@ -49,6 +49,11 @@
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
+		<key>Render_to_texture.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 	</dict>
 </dict>
 </plist>
