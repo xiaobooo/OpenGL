@@ -18,7 +18,7 @@ uniform sampler2D diffuseTexture;
 uniform vec3 viewPos;
 
 void main()
-{           
+{
     vec3 color = texture(diffuseTexture, fs_in.TexCoords).rgb;
     vec3 normal = normalize(fs_in.Normal);
     // ambient
@@ -31,12 +31,12 @@ void main()
         // diffuse
         vec3 lightDir = normalize(lights[i].Position - fs_in.FragPos);
         float diff = max(dot(lightDir, normal), 0.0);
-        vec3 result = lights[i].Color * diff * color;      
+        vec3 result = lights[i].Color * diff * color;
         // attenuation (use quadratic as we have gamma correction)
         float distance = length(fs_in.FragPos - lights[i].Position);
         result *= 1.0 / (distance * distance);
         lighting += result;
-                
+        
     }
     vec3 result = ambient + lighting;
     // check whether result is higher than some threshold, if so, output as bloom threshold color
