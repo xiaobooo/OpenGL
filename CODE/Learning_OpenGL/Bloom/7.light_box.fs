@@ -11,7 +11,7 @@ in VS_OUT {
 uniform vec3 lightColor;
 
 void main()
-{           
+{
     FragColor = vec4(lightColor, 1.0);
     float brightness = dot(FragColor.rgb, vec3(0.2126, 0.7152, 0.0722));
     if(brightness > 1.0)
