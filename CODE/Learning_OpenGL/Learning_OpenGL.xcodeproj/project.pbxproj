@@ -197,7 +197,6 @@
 		3E1531D021143D760086BBEE /* 7.blur.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 7.blur.fs; sourceTree = "<group>"; };
 		3E1531D121143D760086BBEE /* 7.bloom_final.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 7.bloom_final.vs; sourceTree = "<group>"; };
 		3E1531D221143D760086BBEE /* 7.light_box.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 7.light_box.fs; sourceTree = "<group>"; };
-		3E1531D321143D760086BBEE /* 7.light_box.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 7.light_box.vs; sourceTree = "<group>"; };
 		3E1531D421143D760086BBEE /* 7.bloom_final.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 7.bloom_final.fs; sourceTree = "<group>"; };
 		3E1531D521143D760086BBEE /* 7.bloom.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 7.bloom.vs; sourceTree = "<group>"; };
 		3E1531D621143D760086BBEE /* 7.bloom.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 7.bloom.fs; sourceTree = "<group>"; };
@@ -448,7 +447,6 @@
 				3E1531D021143D760086BBEE /* 7.blur.fs */,
 				3E1531D721143D760086BBEE /* 7.blur.vs */,
 				3E1531D221143D760086BBEE /* 7.light_box.fs */,
-				3E1531D321143D760086BBEE /* 7.light_box.vs */,
 				3E1531CE21143C2E0086BBEE /* glad.c */,
 				3E1531C621143BBC0086BBEE /* main.cpp */,
 			);
