@@ -90,7 +90,7 @@ int main()
     
     // build and compile shaders
     // -------------------------
-    Shader shader("7.bloom.vs", "7.bloom.fs");
+    Shader shader("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/Bloom/7.bloom.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/Bloom/7.bloom.fs");
     Shader shaderLight("7.bloom.vs", "7.light_box.fs");
     Shader shaderBlur("7.blur.vs", "7.blur.fs");
     Shader shaderBloomFinal("7.bloom_final.vs", "7.bloom_final.fs");
