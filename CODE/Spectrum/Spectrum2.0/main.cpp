@@ -105,7 +105,7 @@ int main()
     }
     // 构建并编译着色器程序
     // ------------------------------------
-    Shader ourShader("", "");
+    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum2.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum2.0/spectrum.fs");
     
     // 设置顶点数据（和缓冲区）并配置顶点属性
     // ------------------------------------------------------------------
