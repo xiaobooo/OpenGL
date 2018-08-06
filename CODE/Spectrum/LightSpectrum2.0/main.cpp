@@ -5,8 +5,6 @@
 //  Created by boone on 2018/8/1.
 //  Copyright © 2018年 boone. All rights reserved.
 //
-
-
 #define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"     //PCM源文件
 
 #include <glad/glad.h>
@@ -37,7 +35,7 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 800;
 
 // camera
-Camera camera(glm::vec3(1.0f, 1.0f, 3.0f));
+Camera camera(glm::vec3(0.0f, 0.0f, 1.0f));
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -124,9 +122,9 @@ int main()
     
      // configure global opengl state
      // -----------------------------
-     glEnable(GL_MULTISAMPLE); // Enabled by default on some drivers, but not all so always enable to make sure
-     glEnable (GL_LINE_SMOOTH);//启用线抗锯齿,边缘会降低其alpha值
-     glEnable (GL_BLEND);//启用混合
+//     glEnable(GL_MULTISAMPLE); // Enabled by default on some drivers, but not all so always enable to make sure
+//     glEnable (GL_LINE_SMOOTH);//启用线抗锯齿,边缘会降低其alpha值
+//     glEnable (GL_BLEND);//启用混合
      glEnable(GL_DEPTH_TEST);
      
     // 构建并编译着色器程序
@@ -157,50 +155,6 @@ int main()
         }
         
     }
-     
-     float lamp_vertices[] = {
-          -0.5f, -0.5f, -0.5f,
-          0.5f, -0.5f, -0.5f,
-          0.5f,  0.5f, -0.5f,
-          0.5f,  0.5f, -0.5f,
-          -0.5f,  0.5f, -0.5f,
-          -0.5f, -0.5f, -0.5f,
-          
-          -0.5f, -0.5f,  0.5f,
-          0.5f, -0.5f,  0.5f,
-          0.5f,  0.5f,  0.5f,
-          0.5f,  0.5f,  0.5f,
-          -0.5f,  0.5f,  0.5f,
-          -0.5f, -0.5f,  0.5f,
-          
-          -0.5f,  0.5f,  0.5f,
-          -0.5f,  0.5f, -0.5f,
-          -0.5f, -0.5f, -0.5f,
-          -0.5f, -0.5f, -0.5f,
-          -0.5f, -0.5f,  0.5f,
-          -0.5f,  0.5f,  0.5f,
-          
-          0.5f,  0.5f,  0.5f,
-          0.5f,  0.5f, -0.5f,
-          0.5f, -0.5f, -0.5f,
-          0.5f, -0.5f, -0.5f,
-          0.5f, -0.5f,  0.5f,
-          0.5f,  0.5f,  0.5f,
-          
-          -0.5f, -0.5f, -0.5f,
-          0.5f, -0.5f, -0.5f,
-          0.5f, -0.5f,  0.5f,
-          0.5f, -0.5f,  0.5f,
-          -0.5f, -0.5f,  0.5f,
-          -0.5f, -0.5f, -0.5f,
-          
-          -0.5f,  0.5f, -0.5f,
-          0.5f,  0.5f, -0.5f,
-          0.5f,  0.5f,  0.5f,
-          0.5f,  0.5f,  0.5f,
-          -0.5f,  0.5f,  0.5f,
-          -0.5f,  0.5f, -0.5f,
-     };
     
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
@@ -213,20 +167,7 @@ int main()
      
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
-    
-     //lamp
-     //---------------------------------------
-     unsigned int lightVBO,lightVAO;
-     glGenVertexArrays(1, &lightVAO);
-     glGenBuffers(1,&lightVBO);
-     
-     glBindBuffer(GL_ARRAY_BUFFER,lightVBO);
-     glBufferData(GL_ARRAY_BUFFER,sizeof(lamp_vertices),lamp_vertices,GL_STATIC_DRAW);
-     
-     glBindVertexArray(lightVAO);
-     
-     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-     glEnableVertexAttribArray(0);
+
      
     // 循环渲染
     // -----------
@@ -273,8 +214,7 @@ int main()
          model = glm::translate(model, lightPos);
          model = glm::scale(model, glm::vec3(0.2f)); // a smaller cube
          lampShader.setMat4("model", model);
-         
-         glBindVertexArray(lightVAO);
+
          glDrawArrays(GL_TRIANGLES, 0, 36);
         
          
@@ -354,8 +294,13 @@ void drawLine()
     for (int i=istart; i<2000+istart; i+=2) {
         glUniform4f(0, redValue, 1.0f, yellowValue, 1.0f);
         
-        redValue=redValue+0.001;
-        yellowValue=yellowValue-0.001;
+         if (i<=1000+istart) {
+              redValue=redValue+0.002;
+              yellowValue=yellowValue-0.002;
+         }else{
+              redValue=redValue-0.002;
+              yellowValue=yellowValue+0.002;
+         }
         
         glDrawArrays(GL_LINES, i, 2);
     }

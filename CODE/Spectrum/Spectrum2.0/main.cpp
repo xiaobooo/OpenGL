@@ -148,7 +148,7 @@ int main()
     glEnableVertexAttribArray(0);
 
     glBindVertexArray(VAO);
-    
+
     while (!glfwWindowShouldClose(window))
     {
         processInput(window);
