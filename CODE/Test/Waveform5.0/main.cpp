@@ -261,50 +261,11 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
 }
-//绘制频谱
-void drawLine()
-{
-    usleep(99900);   //通过延时实现频谱的显示频率
-    
-    //颜色随机设置
-    float redValue = 0.0f;
-    float blueValue = 1.0f;
-    
-    for (int i=istart; i<2000+istart; i+=2) {
-        
-        glUniform4f(0, redValue, 1.0f, blueValue, 1.0f);
-        
-        if (i<=1000+istart) {
-            redValue=redValue+0.002;
-            blueValue=blueValue-0.002;
-        }else{
-            redValue=redValue-0.002;
-            blueValue=blueValue+0.002;
-        }
-        
-        glDrawArrays(GL_LINES, i, 2);
-    }
-    
-    istart+=2000;
-}
 
-//绘制离散型频谱
-void drawPoint()
-{
-    
-    for (int i=pstart; i<800+pstart; i++) {
-        
-        glUniform4f(0, 0.2f, 0.7f, 1.0f, 1.0f);
-        
-        glPointSize(3);
-        glDrawArrays(GL_POINTS, i, 1);
-    }
-    
-    pstart+=800;
-}
 //绘制波形频谱
 void drawWave()
 {
+    usleep(99900);   //通过延时实现频谱的显示频率
     //颜色随机设置
     float redValue = 0.0f;
     float blueValue = 1.0f;
