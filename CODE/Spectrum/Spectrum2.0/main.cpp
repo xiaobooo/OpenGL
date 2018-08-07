@@ -21,11 +21,13 @@ using namespace std;
 
 vector<float> vertices;    //用于存储pcm文件解析出的数据
 int istart=0;
+int wstart=0;
 int n;       //记录pcm文件中数据个数
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
 void drawLine();
+void drawWave();
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -99,12 +101,13 @@ int main()
     // ------------------------------------
     Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum2.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum2.0/spectrum.fs");
     
-    //直线型频谱图数据存储
     float* arr = new float[6*n];
+    float* arr2 = new float[3*n];
     
     int i=0;
     float xstart=-1.0;
     
+    //直线型频谱图数据存储
     for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
     {
         arr[i++]=xstart;     //圆上的点
@@ -121,7 +124,23 @@ int main()
         }
         
     }
-    
+    //波形，离散点频谱图数据存储
+    xstart=-1.0;
+    i=0;
+    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
+    {
+        arr2[i++]=xstart;
+        arr2[i++]=-*it;
+        arr2[i++]=0.0f;
+        
+        xstart=xstart+0.001;
+        if (xstart>1.0) {
+            xstart=-1.0;
+        }
+        
+    }
+
+    //直线型
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
@@ -134,7 +153,21 @@ int main()
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 
     glEnableVertexAttribArray(0);
-    glBindVertexArray(VAO);
+    
+    //波形 离散型
+    unsigned int wpVAO,wpVBO;
+    glGenVertexArrays(1, &wpVAO);
+    glGenBuffers(1, &wpVBO);
+    
+    glBindVertexArray(wpVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, wpVBO);
+    
+    glBufferData(GL_ARRAY_BUFFER, 12*n, arr2, GL_STATIC_DRAW);
+    
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    
+    glEnableVertexAttribArray(0);
+
     
     // 循环渲染
     // -----------
@@ -153,28 +186,27 @@ int main()
         if (istart<6*n) {   //到达终点之前每次绘制一帧的频谱图
             drawLine();
         }
+
         
-        // glBindVertexArray(0); // 不需要每次都解除绑定
+        glBindVertexArray(wpVAO); // 激活VAO表示的顶点缓存
+        if (wstart<3*n) {   //到达终点之前每次绘制一帧的频谱图
+            drawWave();
+        }
         
-        // glfw: 交换缓冲区和轮询IO事件（按下/释放键，鼠标移动等）
-        // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
     
-    // 绘制完成后释放资源
-    // ------------------------------------------------------------------------
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
     
-    // glfw: 清除先前分配的所有GLFW资源
-    // ------------------------------------------------------------------
+    glDeleteVertexArrays(1, &wpVAO);
+    glDeleteBuffers(1, &wpVBO);
+    
     glfwTerminate();
     return 0;
 }
 
-// glfw:对相应的按键作出相应的响应
-// ---------------------------------------------------------------------------------------------------------
 void processInput(GLFWwindow *window)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
@@ -185,8 +217,6 @@ void processInput(GLFWwindow *window)
 // ---------------------------------------------------------------------------------------------
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
-    //确保视口与新窗口尺寸匹配；注意宽度和
-    //高度将显著大于视网膜显示器上指定的高度。
     glViewport(0, 0, width, height);
 }
 //绘制频谱
@@ -215,4 +245,31 @@ void drawLine()
     }
     
     istart+=2000;
+}
+
+//绘制波形频谱
+void drawWave()
+{
+    
+    //颜色随机设置
+    float redValue = 0.0f;
+    float blueValue = 1.0f;
+    
+    for (int i=wstart; i<2000+wstart; i++) {
+        
+        glUniform4f(0, redValue, 1.0f, blueValue, 1.0f);
+        
+        if (i<=500+wstart) {
+            redValue=redValue+0.002;
+            blueValue=blueValue-0.002;
+        }else{
+            redValue=redValue-0.002;
+            blueValue=blueValue+0.002;
+        }
+        
+        glad_glLineWidth(5);
+        glDrawArrays(GL_LINE_LOOP, i, 2);
+    }
+    
+    wstart+=2000;
 }
