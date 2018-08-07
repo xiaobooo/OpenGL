@@ -128,6 +128,8 @@
 		3E153205211981CC0086BBEE /* Spectrum3.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Spectrum3.0; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E153207211981CC0086BBEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E15320F211981F80086BBEE /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		3E1532112119827A0086BBEE /* spectrum.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.vs; sourceTree = "<group>"; };
+		3E1532122119827A0086BBEE /* spectrum.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.fs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,8 @@
 		3E153206211981CC0086BBEE /* Spectrum3.0 */ = {
 			isa = PBXGroup;
 			children = (
+				3E1532122119827A0086BBEE /* spectrum.fs */,
+				3E1532112119827A0086BBEE /* spectrum.vs */,
 				3E15320F211981F80086BBEE /* glad.c */,
 				3E153207211981CC0086BBEE /* main.cpp */,
 			);
