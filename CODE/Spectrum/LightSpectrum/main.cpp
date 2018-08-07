@@ -23,11 +23,6 @@ vector<float> vertices;    //用于存储pcm文件解析出的数据
 int istart=0;
 int n;       //记录pcm文件中数据个数
 
-int NUM=1000;  //一个圆周上分布频谱的个数
-float PI=3.1415926f;
-float R=0.6f;  //半径
-
-
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
 void drawLine();
@@ -217,13 +212,20 @@ void drawLine()
     
     //颜色随机设置
     float redValue = 0.0f;
-    float yellowValue = 1.0f;
+    float blueValue = 1.0f;
     
     for (int i=istart; i<2000+istart; i+=2) {
-        glUniform4f(0, redValue, 1.0f, yellowValue, 1.0f);
         
-        redValue=redValue+0.0005;
-        yellowValue=yellowValue-0.0005;
+        glUniform4f(0, redValue, 1.0f, blueValue, 1.0f);
+        
+        if (i<=1000+istart) {
+            redValue=redValue+0.002;
+            blueValue=blueValue-0.002;
+        }else{
+            redValue=redValue-0.002;
+            blueValue=blueValue+0.002;
+        }
+        
         
         glDrawArrays(GL_LINES, i, 2);
     }

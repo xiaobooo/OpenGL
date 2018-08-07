@@ -129,7 +129,8 @@ void drawSpectrum()
     glBegin(GL_LINES);
     
     float xstart=-1.0;
-    //testing-------------------------------------------------------------------------------------------------------------------
+
+    
     float redValue = 0.0f;
     float yellowValue = 1.0f;
     int k=0;
@@ -164,7 +165,7 @@ void drawSpectrum()
 void drawLine()
 {
     
-    glLineWidth(2);//设置线段宽度
+    glLineWidth(6);//设置线段宽度
     glBegin(GL_LINES);
     
     float temp = 0.0;
