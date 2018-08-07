@@ -22,11 +22,13 @@ using namespace std;
 vector<float> vertices;    //用于存储pcm文件解析出的数据
 int istart=0;
 int wstart=0;
+int pstart=0;
 int n;       //记录pcm文件中数据个数
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
 void drawLine();
+void drawPoint();
 void drawWave();
 
 // settings
@@ -102,7 +104,9 @@ int main()
     Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum2.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum2.0/spectrum.fs");
     
     float* arr = new float[6*n];
+    float* arr1 = new float[6*n];
     float* arr2 = new float[3*n];
+
     
     int i=0;
     float xstart=-1.0;
@@ -124,7 +128,27 @@ int main()
         }
         
     }
-    //波形，离散点频谱图数据存储
+    
+    //离散点频谱图数据存储
+    xstart=-1.0;
+    i=0;
+    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
+    {
+        arr1[i++]=xstart;
+        arr1[i++]=-*it-0.01;
+        arr1[i++]=0.0f;
+        
+        arr1[i++]=xstart;
+        arr1[i++]=*it+0.01;
+        arr1[i++]=0.0f;
+        
+        xstart=xstart+0.003;
+        if (xstart>1.0) {
+            xstart=-1.0;
+        }
+    }
+
+    //波形频谱图数据存储
     xstart=-1.0;
     i=0;
     for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
@@ -154,13 +178,28 @@ int main()
 
     glEnableVertexAttribArray(0);
     
-    //波形 离散型
-    unsigned int wpVAO,wpVBO;
-    glGenVertexArrays(1, &wpVAO);
-    glGenBuffers(1, &wpVBO);
+    //离散型
+    unsigned int pointVBO, pointVAO;
+    glGenVertexArrays(1, &pointVAO);
+    glGenBuffers(1, &pointVBO);
     
-    glBindVertexArray(wpVAO);
-    glBindBuffer(GL_ARRAY_BUFFER, wpVBO);
+    glBindVertexArray(pointVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, pointVBO);
+    
+    glBufferData(GL_ARRAY_BUFFER, 24*n, arr1, GL_STATIC_DRAW);
+    
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    
+    glEnableVertexAttribArray(0);
+
+    
+    //波形
+    unsigned int waveVAO,waveVBO;
+    glGenVertexArrays(1, &waveVAO);
+    glGenBuffers(1, &waveVBO);
+    
+    glBindVertexArray(waveVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, waveVBO);
     
     glBufferData(GL_ARRAY_BUFFER, 12*n, arr2, GL_STATIC_DRAW);
     
@@ -187,8 +226,12 @@ int main()
             drawLine();
         }
 
+        glBindVertexArray(pointVAO); // 激活VAO表示的顶点缓存
+        if (pstart<6*n) {   //到达终点之前每次绘制一帧的频谱图
+            drawPoint();
+        }
         
-        glBindVertexArray(wpVAO); // 激活VAO表示的顶点缓存
+        glBindVertexArray(waveVAO); // 激活VAO表示的顶点缓存
         if (wstart<3*n) {   //到达终点之前每次绘制一帧的频谱图
             drawWave();
         }
@@ -200,8 +243,8 @@ int main()
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
     
-    glDeleteVertexArrays(1, &wpVAO);
-    glDeleteBuffers(1, &wpVBO);
+    glDeleteVertexArrays(1, &waveVAO);
+    glDeleteBuffers(1, &waveVBO);
     
     glfwTerminate();
     return 0;
@@ -247,6 +290,19 @@ void drawLine()
     istart+=2000;
 }
 
+//绘制离散型频谱
+void drawPoint()
+{
+    
+    for (int i=pstart; i<1200+pstart; i++) {
+        
+        glUniform4f(0, 0.2f, 0.7f, 1.0f, 1.0f);
+        
+        glDrawArrays(GL_POINTS, i, 1);
+    }
+    
+    pstart+=1200;
+}
 //绘制波形频谱
 void drawWave()
 {
@@ -257,7 +313,7 @@ void drawWave()
     
     for (int i=wstart; i<2000+wstart; i++) {
         
-        glUniform4f(0, redValue, 1.0f, blueValue, 1.0f);
+        glUniform4f(0, redValue, blueValue, 1.0f, 1.0f);
         
         if (i<=500+wstart) {
             redValue=redValue+0.002;
@@ -267,7 +323,6 @@ void drawWave()
             blueValue=blueValue+0.002;
         }
         
-        glad_glLineWidth(5);
         glDrawArrays(GL_LINE_LOOP, i, 2);
     }
     
