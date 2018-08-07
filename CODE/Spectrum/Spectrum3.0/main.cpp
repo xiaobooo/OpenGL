@@ -101,7 +101,7 @@ int main()
     
     // 构建并编译着色器程序
     // ------------------------------------
-    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum2.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum2.0/spectrum.fs");
+    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum3.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum3.0/spectrum.fs");
     
     float* arr = new float[6*n];
     float* arr1 = new float[6*n];
@@ -243,6 +243,9 @@ int main()
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
     
+    glDeleteVertexArrays(1, &pointVAO);
+    glDeleteBuffers(1, &pointVBO);
+    
     glDeleteVertexArrays(1, &waveVAO);
     glDeleteBuffers(1, &waveVBO);
     
@@ -273,7 +276,7 @@ void drawLine()
     
     for (int i=istart; i<2000+istart; i+=2) {
         
-        glUniform4f(0, redValue, 1.0f, blueValue, 1.0f);
+        glUniform4f(0, redValue, 5.0f, blueValue, 1.0f);
         
         if (i<=1000+istart) {
             redValue=redValue+0.002;
@@ -295,7 +298,7 @@ void drawPoint()
     
     for (int i=pstart; i<800+pstart; i++) {
         
-        glUniform4f(0, 0.2f, 0.7f, 1.0f, 1.0f);
+        glUniform4f(0, 0.2f, 0.7f, 1.0f, 0.1f);
         
         glPointSize(3);
         glDrawArrays(GL_POINTS, i, 1);
