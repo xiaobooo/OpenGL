@@ -109,7 +109,7 @@ int main()
     for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
     {
         arr2[i++]=xstart;
-        arr2[i++]=-*it;
+        arr2[i++]=*it;
         arr2[i++]=0.0f;
         
         xstart=xstart+0.001;
@@ -156,9 +156,6 @@ int main()
         glfwPollEvents();
     }
     
-    glDeleteVertexArrays(1, &VAO);
-    glDeleteBuffers(1, &VBO);
-    
     glDeleteVertexArrays(1, &waveVAO);
     glDeleteBuffers(1, &waveVBO);
     
@@ -200,7 +197,7 @@ void drawWave()
         }
         
         //glLineWidth(8);
-        glPointSize(4);
+        glPointSize(5);
         glDrawArrays(GL_POINTS, i, 1);
     }
     
