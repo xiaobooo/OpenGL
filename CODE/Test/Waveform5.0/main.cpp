@@ -20,15 +20,12 @@
 using namespace std;
 
 vector<float> vertices;    //用于存储pcm文件解析出的数据
-int istart=0;
 int wstart=0;
-int pstart=0;
 int n;       //记录pcm文件中数据个数
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
-void drawLine();
-void drawPoint();
+
 void drawWave();
 
 // settings
