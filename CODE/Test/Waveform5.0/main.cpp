@@ -101,16 +101,13 @@ int main()
     // 构建并编译着色器程序
     // ------------------------------------
     Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Test/Waveform5.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Test/Waveform5.0/spectrum.fs");
-    
-    float* arr = new float[6*n];
-    float* arr1 = new float[6*n];
+
     float* arr2 = new float[3*n];
     
     
     int i=0;
     float xstart=-1.0;
     
-
     //波形频谱图数据存储
     for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
     {
