@@ -110,46 +110,8 @@ int main()
     int i=0;
     float xstart=-1.0;
     
-    //直线型频谱图数据存储
-    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
-    {
-        arr[i++]=xstart;     //圆上的点
-        arr[i++]=0.0f;
-        arr[i++]=0.0f;
-        
-        arr[i++]=xstart;     //由圆向外延伸的终点，表示频谱
-        arr[i++]=*it;
-        arr[i++]=0.0f;
-        
-        xstart=xstart+0.002;
-        if (xstart>1.0) {
-            xstart=-1.0;     //循环存储N个圆形频谱
-        }
-        
-    }
-    
-    //离散点频谱图数据存储
-    xstart=-1.0;
-    i=0;
-    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
-    {
-        arr1[i++]=xstart;
-        arr1[i++]=-*it-0.01;
-        arr1[i++]=0.0f;
-        
-        arr1[i++]=xstart;
-        arr1[i++]=*it+0.01;
-        arr1[i++]=0.0f;
-        
-        xstart=xstart+0.005;
-        if (xstart>1.0) {
-            xstart=-1.0;
-        }
-    }
-    
+
     //波形频谱图数据存储
-    xstart=-1.0;
-    i=0;
     for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
     {
         arr2[i++]=xstart;
@@ -162,35 +124,6 @@ int main()
         }
         
     }
-    
-    //直线型
-    unsigned int VBO, VAO;
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
-    
-    glBindVertexArray(VAO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    
-    glBufferData(GL_ARRAY_BUFFER, 24*n, arr, GL_STATIC_DRAW);
-    
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-    
-    glEnableVertexAttribArray(0);
-    
-    //离散型
-    unsigned int pointVBO, pointVAO;
-    glGenVertexArrays(1, &pointVAO);
-    glGenBuffers(1, &pointVBO);
-    
-    glBindVertexArray(pointVAO);
-    glBindBuffer(GL_ARRAY_BUFFER, pointVBO);
-    
-    glBufferData(GL_ARRAY_BUFFER, 24*n, arr1, GL_STATIC_DRAW);
-    
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-    
-    glEnableVertexAttribArray(0);
-    
     
     //波形
     unsigned int waveVAO,waveVBO;
@@ -219,16 +152,6 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
         
         ourShader.use();
-        
-        glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
-        if (istart<6*n) {   //到达终点之前每次绘制一帧的频谱图
-            drawLine();
-        }
-        
-        glBindVertexArray(pointVAO); // 激活VAO表示的顶点缓存
-        if (pstart<6*n) {   //到达终点之前每次绘制一帧的频谱图
-            drawPoint();
-        }
         
         glBindVertexArray(waveVAO); // 激活VAO表示的顶点缓存
         if (wstart<3*n) {   //到达终点之前每次绘制一帧的频谱图
