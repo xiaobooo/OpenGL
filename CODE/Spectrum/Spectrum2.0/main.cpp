@@ -142,7 +142,7 @@ int main()
         arr1[i++]=*it+0.01;
         arr1[i++]=0.0f;
         
-        xstart=xstart+0.003;
+        xstart=xstart+0.005;
         if (xstart>1.0) {
             xstart=-1.0;
         }
@@ -293,19 +293,19 @@ void drawLine()
 void drawPoint()
 {
     
-    for (int i=pstart; i<1200+pstart; i++) {
+    for (int i=pstart; i<800+pstart; i++) {
         
         glUniform4f(0, 0.2f, 0.7f, 1.0f, 1.0f);
         
+        glPointSize(3);
         glDrawArrays(GL_POINTS, i, 1);
     }
     
-    pstart+=1200;
+    pstart+=800;
 }
 //绘制波形频谱
 void drawWave()
 {
-    
     //颜色随机设置
     float redValue = 0.0f;
     float blueValue = 1.0f;
@@ -321,9 +321,10 @@ void drawWave()
             redValue=redValue-0.002;
             blueValue=blueValue+0.002;
         }
-        
-        glLineWidth(0.8);
-        glDrawArrays(GL_LINES, i, 2);
+
+        //glLineWidth(8);
+        glPointSize(4);
+        glDrawArrays(GL_POINTS, i, 1);
     }
     
     wstart+=2000;
