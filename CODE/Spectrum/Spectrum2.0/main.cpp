@@ -283,7 +283,6 @@ void drawLine()
             blueValue=blueValue+0.002;
         }
         
-        
         glDrawArrays(GL_LINES, i, 2);
     }
     
@@ -323,7 +322,8 @@ void drawWave()
             blueValue=blueValue+0.002;
         }
         
-        glDrawArrays(GL_LINE_LOOP, i, 2);
+        glLineWidth(0.8);
+        glDrawArrays(GL_LINES, i, 2);
     }
     
     wstart+=2000;
