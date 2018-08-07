@@ -106,8 +106,6 @@
 		3E1530C9210EA1250086BBEE /* libglfw.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.dylib; path = ../../../../CODE/OpenGL/libglfw.dylib; sourceTree = "<group>"; };
 		3E1530CE210EA2410086BBEE /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		3E1530D0210EA24A0086BBEE /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
-		3E1530D2210EA2890086BBEE /* spectrum.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.fs; sourceTree = "<group>"; };
-		3E1530D3210EA2890086BBEE /* spectrum.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.vs; sourceTree = "<group>"; };
 		3E153144211153840086BBEE /* LightSpectrum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LightSpectrum; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E153146211153840086BBEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E15314E2111541B0086BBEE /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
@@ -130,6 +128,10 @@
 		3E15320F211981F80086BBEE /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		3E1532112119827A0086BBEE /* spectrum.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.vs; sourceTree = "<group>"; };
 		3E1532122119827A0086BBEE /* spectrum.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.fs; sourceTree = "<group>"; };
+		3E1532192119BE910086BBEE /* lamp.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lamp.vs; sourceTree = "<group>"; };
+		3E15321A2119BE910086BBEE /* lamp.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lamp.fs; sourceTree = "<group>"; };
+		3E15321B2119BF000086BBEE /* spectrum.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.fs; sourceTree = "<group>"; };
+		3E15321C2119BF000086BBEE /* spectrum.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.vs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,8 +237,10 @@
 		3E1530BE210EA0EF0086BBEE /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				3E1530D2210EA2890086BBEE /* spectrum.fs */,
-				3E1530D3210EA2890086BBEE /* spectrum.vs */,
+				3E15321B2119BF000086BBEE /* spectrum.fs */,
+				3E15321C2119BF000086BBEE /* spectrum.vs */,
+				3E15321A2119BE910086BBEE /* lamp.fs */,
+				3E1532192119BE910086BBEE /* lamp.vs */,
 				3E1530CE210EA2410086BBEE /* glad.c */,
 				3E1530BF210EA0EF0086BBEE /* main.cpp */,
 			);

@@ -28,7 +28,7 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 // camera
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera camera(glm::vec3(0.0f, 0.0f, 1.0f));
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -38,7 +38,7 @@ float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
 // lighting
-glm::vec3 lightPos(1.0f, 1.0f, 1.0f);
+glm::vec3 lightPos(0.0f, 2.0f, 0.0f);
 
 int main()
 {
@@ -85,7 +85,6 @@ int main()
     // build and compile our shader zprogram
     // ------------------------------------
     Shader lightingShader("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/Material/3.1.materials.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/Material/3.1.materials.fs");
-    Shader lampShader("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/Material/3.1.lamp.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/Material/3.1.lamp.fs");
     
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -150,17 +149,6 @@ int main()
     glEnableVertexAttribArray(1);
     
     
-    // second, configure the light's VAO (VBO stays the same; the vertices are the same for the light object which is also a 3D cube)
-    unsigned int lightVAO;
-    glGenVertexArrays(1, &lightVAO);
-    glBindVertexArray(lightVAO);
-    
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    // note that we update the lamp's position attribute's stride to reflect the updated buffer data
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-    
-    
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window))
@@ -217,17 +205,6 @@ int main()
         glDrawArrays(GL_TRIANGLES, 0, 36);
         
         
-        // also draw the lamp object
-        lampShader.use();
-        lampShader.setMat4("projection", projection);
-        lampShader.setMat4("view", view);
-        model = glm::mat4();
-        model = glm::translate(model, lightPos);
-        model = glm::scale(model, glm::vec3(0.2f)); // a smaller cube
-        lampShader.setMat4("model", model);
-        
-        glBindVertexArray(lightVAO);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
         
         
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
@@ -239,7 +216,6 @@ int main()
     // optional: de-allocate all resources once they've outlived their purpose:
     // ------------------------------------------------------------------------
     glDeleteVertexArrays(1, &cubeVAO);
-    glDeleteVertexArrays(1, &lightVAO);
     glDeleteBuffers(1, &VBO);
     
     // glfw: terminate, clearing all previously allocated GLFW resources.

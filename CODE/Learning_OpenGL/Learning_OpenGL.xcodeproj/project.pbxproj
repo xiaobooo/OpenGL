@@ -176,8 +176,6 @@
 		3E15311C2110371F0086BBEE /* Material */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Material; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E15311E2110371F0086BBEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E153126211037460086BBEE /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
-		3E153128211038380086BBEE /* 3.1.lamp.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 3.1.lamp.fs; sourceTree = "<group>"; };
-		3E153129211038380086BBEE /* 3.1.lamp.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 3.1.lamp.vs; sourceTree = "<group>"; };
 		3E15312A211038380086BBEE /* 3.1.materials.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 3.1.materials.fs; sourceTree = "<group>"; };
 		3E15312B211038380086BBEE /* 3.1.materials.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 3.1.materials.vs; sourceTree = "<group>"; };
 		3E153130211052030086BBEE /* LightMapping */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LightMapping; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -411,8 +409,6 @@
 		3E15311D2110371F0086BBEE /* Material */ = {
 			isa = PBXGroup;
 			children = (
-				3E153128211038380086BBEE /* 3.1.lamp.fs */,
-				3E153129211038380086BBEE /* 3.1.lamp.vs */,
 				3E15312A211038380086BBEE /* 3.1.materials.fs */,
 				3E15312B211038380086BBEE /* 3.1.materials.vs */,
 				3E153126211037460086BBEE /* glad.c */,
