@@ -37,7 +37,7 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 800;
 
 // camera
-Camera camera(glm::vec3(1.0f, 1.0f, 3.0f));
+Camera camera(glm::vec3(0.0f, 0.0f, 2.0f));
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -131,7 +131,7 @@ int main()
      
     // 构建并编译着色器程序
 
-     Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/lamp.vs","/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/lamp.fs");
+     Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/colors.vs","/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/colors.fs");
     Shader lampShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/lamp.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/LightSpectrum2.0/lamp.fs");
     // 设置顶点数据（和缓冲区）并配置顶点属性
     // ------------------------------------------------------------------
