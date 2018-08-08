@@ -37,7 +37,7 @@ float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
 // lighting
-glm::vec3 lightPos(0.0f, 0.0f, 1.0f);
+glm::vec3 lightPos(1.0f, 1.0f, 1.0f);
 
 int main()
 {
@@ -198,7 +198,7 @@ int main()
         
         // render the cube
         glBindVertexArray(cubeVAO);
-        glDrawArrays(GL_LINE_LOOP, 0, 36);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
         
         
         // also draw the lamp object
