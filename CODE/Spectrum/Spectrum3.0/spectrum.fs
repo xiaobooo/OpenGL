@@ -1,52 +1,112 @@
 #version 330 core
+
 out vec4 FragColor;
 
-uniform vec4 ourColor; // 在OpenGL程序代码中设定这个变量
+uniform vec4 ourColor;
 
-struct Material {
-    vec3 ambient;
-    vec3 diffuse;
-    vec3 specular;
-    float shininess;
-};
+uniform sampler2D tex;
+uniform float u_hue;
+uniform float u_saturation;
+uniform float u_value;
+uniform float u_contrast;
 
-struct Light {
-    vec3 position;
-    
-    vec3 ambient;
-    vec3 diffuse;
-    vec3 specular;
-};
-
-in vec3 FragPos;
-in vec3 Normal;
-
-uniform vec3 viewPos;
-uniform Material material;
-uniform Light light;
-
+vec3 rgbtohsv(vec3 rgb)
+{
+    float R = rgb.x;
+    float G = rgb.y;
+    float B = rgb.z;
+    vec3 hsv;
+    float max1 = max(R, max(G, B));
+    float min1 = min(R, min(G, B));
+    if (R == max1)
+    {
+        hsv.x = (G - B) / (max1 - min1);
+    }
+    if (G == max1)
+    {
+        hsv.x = 2.0 + (B - R) / (max1 - min1);
+    }
+    if (B == max1)
+    {
+        hsv.x = 4.0 + (R - G) / (max1 - min1);
+    }
+    hsv.x = hsv.x * 60.0;
+    if (hsv.x < 0.0)
+    {
+        hsv.x = hsv.x + 360.0;
+    }
+    hsv.z = max1;
+    hsv.y = (max1 - min1) / max1;
+    return hsv;
+}
+vec3 hsvtorgb(vec3 hsv)
+{
+    float R;
+    float G;
+    float B;
+    if (hsv.y == 0.0)
+    {
+        R = G = B = hsv.z;
+    }
+    else
+    {
+        hsv.x = hsv.x / 60.0;
+        int i = int(hsv.x);
+        float f = hsv.x - float(i);
+        float a = hsv.z * (1.0 - hsv.y);
+        float b = hsv.z * (1.0 - hsv.y * f);
+        float c = hsv.z * (1.0 - hsv.y * (1.0 - f));
+        if (i == 0)
+        {
+            R = hsv.z;
+            G = c;
+            B = a;
+        }
+        else if (i == 1)
+        {
+            R = b;
+            G = hsv.z;
+            B = a;
+        }
+        else if (i == 2)
+        {
+            R = a;
+            G = hsv.z;
+            B = c;
+        }
+        else if (i == 3)
+        {
+            R = a;
+            G = b;
+            B = hsv.z;
+        }
+        else if (i == 4)
+        {
+            R = c;
+            G = a;
+            B = hsv.z;
+        }
+        else
+        {
+            R = hsv.z;
+            G = a;
+            B = b;
+        }
+    }
+    return vec3(R, G, B);
+}
 void main()
 {
-    // ambient
-    vec3 ambient = light.ambient * material.ambient;
+    vec4 pixColor = ourColor;
+    vec3 hsv;
+    hsv.xyz = rgbtohsv(pixColor.rgb);
+    hsv.x += u_hue;
+    hsv.x = mod(hsv.x, 360.0);
+    hsv.y *= u_saturation;
+    hsv.z *= u_value;
+    vec3 f_color = hsvtorgb(hsv);
+    f_color = ((f_color - 0.5) * max(u_contrast+1.0, 0.0)) + 0.5;
     
-    // diffuse
-    vec3 norm = normalize(Normal);
-    vec3 lightDir = normalize(light.position - FragPos);
-    float diff = max(dot(norm, lightDir), 0.0);
-    vec3 diffuse = light.diffuse * (diff * material.diffuse);
-    
-    // specular
-    vec3 viewDir = normalize(viewPos - FragPos);
-    vec3 reflectDir = reflect(-lightDir, norm);
-    float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
-    vec3 specular = light.specular * (spec * material.specular);
-    
-    vec3 result = ambient + diffuse + specular;
-    
-    //FragColor =vec4(result, 1.0);
-    
-    FragColor = ourColor;
+    gl_FragColor = gl_Color * vec4(f_color, pixColor.a);
 }
-
 
