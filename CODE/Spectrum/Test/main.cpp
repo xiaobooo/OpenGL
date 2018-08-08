@@ -6,7 +6,6 @@
 //  Copyright © 2018年 boone. All rights reserved.
 //
 
-
 #define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"     //PCM源文件
 
 #include <glad/glad.h>
@@ -47,7 +46,7 @@ float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
 // lighting
-glm::vec3 lightPos(0.0f, 0.0f, 1.0f);
+glm::vec3 lightPos(0.0f, 0.0f, -0.1f);
 
 //draw
 vector<float> vertices;    //用于存储pcm文件解析出的数据
@@ -244,7 +243,7 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
         ourShader.use();
-        ourShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
+        ourShader.setVec3("objectColor", 1.0f, 0.0f, 0.0f);
         ourShader.setVec3("lightColor",  1.0f, 1.0f, 1.0f);
         
         // view/projection transformations

@@ -1,11 +1,10 @@
 //
 //  main.cpp
-//  Learning_OpenGL
+//  Base_Light2.0
 //
-//  Created by boone on 2018/7/30.
+//  Created by boone on 2018/8/8.
 //  Copyright © 2018年 boone. All rights reserved.
 //
-
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -38,7 +37,7 @@ float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
 // lighting
-glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+glm::vec3 lightPos(0.0f, 0.0f, 1.0f);
 
 int main()
 {
@@ -84,8 +83,8 @@ int main()
     
     // build and compile our shader zprogram
     // ------------------------------------
-    Shader lightingShader("2.2.basic_lighting.vs", "2.2.basic_lighting.fs");
-    Shader lampShader("2.2.lamp.vs", "2.2.lamp.fs");
+    Shader lightingShader("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/Base_Light2.0/2.2.basic_lighting.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/Base_Light2.0/2.2.basic_lighting.fs");
+    Shader lampShader("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/Base_Light2.0/2.2.lamp.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/Base_Light2.0/2.2.lamp.fs");
     
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -182,7 +181,7 @@ int main()
         
         // be sure to activate shader when setting uniforms/drawing objects
         lightingShader.use();
-        lightingShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
+        lightingShader.setVec3("objectColor", 1.0f, 0.0f, 0.0f);
         lightingShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
         lightingShader.setVec3("lightPos", lightPos);
         lightingShader.setVec3("viewPos", camera.Position);
@@ -199,7 +198,7 @@ int main()
         
         // render the cube
         glBindVertexArray(cubeVAO);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
+        glDrawArrays(GL_LINE_LOOP, 0, 36);
         
         
         // also draw the lamp object
