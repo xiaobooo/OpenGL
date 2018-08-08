@@ -4,10 +4,10 @@ out vec4 FragColor;
 
 uniform vec4 ourColor;
 
-uniform float u_hue;
-uniform float u_saturation;
-uniform float u_value;
-uniform float u_contrast;
+uniform float u_hue=240.0;
+uniform float u_saturation=1.0;
+uniform float u_value=1.2;
+uniform float u_contrast=0.0;
 
 vec3 rgbtohsv(vec3 rgb)
 {
@@ -107,8 +107,8 @@ void main()
     vec3 f_color = hsvtorgb(hsv);
     f_color = ((f_color - 0.5) * max(u_contrast+1.0, 0.0)) + 0.5;
     
-  //  FragColor = vec4(f_color, pixColor.a);
+    FragColor = vec4(f_color, pixColor.a);
     
-    FragColor = ourColor*vec4(1.0,1.0,1.0,0.5);
+    //FragColor = ourColor*vec4(1.0,1.0,1.0,0.5);
 }
 
