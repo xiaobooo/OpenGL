@@ -4,7 +4,6 @@ out vec4 FragColor;
 
 uniform vec4 ourColor;
 
-uniform sampler2D tex;
 uniform float u_hue;
 uniform float u_saturation;
 uniform float u_value;
@@ -97,6 +96,7 @@ vec3 hsvtorgb(vec3 hsv)
 }
 void main()
 {
+    
     vec4 pixColor = ourColor;
     vec3 hsv;
     hsv.xyz = rgbtohsv(pixColor.rgb);
@@ -107,6 +107,8 @@ void main()
     vec3 f_color = hsvtorgb(hsv);
     f_color = ((f_color - 0.5) * max(u_contrast+1.0, 0.0)) + 0.5;
     
-    gl_FragColor = gl_Color * vec4(f_color, pixColor.a);
+  //  FragColor = vec4(f_color, pixColor.a);
+    
+    FragColor = ourColor*vec4(1.0,1.0,1.0,0.5);
 }
 
