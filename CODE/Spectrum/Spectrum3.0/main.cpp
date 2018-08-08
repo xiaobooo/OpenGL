@@ -322,7 +322,7 @@ void drawWave()
             blueValue=blueValue+0.002;
         }
         
-        //glLineWidth(8);
+        //glLineWidth(8); 
         glPointSize(4);
         glDrawArrays(GL_POINTS, i, 1);
     }
