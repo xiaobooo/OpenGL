@@ -76,14 +76,13 @@ void fileOutput()
         }
         
         double float_data = (double)(data_complement/(double)32768);
-        //printf("%f ", float_data);
+        printf("%f ", float_data);
         vertices.push_back(float_data);
         
     }
     fs.close();
     
     delete[] WAV.data;
-    system("pause");
 }
 
 int main()
@@ -149,6 +148,7 @@ int main()
         if (xstart>1.0) {
             xstart=-1.0;     //循环存储N个圆形频谱
         }
+        cout<<*it<<" ";
         
     }
     
