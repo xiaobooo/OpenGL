@@ -46,30 +46,6 @@ const unsigned int SCR_HEIGHT = 800;
 //PCM文件数据解码保存到数组中
 void fileOutput()
 {
-    short pcm_In = 0;
-    int size = 0;
-    FILE *fp = fopen(OLD_FILE_PATH, "rb+");     //为读写打开一个二进制文件 即pcm文件
-    
-    int i=0;
-    while(!feof(fp))
-    {
-        size = fread(&pcm_In, 2, 1, fp);     //pcm中每个数据大小为2字节，每次读取1个数据
-        if(size>0)
-        {
-            //-------------------------------------------------------------------------------------------------------------------------
-            if(pcm_In<0){
-                pcm_In=-pcm_In;
-            }
-            vertices.push_back((float)pcm_In/30000);
-        }
-        i++;
-    }
-    
-    n=i;
-    // cout<<"数据个数： "<<n<<endl;
-    
-    fclose(fp);
-    
     fstream fs;
     wav_struct WAV;
     
