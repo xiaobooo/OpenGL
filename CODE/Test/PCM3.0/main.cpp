@@ -8,11 +8,6 @@
 
 #include <iostream>
 #include <fstream>
-#include <string.h>
-#include<cmath>
-#include<stdlib.h>
-#include <bitset>
-#include <iomanip>
 
 using namespace std;
 
