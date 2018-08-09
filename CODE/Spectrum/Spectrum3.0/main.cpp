@@ -58,7 +58,7 @@ void fileOutput()
     }
     
     n=i;
-    //    cout<<"数据个数： "<<n<<endl;
+       // cout<<"数据个数： "<<n<<endl; 
     
     fclose(fp);
 }
@@ -306,7 +306,7 @@ void drawPoint()
 //绘制波形频谱
 void drawWave()
 {
-    //颜色随机设置 
+    //颜色随机设置
     float redValue = 0.0f;
     float blueValue = 1.0f;
     

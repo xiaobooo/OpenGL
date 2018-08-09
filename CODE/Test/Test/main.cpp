@@ -5,221 +5,70 @@
 //  Created by boone on 2018/7/18.
 //  Copyright © 2018年 boone. All rights reserved.
 //
-#define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"     //PCM源文件
-
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include <stb_image.h>
-
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
-
-#include <learnopengl/shader_m.h>
-
 #include <iostream>
-#include <vector>
-#include <cmath>
-#include <unistd.h>
-
+#include <fstream>
 using namespace std;
 
-vector<float> vertices;    //用于存储pcm文件解析出的数据
-int istart=0;
-int n;       //记录pcm文件中数据个数
-
-int NUM=1000;  //一个圆周上分布频谱的个数
-float PI=3.1415926f;
-float R=0.3f;  //半径
-
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void processInput(GLFWwindow *window);
-void drawLine();
-
-// settings
-const unsigned int SCR_WIDTH = 800;
-const unsigned int SCR_HEIGHT = 800;
-
-//PCM文件数据解码保存到数组中
-void fileOutput()
+struct wav_struct
 {
-    short pcm_In = 0;
-    int size = 0;
-    FILE *fp = fopen(OLD_FILE_PATH, "rb+");     //为读写打开一个二进制文件 即pcm文件
+    unsigned long file_size;        //文件大小
+    unsigned short channel;            //通道数
+    unsigned long frequency;        //采样频率
+    unsigned long Bps;                //Byte率
+    unsigned short sample_num_bit;    //一个样本的位数
+    unsigned long data_size;        //数据大小
+    unsigned char *data;            //音频数据 ,这里要定义什么就看样本位数了，我这里只是单纯的复制数据
     
-    int i=0;
-    while(!feof(fp))
-    {
-        size = fread(&pcm_In, 2, 1, fp);     //pcm中每个数据大小为2字节，每次读取1个数据
-        if(size>0)
-        {
-            //-------------------------------------------------------------------------------------------------------------------------
-            if(pcm_In<0){
-                pcm_In=-pcm_In;
-            }
-            vertices.push_back((float)pcm_In/30000);
-        }
-        i++;
-    }
-    
-    n=i;
-    //    cout<<"数据个数： "<<n<<endl;
-    
-    fclose(fp);
-}
+};
 
-int main()
+int main(int argc,char **argv)
 {
-    fileOutput();
+    fstream fs;
+    wav_struct WAV;
+    fs.open("/Users/boone/Desktop/Music/Seve.wav",ios::binary|ios::in);
     
-    // glfw: 初始化并配置
-    // ------------------------------
-    glfwInit();
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    //    fs.seekg(0x04);                //从文件数据中获取文件大小
+    //    fs.read((char*)&WAV.file_size,sizeof(WAV.file_size));
+    //    WAV.file_size+=8;
     
-#ifdef __APPLE__
-    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // ！！！for OS X   没有此行报错为 not support version 330
-#endif
+    fs.seekg(0,ios::end);        //用c++常用方法获得文件大小
+    WAV.file_size=fs.tellg();
     
-    // glfw 创建窗口
-    // --------------------
-    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Music Circular Spectrum", NULL, NULL);
-    if (window == NULL)
+    fs.seekg(0x14);
+    fs.read((char*)&WAV.channel,sizeof(WAV.channel));
+    
+    fs.seekg(0x18);
+    fs.read((char*)&WAV.frequency,sizeof(WAV.frequency));
+    
+    fs.seekg(0x1c);
+    fs.read((char*)&WAV.Bps,sizeof(WAV.Bps));
+    
+    fs.seekg(0x22);
+    fs.read((char*)&WAV.sample_num_bit,sizeof(WAV.sample_num_bit));
+    
+    fs.seekg(0x28);
+    fs.read((char*)&WAV.data_size,sizeof(WAV.data_size));
+    
+    WAV.data=new unsigned char[WAV.data_size];
+    
+    fs.seekg(0x2c);
+    fs.read((char *)WAV.data,sizeof(char)*WAV.data_size);
+    
+    cout<<"文件大小为  ："<<WAV.file_size<<endl;
+    cout<<"音频通道数  ："<<WAV.channel<<endl;
+    cout<<"采样频率    ："<<WAV.frequency<<endl;
+    cout<<"Byte率      ："<<WAV.Bps<<endl;
+    cout<<"样本位数    ："<<WAV.sample_num_bit<<endl;
+    cout<<"音频数据大小："<<WAV.data_size<<endl;
+    cout<<"最后20个数据："<<endl;
+    
+    for (unsigned long i=WAV.data_size-20;i<WAV.data_size;i++)
     {
-        std::cout << "Failed to create GLFW window" << std::endl;
-        glfwTerminate();
-        return -1;
+        printf("%x  ",WAV.data[i]);
     }
-    glfwMakeContextCurrent(window);
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    fs.close();
     
-    // glad: 家在所有OpenGL函数指针
-    // ---------------------------------------
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
-        std::cout << "Failed to initialize GLAD" << std::endl;
-        return -1;
-    }
-    // 构建并编译着色器程序
-    // ------------------------------------
-    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Test/Test/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Test/Test/spectrum.fs");
+    delete[] WAV.data;
+    system("pause");
     
-    // 设置顶点数据（和缓冲区）并配置顶点属性
-    // ------------------------------------------------------------------
-    float* arr = new float[6*n];
-    
-    int i=0;
-    int j=0;
-    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
-    {
-        if (R<1.0) {
-            R=R+0.003f;
-        }else{
-            R=0.3;
-        }
-        arr[i++]=R*cos(2*PI/NUM*j);     //圆上的点
-        arr[i++]=R*sin(2*PI/NUM*j);
-        arr[i++]=0.0f;
-        
-        arr[i++]=R*cos(2*PI/NUM*j);     //由圆向外延伸的终点，表示频谱
-        arr[i++]=R*sin(2*PI/NUM*j)+*it;
-        arr[i++]=0.0f;
-        
-        j++;
-        if (j>NUM) {
-            j=0;     //循环存储N个圆形频谱
-        }
-    }
-    
-    unsigned int VBO, VAO;
-
-    glGenVertexArrays(1, &VAO);
-    // glGenBuffers() 创建一个缓存对象并且返回缓存对象的标示符。
-    glGenBuffers(1, &VBO);
-    
-    // 顶点对象创建之后，在使用缓存对象之前，需要将缓存对象连接到相应的缓存上。
-    glBindVertexArray(VAO);
-    // glBindBuffer()有2个参数：target与buffer
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
-    glBufferData(GL_ARRAY_BUFFER, 24*n, arr, GL_STATIC_DRAW);
-
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-    
-    //以顶点属性位置值作为参数，启用顶点属性；顶点属性默认是禁用的
-    glEnableVertexAttribArray(0);
-    
-    //解绑缓存着色器
-    //glBindBuffer(GL_ARRAY_BUFFER, 0);
-    // 解绑顶点着色器，绑定和解绑的顺序很重要！！！
-    glBindVertexArray(VAO);
-    
-    // 循环渲染
-    // -----------
-    while (!glfwWindowShouldClose(window))
-    {
-        processInput(window);
-        
-        // 渲染
-        // ------
-        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
-        
-        // 频谱图绘制
-        ourShader.use();    //启用着色器程序
-        
-        glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
-        if (istart<6*n) {   //到达终点之前每次绘制一帧的频谱图
-            drawLine();
-        }
-        
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
-    
-    // 绘制完成后释放资源
-    // ------------------------------------------------------------------------
-    glDeleteVertexArrays(1, &VAO);
-    glDeleteBuffers(1, &VBO);
-    
-    // glfw: 清除先前分配的所有GLFW资源
-    // ------------------------------------------------------------------
-    glfwTerminate();
-    return 0;
-}
-
-void processInput(GLFWwindow *window)
-{
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
-}
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-    glViewport(0, 0, width, height);
-}
-//绘制频谱
-void drawLine()
-{
-    usleep(99900);   //通过延时实现频谱的显示频率
-    
-    //颜色随机设置
-    float redValue = 0.0f;
-    float yellowValue = 1.0f;
-    
-    for (int i=istart; i<2000+istart; i=i+2) {
-        glUniform4f(0, redValue, 1.0f, yellowValue, 1.0f);
-        
-        if (i<=1000+istart) {
-            redValue=redValue+0.002;
-            yellowValue=yellowValue-0.002;
-        }else{
-            redValue=redValue-0.002;
-            yellowValue=yellowValue+0.002;
-        }
-        glDrawArrays(GL_LINES, i, 2);
-    }
-    
-    istart+=2000;
 }
