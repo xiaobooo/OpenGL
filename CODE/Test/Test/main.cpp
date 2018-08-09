@@ -75,7 +75,6 @@ void fileOutput()
             data_complement = data_true;
         }
         
-        setprecision(4);
         double float_data = (double)(data_complement/(double)32768);
         //printf("%f ", float_data);
         vertices.push_back(float_data);
