@@ -78,27 +78,6 @@ void fileOutput()
     
     fs.open("/Users/boone/Desktop/Music/Seve.wav", ios::binary | ios::in);
     
-    fs.seekg(0, ios::end);        //用c++常用方法获得文件大小
-    WAV.file_size = fs.tellg();
-    
-    fs.seekg(0x14);
-    fs.read((char*)&WAV.channel, sizeof(WAV.channel));
-    
-    fs.seekg(0x18);
-    fs.read((char*)&WAV.frequency, sizeof(WAV.frequency));
-    
-    fs.seekg(0x1c);
-    fs.read((char*)&WAV.Bps, sizeof(WAV.Bps));
-    
-    fs.seekg(0x22);
-    fs.read((char*)&WAV.sample_num_bit, sizeof(WAV.sample_num_bit));
-    
-    fs.seekg(0x28);
-    fs.read((char*)&WAV.data_size, sizeof(WAV.data_size));
-    
-    WAV.data = new unsigned char[WAV.data_size];
-    
-    
     fs.seekg(0x2c);
     fs.read((char *)WAV.data, sizeof(char)*WAV.data_size);
     
