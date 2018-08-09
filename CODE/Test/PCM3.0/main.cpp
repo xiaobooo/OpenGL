@@ -20,7 +20,7 @@ struct wav_struct
     unsigned long Bps;                //Byte率
     unsigned short sample_num_bit;    //一个样本的位数
     unsigned long data_size;        //数据大小
-    unsigned char *data;            //音频数据 ,这里要定义什么就看样本位数了，我这里只是单纯的复制数据
+    unsigned char *data;            //音频数据 
 };
 
 int main(int argc, char **argv)
