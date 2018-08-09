@@ -101,7 +101,7 @@ int main()
     
     // 构建并编译着色器程序
     // ------------------------------------
-    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum3.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum3.0/spectrum.fs");
+    Shader ourShader("", "");
     
     float* arr = new float[6*n];
     float* arr1 = new float[6*n];
