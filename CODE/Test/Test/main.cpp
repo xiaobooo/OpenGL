@@ -102,14 +102,6 @@ void fileOutput()
     fs.seekg(0x2c);
     fs.read((char *)WAV.data, sizeof(char)*WAV.data_size);
     
-    cout << "文件大小为  ：" << WAV.file_size << endl;
-    cout << "音频通道数  ：" << WAV.channel << endl;
-    cout << "采样频率    ：" << WAV.frequency << endl;
-    cout << "Byte率      ：" << WAV.Bps << endl;
-    cout << "样本位数    ：" << WAV.sample_num_bit << endl;
-    cout << "音频数据大小：" << WAV.data_size << endl;
-    cout << "最后10个数据：" << endl;
-    
     for (unsigned long i =0; i<WAV.data_size; i = i + 2)
     {
         //右边为大端
