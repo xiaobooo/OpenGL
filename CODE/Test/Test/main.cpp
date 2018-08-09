@@ -5,9 +5,6 @@
 //  Created by boone on 2018/7/18.
 //  Copyright © 2018年 boone. All rights reserved.
 //
-
-#define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"     //PCM源文件
-
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <learnopengl/shader.h>
