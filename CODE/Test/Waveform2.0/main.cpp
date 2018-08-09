@@ -44,9 +44,9 @@ void drawLint()
             xend=xstart+0.0000001;
             
             //-------------------------------------------------------------------------------------------------------------------------
-            yend=(float)pcm_In/30000;       //short类型除以一个数要么是0要么是大于一的整数，所以坐标变换要注意先转为float
+            yend=(float)pcm_In/32768;       //short类型除以一个数要么是0要么是大于一的整数，所以坐标变换要注意先转为float
             
-            cout<<pcm_In<<" ";
+            printf("%f ",yend);
             //绘制折线
             glVertex2f(xstart,ystart);
             glVertex2f(xend,yend);

@@ -1,6 +1,6 @@
 //
 //  main.cpp
-//  PCM3.0
+//  PCM3.0    解码效率低 卡顿十分严重
 //
 //  Created by boone on 2018/8/9.
 //  Copyright © 2018年 boone. All rights reserved.

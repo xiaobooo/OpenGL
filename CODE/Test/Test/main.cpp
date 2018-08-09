@@ -51,6 +51,11 @@ void fileOutput()
     
     fs.open("/Users/boone/Desktop/Music/Seve.wav", ios::binary | ios::in);
     
+    fs.seekg(0x28);
+    fs.read((char*)&WAV.data_size, sizeof(WAV.data_size));
+    
+    WAV.data = new unsigned char[WAV.data_size];
+
     fs.seekg(0x2c);
     fs.read((char *)WAV.data, sizeof(char)*WAV.data_size);
     
@@ -76,7 +81,7 @@ void fileOutput()
         }
         
         double float_data = (double)(data_complement/(double)32768);
-        printf("%f ", float_data);
+        //printf("%f ", float_data);
         vertices.push_back(float_data);
         
     }
@@ -148,7 +153,6 @@ int main()
         if (xstart>1.0) {
             xstart=-1.0;     //循环存储N个圆形频谱
         }
-        cout<<*it<<" ";
         
     }
     
@@ -288,7 +292,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 //绘制频谱
 void drawLine()
 {
-    usleep(99900);   //通过延时实现频谱的显示频率
+  //  usleep(99900);   //通过延时实现频谱的显示频率
     
     //颜色随机设置
     float redValue = 0.0f;

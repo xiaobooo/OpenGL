@@ -568,6 +568,7 @@
 		3E3C2FC420F35B68001D1341 /* Waveform3.0 */ = {
 			isa = PBXGroup;
 			children = (
+				3E1530882109A1E80086BBEE /* 3D_Circular2.0 */,
 				3E3C2FC520F35B68001D1341 /* main.cpp */,
 			);
 			path = Waveform3.0;
@@ -619,7 +620,6 @@
 				3E1530252105B1500086BBEE /* Circular */,
 				3E15306021070FE70086BBEE /* Circular2.0 */,
 				3E153076210864040086BBEE /* 3D_Circular */,
-				3E1530882109A1E80086BBEE /* 3D_Circular2.0 */,
 				3ED6BD5020E5D96100F158A2 /* Products */,
 				3E3C2E5820E9B73A001D1341 /* Frameworks */,
 			);
