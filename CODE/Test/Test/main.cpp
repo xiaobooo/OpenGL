@@ -54,6 +54,8 @@ void fileOutput()
     fs.seekg(0x2c);
     fs.read((char *)WAV.data, sizeof(char)*WAV.data_size);
     
+    n=WAV.data_size;
+    
     for (unsigned long i =0; i<WAV.data_size; i = i + 2)
     {
         //右边为大端
