@@ -8,14 +8,15 @@
 
 #define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"     //PCM源文件
 
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include <learnopengl/shader.h>
-
 #include <iostream>
 #include <vector>
 #include <cmath>
 #include <unistd.h>
+
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+
+#include <learnopengl/shader.h>
 
 using namespace std;
 
@@ -58,7 +59,7 @@ void fileOutput()
     }
     
     n=i;
-       // cout<<"数据个数： "<<n<<endl; 
+       // cout<<"数据个数： "<<n<<endl;
     
     fclose(fp);
 }
