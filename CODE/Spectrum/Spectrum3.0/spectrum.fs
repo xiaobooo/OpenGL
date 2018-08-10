@@ -4,8 +4,8 @@ out vec4 FragColor;
 
 uniform vec4 ourColor;
 
-uniform float u_hue=116.0;
-uniform float u_saturation=1.0;
+uniform float u_hue=121.0;
+uniform float u_saturation=0.82;
 uniform float u_value=1.0;
 uniform float u_contrast=0.0;
 
