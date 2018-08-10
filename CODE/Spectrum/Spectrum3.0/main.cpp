@@ -20,7 +20,7 @@
 
 using namespace std;
 
-vector<float> vertices;    //用于存储pcm文件解析出的数据
+vector<float> vertices;    // 用于存储pcm文件解析出的数据
 int istart=0;
 int wstart=0;
 int pstart=0;
