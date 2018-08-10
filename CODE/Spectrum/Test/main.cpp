@@ -292,7 +292,7 @@ int main()
 }
 
 // glfw:对相应的按键作出相应的响应
-// ---------------------------------------------------------------------------------------------------------
+
 void processInput(GLFWwindow *window)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
