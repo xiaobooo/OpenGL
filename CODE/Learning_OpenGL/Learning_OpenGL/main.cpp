@@ -29,5 +29,13 @@ int main()
             in[i][1]=0;
         }
     }
+    p = fftw_plan_dft_1d(N, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
+    fftw_execute(p);
+    fftw_destroy_plan(p);
+    fftw_cleanup();
+    for (i=0; i<N; i++) {
+        cout<<out[i][0]<<"   "<<out[i][1]<<endl;
+    }
+    
     return 0;
 }
