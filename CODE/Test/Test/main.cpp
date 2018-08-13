@@ -7,7 +7,10 @@
 //
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <fftw3.h>
+
 #include <learnopengl/shader.h>
+
 
 #include <iostream>
 #include <vector>
