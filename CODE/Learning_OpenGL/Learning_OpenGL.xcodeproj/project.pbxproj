@@ -62,6 +62,149 @@
 		3E153229211A92D50086BBEE /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530EA210EF5E00086BBEE /* libGLEW.dylib */; };
 		3E15322A211A92D90086BBEE /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530EC210EF5E30086BBEE /* libglfw.dylib */; };
 		3E15322C211A92E30086BBEE /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E15322B211A92E30086BBEE /* glad.c */; };
+		3E4757F621216994000963BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E4757F521216994000963BA /* main.cpp */; };
+		3E47585721217613000963BA /* fn_9.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47580721217613000963BA /* fn_9.c */; };
+		3E47585821217613000963BA /* executor.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47580821217613000963BA /* executor.c */; };
+		3E47585921217613000963BA /* fn_3.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47580921217613000963BA /* fn_3.c */; };
+		3E47585A21217613000963BA /* fni_15.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47580A21217613000963BA /* fni_15.c */; };
+		3E47585B21217613000963BA /* ftwi_64.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47580B21217613000963BA /* ftwi_64.c */; };
+		3E47585C21217613000963BA /* ftw_4.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47580C21217613000963BA /* ftw_4.c */; };
+		3E47585D21217613000963BA /* fni_11.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47580D21217613000963BA /* fni_11.c */; };
+		3E47585E21217613000963BA /* fn_7.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47580E21217613000963BA /* fn_7.c */; };
+		3E47585F21217613000963BA /* ftw_64.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47580F21217613000963BA /* ftw_64.c */; };
+		3E47586021217613000963BA /* timer.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47581021217613000963BA /* timer.c */; };
+		3E47586121217613000963BA /* ftwi_8.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47581121217613000963BA /* ftwi_8.c */; };
+		3E47586221217613000963BA /* fn_32.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47581221217613000963BA /* fn_32.c */; };
+		3E47586321217613000963BA /* ftwi_2.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47581321217613000963BA /* ftwi_2.c */; };
+		3E47586421217613000963BA /* ftwi_6.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47581421217613000963BA /* ftwi_6.c */; };
+		3E47586521217613000963BA /* fni_64.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47581621217613000963BA /* fni_64.c */; };
+		3E47586621217613000963BA /* fni_4.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47581721217613000963BA /* fni_4.c */; };
+		3E47586721217613000963BA /* fn_13.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47581821217613000963BA /* fn_13.c */; };
+		3E47586821217613000963BA /* ftw_9.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47581921217613000963BA /* ftw_9.c */; };
+		3E47586921217613000963BA /* fni_16.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47581A21217613000963BA /* fni_16.c */; };
+		3E47586A21217613000963BA /* ftw_3.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47581B21217613000963BA /* ftw_3.c */; };
+		3E47586B21217613000963BA /* fn_4.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47581C21217613000963BA /* fn_4.c */; };
+		3E47586C21217613000963BA /* ftw_7.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47581D21217613000963BA /* ftw_7.c */; };
+		3E47586D21217613000963BA /* fni_12.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47581E21217613000963BA /* fni_12.c */; };
+		3E47586E21217613000963BA /* ftw_16.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47582021217613000963BA /* ftw_16.c */; };
+		3E47586F21217613000963BA /* fn_14.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47582121217613000963BA /* fn_14.c */; };
+		3E47587021217613000963BA /* fni_3.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47582221217613000963BA /* fni_3.c */; };
+		3E47587121217613000963BA /* fni_9.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47582321217613000963BA /* fni_9.c */; };
+		3E47587221217613000963BA /* fn_10.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47582421217613000963BA /* fn_10.c */; };
+		3E47587321217613000963BA /* fni_7.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47582521217613000963BA /* fni_7.c */; };
+		3E47587421217613000963BA /* rader.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47582621217613000963BA /* rader.c */; };
+		3E47587521217613000963BA /* ftwi_16.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47582721217613000963BA /* ftwi_16.c */; };
+		3E47587621217613000963BA /* ftwi_5.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47582821217613000963BA /* ftwi_5.c */; };
+		3E47587721217613000963BA /* ftw_2.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47582A21217613000963BA /* ftw_2.c */; };
+		3E47587821217613000963BA /* ftw_8.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47582B21217613000963BA /* ftw_8.c */; };
+		3E47587921217613000963BA /* fn_1.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47582C21217613000963BA /* fn_1.c */; };
+		3E47587A21217613000963BA /* fni_32.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47582D21217613000963BA /* fni_32.c */; };
+		3E47587B21217613000963BA /* twiddle.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47582E21217613000963BA /* twiddle.c */; };
+		3E47587C21217613000963BA /* fn_5.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47582F21217613000963BA /* fn_5.c */; };
+		3E47587D21217613000963BA /* generic.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47583221217613000963BA /* generic.c */; };
+		3E47587E21217613000963BA /* fn_64.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47583321217613000963BA /* fn_64.c */; };
+		3E47587F21217613000963BA /* fni_13.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47583421217613000963BA /* fni_13.c */; };
+		3E47588021217613000963BA /* ftw_6.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47583521217613000963BA /* ftw_6.c */; };
+		3E47588121217613000963BA /* putils.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47583621217613000963BA /* putils.c */; };
+		3E47588221217613000963BA /* ftw_32.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47583721217613000963BA /* ftw_32.c */; };
+		3E47588321217613000963BA /* fni_8.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47583821217613000963BA /* fni_8.c */; };
+		3E47588421217613000963BA /* fftwf77.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47583921217613000963BA /* fftwf77.c */; };
+		3E47588521217613000963BA /* config.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47583A21217613000963BA /* config.c */; };
+		3E47588621217613000963BA /* fn_15.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47583B21217613000963BA /* fn_15.c */; };
+		3E47588721217613000963BA /* fni_2.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47583C21217613000963BA /* fni_2.c */; };
+		3E47588821217613000963BA /* fn_11.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47583D21217613000963BA /* fn_11.c */; };
+		3E47588921217613000963BA /* fni_6.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47583E21217613000963BA /* fni_6.c */; };
+		3E47588A21217613000963BA /* ftwi_32.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47583F21217613000963BA /* ftwi_32.c */; };
+		3E47588B21217613000963BA /* ftwi_4.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47584021217613000963BA /* ftwi_4.c */; };
+		3E47588C21217613000963BA /* malloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47584121217613000963BA /* malloc.c */; };
+		3E47588D21217613000963BA /* fftwnd.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47584221217613000963BA /* fftwnd.c */; };
+		3E47588E21217613000963BA /* fn_2.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47584321217613000963BA /* fn_2.c */; };
+		3E47588F21217613000963BA /* fn_8.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47584421217613000963BA /* fn_8.c */; };
+		3E47589021217613000963BA /* fni_14.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47584521217613000963BA /* fni_14.c */; };
+		3E47589121217613000963BA /* fni_10.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47584621217613000963BA /* fni_10.c */; };
+		3E47589221217613000963BA /* ftw_5.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47584721217613000963BA /* ftw_5.c */; };
+		3E47589321217613000963BA /* wisdom.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47584821217613000963BA /* wisdom.c */; };
+		3E47589421217613000963BA /* fn_6.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47584921217613000963BA /* fn_6.c */; };
+		3E47589521217613000963BA /* ftwi_10.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47584B21217613000963BA /* ftwi_10.c */; };
+		3E47589621217613000963BA /* fni_1.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47584C21217613000963BA /* fni_1.c */; };
+		3E47589721217613000963BA /* fn_16.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47584D21217613000963BA /* fn_16.c */; };
+		3E47589821217613000963BA /* ftwi_3.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47584E21217613000963BA /* ftwi_3.c */; };
+		3E47589921217613000963BA /* ftwi_9.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47584F21217613000963BA /* ftwi_9.c */; };
+		3E47589A21217613000963BA /* ftwi_7.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47585021217613000963BA /* ftwi_7.c */; };
+		3E47589B21217613000963BA /* ftw_10.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47585121217613000963BA /* ftw_10.c */; };
+		3E47589C21217613000963BA /* planner.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47585321217613000963BA /* planner.c */; };
+		3E47589D21217613000963BA /* fni_5.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47585421217613000963BA /* fni_5.c */; };
+		3E47589E21217613000963BA /* fn_12.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47585521217613000963BA /* fn_12.c */; };
+		3E47589F21217613000963BA /* wisdomio.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E47585621217613000963BA /* wisdomio.c */; };
+		3E476A0C21218077000963BA /* plan-dft-r2c-1d.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769B421218077000963BA /* plan-dft-r2c-1d.c */; };
+		3E476A0D21218077000963BA /* execute-dft.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769B521218077000963BA /* execute-dft.c */; };
+		3E476A0E21218077000963BA /* mkprinter-file.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769B621218077000963BA /* mkprinter-file.c */; };
+		3E476A0F21218077000963BA /* execute-dft-c2r.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769B821218077000963BA /* execute-dft-c2r.c */; };
+		3E476A1021218077000963BA /* fftw3.f in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769B921218077000963BA /* fftw3.f */; };
+		3E476A1121218077000963BA /* import-wisdom.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769BB21218077000963BA /* import-wisdom.c */; };
+		3E476A1221218077000963BA /* plan-guru-split-dft-r2c.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769BC21218077000963BA /* plan-guru-split-dft-r2c.c */; };
+		3E476A1321218077000963BA /* forget-wisdom.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769BD21218077000963BA /* forget-wisdom.c */; };
+		3E476A1421218077000963BA /* plan-guru-dft.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769BE21218077000963BA /* plan-guru-dft.c */; };
+		3E476A1521218077000963BA /* plan-guru64-split-dft.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769BF21218077000963BA /* plan-guru64-split-dft.c */; };
+		3E476A1621218077000963BA /* rdft2-pad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769C021218077000963BA /* rdft2-pad.c */; };
+		3E476A1721218077000963BA /* plan-guru64-dft-r2c.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769C121218077000963BA /* plan-guru64-dft-r2c.c */; };
+		3E476A1821218077000963BA /* execute-split-dft-r2c.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769C221218077000963BA /* execute-split-dft-r2c.c */; };
+		3E476A1921218077000963BA /* plan-dft.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769C321218077000963BA /* plan-dft.c */; };
+		3E476A1A21218077000963BA /* plan-guru-dft-r2c.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769C421218077000963BA /* plan-guru-dft-r2c.c */; };
+		3E476A1B21218077000963BA /* map-r2r-kind.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769C521218077000963BA /* map-r2r-kind.c */; };
+		3E476A1C21218077000963BA /* plan-r2r.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769C621218077000963BA /* plan-r2r.c */; };
+		3E476A1D21218077000963BA /* execute.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769C721218077000963BA /* execute.c */; };
+		3E476A1E21218077000963BA /* execute-dft-r2c.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769C821218077000963BA /* execute-dft-r2c.c */; };
+		3E476A1F21218077000963BA /* flops.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769C921218077000963BA /* flops.c */; };
+		3E476A2021218077000963BA /* plan-r2r-3d.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769CA21218077000963BA /* plan-r2r-3d.c */; };
+		3E476A2121218077000963BA /* plan-guru-split-dft-c2r.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769CB21218077000963BA /* plan-guru-split-dft-c2r.c */; };
+		3E476A2221218077000963BA /* plan-guru64-dft-c2r.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769CE21218077000963BA /* plan-guru64-dft-c2r.c */; };
+		3E476A2321218077000963BA /* export-wisdom-to-file.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769CF21218077000963BA /* export-wisdom-to-file.c */; };
+		3E476A2421218077000963BA /* execute-split-dft-c2r.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769D121218077000963BA /* execute-split-dft-c2r.c */; };
+		3E476A2521218077000963BA /* plan-guru-r2r.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769D221218077000963BA /* plan-guru-r2r.c */; };
+		3E476A2621218077000963BA /* plan-dft-c2r-1d.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769D321218077000963BA /* plan-dft-c2r-1d.c */; };
+		3E476A2721218077000963BA /* mktensor-iodims64.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769D421218077000963BA /* mktensor-iodims64.c */; };
+		3E476A2821218077000963BA /* export-wisdom-to-string.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769D521218077000963BA /* export-wisdom-to-string.c */; };
+		3E476A2921218077000963BA /* execute-r2r.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769D621218077000963BA /* execute-r2r.c */; };
+		3E476A2A21218077000963BA /* import-system-wisdom.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769D721218077000963BA /* import-system-wisdom.c */; };
+		3E476A2B21218077000963BA /* plan-guru-dft-c2r.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769D821218077000963BA /* plan-guru-dft-c2r.c */; };
+		3E476A2C21218077000963BA /* plan-dft-1d.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769DA21218077000963BA /* plan-dft-1d.c */; };
+		3E476A2D21218077000963BA /* plan-r2r-2d.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769DC21218077000963BA /* plan-r2r-2d.c */; };
+		3E476A2E21218077000963BA /* plan-many-dft-r2c.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769DD21218077000963BA /* plan-many-dft-r2c.c */; };
+		3E476A2F21218077000963BA /* plan-dft-c2r-2d.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769E121218077000963BA /* plan-dft-c2r-2d.c */; };
+		3E476A3021218077000963BA /* mkprinter-str.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769E321218077000963BA /* mkprinter-str.c */; };
+		3E476A3121218077000963BA /* plan-dft-2d.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769E421218077000963BA /* plan-dft-2d.c */; };
+		3E476A3221218077000963BA /* plan-guru64-r2r.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769E521218077000963BA /* plan-guru64-r2r.c */; };
+		3E476A3321218077000963BA /* plan-r2r-1d.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769E621218077000963BA /* plan-r2r-1d.c */; };
+		3E476A3421218077000963BA /* plan-guru64-split-dft-r2c.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769E721218077000963BA /* plan-guru64-split-dft-r2c.c */; };
+		3E476A3521218077000963BA /* plan-dft-3d.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769E821218077000963BA /* plan-dft-3d.c */; };
+		3E476A3621218077000963BA /* plan-many-dft.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769EC21218077000963BA /* plan-many-dft.c */; };
+		3E476A3721218077000963BA /* plan-dft-r2c.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769ED21218077000963BA /* plan-dft-r2c.c */; };
+		3E476A3821218077000963BA /* import-wisdom-from-file.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769EE21218077000963BA /* import-wisdom-from-file.c */; };
+		3E476A3921218077000963BA /* the-planner.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769EF21218077000963BA /* the-planner.c */; };
+		3E476A3A21218077000963BA /* version.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769F121218077000963BA /* version.c */; };
+		3E476A3B21218077000963BA /* plan-dft-c2r-3d.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769F221218077000963BA /* plan-dft-c2r-3d.c */; };
+		3E476A3C21218077000963BA /* malloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769F321218077000963BA /* malloc.c */; };
+		3E476A3D21218077000963BA /* execute-split-dft.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769F421218077000963BA /* execute-split-dft.c */; };
+		3E476A3E21218077000963BA /* plan-many-dft-c2r.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769F521218077000963BA /* plan-many-dft-c2r.c */; };
+		3E476A3F21218077000963BA /* print-plan.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769F621218077000963BA /* print-plan.c */; };
+		3E476A4021218077000963BA /* mktensor-iodims.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769F721218077000963BA /* mktensor-iodims.c */; };
+		3E476A4121218077000963BA /* plan-guru-split-dft.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769F821218077000963BA /* plan-guru-split-dft.c */; };
+		3E476A4221218077000963BA /* export-wisdom.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769FA21218077000963BA /* export-wisdom.c */; };
+		3E476A4321218077000963BA /* plan-dft-r2c-3d.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769FB21218077000963BA /* plan-dft-r2c-3d.c */; };
+		3E476A4421218077000963BA /* plan-many-r2r.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769FE21218077000963BA /* plan-many-r2r.c */; };
+		3E476A4521218077000963BA /* mktensor-rowmajor.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E4769FF21218077000963BA /* mktensor-rowmajor.c */; };
+		3E476A4621218077000963BA /* apiplan.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E476A0021218077000963BA /* apiplan.c */; };
+		3E476A4721218077000963BA /* plan-guru64-split-dft-c2r.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E476A0121218077000963BA /* plan-guru64-split-dft-c2r.c */; };
+		3E476A4821218077000963BA /* mapflags.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E476A0221218077000963BA /* mapflags.c */; };
+		3E476A4921218077000963BA /* plan-dft-r2c-2d.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E476A0421218077000963BA /* plan-dft-r2c-2d.c */; };
+		3E476A4A21218077000963BA /* f77api.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E476A0521218077000963BA /* f77api.c */; };
+		3E476A4B21218077000963BA /* plan-guru64-dft.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E476A0721218077000963BA /* plan-guru64-dft.c */; };
+		3E476A4C21218077000963BA /* plan-dft-c2r.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E476A0821218077000963BA /* plan-dft-c2r.c */; };
+		3E476A4D21218077000963BA /* configure.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E476A0921218077000963BA /* configure.c */; };
+		3E476A4E21218077000963BA /* import-wisdom-from-string.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E476A0B21218077000963BA /* import-wisdom-from-string.c */; };
+		3E476A4F2121819B000963BA /* libfftw3f_threads.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4757E921215F80000963BA /* libfftw3f_threads.a */; };
+		3E476A502121819B000963BA /* libfftw3f.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4757EA21215F80000963BA /* libfftw3f.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -164,6 +307,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		3E4757F121216994000963BA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -243,6 +395,186 @@
 		3E153230211A93480086BBEE /* 2.2.basic_lighting.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 2.2.basic_lighting.fs; sourceTree = "<group>"; };
 		3E4757E5212151BF000963BA /* libfftw3f_threads.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f_threads.a; path = "../../../../CODE/OpenGL/fft_conv/arm64-v8a/usr/lib/libfftw3f_threads.a"; sourceTree = "<group>"; };
 		3E4757E6212151BF000963BA /* libfftw3f.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f.a; path = "../../../../CODE/OpenGL/fft_conv/arm64-v8a/usr/lib/libfftw3f.a"; sourceTree = "<group>"; };
+		3E4757E921215F80000963BA /* libfftw3f_threads.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f_threads.a; path = ../../../../CODE/OpenGL/fft_conv/x86_64/usr/lib/libfftw3f_threads.a; sourceTree = "<group>"; };
+		3E4757EA21215F80000963BA /* libfftw3f.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f.a; path = ../../../../CODE/OpenGL/fft_conv/x86_64/usr/lib/libfftw3f.a; sourceTree = "<group>"; };
+		3E4757ED21216868000963BA /* libfftw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3.a; path = "../../../../../Downloads/fftw-meitu_clipping-716edc27c86161aa34400974434ad19b9f97ffaa 2/clip/meitu_build/libfftw3/iOS/lib/libfftw3.a"; sourceTree = "<group>"; };
+		3E4757F321216994000963BA /* TestFFT */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestFFT; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E4757F521216994000963BA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E4757FA212169A3000963BA /* libfftw3f_threads.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f_threads.a; path = ../../../../../../../usr/local/lib/libfftw3f_threads.a; sourceTree = "<group>"; };
+		3E4757FC212169B1000963BA /* libfftw3f.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f.a; path = ../../../../../../../usr/local/lib/libfftw3f.a; sourceTree = "<group>"; };
+		3E4757FE21217244000963BA /* libfftw3f.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f.a; path = "../../../../CODE/OpenGL/fftw-feature-3.3.7-168c70373b90ee3600e33bdd5c8b401cde236e96/meitu_build/libfftw3f/centos/lib64/libfftw3f.a"; sourceTree = "<group>"; };
+		3E4757FF21217244000963BA /* libfftw3f_threads.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f_threads.a; path = "../../../../CODE/OpenGL/fftw-feature-3.3.7-168c70373b90ee3600e33bdd5c8b401cde236e96/meitu_build/libfftw3f/centos/lib64/libfftw3f_threads.a"; sourceTree = "<group>"; };
+		3E47580221217266000963BA /* libfftw3f.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f.a; path = "../../../../CODE/OpenGL/fftw-feature-3.3.7-168c70373b90ee3600e33bdd5c8b401cde236e96/meitu_build/libfftw3f/iOS/lib/libfftw3f.a"; sourceTree = "<group>"; };
+		3E47580321217266000963BA /* libfftw3f_threads.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f_threads.a; path = "../../../../CODE/OpenGL/fftw-feature-3.3.7-168c70373b90ee3600e33bdd5c8b401cde236e96/meitu_build/libfftw3f/iOS/lib/libfftw3f_threads.a"; sourceTree = "<group>"; };
+		3E47580721217613000963BA /* fn_9.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_9.c; sourceTree = "<group>"; };
+		3E47580821217613000963BA /* executor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = executor.c; sourceTree = "<group>"; };
+		3E47580921217613000963BA /* fn_3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_3.c; sourceTree = "<group>"; };
+		3E47580A21217613000963BA /* fni_15.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_15.c; sourceTree = "<group>"; };
+		3E47580B21217613000963BA /* ftwi_64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftwi_64.c; sourceTree = "<group>"; };
+		3E47580C21217613000963BA /* ftw_4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftw_4.c; sourceTree = "<group>"; };
+		3E47580D21217613000963BA /* fni_11.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_11.c; sourceTree = "<group>"; };
+		3E47580E21217613000963BA /* fn_7.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_7.c; sourceTree = "<group>"; };
+		3E47580F21217613000963BA /* ftw_64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftw_64.c; sourceTree = "<group>"; };
+		3E47581021217613000963BA /* timer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = timer.c; sourceTree = "<group>"; };
+		3E47581121217613000963BA /* ftwi_8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftwi_8.c; sourceTree = "<group>"; };
+		3E47581221217613000963BA /* fn_32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_32.c; sourceTree = "<group>"; };
+		3E47581321217613000963BA /* ftwi_2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftwi_2.c; sourceTree = "<group>"; };
+		3E47581421217613000963BA /* ftwi_6.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftwi_6.c; sourceTree = "<group>"; };
+		3E47581521217613000963BA /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		3E47581621217613000963BA /* fni_64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_64.c; sourceTree = "<group>"; };
+		3E47581721217613000963BA /* fni_4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_4.c; sourceTree = "<group>"; };
+		3E47581821217613000963BA /* fn_13.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_13.c; sourceTree = "<group>"; };
+		3E47581921217613000963BA /* ftw_9.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftw_9.c; sourceTree = "<group>"; };
+		3E47581A21217613000963BA /* fni_16.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_16.c; sourceTree = "<group>"; };
+		3E47581B21217613000963BA /* ftw_3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftw_3.c; sourceTree = "<group>"; };
+		3E47581C21217613000963BA /* fn_4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_4.c; sourceTree = "<group>"; };
+		3E47581D21217613000963BA /* ftw_7.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftw_7.c; sourceTree = "<group>"; };
+		3E47581E21217613000963BA /* fni_12.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_12.c; sourceTree = "<group>"; };
+		3E47581F21217613000963BA /* config.h.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.h.in; sourceTree = "<group>"; };
+		3E47582021217613000963BA /* ftw_16.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftw_16.c; sourceTree = "<group>"; };
+		3E47582121217613000963BA /* fn_14.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_14.c; sourceTree = "<group>"; };
+		3E47582221217613000963BA /* fni_3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_3.c; sourceTree = "<group>"; };
+		3E47582321217613000963BA /* fni_9.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_9.c; sourceTree = "<group>"; };
+		3E47582421217613000963BA /* fn_10.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_10.c; sourceTree = "<group>"; };
+		3E47582521217613000963BA /* fni_7.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_7.c; sourceTree = "<group>"; };
+		3E47582621217613000963BA /* rader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rader.c; sourceTree = "<group>"; };
+		3E47582721217613000963BA /* ftwi_16.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftwi_16.c; sourceTree = "<group>"; };
+		3E47582821217613000963BA /* ftwi_5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftwi_5.c; sourceTree = "<group>"; };
+		3E47582921217613000963BA /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		3E47582A21217613000963BA /* ftw_2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftw_2.c; sourceTree = "<group>"; };
+		3E47582B21217613000963BA /* ftw_8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftw_8.c; sourceTree = "<group>"; };
+		3E47582C21217613000963BA /* fn_1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_1.c; sourceTree = "<group>"; };
+		3E47582D21217613000963BA /* fni_32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_32.c; sourceTree = "<group>"; };
+		3E47582E21217613000963BA /* twiddle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = twiddle.c; sourceTree = "<group>"; };
+		3E47582F21217613000963BA /* fn_5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_5.c; sourceTree = "<group>"; };
+		3E47583021217613000963BA /* fftw-int.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "fftw-int.h"; sourceTree = "<group>"; };
+		3E47583121217613000963BA /* fftw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fftw.h; sourceTree = "<group>"; };
+		3E47583221217613000963BA /* generic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = generic.c; sourceTree = "<group>"; };
+		3E47583321217613000963BA /* fn_64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_64.c; sourceTree = "<group>"; };
+		3E47583421217613000963BA /* fni_13.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_13.c; sourceTree = "<group>"; };
+		3E47583521217613000963BA /* ftw_6.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftw_6.c; sourceTree = "<group>"; };
+		3E47583621217613000963BA /* putils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = putils.c; sourceTree = "<group>"; };
+		3E47583721217613000963BA /* ftw_32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftw_32.c; sourceTree = "<group>"; };
+		3E47583821217613000963BA /* fni_8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_8.c; sourceTree = "<group>"; };
+		3E47583921217613000963BA /* fftwf77.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fftwf77.c; sourceTree = "<group>"; };
+		3E47583A21217613000963BA /* config.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = config.c; sourceTree = "<group>"; };
+		3E47583B21217613000963BA /* fn_15.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_15.c; sourceTree = "<group>"; };
+		3E47583C21217613000963BA /* fni_2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_2.c; sourceTree = "<group>"; };
+		3E47583D21217613000963BA /* fn_11.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_11.c; sourceTree = "<group>"; };
+		3E47583E21217613000963BA /* fni_6.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_6.c; sourceTree = "<group>"; };
+		3E47583F21217613000963BA /* ftwi_32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftwi_32.c; sourceTree = "<group>"; };
+		3E47584021217613000963BA /* ftwi_4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftwi_4.c; sourceTree = "<group>"; };
+		3E47584121217613000963BA /* malloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = malloc.c; sourceTree = "<group>"; };
+		3E47584221217613000963BA /* fftwnd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fftwnd.c; sourceTree = "<group>"; };
+		3E47584321217613000963BA /* fn_2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_2.c; sourceTree = "<group>"; };
+		3E47584421217613000963BA /* fn_8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_8.c; sourceTree = "<group>"; };
+		3E47584521217613000963BA /* fni_14.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_14.c; sourceTree = "<group>"; };
+		3E47584621217613000963BA /* fni_10.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_10.c; sourceTree = "<group>"; };
+		3E47584721217613000963BA /* ftw_5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftw_5.c; sourceTree = "<group>"; };
+		3E47584821217613000963BA /* wisdom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wisdom.c; sourceTree = "<group>"; };
+		3E47584921217613000963BA /* fn_6.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_6.c; sourceTree = "<group>"; };
+		3E47584A21217613000963BA /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		3E47584B21217613000963BA /* ftwi_10.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftwi_10.c; sourceTree = "<group>"; };
+		3E47584C21217613000963BA /* fni_1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_1.c; sourceTree = "<group>"; };
+		3E47584D21217613000963BA /* fn_16.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_16.c; sourceTree = "<group>"; };
+		3E47584E21217613000963BA /* ftwi_3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftwi_3.c; sourceTree = "<group>"; };
+		3E47584F21217613000963BA /* ftwi_9.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftwi_9.c; sourceTree = "<group>"; };
+		3E47585021217613000963BA /* ftwi_7.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftwi_7.c; sourceTree = "<group>"; };
+		3E47585121217613000963BA /* ftw_10.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ftw_10.c; sourceTree = "<group>"; };
+		3E47585221217613000963BA /* fftw.h.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fftw.h.in; sourceTree = "<group>"; };
+		3E47585321217613000963BA /* planner.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = planner.c; sourceTree = "<group>"; };
+		3E47585421217613000963BA /* fni_5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fni_5.c; sourceTree = "<group>"; };
+		3E47585521217613000963BA /* fn_12.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fn_12.c; sourceTree = "<group>"; };
+		3E47585621217613000963BA /* wisdomio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wisdomio.c; sourceTree = "<group>"; };
+		3E4758A22121780F000963BA /* libfftw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3.a; path = ../../../../../../../usr/local/lib/libfftw3.a; sourceTree = "<group>"; };
+		3E4769B421218077000963BA /* plan-dft-r2c-1d.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-dft-r2c-1d.c"; sourceTree = "<group>"; };
+		3E4769B521218077000963BA /* execute-dft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "execute-dft.c"; sourceTree = "<group>"; };
+		3E4769B621218077000963BA /* mkprinter-file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mkprinter-file.c"; sourceTree = "<group>"; };
+		3E4769B721218077000963BA /* fftw3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fftw3.h; sourceTree = "<group>"; };
+		3E4769B821218077000963BA /* execute-dft-c2r.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "execute-dft-c2r.c"; sourceTree = "<group>"; };
+		3E4769B921218077000963BA /* fftw3.f */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.fortran; path = fftw3.f; sourceTree = "<group>"; };
+		3E4769BA21218077000963BA /* f03api.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = f03api.sh; sourceTree = "<group>"; };
+		3E4769BB21218077000963BA /* import-wisdom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "import-wisdom.c"; sourceTree = "<group>"; };
+		3E4769BC21218077000963BA /* plan-guru-split-dft-r2c.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-guru-split-dft-r2c.c"; sourceTree = "<group>"; };
+		3E4769BD21218077000963BA /* forget-wisdom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "forget-wisdom.c"; sourceTree = "<group>"; };
+		3E4769BE21218077000963BA /* plan-guru-dft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-guru-dft.c"; sourceTree = "<group>"; };
+		3E4769BF21218077000963BA /* plan-guru64-split-dft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-guru64-split-dft.c"; sourceTree = "<group>"; };
+		3E4769C021218077000963BA /* rdft2-pad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "rdft2-pad.c"; sourceTree = "<group>"; };
+		3E4769C121218077000963BA /* plan-guru64-dft-r2c.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-guru64-dft-r2c.c"; sourceTree = "<group>"; };
+		3E4769C221218077000963BA /* execute-split-dft-r2c.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "execute-split-dft-r2c.c"; sourceTree = "<group>"; };
+		3E4769C321218077000963BA /* plan-dft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-dft.c"; sourceTree = "<group>"; };
+		3E4769C421218077000963BA /* plan-guru-dft-r2c.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-guru-dft-r2c.c"; sourceTree = "<group>"; };
+		3E4769C521218077000963BA /* map-r2r-kind.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "map-r2r-kind.c"; sourceTree = "<group>"; };
+		3E4769C621218077000963BA /* plan-r2r.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-r2r.c"; sourceTree = "<group>"; };
+		3E4769C721218077000963BA /* execute.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = execute.c; sourceTree = "<group>"; };
+		3E4769C821218077000963BA /* execute-dft-r2c.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "execute-dft-r2c.c"; sourceTree = "<group>"; };
+		3E4769C921218077000963BA /* flops.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = flops.c; sourceTree = "<group>"; };
+		3E4769CA21218077000963BA /* plan-r2r-3d.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-r2r-3d.c"; sourceTree = "<group>"; };
+		3E4769CB21218077000963BA /* plan-guru-split-dft-c2r.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-guru-split-dft-c2r.c"; sourceTree = "<group>"; };
+		3E4769CC21218077000963BA /* plan-guru-split-dft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "plan-guru-split-dft.h"; sourceTree = "<group>"; };
+		3E4769CD21218077000963BA /* mktensor-iodims.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mktensor-iodims.h"; sourceTree = "<group>"; };
+		3E4769CE21218077000963BA /* plan-guru64-dft-c2r.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-guru64-dft-c2r.c"; sourceTree = "<group>"; };
+		3E4769CF21218077000963BA /* export-wisdom-to-file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "export-wisdom-to-file.c"; sourceTree = "<group>"; };
+		3E4769D021218077000963BA /* guru64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = guru64.h; sourceTree = "<group>"; };
+		3E4769D121218077000963BA /* execute-split-dft-c2r.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "execute-split-dft-c2r.c"; sourceTree = "<group>"; };
+		3E4769D221218077000963BA /* plan-guru-r2r.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-guru-r2r.c"; sourceTree = "<group>"; };
+		3E4769D321218077000963BA /* plan-dft-c2r-1d.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-dft-c2r-1d.c"; sourceTree = "<group>"; };
+		3E4769D421218077000963BA /* mktensor-iodims64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mktensor-iodims64.c"; sourceTree = "<group>"; };
+		3E4769D521218077000963BA /* export-wisdom-to-string.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "export-wisdom-to-string.c"; sourceTree = "<group>"; };
+		3E4769D621218077000963BA /* execute-r2r.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "execute-r2r.c"; sourceTree = "<group>"; };
+		3E4769D721218077000963BA /* import-system-wisdom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "import-system-wisdom.c"; sourceTree = "<group>"; };
+		3E4769D821218077000963BA /* plan-guru-dft-c2r.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-guru-dft-c2r.c"; sourceTree = "<group>"; };
+		3E4769D921218077000963BA /* fftw3.f03.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fftw3.f03.in; sourceTree = "<group>"; };
+		3E4769DA21218077000963BA /* plan-dft-1d.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-dft-1d.c"; sourceTree = "<group>"; };
+		3E4769DB21218077000963BA /* fftw3q.f03 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fftw3q.f03; sourceTree = "<group>"; };
+		3E4769DC21218077000963BA /* plan-r2r-2d.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-r2r-2d.c"; sourceTree = "<group>"; };
+		3E4769DD21218077000963BA /* plan-many-dft-r2c.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-many-dft-r2c.c"; sourceTree = "<group>"; };
+		3E4769DE21218077000963BA /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		3E4769DF21218077000963BA /* api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = api.h; sourceTree = "<group>"; };
+		3E4769E021218077000963BA /* plan-guru-dft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "plan-guru-dft.h"; sourceTree = "<group>"; };
+		3E4769E121218077000963BA /* plan-dft-c2r-2d.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-dft-c2r-2d.c"; sourceTree = "<group>"; };
+		3E4769E221218077000963BA /* plan-guru-split-dft-r2c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "plan-guru-split-dft-r2c.h"; sourceTree = "<group>"; };
+		3E4769E321218077000963BA /* mkprinter-str.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mkprinter-str.c"; sourceTree = "<group>"; };
+		3E4769E421218077000963BA /* plan-dft-2d.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-dft-2d.c"; sourceTree = "<group>"; };
+		3E4769E521218077000963BA /* plan-guru64-r2r.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-guru64-r2r.c"; sourceTree = "<group>"; };
+		3E4769E621218077000963BA /* plan-r2r-1d.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-r2r-1d.c"; sourceTree = "<group>"; };
+		3E4769E721218077000963BA /* plan-guru64-split-dft-r2c.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-guru64-split-dft-r2c.c"; sourceTree = "<group>"; };
+		3E4769E821218077000963BA /* plan-dft-3d.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-dft-3d.c"; sourceTree = "<group>"; };
+		3E4769E921218077000963BA /* f77funcs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = f77funcs.h; sourceTree = "<group>"; };
+		3E4769EA21218077000963BA /* plan-guru-dft-r2c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "plan-guru-dft-r2c.h"; sourceTree = "<group>"; };
+		3E4769EB21218077000963BA /* fftw3l.f03 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fftw3l.f03; sourceTree = "<group>"; };
+		3E4769EC21218077000963BA /* plan-many-dft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-many-dft.c"; sourceTree = "<group>"; };
+		3E4769ED21218077000963BA /* plan-dft-r2c.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-dft-r2c.c"; sourceTree = "<group>"; };
+		3E4769EE21218077000963BA /* import-wisdom-from-file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "import-wisdom-from-file.c"; sourceTree = "<group>"; };
+		3E4769EF21218077000963BA /* the-planner.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "the-planner.c"; sourceTree = "<group>"; };
+		3E4769F021218077000963BA /* genf03.pl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; path = genf03.pl; sourceTree = "<group>"; };
+		3E4769F121218077000963BA /* version.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = version.c; sourceTree = "<group>"; };
+		3E4769F221218077000963BA /* plan-dft-c2r-3d.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-dft-c2r-3d.c"; sourceTree = "<group>"; };
+		3E4769F321218077000963BA /* malloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = malloc.c; sourceTree = "<group>"; };
+		3E4769F421218077000963BA /* execute-split-dft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "execute-split-dft.c"; sourceTree = "<group>"; };
+		3E4769F521218077000963BA /* plan-many-dft-c2r.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-many-dft-c2r.c"; sourceTree = "<group>"; };
+		3E4769F621218077000963BA /* print-plan.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "print-plan.c"; sourceTree = "<group>"; };
+		3E4769F721218077000963BA /* mktensor-iodims.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mktensor-iodims.c"; sourceTree = "<group>"; };
+		3E4769F821218077000963BA /* plan-guru-split-dft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-guru-split-dft.c"; sourceTree = "<group>"; };
+		3E4769F921218077000963BA /* plan-guru-split-dft-c2r.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "plan-guru-split-dft-c2r.h"; sourceTree = "<group>"; };
+		3E4769FA21218077000963BA /* export-wisdom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "export-wisdom.c"; sourceTree = "<group>"; };
+		3E4769FB21218077000963BA /* plan-dft-r2c-3d.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-dft-r2c-3d.c"; sourceTree = "<group>"; };
+		3E4769FC21218077000963BA /* x77.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x77.h; sourceTree = "<group>"; };
+		3E4769FD21218077000963BA /* guru.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = guru.h; sourceTree = "<group>"; };
+		3E4769FE21218077000963BA /* plan-many-r2r.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-many-r2r.c"; sourceTree = "<group>"; };
+		3E4769FF21218077000963BA /* mktensor-rowmajor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mktensor-rowmajor.c"; sourceTree = "<group>"; };
+		3E476A0021218077000963BA /* apiplan.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = apiplan.c; sourceTree = "<group>"; };
+		3E476A0121218077000963BA /* plan-guru64-split-dft-c2r.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-guru64-split-dft-c2r.c"; sourceTree = "<group>"; };
+		3E476A0221218077000963BA /* mapflags.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mapflags.c; sourceTree = "<group>"; };
+		3E476A0321218077000963BA /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		3E476A0421218077000963BA /* plan-dft-r2c-2d.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-dft-r2c-2d.c"; sourceTree = "<group>"; };
+		3E476A0521218077000963BA /* f77api.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = f77api.c; sourceTree = "<group>"; };
+		3E476A0621218077000963BA /* plan-guru-dft-c2r.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "plan-guru-dft-c2r.h"; sourceTree = "<group>"; };
+		3E476A0721218077000963BA /* plan-guru64-dft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-guru64-dft.c"; sourceTree = "<group>"; };
+		3E476A0821218077000963BA /* plan-dft-c2r.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "plan-dft-c2r.c"; sourceTree = "<group>"; };
+		3E476A0921218077000963BA /* configure.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = configure.c; sourceTree = "<group>"; };
+		3E476A0A21218077000963BA /* plan-guru-r2r.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "plan-guru-r2r.h"; sourceTree = "<group>"; };
+		3E476A0B21218077000963BA /* import-wisdom-from-string.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "import-wisdom-from-string.c"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +585,8 @@
 				3E1530E9210EF5CA0086BBEE /* OpenGL.framework in Frameworks */,
 				3E1530EB210EF5E00086BBEE /* libGLEW.dylib in Frameworks */,
 				3E1530ED210EF5E40086BBEE /* libglfw.dylib in Frameworks */,
+				3E476A4F2121819B000963BA /* libfftw3f_threads.a in Frameworks */,
+				3E476A502121819B000963BA /* libfftw3f.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +690,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3E4757F021216994000963BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -373,6 +714,7 @@
 				3E1531AF2113E6C50086BBEE /* HDR */,
 				3E1531C521143BBC0086BBEE /* Bloom */,
 				3E1531DE211452250086BBEE /* Render_to_texture */,
+				3E4757F421216994000963BA /* TestFFT */,
 				3E1530DE210EF56B0086BBEE /* Products */,
 				3E1530E7210EF5CA0086BBEE /* Frameworks */,
 			);
@@ -392,6 +734,7 @@
 				3E1531C421143BBC0086BBEE /* Bloom */,
 				3E1531DD211452250086BBEE /* Render_to_texture */,
 				3E153221211A929D0086BBEE /* Base_Light2.0 */,
+				3E4757F321216994000963BA /* TestFFT */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -399,6 +742,7 @@
 		3E1530DF210EF56B0086BBEE /* Learning_OpenGL */ = {
 			isa = PBXGroup;
 			children = (
+				3E4769B321218077000963BA /* api */,
 				3E1530EE210EF5F20086BBEE /* glad.c */,
 				3E1530E0210EF56B0086BBEE /* main.cpp */,
 			);
@@ -408,8 +752,18 @@
 		3E1530E7210EF5CA0086BBEE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E4758A22121780F000963BA /* libfftw3.a */,
+				3E4757FF21217244000963BA /* libfftw3f_threads.a */,
+				3E47580321217266000963BA /* libfftw3f_threads.a */,
+				3E4757FC212169B1000963BA /* libfftw3f.a */,
+				3E4757FA212169A3000963BA /* libfftw3f_threads.a */,
+				3E4757FE21217244000963BA /* libfftw3f.a */,
+				3E47580221217266000963BA /* libfftw3f.a */,
+				3E4757ED21216868000963BA /* libfftw3.a */,
 				3E4757E5212151BF000963BA /* libfftw3f_threads.a */,
 				3E4757E6212151BF000963BA /* libfftw3f.a */,
+				3E4757E921215F80000963BA /* libfftw3f_threads.a */,
+				3E4757EA21215F80000963BA /* libfftw3f.a */,
 				3E1530EC210EF5E30086BBEE /* libglfw.dylib */,
 				3E1530EA210EF5E00086BBEE /* libGLEW.dylib */,
 				3E1530E8210EF5CA0086BBEE /* OpenGL.framework */,
@@ -543,6 +897,197 @@
 				3E153223211A929D0086BBEE /* main.cpp */,
 			);
 			path = Base_Light2.0;
+			sourceTree = "<group>";
+		};
+		3E4757F421216994000963BA /* TestFFT */ = {
+			isa = PBXGroup;
+			children = (
+				3E47580621217613000963BA /* fftw */,
+				3E4757F521216994000963BA /* main.cpp */,
+			);
+			path = TestFFT;
+			sourceTree = "<group>";
+		};
+		3E47580621217613000963BA /* fftw */ = {
+			isa = PBXGroup;
+			children = (
+				3E47580721217613000963BA /* fn_9.c */,
+				3E47580821217613000963BA /* executor.c */,
+				3E47580921217613000963BA /* fn_3.c */,
+				3E47580A21217613000963BA /* fni_15.c */,
+				3E47580B21217613000963BA /* ftwi_64.c */,
+				3E47580C21217613000963BA /* ftw_4.c */,
+				3E47580D21217613000963BA /* fni_11.c */,
+				3E47580E21217613000963BA /* fn_7.c */,
+				3E47580F21217613000963BA /* ftw_64.c */,
+				3E47581021217613000963BA /* timer.c */,
+				3E47581121217613000963BA /* ftwi_8.c */,
+				3E47581221217613000963BA /* fn_32.c */,
+				3E47581321217613000963BA /* ftwi_2.c */,
+				3E47581421217613000963BA /* ftwi_6.c */,
+				3E47581521217613000963BA /* config.h */,
+				3E47581621217613000963BA /* fni_64.c */,
+				3E47581721217613000963BA /* fni_4.c */,
+				3E47581821217613000963BA /* fn_13.c */,
+				3E47581921217613000963BA /* ftw_9.c */,
+				3E47581A21217613000963BA /* fni_16.c */,
+				3E47581B21217613000963BA /* ftw_3.c */,
+				3E47581C21217613000963BA /* fn_4.c */,
+				3E47581D21217613000963BA /* ftw_7.c */,
+				3E47581E21217613000963BA /* fni_12.c */,
+				3E47581F21217613000963BA /* config.h.in */,
+				3E47582021217613000963BA /* ftw_16.c */,
+				3E47582121217613000963BA /* fn_14.c */,
+				3E47582221217613000963BA /* fni_3.c */,
+				3E47582321217613000963BA /* fni_9.c */,
+				3E47582421217613000963BA /* fn_10.c */,
+				3E47582521217613000963BA /* fni_7.c */,
+				3E47582621217613000963BA /* rader.c */,
+				3E47582721217613000963BA /* ftwi_16.c */,
+				3E47582821217613000963BA /* ftwi_5.c */,
+				3E47582921217613000963BA /* Makefile.am */,
+				3E47582A21217613000963BA /* ftw_2.c */,
+				3E47582B21217613000963BA /* ftw_8.c */,
+				3E47582C21217613000963BA /* fn_1.c */,
+				3E47582D21217613000963BA /* fni_32.c */,
+				3E47582E21217613000963BA /* twiddle.c */,
+				3E47582F21217613000963BA /* fn_5.c */,
+				3E47583021217613000963BA /* fftw-int.h */,
+				3E47583121217613000963BA /* fftw.h */,
+				3E47583221217613000963BA /* generic.c */,
+				3E47583321217613000963BA /* fn_64.c */,
+				3E47583421217613000963BA /* fni_13.c */,
+				3E47583521217613000963BA /* ftw_6.c */,
+				3E47583621217613000963BA /* putils.c */,
+				3E47583721217613000963BA /* ftw_32.c */,
+				3E47583821217613000963BA /* fni_8.c */,
+				3E47583921217613000963BA /* fftwf77.c */,
+				3E47583A21217613000963BA /* config.c */,
+				3E47583B21217613000963BA /* fn_15.c */,
+				3E47583C21217613000963BA /* fni_2.c */,
+				3E47583D21217613000963BA /* fn_11.c */,
+				3E47583E21217613000963BA /* fni_6.c */,
+				3E47583F21217613000963BA /* ftwi_32.c */,
+				3E47584021217613000963BA /* ftwi_4.c */,
+				3E47584121217613000963BA /* malloc.c */,
+				3E47584221217613000963BA /* fftwnd.c */,
+				3E47584321217613000963BA /* fn_2.c */,
+				3E47584421217613000963BA /* fn_8.c */,
+				3E47584521217613000963BA /* fni_14.c */,
+				3E47584621217613000963BA /* fni_10.c */,
+				3E47584721217613000963BA /* ftw_5.c */,
+				3E47584821217613000963BA /* wisdom.c */,
+				3E47584921217613000963BA /* fn_6.c */,
+				3E47584A21217613000963BA /* Makefile.in */,
+				3E47584B21217613000963BA /* ftwi_10.c */,
+				3E47584C21217613000963BA /* fni_1.c */,
+				3E47584D21217613000963BA /* fn_16.c */,
+				3E47584E21217613000963BA /* ftwi_3.c */,
+				3E47584F21217613000963BA /* ftwi_9.c */,
+				3E47585021217613000963BA /* ftwi_7.c */,
+				3E47585121217613000963BA /* ftw_10.c */,
+				3E47585221217613000963BA /* fftw.h.in */,
+				3E47585321217613000963BA /* planner.c */,
+				3E47585421217613000963BA /* fni_5.c */,
+				3E47585521217613000963BA /* fn_12.c */,
+				3E47585621217613000963BA /* wisdomio.c */,
+			);
+			path = fftw;
+			sourceTree = "<group>";
+		};
+		3E4769B321218077000963BA /* api */ = {
+			isa = PBXGroup;
+			children = (
+				3E4769B421218077000963BA /* plan-dft-r2c-1d.c */,
+				3E4769B521218077000963BA /* execute-dft.c */,
+				3E4769B621218077000963BA /* mkprinter-file.c */,
+				3E4769B721218077000963BA /* fftw3.h */,
+				3E4769B821218077000963BA /* execute-dft-c2r.c */,
+				3E4769B921218077000963BA /* fftw3.f */,
+				3E4769BA21218077000963BA /* f03api.sh */,
+				3E4769BB21218077000963BA /* import-wisdom.c */,
+				3E4769BC21218077000963BA /* plan-guru-split-dft-r2c.c */,
+				3E4769BD21218077000963BA /* forget-wisdom.c */,
+				3E4769BE21218077000963BA /* plan-guru-dft.c */,
+				3E4769BF21218077000963BA /* plan-guru64-split-dft.c */,
+				3E4769C021218077000963BA /* rdft2-pad.c */,
+				3E4769C121218077000963BA /* plan-guru64-dft-r2c.c */,
+				3E4769C221218077000963BA /* execute-split-dft-r2c.c */,
+				3E4769C321218077000963BA /* plan-dft.c */,
+				3E4769C421218077000963BA /* plan-guru-dft-r2c.c */,
+				3E4769C521218077000963BA /* map-r2r-kind.c */,
+				3E4769C621218077000963BA /* plan-r2r.c */,
+				3E4769C721218077000963BA /* execute.c */,
+				3E4769C821218077000963BA /* execute-dft-r2c.c */,
+				3E4769C921218077000963BA /* flops.c */,
+				3E4769CA21218077000963BA /* plan-r2r-3d.c */,
+				3E4769CB21218077000963BA /* plan-guru-split-dft-c2r.c */,
+				3E4769CC21218077000963BA /* plan-guru-split-dft.h */,
+				3E4769CD21218077000963BA /* mktensor-iodims.h */,
+				3E4769CE21218077000963BA /* plan-guru64-dft-c2r.c */,
+				3E4769CF21218077000963BA /* export-wisdom-to-file.c */,
+				3E4769D021218077000963BA /* guru64.h */,
+				3E4769D121218077000963BA /* execute-split-dft-c2r.c */,
+				3E4769D221218077000963BA /* plan-guru-r2r.c */,
+				3E4769D321218077000963BA /* plan-dft-c2r-1d.c */,
+				3E4769D421218077000963BA /* mktensor-iodims64.c */,
+				3E4769D521218077000963BA /* export-wisdom-to-string.c */,
+				3E4769D621218077000963BA /* execute-r2r.c */,
+				3E4769D721218077000963BA /* import-system-wisdom.c */,
+				3E4769D821218077000963BA /* plan-guru-dft-c2r.c */,
+				3E4769D921218077000963BA /* fftw3.f03.in */,
+				3E4769DA21218077000963BA /* plan-dft-1d.c */,
+				3E4769DB21218077000963BA /* fftw3q.f03 */,
+				3E4769DC21218077000963BA /* plan-r2r-2d.c */,
+				3E4769DD21218077000963BA /* plan-many-dft-r2c.c */,
+				3E4769DE21218077000963BA /* Makefile.am */,
+				3E4769DF21218077000963BA /* api.h */,
+				3E4769E021218077000963BA /* plan-guru-dft.h */,
+				3E4769E121218077000963BA /* plan-dft-c2r-2d.c */,
+				3E4769E221218077000963BA /* plan-guru-split-dft-r2c.h */,
+				3E4769E321218077000963BA /* mkprinter-str.c */,
+				3E4769E421218077000963BA /* plan-dft-2d.c */,
+				3E4769E521218077000963BA /* plan-guru64-r2r.c */,
+				3E4769E621218077000963BA /* plan-r2r-1d.c */,
+				3E4769E721218077000963BA /* plan-guru64-split-dft-r2c.c */,
+				3E4769E821218077000963BA /* plan-dft-3d.c */,
+				3E4769E921218077000963BA /* f77funcs.h */,
+				3E4769EA21218077000963BA /* plan-guru-dft-r2c.h */,
+				3E4769EB21218077000963BA /* fftw3l.f03 */,
+				3E4769EC21218077000963BA /* plan-many-dft.c */,
+				3E4769ED21218077000963BA /* plan-dft-r2c.c */,
+				3E4769EE21218077000963BA /* import-wisdom-from-file.c */,
+				3E4769EF21218077000963BA /* the-planner.c */,
+				3E4769F021218077000963BA /* genf03.pl */,
+				3E4769F121218077000963BA /* version.c */,
+				3E4769F221218077000963BA /* plan-dft-c2r-3d.c */,
+				3E4769F321218077000963BA /* malloc.c */,
+				3E4769F421218077000963BA /* execute-split-dft.c */,
+				3E4769F521218077000963BA /* plan-many-dft-c2r.c */,
+				3E4769F621218077000963BA /* print-plan.c */,
+				3E4769F721218077000963BA /* mktensor-iodims.c */,
+				3E4769F821218077000963BA /* plan-guru-split-dft.c */,
+				3E4769F921218077000963BA /* plan-guru-split-dft-c2r.h */,
+				3E4769FA21218077000963BA /* export-wisdom.c */,
+				3E4769FB21218077000963BA /* plan-dft-r2c-3d.c */,
+				3E4769FC21218077000963BA /* x77.h */,
+				3E4769FD21218077000963BA /* guru.h */,
+				3E4769FE21218077000963BA /* plan-many-r2r.c */,
+				3E4769FF21218077000963BA /* mktensor-rowmajor.c */,
+				3E476A0021218077000963BA /* apiplan.c */,
+				3E476A0121218077000963BA /* plan-guru64-split-dft-c2r.c */,
+				3E476A0221218077000963BA /* mapflags.c */,
+				3E476A0321218077000963BA /* Makefile.in */,
+				3E476A0421218077000963BA /* plan-dft-r2c-2d.c */,
+				3E476A0521218077000963BA /* f77api.c */,
+				3E476A0621218077000963BA /* plan-guru-dft-c2r.h */,
+				3E476A0721218077000963BA /* plan-guru64-dft.c */,
+				3E476A0821218077000963BA /* plan-dft-c2r.c */,
+				3E476A0921218077000963BA /* configure.c */,
+				3E476A0A21218077000963BA /* plan-guru-r2r.h */,
+				3E476A0B21218077000963BA /* import-wisdom-from-string.c */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -735,6 +1280,23 @@
 			productReference = 3E153221211A929D0086BBEE /* Base_Light2.0 */;
 			productType = "com.apple.product-type.tool";
 		};
+		3E4757F221216994000963BA /* TestFFT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E4757F721216994000963BA /* Build configuration list for PBXNativeTarget "TestFFT" */;
+			buildPhases = (
+				3E4757EF21216994000963BA /* Sources */,
+				3E4757F021216994000963BA /* Frameworks */,
+				3E4757F121216994000963BA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestFFT;
+			productName = TestFFT;
+			productReference = 3E4757F321216994000963BA /* TestFFT */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -777,6 +1339,9 @@
 					3E153220211A929D0086BBEE = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					3E4757F221216994000963BA = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 3E1530D8210EF56B0086BBEE /* Build configuration list for PBXProject "Learning_OpenGL" */;
@@ -802,6 +1367,7 @@
 				3E1531C321143BBC0086BBEE /* Bloom */,
 				3E1531DC211452250086BBEE /* Render_to_texture */,
 				3E153220211A929D0086BBEE /* Base_Light2.0 */,
+				3E4757F221216994000963BA /* TestFFT */,
 			);
 		};
 /* End PBXProject section */
@@ -811,8 +1377,75 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E476A3321218077000963BA /* plan-r2r-1d.c in Sources */,
+				3E476A1021218077000963BA /* fftw3.f in Sources */,
+				3E476A4B21218077000963BA /* plan-guru64-dft.c in Sources */,
+				3E476A1D21218077000963BA /* execute.c in Sources */,
+				3E476A3D21218077000963BA /* execute-split-dft.c in Sources */,
+				3E476A2821218077000963BA /* export-wisdom-to-string.c in Sources */,
+				3E476A2D21218077000963BA /* plan-r2r-2d.c in Sources */,
+				3E476A2021218077000963BA /* plan-r2r-3d.c in Sources */,
+				3E476A1B21218077000963BA /* map-r2r-kind.c in Sources */,
+				3E476A1921218077000963BA /* plan-dft.c in Sources */,
+				3E476A3C21218077000963BA /* malloc.c in Sources */,
+				3E476A3121218077000963BA /* plan-dft-2d.c in Sources */,
+				3E476A4721218077000963BA /* plan-guru64-split-dft-c2r.c in Sources */,
+				3E476A1521218077000963BA /* plan-guru64-split-dft.c in Sources */,
+				3E476A3021218077000963BA /* mkprinter-str.c in Sources */,
+				3E476A2521218077000963BA /* plan-guru-r2r.c in Sources */,
+				3E476A3621218077000963BA /* plan-many-dft.c in Sources */,
+				3E476A4421218077000963BA /* plan-many-r2r.c in Sources */,
+				3E476A2C21218077000963BA /* plan-dft-1d.c in Sources */,
+				3E476A3821218077000963BA /* import-wisdom-from-file.c in Sources */,
+				3E476A1821218077000963BA /* execute-split-dft-r2c.c in Sources */,
+				3E476A2A21218077000963BA /* import-system-wisdom.c in Sources */,
+				3E476A1A21218077000963BA /* plan-guru-dft-r2c.c in Sources */,
+				3E476A1321218077000963BA /* forget-wisdom.c in Sources */,
+				3E476A1F21218077000963BA /* flops.c in Sources */,
+				3E476A2621218077000963BA /* plan-dft-c2r-1d.c in Sources */,
+				3E476A1421218077000963BA /* plan-guru-dft.c in Sources */,
+				3E476A3F21218077000963BA /* print-plan.c in Sources */,
+				3E476A2F21218077000963BA /* plan-dft-c2r-2d.c in Sources */,
+				3E476A1721218077000963BA /* plan-guru64-dft-r2c.c in Sources */,
+				3E476A2B21218077000963BA /* plan-guru-dft-c2r.c in Sources */,
+				3E476A4221218077000963BA /* export-wisdom.c in Sources */,
+				3E476A0D21218077000963BA /* execute-dft.c in Sources */,
+				3E476A4121218077000963BA /* plan-guru-split-dft.c in Sources */,
+				3E476A3521218077000963BA /* plan-dft-3d.c in Sources */,
+				3E476A1E21218077000963BA /* execute-dft-r2c.c in Sources */,
+				3E476A3B21218077000963BA /* plan-dft-c2r-3d.c in Sources */,
+				3E476A4C21218077000963BA /* plan-dft-c2r.c in Sources */,
+				3E476A3921218077000963BA /* the-planner.c in Sources */,
+				3E476A4A21218077000963BA /* f77api.c in Sources */,
+				3E476A3421218077000963BA /* plan-guru64-split-dft-r2c.c in Sources */,
+				3E476A4321218077000963BA /* plan-dft-r2c-3d.c in Sources */,
+				3E476A2421218077000963BA /* execute-split-dft-c2r.c in Sources */,
+				3E476A4021218077000963BA /* mktensor-iodims.c in Sources */,
+				3E476A1621218077000963BA /* rdft2-pad.c in Sources */,
+				3E476A0E21218077000963BA /* mkprinter-file.c in Sources */,
+				3E476A2921218077000963BA /* execute-r2r.c in Sources */,
+				3E476A1221218077000963BA /* plan-guru-split-dft-r2c.c in Sources */,
+				3E476A3E21218077000963BA /* plan-many-dft-c2r.c in Sources */,
+				3E476A4621218077000963BA /* apiplan.c in Sources */,
+				3E476A4D21218077000963BA /* configure.c in Sources */,
+				3E476A4921218077000963BA /* plan-dft-r2c-2d.c in Sources */,
+				3E476A3221218077000963BA /* plan-guru64-r2r.c in Sources */,
+				3E476A4E21218077000963BA /* import-wisdom-from-string.c in Sources */,
+				3E476A1C21218077000963BA /* plan-r2r.c in Sources */,
+				3E476A1121218077000963BA /* import-wisdom.c in Sources */,
+				3E476A0F21218077000963BA /* execute-dft-c2r.c in Sources */,
 				3E1530E1210EF56B0086BBEE /* main.cpp in Sources */,
+				3E476A2321218077000963BA /* export-wisdom-to-file.c in Sources */,
+				3E476A4821218077000963BA /* mapflags.c in Sources */,
+				3E476A3721218077000963BA /* plan-dft-r2c.c in Sources */,
+				3E476A2121218077000963BA /* plan-guru-split-dft-c2r.c in Sources */,
+				3E476A0C21218077000963BA /* plan-dft-r2c-1d.c in Sources */,
+				3E476A2E21218077000963BA /* plan-many-dft-r2c.c in Sources */,
 				3E1530EF210EF5F20086BBEE /* glad.c in Sources */,
+				3E476A3A21218077000963BA /* version.c in Sources */,
+				3E476A4521218077000963BA /* mktensor-rowmajor.c in Sources */,
+				3E476A2221218077000963BA /* plan-guru64-dft-c2r.c in Sources */,
+				3E476A2721218077000963BA /* mktensor-iodims64.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,6 +1536,87 @@
 			files = (
 				3E153224211A929D0086BBEE /* main.cpp in Sources */,
 				3E15322C211A92E30086BBEE /* glad.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E4757EF21216994000963BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E47588021217613000963BA /* ftw_6.c in Sources */,
+				3E47589421217613000963BA /* fn_6.c in Sources */,
+				3E47585821217613000963BA /* executor.c in Sources */,
+				3E47587821217613000963BA /* ftw_8.c in Sources */,
+				3E47587A21217613000963BA /* fni_32.c in Sources */,
+				3E47587F21217613000963BA /* fni_13.c in Sources */,
+				3E47587B21217613000963BA /* twiddle.c in Sources */,
+				3E47588F21217613000963BA /* fn_8.c in Sources */,
+				3E47588421217613000963BA /* fftwf77.c in Sources */,
+				3E47589D21217613000963BA /* fni_5.c in Sources */,
+				3E47587121217613000963BA /* fni_9.c in Sources */,
+				3E47588C21217613000963BA /* malloc.c in Sources */,
+				3E47587921217613000963BA /* fn_1.c in Sources */,
+				3E47589721217613000963BA /* fn_16.c in Sources */,
+				3E47587621217613000963BA /* ftwi_5.c in Sources */,
+				3E47588921217613000963BA /* fni_6.c in Sources */,
+				3E47589A21217613000963BA /* ftwi_7.c in Sources */,
+				3E47585921217613000963BA /* fn_3.c in Sources */,
+				3E47589C21217613000963BA /* planner.c in Sources */,
+				3E47587221217613000963BA /* fn_10.c in Sources */,
+				3E47589B21217613000963BA /* ftw_10.c in Sources */,
+				3E47586121217613000963BA /* ftwi_8.c in Sources */,
+				3E47589221217613000963BA /* ftw_5.c in Sources */,
+				3E47586721217613000963BA /* fn_13.c in Sources */,
+				3E47586B21217613000963BA /* fn_4.c in Sources */,
+				3E47589521217613000963BA /* ftwi_10.c in Sources */,
+				3E47589121217613000963BA /* fni_10.c in Sources */,
+				3E47588121217613000963BA /* putils.c in Sources */,
+				3E47585C21217613000963BA /* ftw_4.c in Sources */,
+				3E47586021217613000963BA /* timer.c in Sources */,
+				3E47589E21217613000963BA /* fn_12.c in Sources */,
+				3E47588821217613000963BA /* fn_11.c in Sources */,
+				3E47586C21217613000963BA /* ftw_7.c in Sources */,
+				3E4757F621216994000963BA /* main.cpp in Sources */,
+				3E47589F21217613000963BA /* wisdomio.c in Sources */,
+				3E47587721217613000963BA /* ftw_2.c in Sources */,
+				3E47586221217613000963BA /* fn_32.c in Sources */,
+				3E47588221217613000963BA /* ftw_32.c in Sources */,
+				3E47588E21217613000963BA /* fn_2.c in Sources */,
+				3E47588D21217613000963BA /* fftwnd.c in Sources */,
+				3E47586421217613000963BA /* ftwi_6.c in Sources */,
+				3E47585A21217613000963BA /* fni_15.c in Sources */,
+				3E47586F21217613000963BA /* fn_14.c in Sources */,
+				3E47589321217613000963BA /* wisdom.c in Sources */,
+				3E47589021217613000963BA /* fni_14.c in Sources */,
+				3E47586821217613000963BA /* ftw_9.c in Sources */,
+				3E47586321217613000963BA /* ftwi_2.c in Sources */,
+				3E47589821217613000963BA /* ftwi_3.c in Sources */,
+				3E47585F21217613000963BA /* ftw_64.c in Sources */,
+				3E47587421217613000963BA /* rader.c in Sources */,
+				3E47585721217613000963BA /* fn_9.c in Sources */,
+				3E47588621217613000963BA /* fn_15.c in Sources */,
+				3E47588521217613000963BA /* config.c in Sources */,
+				3E47587C21217613000963BA /* fn_5.c in Sources */,
+				3E47587E21217613000963BA /* fn_64.c in Sources */,
+				3E47588A21217613000963BA /* ftwi_32.c in Sources */,
+				3E47586E21217613000963BA /* ftw_16.c in Sources */,
+				3E47588721217613000963BA /* fni_2.c in Sources */,
+				3E47586D21217613000963BA /* fni_12.c in Sources */,
+				3E47587321217613000963BA /* fni_7.c in Sources */,
+				3E47588B21217613000963BA /* ftwi_4.c in Sources */,
+				3E47586621217613000963BA /* fni_4.c in Sources */,
+				3E47585E21217613000963BA /* fn_7.c in Sources */,
+				3E47589621217613000963BA /* fni_1.c in Sources */,
+				3E47587021217613000963BA /* fni_3.c in Sources */,
+				3E47589921217613000963BA /* ftwi_9.c in Sources */,
+				3E47588321217613000963BA /* fni_8.c in Sources */,
+				3E47587521217613000963BA /* ftwi_16.c in Sources */,
+				3E47586921217613000963BA /* fni_16.c in Sources */,
+				3E47585B21217613000963BA /* ftwi_64.c in Sources */,
+				3E47586A21217613000963BA /* ftw_3.c in Sources */,
+				3E47585D21217613000963BA /* fni_11.c in Sources */,
+				3E47586521217613000963BA /* fni_64.c in Sources */,
+				3E47587D21217613000963BA /* generic.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1238,6 +1952,26 @@
 			};
 			name = Release;
 		};
+		3E4757F821216994000963BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3E4757F921216994000963BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1345,6 +2079,15 @@
 			buildConfigurations = (
 				3E153226211A929D0086BBEE /* Debug */,
 				3E153227211A929D0086BBEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E4757F721216994000963BA /* Build configuration list for PBXNativeTarget "TestFFT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E4757F821216994000963BA /* Debug */,
+				3E4757F921216994000963BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
