@@ -34,8 +34,17 @@ int main()
     fftw_destroy_plan(p);
     fftw_cleanup();
     for (i=0; i<N; i++) {
+        cout<<in[i][0]<<"   "<<in[i][1]<<endl;
+    }
+    cout<<"========================================================="<<endl;
+    for (i=0; i<N; i++) {
         cout<<out[i][0]<<"   "<<out[i][1]<<endl;
     }
-    
+    if (in!=NULL) {
+        fftw_free(in);
+    }
+    if (out!=NULL) {
+        fftw_free(out);
+    }
     return 0;
 }

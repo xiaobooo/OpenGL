@@ -241,6 +241,8 @@
 		3E15322E211A93470086BBEE /* 2.2.basic_lighting.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 2.2.basic_lighting.vs; sourceTree = "<group>"; };
 		3E15322F211A93480086BBEE /* 2.2.lamp.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 2.2.lamp.vs; sourceTree = "<group>"; };
 		3E153230211A93480086BBEE /* 2.2.basic_lighting.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 2.2.basic_lighting.fs; sourceTree = "<group>"; };
+		3E4757E5212151BF000963BA /* libfftw3f_threads.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f_threads.a; path = "../../../../CODE/OpenGL/fft_conv/arm64-v8a/usr/lib/libfftw3f_threads.a"; sourceTree = "<group>"; };
+		3E4757E6212151BF000963BA /* libfftw3f.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f.a; path = "../../../../CODE/OpenGL/fft_conv/arm64-v8a/usr/lib/libfftw3f.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -406,6 +408,8 @@
 		3E1530E7210EF5CA0086BBEE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E4757E5212151BF000963BA /* libfftw3f_threads.a */,
+				3E4757E6212151BF000963BA /* libfftw3f.a */,
 				3E1530EC210EF5E30086BBEE /* libglfw.dylib */,
 				3E1530EA210EF5E00086BBEE /* libGLEW.dylib */,
 				3E1530E8210EF5CA0086BBEE /* OpenGL.framework */,
