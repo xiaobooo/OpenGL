@@ -1,21 +1,21 @@
 //
 //  main.cpp
 //  Spectrum3.0
+//  引入FFTW进行测试
 //
 //  Created by boone on 2018/7/18.
 //  Copyright © 2018年 boone. All rights reserved.
 //
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <unistd.h>
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <fftw3.h>
 
 #include <learnopengl/shader.h>
-
-
-#include <iostream>
-#include <vector>
-#include <cmath>
-#include <unistd.h>
 
 using namespace std;
 
