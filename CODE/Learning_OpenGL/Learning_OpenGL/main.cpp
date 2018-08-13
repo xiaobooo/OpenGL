@@ -5,3 +5,29 @@
 //  Created by boone on 2018/7/30.
 //  Copyright © 2018年 boone. All rights reserved.
 //
+
+#include <iostream>
+
+#include <fftw3.h>
+
+using namespace std;
+
+#define N 80
+
+int main()
+{
+    int i;
+    fftw_complex *in,*out;
+    fftw_plan p;
+    in = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*N);
+    out = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*N);
+    if (in==NULL||out==NULL) {
+        cout<<"ERROR: Fail to memory allocation"<<endl;
+    }else{
+        for (i=0; i<N; i++) {
+            in[i][0]=i+1;
+            in[i][1]=0;
+        }
+    }
+    return 0;
+}
