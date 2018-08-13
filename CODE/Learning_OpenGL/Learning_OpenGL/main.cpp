@@ -12,7 +12,7 @@
 
 using namespace std;
 
-#define N 80
+#define N 8
 
 int main()
 {
@@ -36,7 +36,7 @@ int main()
     for (i=0; i<N; i++) {
         cout<<in[i][0]<<"   "<<in[i][1]<<endl;
     }
-    cout<<"========================================================="<<endl;
+    cout<<"=================================================="<<endl;
     for (i=0; i<N; i++) {
         cout<<out[i][0]<<"   "<<out[i][1]<<endl;
     }
