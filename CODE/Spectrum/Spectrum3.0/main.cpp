@@ -307,7 +307,7 @@ void drawPoint()
 //绘制波形频谱
 void drawWave()
 {
-    //颜色随机设置 
+    //颜色随机设置
     float redValue = 0.0f;
     float blueValue = 1.0f;
     
@@ -323,7 +323,7 @@ void drawWave()
             blueValue=blueValue+0.002;
         }
         
-        //glLineWidth(8); 
+        //glLineWidth(8);
         glPointSize(4);
         glDrawArrays(GL_POINTS, i, 1);
     }
