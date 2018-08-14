@@ -54,7 +54,7 @@ void fileOutput()
             if(pcm_In<0){
                 pcm_In=-pcm_In;
             }
-            vertices.push_back((float)pcm_In/30000);
+            vertices.push_back((float)pcm_In/32768);
         }
         i++;
     }
