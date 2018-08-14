@@ -45,6 +45,7 @@
 		3E476A7C2122B2B4000963BA /* libfftw3f.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A782122B2B4000963BA /* libfftw3f.a */; };
 		3E476A7D2122B2B4000963BA /* libfftw3_threads.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A792122B2B4000963BA /* libfftw3_threads.a */; };
 		3E476A7E2122B2B4000963BA /* libfftw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A7A2122B2B4000963BA /* libfftw3.a */; };
+		3E476A872122B3D6000963BA /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E476A862122B3D6000963BA /* glad.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -155,6 +156,13 @@
 		3E476A782122B2B4000963BA /* libfftw3f.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f.a; path = ../../../../CODE/OpenGL/fftw3/libfftw3f.a; sourceTree = "<group>"; };
 		3E476A792122B2B4000963BA /* libfftw3_threads.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3_threads.a; path = ../../../../CODE/OpenGL/fftw3/libfftw3_threads.a; sourceTree = "<group>"; };
 		3E476A7A2122B2B4000963BA /* libfftw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3.a; path = ../../../../CODE/OpenGL/fftw3/libfftw3.a; sourceTree = "<group>"; };
+		3E476A802122B3BD000963BA /* wave.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = wave.vs; sourceTree = "<group>"; };
+		3E476A812122B3BD000963BA /* point.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = point.fs; sourceTree = "<group>"; };
+		3E476A822122B3BD000963BA /* spectrum.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.fs; sourceTree = "<group>"; };
+		3E476A832122B3BD000963BA /* spectrum.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.vs; sourceTree = "<group>"; };
+		3E476A842122B3BD000963BA /* point.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = point.vs; sourceTree = "<group>"; };
+		3E476A852122B3BD000963BA /* wave.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = wave.fs; sourceTree = "<group>"; };
+		3E476A862122B3D6000963BA /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,9 +357,24 @@
 		3E476A6E2122B292000963BA /* Spectrum4.0 */ = {
 			isa = PBXGroup;
 			children = (
+				3E476A7F2122B3BD000963BA /* shader */,
 				3E476A6F2122B292000963BA /* main.cpp */,
+				3E476A862122B3D6000963BA /* glad.c */,
 			);
 			path = Spectrum4.0;
+			sourceTree = "<group>";
+		};
+		3E476A7F2122B3BD000963BA /* shader */ = {
+			isa = PBXGroup;
+			children = (
+				3E476A802122B3BD000963BA /* wave.vs */,
+				3E476A812122B3BD000963BA /* point.fs */,
+				3E476A822122B3BD000963BA /* spectrum.fs */,
+				3E476A832122B3BD000963BA /* spectrum.vs */,
+				3E476A842122B3BD000963BA /* point.vs */,
+				3E476A852122B3BD000963BA /* wave.fs */,
+			);
+			path = shader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -591,6 +614,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E476A702122B292000963BA /* main.cpp in Sources */,
+				3E476A872122B3D6000963BA /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
