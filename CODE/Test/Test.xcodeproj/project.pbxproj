@@ -62,6 +62,10 @@
 		3E3C2FD820F44546001D1341 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E5B20E9B744001D1341 /* OpenGL.framework */; };
 		3E3C2FD920F44557001D1341 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2F9720EF632D001D1341 /* libGLEW.dylib */; };
 		3E3C2FDA20F4455A001D1341 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2F9920EF6330001D1341 /* libglfw.dylib */; };
+		3E476A6521227F7C000963BA /* libfftw3f_threads.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A6121227F7C000963BA /* libfftw3f_threads.a */; };
+		3E476A6621227F7C000963BA /* libfftw3f.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A6221227F7C000963BA /* libfftw3f.a */; };
+		3E476A6721227F7C000963BA /* libfftw3_threads.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A6321227F7C000963BA /* libfftw3_threads.a */; };
+		3E476A6821227F7C000963BA /* libfftw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A6421227F7C000963BA /* libfftw3.a */; };
 		3E6E535020F5E109007BF30B /* basstest.nib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6E534F20F5E108007BF30B /* basstest.nib */; };
 		3E6E53DF20F759E1007BF30B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E6E53DE20F759E1007BF30B /* main.cpp */; };
 		3E6E53E320F75A49007BF30B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3C2E5B20E9B744001D1341 /* OpenGL.framework */; };
@@ -275,6 +279,10 @@
 		3E3C2FC520F35B68001D1341 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E3C2FD120F4453C001D1341 /* Waveform4.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Waveform4.0; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3C2FD320F4453C001D1341 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E476A6121227F7C000963BA /* libfftw3f_threads.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f_threads.a; path = ../../../../CODE/OpenGL/fftw3/libfftw3f_threads.a; sourceTree = "<group>"; };
+		3E476A6221227F7C000963BA /* libfftw3f.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f.a; path = ../../../../CODE/OpenGL/fftw3/libfftw3f.a; sourceTree = "<group>"; };
+		3E476A6321227F7C000963BA /* libfftw3_threads.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3_threads.a; path = ../../../../CODE/OpenGL/fftw3/libfftw3_threads.a; sourceTree = "<group>"; };
+		3E476A6421227F7C000963BA /* libfftw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3.a; path = ../../../../CODE/OpenGL/fftw3/libfftw3.a; sourceTree = "<group>"; };
 		3E6E534F20F5E108007BF30B /* basstest.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = basstest.nib; path = "../../../../CODE/OpenGL/bass24-osx/basstest/basstest.nib"; sourceTree = "<group>"; };
 		3E6E53DC20F759E1007BF30B /* Waveform5.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Waveform5.0; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E6E53DE20F759E1007BF30B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -442,6 +450,10 @@
 				3E3C2E5A20E9B73B001D1341 /* GLUT.framework in Frameworks */,
 				3E3C2EAC20EA54DC001D1341 /* libglfw.dylib in Frameworks */,
 				3E3C2EAA20EA54D2001D1341 /* libGLEW.dylib in Frameworks */,
+				3E476A6521227F7C000963BA /* libfftw3f_threads.a in Frameworks */,
+				3E476A6621227F7C000963BA /* libfftw3f.a in Frameworks */,
+				3E476A6721227F7C000963BA /* libfftw3_threads.a in Frameworks */,
+				3E476A6821227F7C000963BA /* libfftw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +532,10 @@
 		3E3C2E5820E9B73A001D1341 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E476A6321227F7C000963BA /* libfftw3_threads.a */,
+				3E476A6421227F7C000963BA /* libfftw3.a */,
+				3E476A6121227F7C000963BA /* libfftw3f_threads.a */,
+				3E476A6221227F7C000963BA /* libfftw3f.a */,
 				3E6E53E620F75A60007BF30B /* libglfw.dylib */,
 				3E6E53E420F75A57007BF30B /* libGLEW.dylib */,
 				3E6E534F20F5E108007BF30B /* basstest.nib */,

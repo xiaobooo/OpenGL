@@ -133,43 +133,79 @@ int main()
     // ------------------------------------
     Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Test/Test/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Test/Test/spectrum.fs");
     
+    //FFTW
+    fftw_complex *in,*out;
+    fftw_plan p;
+    in = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*n);
+    out = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*n);
+    if (in==NULL||out==NULL) {
+        cout<<"ERROR: Fail to memory allocation"<<endl;
+    }else{
+        int  i=0;
+        for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it++ ){
+            in[i][0]=*it;
+            in[i][1]=0;
+            i++;
+        }
+    }
+    p = fftw_plan_dft_1d(n, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
+    fftw_execute(p);
+    fftw_destroy_plan(p);
+    fftw_cleanup();
+//    for (int i=0; i<n; i++) {
+//        printf("%f,%f,    %f,%f\n",in[i][0],in[0][1],out[i][0],out[i][1]);
+//    }
+    
+    
     float* arr = new float[6*n];
     float* arr1 = new float[6*n];
     float* arr2 = new float[3*n];
-    
-    
-    int i=0;
+
     float xstart=-1.0;
-    
+    int j=1;
     //直线型频谱图数据存储
-    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
+    for(int i=0;i<n; )    //用迭代器的方式输出容器对象的值
     {
-        arr[i++]=xstart;     //圆上的点
+        float temp =out[j][0]/30000;
+        if (temp<0) {
+            temp=-temp;
+        }
+        j++;
+
+        arr[i++]=xstart;
         arr[i++]=0.0f;
         arr[i++]=0.0f;
         
-        arr[i++]=xstart;     //由圆向外延伸的终点，表示频谱
-        arr[i++]=*it;
+        arr[i++]=xstart;
+        arr[i++]=temp;
         arr[i++]=0.0f;
         
         xstart=xstart+0.002;
         if (xstart>1.0) {
-            xstart=-1.0;     //循环存储N个圆形频谱
+            xstart=-1.0;
         }
-        
     }
+//    for (int i=0; i<n; i++) {
+//        cout<<arr[i]<<"      ";
+//    }
     
     //离散点频谱图数据存储
     xstart=-1.0;
-    i=0;
-    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
+    j=0;
+    for(int i=0;i<n;)    //用迭代器的方式输出容器对象的值
     {
+        float temp =out[j][0]/30000;
+        if (temp<0) {
+            temp=-temp;
+        }
+        j++;
+        
         arr1[i++]=xstart;
-        arr1[i++]=-*it-0.01;
+        arr1[i++]=-temp;
         arr1[i++]=0.0f;
         
         arr1[i++]=xstart;
-        arr1[i++]=*it+0.01;
+        arr1[i++]=temp;
         arr1[i++]=0.0f;
         
         xstart=xstart+0.005;
@@ -180,11 +216,17 @@ int main()
     
     //波形频谱图数据存储
     xstart=-1.0;
-    i=0;
-    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
+    j=0;
+    for(int i=0;i<n;)    //用迭代器的方式输出容器对象的值
     {
+        float temp =out[j][0]/30000;
+        if (temp>0) {
+            temp=-temp;
+        }
+        j++;
+        
         arr2[i++]=xstart;
-        arr2[i++]=-*it;
+        arr2[i++]=temp;
         arr2[i++]=0.0f;
         
         xstart=xstart+0.001;
@@ -194,6 +236,12 @@ int main()
         
     }
     
+    if (in!=NULL) {
+        fftw_free(in);
+    }
+    if (out!=NULL) {
+        fftw_free(out);
+    }
     //直线型
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);

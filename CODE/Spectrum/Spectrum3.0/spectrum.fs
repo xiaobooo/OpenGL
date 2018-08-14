@@ -6,7 +6,7 @@ uniform vec4 ourColor;
 
 uniform float u_hue=121.0;
 uniform float u_saturation=0.82;
-uniform float u_value=1.0;
+uniform float u_value=0.2;
 uniform float u_contrast=0.0;
 
 vec3 rgbtohsv(vec3 rgb)

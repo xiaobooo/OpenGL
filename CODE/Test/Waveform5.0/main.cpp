@@ -45,9 +45,9 @@ void fileOutput()
         size = fread(&pcm_In, 2, 1, fp);     //pcm中每个数据大小为2字节，每次读取1个数据
         if(size>0)
         {
-            if(pcm_In<0){
-                pcm_In=-pcm_In;
-            }
+//            if(pcm_In<0){
+//                pcm_In=-pcm_In;
+//            }
             vertices.push_back((float)pcm_In/30000);
         }
         i++;
