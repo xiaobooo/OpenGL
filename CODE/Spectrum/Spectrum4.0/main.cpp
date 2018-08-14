@@ -106,6 +106,8 @@ int main()
     
     Shader waveShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum4.0/shader/wave.vs","/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum4.0/shader/wave.fs");
     
+    Shader pointShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum4.0/shader/point.vs","/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum4.0/shader/point.fs");
+    
     float* arr = new float[6*n];
     float* arr1 = new float[6*n];
     float* arr2 = new float[3*n];
