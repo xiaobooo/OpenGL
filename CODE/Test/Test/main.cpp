@@ -142,7 +142,7 @@ int main()
         cout<<"ERROR: Fail to memory allocation"<<endl;
     }else{
         int  i=0;
-        for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it++ ){
+        for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 ){
             in[i][0]=*it;
             in[i][1]=0;
             i++;
@@ -166,10 +166,7 @@ int main()
     //直线型频谱图数据存储
     for(int i=0;i<n; )    //用迭代器的方式输出容器对象的值
     {
-        float temp =out[j][0]/30000;
-        if (temp<0) {
-            temp=-temp;
-        }
+        float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
         j++;
 
         arr[i++]=xstart;
@@ -194,10 +191,7 @@ int main()
     j=0;
     for(int i=0;i<n;)    //用迭代器的方式输出容器对象的值
     {
-        float temp =out[j][0]/30000;
-        if (temp<0) {
-            temp=-temp;
-        }
+        float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
         j++;
         
         arr1[i++]=xstart;
@@ -219,12 +213,9 @@ int main()
     j=0;
     for(int i=0;i<n;)    //用迭代器的方式输出容器对象的值
     {
-        float temp =out[j][0]/30000;
-        if (temp>0) {
-            temp=-temp;
-        }
+        float temp =-sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/50000;
         j++;
-        
+
         arr2[i++]=xstart;
         arr2[i++]=temp;
         arr2[i++]=0.0f;
@@ -343,7 +334,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 //绘制频谱
 void drawLine()
 {
-  //  usleep(99900);   //通过延时实现频谱的显示频率
+    usleep(99900);   //通过延时实现频谱的显示频率
     
     //颜色随机设置
     float redValue = 0.0f;

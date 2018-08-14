@@ -15,6 +15,7 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <fftw3.h>
 
 #include <learnopengl/shader.h>
 
@@ -156,15 +157,21 @@ int main()
     
     //离散点频谱图数据存储
     xstart=-1.0;
-    i=0;
-    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
+    int j=0;
+    for(i=0;i<n; )    //用迭代器的方式输出容器对象的值
     {
+        float temp =out[j][1]/30000;
+        if (temp<0) {
+            temp=-temp;
+        }
+        j++;
+        
         arr1[i++]=xstart;
-        arr1[i++]=-*it-0.01;
+        arr1[i++]=temp;
         arr1[i++]=0.0f;
         
         arr1[i++]=xstart;
-        arr1[i++]=*it+0.01;
+        arr1[i++]=-temp;
         arr1[i++]=0.0f;
         
         xstart=xstart+0.005;
