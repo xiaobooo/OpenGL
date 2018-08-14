@@ -25,8 +25,8 @@ int main()
     if (in==NULL||out==NULL) {
         cout<<"ERROR: Fail to memory allocation"<<endl;
     }else{
-        for (i=1000; i<1000*N; i+=1000) {
-            in[i][0]=i+1;
+        for (i=0; i<N; i++) {
+            in[i][0]=i*1000+50;
             in[i][1]=0;
         }
     }
@@ -37,7 +37,7 @@ int main()
     for (i=0; i<N; i++) {
 //        cout<<in[i][0]<<"   "<<in[i][1]<<"      ";
 //        cout<<out[i][0]<<"   "<<out[i][1]<<endl;
-        printf("%",)
+        printf("%f,%f,    %f,%f\n",in[i][0],in[0][1],out[i][0],out[i][1]);
     }
     
     if (in!=NULL) {
