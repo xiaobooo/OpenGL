@@ -177,7 +177,7 @@ int main()
         arr[i++]=temp;
         arr[i++]=0.0f;
         
-        xstart=xstart+0.002;
+        xstart=xstart+0.001;
         if (xstart>1.0) {
             xstart=-1.0;
         }
@@ -340,7 +340,7 @@ void drawLine()
     float redValue = 0.0f;
     float blueValue = 1.0f;
     
-    for (int i=istart; i<2000+istart; i+=2) {
+    for (int i=istart; i<4000+istart; i+=2) {
         
         glUniform4f(0, redValue, 1.0f, blueValue, 1.0f);
         
@@ -355,7 +355,7 @@ void drawLine()
         glDrawArrays(GL_LINES, i, 2);
     }
     
-    istart+=2000;
+    istart+=4000;
 }
 
 //绘制离散型频谱
