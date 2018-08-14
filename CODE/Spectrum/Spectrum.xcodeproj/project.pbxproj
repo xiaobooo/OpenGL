@@ -46,6 +46,15 @@
 		3E476A7D2122B2B4000963BA /* libfftw3_threads.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A792122B2B4000963BA /* libfftw3_threads.a */; };
 		3E476A7E2122B2B4000963BA /* libfftw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A7A2122B2B4000963BA /* libfftw3.a */; };
 		3E476A872122B3D6000963BA /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E476A862122B3D6000963BA /* glad.c */; };
+		3E476A8F2122C738000963BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E476A8E2122C738000963BA /* main.cpp */; };
+		3E476A932122C75D000963BA /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530C5210EA1120086BBEE /* OpenGL.framework */; };
+		3E476A942122C766000963BA /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530C7210EA1220086BBEE /* libGLEW.dylib */; };
+		3E476A952122C768000963BA /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530C9210EA1250086BBEE /* libglfw.dylib */; };
+		3E476A962122C771000963BA /* libfftw3_threads.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A792122B2B4000963BA /* libfftw3_threads.a */; };
+		3E476A972122C771000963BA /* libfftw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A7A2122B2B4000963BA /* libfftw3.a */; };
+		3E476A982122C771000963BA /* libfftw3f_threads.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A772122B2B3000963BA /* libfftw3f_threads.a */; };
+		3E476A992122C771000963BA /* libfftw3f.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A782122B2B4000963BA /* libfftw3f.a */; };
+		3E476A9B2122C78E000963BA /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E476A9A2122C78E000963BA /* glad.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -112,6 +121,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		3E476A8A2122C738000963BA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -163,6 +181,11 @@
 		3E476A842122B3BD000963BA /* point.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = point.vs; sourceTree = "<group>"; };
 		3E476A852122B3BD000963BA /* wave.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = wave.fs; sourceTree = "<group>"; };
 		3E476A862122B3D6000963BA /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		3E476A8C2122C738000963BA /* Spectrum5.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Spectrum5.0; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E476A8E2122C738000963BA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E476A9A2122C78E000963BA /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		3E476A9C2122C7D5000963BA /* spectrum.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.fs; sourceTree = "<group>"; };
+		3E476A9D2122C7D5000963BA /* spectrum.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.vs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +263,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3E476A892122C738000963BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E476A932122C75D000963BA /* OpenGL.framework in Frameworks */,
+				3E476A962122C771000963BA /* libfftw3_threads.a in Frameworks */,
+				3E476A972122C771000963BA /* libfftw3.a in Frameworks */,
+				3E476A982122C771000963BA /* libfftw3f_threads.a in Frameworks */,
+				3E476A992122C771000963BA /* libfftw3f.a in Frameworks */,
+				3E476A942122C766000963BA /* libGLEW.dylib in Frameworks */,
+				3E476A952122C768000963BA /* libglfw.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -253,6 +290,7 @@
 				3E1531F22117DB740086BBEE /* Spectrum2.0 */,
 				3E153206211981CC0086BBEE /* Spectrum3.0 */,
 				3E476A6E2122B292000963BA /* Spectrum4.0 */,
+				3E476A8D2122C738000963BA /* Spectrum5.0 */,
 				3E1530B0210EA0CE0086BBEE /* Products */,
 				3E1530C4210EA1110086BBEE /* Frameworks */,
 			);
@@ -268,6 +306,7 @@
 				3E1531F12117DB740086BBEE /* Spectrum2.0 */,
 				3E153205211981CC0086BBEE /* Spectrum3.0 */,
 				3E476A6D2122B292000963BA /* Spectrum4.0 */,
+				3E476A8C2122C738000963BA /* Spectrum5.0 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -375,6 +414,17 @@
 				3E476A852122B3BD000963BA /* wave.fs */,
 			);
 			path = shader;
+			sourceTree = "<group>";
+		};
+		3E476A8D2122C738000963BA /* Spectrum5.0 */ = {
+			isa = PBXGroup;
+			children = (
+				3E476A9C2122C7D5000963BA /* spectrum.fs */,
+				3E476A9D2122C7D5000963BA /* spectrum.vs */,
+				3E476A9A2122C78E000963BA /* glad.c */,
+				3E476A8E2122C738000963BA /* main.cpp */,
+			);
+			path = Spectrum5.0;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,6 +549,23 @@
 			productReference = 3E476A6D2122B292000963BA /* Spectrum4.0 */;
 			productType = "com.apple.product-type.tool";
 		};
+		3E476A8B2122C738000963BA /* Spectrum5.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E476A902122C739000963BA /* Build configuration list for PBXNativeTarget "Spectrum5.0" */;
+			buildPhases = (
+				3E476A882122C738000963BA /* Sources */,
+				3E476A892122C738000963BA /* Frameworks */,
+				3E476A8A2122C738000963BA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Spectrum5.0;
+			productName = Spectrum5.0;
+			productReference = 3E476A8C2122C738000963BA /* Spectrum5.0 */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -529,6 +596,9 @@
 					3E476A6C2122B292000963BA = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					3E476A8B2122C738000963BA = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 3E1530AA210EA0CE0086BBEE /* Build configuration list for PBXProject "Spectrum" */;
@@ -550,6 +620,7 @@
 				3E1531F02117DB740086BBEE /* Spectrum2.0 */,
 				3E153204211981CC0086BBEE /* Spectrum3.0 */,
 				3E476A6C2122B292000963BA /* Spectrum4.0 */,
+				3E476A8B2122C738000963BA /* Spectrum5.0 */,
 			);
 		};
 /* End PBXProject section */
@@ -615,6 +686,15 @@
 			files = (
 				3E476A702122B292000963BA /* main.cpp in Sources */,
 				3E476A872122B3D6000963BA /* glad.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E476A882122C738000963BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E476A8F2122C738000963BA /* main.cpp in Sources */,
+				3E476A9B2122C78E000963BA /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,6 +950,26 @@
 			};
 			name = Release;
 		};
+		3E476A912122C739000963BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3E476A922122C739000963BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -941,6 +1041,15 @@
 			buildConfigurations = (
 				3E476A712122B292000963BA /* Debug */,
 				3E476A722122B292000963BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E476A902122C739000963BA /* Build configuration list for PBXNativeTarget "Spectrum5.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E476A912122C739000963BA /* Debug */,
+				3E476A922122C739000963BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
