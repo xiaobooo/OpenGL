@@ -108,6 +108,26 @@ int main()
     
     Shader pointShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum4.0/shader/point.vs","/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum4.0/shader/point.fs");
     
+    //FFTW
+    fftw_complex *in,*out;
+    fftw_plan p;
+    in = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*n);
+    out = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*n);
+    if (in==NULL||out==NULL) {
+        cout<<"ERROR: Fail to memory allocation"<<endl;
+    }else{
+        int  i=0;
+        for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it++ ){
+            in[i][0]=*it;
+            in[i][1]=0;
+            i++;
+        }
+    }
+    p = fftw_plan_dft_1d(n, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
+    fftw_execute(p);
+    fftw_destroy_plan(p);
+    fftw_cleanup();
+    
     float* arr = new float[6*n];
     float* arr1 = new float[6*n];
     float* arr2 = new float[3*n];
@@ -169,6 +189,12 @@ int main()
         
     }
     
+    if (in!=NULL) {
+        fftw_free(in);
+    }
+    if (out!=NULL) {
+        fftw_free(out);
+    }
     //直线型
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
