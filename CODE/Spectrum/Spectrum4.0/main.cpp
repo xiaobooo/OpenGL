@@ -329,7 +329,7 @@ void drawLine()
     istart+=2000;
 }
 
-//绘制离散型频谱
+//绘制离散型频谱 
 void drawPoint()
 {
     
