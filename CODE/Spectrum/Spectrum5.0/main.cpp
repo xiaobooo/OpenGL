@@ -131,7 +131,7 @@ int main()
     
     // 构建并编译着色器程序
     // ------------------------------------
-    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Test/Test/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Test/Test/spectrum.fs");
+    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum5.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum5.0/spectrum.fs");
     
     //FFTW
     fftw_complex *in,*out;
