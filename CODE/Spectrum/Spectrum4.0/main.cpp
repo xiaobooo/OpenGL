@@ -231,11 +231,13 @@ int main()
             drawLine();
         }
         
+        pointShader.use();
         glBindVertexArray(pointVAO); // 激活VAO表示的顶点缓存
         if (pstart<6*n) {   //到达终点之前每次绘制一帧的频谱图
             drawPoint();
         }
         
+        waveShader.use();
         glBindVertexArray(waveVAO); // 激活VAO表示的顶点缓存
         if (wstart<3*n) {   //到达终点之前每次绘制一帧的频谱图
             drawWave();
