@@ -12,7 +12,7 @@
 
 using namespace std;
 
-#define N 8
+#define N 10
 
 int main()
 {
@@ -26,7 +26,7 @@ int main()
     }else{
         for (i=0; i<N; i++) {
             in[i][0]=i+1;
-            in[i][1]=0;
+            in[i][1]=5;
         }
     }
     p = fftw_plan_dft_1d(N, in, out, FFTW_FORWARD, FFTW_ESTIMATE);

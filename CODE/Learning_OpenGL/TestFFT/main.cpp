@@ -13,7 +13,7 @@
 
 using namespace std;
 
-#define N 50
+#define N 99
 
 int main()
 {
@@ -26,11 +26,11 @@ int main()
         cout<<"ERROR: Fail to memory allocation"<<endl;
     }else{
         for (i=0; i<N; i++) {
-            in[i][0]=i*1000+50;
+            in[i][0]=i;
             in[i][1]=0;
         }
     }
-    p = fftw_plan_dft_1d(N, in, out, FFTW_BACKWARD, FFTW_ESTIMATE);
+    p = fftw_plan_dft_1d(N, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
     fftw_execute(p);
     fftw_destroy_plan(p);
     fftw_cleanup();
