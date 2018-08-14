@@ -177,7 +177,7 @@ int main()
         arr[i++]=temp;
         arr[i++]=0.0f;
         
-        xstart=xstart+0.001;
+        xstart=xstart+0.002;
         if (xstart>1.0) {
             xstart=-1.0;
         }
@@ -334,13 +334,13 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 //绘制频谱
 void drawLine()
 {
-    usleep(99900);   //通过延时实现频谱的显示频率
+  //  usleep(99900);   //通过延时实现频谱的显示频率
     
     //颜色随机设置
     float redValue = 0.0f;
     float blueValue = 1.0f;
     
-    for (int i=istart; i<4000+istart; i+=2) {
+    for (int i=istart; i<2000+istart; i+=2) {
         
         glUniform4f(0, redValue, 1.0f, blueValue, 1.0f);
         
@@ -355,7 +355,7 @@ void drawLine()
         glDrawArrays(GL_LINES, i, 2);
     }
     
-    istart+=4000;
+    istart+=2000;
 }
 
 //绘制离散型频谱

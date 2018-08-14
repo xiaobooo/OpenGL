@@ -138,7 +138,7 @@ int main()
     //直线型频谱图数据存储
     for(int i=0;i<n; )    //用迭代器的方式输出容器对象的值
     {
-        float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
+        float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/10000;
         j++;
         
         arr[i++]=xstart;
