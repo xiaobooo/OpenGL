@@ -378,7 +378,7 @@ void drawWave()
     
     for (int i=wstart; i<2000+wstart; i++) {
         
-        glUniform4f(0, redValue, blueValue, 1.0f, 1.0f);
+        glUniform4f(0, redValue, 1.0f ,blueValue, 1.0f);
         
         if (i<=500+wstart) {
             redValue=redValue+0.002;
