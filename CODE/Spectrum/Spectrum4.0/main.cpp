@@ -249,7 +249,6 @@ int main()
     
     
     // 循环渲染
-    // -----------
     while (!glfwWindowShouldClose(window))
     {
         processInput(window);
