@@ -305,9 +305,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 }
 //绘制频谱
 void drawLine()
-{
-    usleep(99900);   //通过延时实现频谱的显示频率
-    
+{    
     //颜色随机设置
     float redValue = 0.0f;
     float blueValue = 1.0f;
