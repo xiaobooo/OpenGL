@@ -133,30 +133,6 @@ int main()
     float* arr1 = new float[6*n];
     float* arr2 = new float[3*n];
     
-//    int i=0;
-//    float xstart=-1.0;
-//
-//    //直线型频谱图数据存储
-//    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
-//    {
-//        if (*it<0) {
-//            *it=-*it;
-//        }
-//
-//        arr[i++]=xstart;     //圆上的点
-//        arr[i++]=0.0f;
-//        arr[i++]=0.0f;
-//
-//        arr[i++]=xstart;     //由圆向外延伸的终点，表示频谱
-//        arr[i++]=*it;
-//        arr[i++]=0.0f;
-//
-//        xstart=xstart+0.002;
-//        if (xstart>1.0) {
-//            xstart=-1.0;     //循环存储N个圆形频谱
-//        }
-//
-//    }
     float xstart=-1.0;
     int j=1000;
     //直线型频谱图数据存储
