@@ -135,9 +135,9 @@ int main()
     
     float xstart=-1.0;
     int j=1000;
+    int i=0;
     //直线型频谱图数据存储
-    for(int i=0;i<n; )    //用迭代器的方式输出容器对象的值
-    {
+    while(j<n){
         float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
         j++;
         
@@ -157,8 +157,9 @@ int main()
     
     //离散点频谱图数据存储
     xstart=-1.0;
-    j=0;
-    for(int i=0;i<n; )    //用迭代器的方式输出容器对象的值
+    j=10000;
+    i=0;
+    while(j<n)
     {
         float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
         j++;
@@ -179,7 +180,7 @@ int main()
     
     //波形频谱图数据存储
     xstart=-1.0;
-    int i=0;
+    i=0;
     for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
     {
         if (*it<0) {
@@ -305,7 +306,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 }
 //绘制频谱
 void drawLine()
-{    
+{
     //颜色随机设置
     float redValue = 0.0f;
     float blueValue = 1.0f;
@@ -322,7 +323,6 @@ void drawLine()
             blueValue=blueValue+0.002;
         }
         
-        glLineWidth(8);
         glDrawArrays(GL_LINES, i, 2);
     }
     
@@ -361,8 +361,7 @@ void drawWave()
             redValue=redValue-0.002;
             blueValue=blueValue+0.002;
         }
-        
-        //glLineWidth(8);
+
         glPointSize(4);
         glDrawArrays(GL_POINTS, i, 1);
     }
