@@ -51,9 +51,9 @@ void fileOutput()
         if(size>0)
         {
             //-------------------------------------------------------------------------------------------------------------------------
-            if(pcm_In<0){
-                pcm_In=-pcm_In;
-            }
+//            if(pcm_In<0){
+//                pcm_In=-pcm_In;
+//            }
             vertices.push_back((float)pcm_In/32768);
         }
         i++;
@@ -139,6 +139,10 @@ int main()
     //直线型频谱图数据存储
     for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
     {
+        if (*it<0) {
+            *it=-*it;
+        }
+            
         arr[i++]=xstart;     //圆上的点
         arr[i++]=0.0f;
         arr[i++]=0.0f;
@@ -159,7 +163,7 @@ int main()
     int j=0;
     for(int i=0;i<n; )    //用迭代器的方式输出容器对象的值
     {
-        float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/3000;
+        float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
         j++;
         
         arr1[i++]=xstart;
@@ -178,14 +182,15 @@ int main()
     
     //波形频谱图数据存储
     xstart=-1.0;
-    j=0;
-    for(int i=0;i<n; )    //用迭代器的方式输出容器对象的值
+    i=0;
+    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
     {
-        float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/3000;
-        j++;
+        if (*it<0) {
+            *it=-*it;
+        }
         
         arr2[i++]=xstart;
-        arr2[i++]=-temp;
+        arr2[i++]=-*it;
         arr2[i++]=0.0f;
         
         xstart=xstart+0.001;
