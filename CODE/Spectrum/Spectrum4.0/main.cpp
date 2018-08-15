@@ -299,7 +299,7 @@ void processInput(GLFWwindow *window)
 }
 
 // glfw: 每当窗口大小改变时，调用该回调函数
-// ---------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
