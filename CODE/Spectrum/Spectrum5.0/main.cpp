@@ -33,7 +33,7 @@ struct wav_struct
 vector<float> vertices;    //用于存储pcm文件解析出的数据
 int istart=0;
 int wstart=0;
-int pstart=0;
+int pstart=10000;
 int n;       //记录pcm文件中数据个数
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -162,7 +162,7 @@ int main()
     float* arr2 = new float[3*n];
     
     float xstart=-1.0;
-    int j=1;
+    int j=1000;
     //直线型频谱图数据存储
     for(int i=0;i<n; )    //用迭代器的方式输出容器对象的值
     {
@@ -210,14 +210,14 @@ int main()
     
     //波形频谱图数据存储
     xstart=-1.0;
-    j=0;
-    for(int i=0;i<n;)    //用迭代器的方式输出容器对象的值
+    int i=0;
+    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
     {
-        float temp =-sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/50000;
-        j++;
-        
+        if (*it>0) {
+            *it=-*it;
+        }
         arr2[i++]=xstart;
-        arr2[i++]=temp;
+        arr2[i++]=*it;
         arr2[i++]=0.0f;
         
         xstart=xstart+0.001;
@@ -226,7 +226,7 @@ int main()
         }
         
     }
-    
+
     if (in!=NULL) {
         fftw_free(in);
     }
@@ -336,7 +336,7 @@ void drawLine()
 {
     //  usleep(99900);   //通过延时实现频谱的显示频率
     
-    //颜色随机设置
+    //颜色随机设置 
     float redValue = 0.0f;
     float blueValue = 1.0f;
     
