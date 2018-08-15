@@ -54,13 +54,13 @@ void fileOutput()
 //            if(pcm_In<0){
 //                pcm_In=-pcm_In;
 //            }
-            vertices.push_back((float)pcm_In/32768);
+            vertices.push_back(pcm_In/(double)32768);
+          //  cout<<pcm_In<<"     ";
         }
         i++;
     }
     
-    n=i;
-    // cout<<"数据个数： "<<n<<endl;
+    n=i*2;
     
     fclose(fp);
 }

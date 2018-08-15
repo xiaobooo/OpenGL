@@ -64,6 +64,8 @@ void fileOutput()
     
     n=WAV.data_size;
     
+    cout<<"数据个数： "<<n<<endl;
+    
     for (unsigned long i =0; i<WAV.data_size; i = i + 2)
     {
         //右边为大端
