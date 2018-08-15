@@ -120,11 +120,11 @@ int main()
         int  i=0;
         for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 ){
             in[i][0]=*it;
-            in[i][1]=0;
+            in[i][1]=0.0;
             i++;
         }
     }
-    p = fftw_plan_dft_1d(n, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
+    p = fftw_plan_dft_1d(n, in, out, FFTW_BACKWARD, FFTW_ESTIMATE);
     fftw_execute(p);
     fftw_destroy_plan(p);
     fftw_cleanup();
