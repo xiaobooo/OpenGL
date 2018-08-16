@@ -329,13 +329,9 @@ void drawLine()
 void drawPoint()
 {
     
-    for (int i=pstart; i<800+pstart; i++) {
-        
-        glUniform4f(0, 0.2f, 0.7f, 1.0f, 1.0f);
-        
-        glPointSize(3);
-        glDrawArrays(GL_POINTS, i, 1);
-    }
+    glUniform4f(0, 0.2f, 0.7f, 1.0f, 1.0f);
+    glPointSize(3);
+    glDrawArrays(GL_POINTS,pstart,800);
     
     pstart+=800;
 }
