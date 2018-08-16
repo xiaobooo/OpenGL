@@ -36,6 +36,10 @@
 		3E15320D211981DF0086BBEE /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530C7210EA1220086BBEE /* libGLEW.dylib */; };
 		3E15320E211981E20086BBEE /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530C9210EA1250086BBEE /* libglfw.dylib */; };
 		3E153210211981F80086BBEE /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E15320F211981F80086BBEE /* glad.c */; };
+		3E17F70F21250BB200FE4332 /* libfftw3_threads.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A792122B2B4000963BA /* libfftw3_threads.a */; };
+		3E17F71021250BB200FE4332 /* libfftw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A7A2122B2B4000963BA /* libfftw3.a */; };
+		3E17F71121250BB200FE4332 /* libfftw3f_threads.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A772122B2B3000963BA /* libfftw3f_threads.a */; };
+		3E17F71221250BB200FE4332 /* libfftw3f.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A782122B2B4000963BA /* libfftw3f.a */; };
 		3E475AFC21217B64000963BA /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E475AFB21217B64000963BA /* glad.c */; };
 		3E476A702122B292000963BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E476A6F2122B292000963BA /* main.cpp */; };
 		3E476A742122B29E000963BA /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530C5210EA1120086BBEE /* OpenGL.framework */; };
@@ -163,8 +167,6 @@
 		3E15320F211981F80086BBEE /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		3E1532112119827A0086BBEE /* spectrum.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.vs; sourceTree = "<group>"; };
 		3E1532122119827A0086BBEE /* spectrum.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.fs; sourceTree = "<group>"; };
-		3E1532192119BE910086BBEE /* lamp.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lamp.vs; sourceTree = "<group>"; };
-		3E15321A2119BE910086BBEE /* lamp.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lamp.fs; sourceTree = "<group>"; };
 		3E15321B2119BF000086BBEE /* spectrum.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.fs; sourceTree = "<group>"; };
 		3E15321C2119BF000086BBEE /* spectrum.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.vs; sourceTree = "<group>"; };
 		3E475AFB21217B64000963BA /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
@@ -206,6 +208,10 @@
 				3E1530C6210EA1120086BBEE /* OpenGL.framework in Frameworks */,
 				3E1530C8210EA1220086BBEE /* libGLEW.dylib in Frameworks */,
 				3E1530CA210EA1250086BBEE /* libglfw.dylib in Frameworks */,
+				3E17F70F21250BB200FE4332 /* libfftw3_threads.a in Frameworks */,
+				3E17F71021250BB200FE4332 /* libfftw3.a in Frameworks */,
+				3E17F71121250BB200FE4332 /* libfftw3f_threads.a in Frameworks */,
+				3E17F71221250BB200FE4332 /* libfftw3f.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,8 +332,6 @@
 				3E15321B2119BF000086BBEE /* spectrum.fs */,
 				3E15321C2119BF000086BBEE /* spectrum.vs */,
 				3E475AFB21217B64000963BA /* glad.c */,
-				3E15321A2119BE910086BBEE /* lamp.fs */,
-				3E1532192119BE910086BBEE /* lamp.vs */,
 				3E1530BF210EA0EF0086BBEE /* main.cpp */,
 			);
 			path = Test;
