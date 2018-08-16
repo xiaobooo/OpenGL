@@ -154,14 +154,11 @@ int main()
     fftw_execute(p);
     fftw_destroy_plan(p);
     fftw_cleanup();
-    //    for (int i=0; i<n; i++) {
-    //        printf("%f,%f,    %f,%f\n",in[i][0],in[0][1],out[i][0],out[i][1]);
-    //    }
     
-    
-    float* arr = new float[6*n];
-    float* arr1 = new float[6*n];
-    float* arr2 = new float[3*n];
+    //顶点数组
+    float* arr = new float[3*n];
+    float* arr1 = new float[3*n];
+    float* arr2 = new float[3*n/2];
     
     float xstart=-1.0;
     int j=1000;
@@ -184,9 +181,6 @@ int main()
             xstart=-1.0;
         }
     }
-    //    for (int i=0; i<n; i++) {
-    //        cout<<arr[i]<<"      ";
-    //    }
     
     //离散点频谱图数据存储
     xstart=-1.0;
@@ -243,7 +237,7 @@ int main()
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     
-    glBufferData(GL_ARRAY_BUFFER, 24*n, arr, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 12*n, arr, GL_STATIC_DRAW);
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     
@@ -257,7 +251,7 @@ int main()
     glBindVertexArray(pointVAO);
     glBindBuffer(GL_ARRAY_BUFFER, pointVBO);
     
-    glBufferData(GL_ARRAY_BUFFER, 24*n, arr1, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 12*n, arr1, GL_STATIC_DRAW);
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     
@@ -272,7 +266,7 @@ int main()
     glBindVertexArray(waveVAO);
     glBindBuffer(GL_ARRAY_BUFFER, waveVBO);
     
-    glBufferData(GL_ARRAY_BUFFER, 12*n, arr2, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 6*n, arr2, GL_STATIC_DRAW);
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     
@@ -335,7 +329,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 //绘制频谱
 void drawLine()
 {
-    //  usleep(99900);   //通过延时实现频谱的显示频率
+      usleep(99900);   //通过延时实现频谱的显示频率
     
     //颜色随机设置 
     float redValue = 0.0f;
