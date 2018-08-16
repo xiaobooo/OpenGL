@@ -291,21 +291,20 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
         
         ourShader.use();
-        
         glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
-        if (istart<6*n) {   //到达终点之前每次绘制一帧的频谱图
-            drawLine();
-        }
+       
+        drawLine();
+        
         
         glBindVertexArray(pointVAO); // 激活VAO表示的顶点缓存
-        if (pstart<6*n) {   //到达终点之前每次绘制一帧的频谱图
-            drawPoint();
-        }
+        
+        drawPoint();
+        
         
         glBindVertexArray(waveVAO); // 激活VAO表示的顶点缓存
-        if (wstart<3*n) {   //到达终点之前每次绘制一帧的频谱图
-            drawWave();
-        }
+        
+        drawWave();
+        
         
         glfwSwapBuffers(window);
         glfwPollEvents();
