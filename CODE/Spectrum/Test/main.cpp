@@ -134,7 +134,7 @@ int main()
     float* arr2 = new float[3*n];
     
     float xstart=-1.0;
-    int j=1000;
+    int j=0;
     int i=0;
     //直线型频谱图数据存储
     while(j<n){
@@ -157,7 +157,7 @@ int main()
     
     //离散点频谱图数据存储
     xstart=-1.0;
-    j=10000;
+    j=0;
     i=0;
     while(j<n)
     {
