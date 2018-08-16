@@ -49,10 +49,6 @@ void fileOutput()
         size = fread(&pcm_In, 2, 1, fp);     //pcm中每个数据大小为2字节，每次读取1个数据
         if(size>0)
         {
-            //-------------------------------------------------------------------------------------------------------------------------
-            //            if(pcm_In<0){
-            //                pcm_In=-pcm_In;
-            //            }
             vertices.push_back(pcm_In/(double)32768);
             //  cout<<pcm_In<<"     ";
         }
@@ -129,10 +125,10 @@ int main()
     fftw_cleanup();
     
     //顶点数组
-    float* arr = new float[6*n];
-    float* arr1 = new float[6*n];
-    float* arr2 = new float[3*n];
-    float* arr3 = new float[6*n];
+    float* arr = new float[3*n];
+    float* arr1 = new float[3*n];
+    float* arr2 = new float[3*n/2];
+    float* arr3 = new float[3*n];
     
     float xstart=-1.0;
     int j=1000;
@@ -155,29 +151,6 @@ int main()
             xstart=-1.0;
         }
     }
-    
-     xstart=-1.0;
-     j=1000;
-     i=0;
-    //直线型频谱图数据存储
-    while(j<n){
-        float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
-        j++;
-        
-        arr3[i++]=xstart;
-        arr3[i++]=-temp;
-        arr3[i++]=0.0f;
-        
-        arr3[i++]=xstart;
-        arr3[i++]=temp;
-        arr3[i++]=0.0f;
-        
-        xstart=xstart+0.002;
-        if (xstart>1.0) {
-            xstart=-1.0;
-        }
-    }
-
     
     //离散点频谱图数据存储
     xstart=-1.0;
@@ -236,21 +209,7 @@ int main()
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     
-    glBufferData(GL_ARRAY_BUFFER, 24*n, arr, GL_STATIC_DRAW);
-    
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-    
-    glEnableVertexAttribArray(0);
-    
-    //test
-    unsigned int testVBO, testVAO;
-    glGenVertexArrays(1, &testVAO);
-    glGenBuffers(1, &testVBO);
-    
-    glBindVertexArray(testVAO);
-    glBindBuffer(GL_ARRAY_BUFFER, testVBO);
-    
-    glBufferData(GL_ARRAY_BUFFER, 24*n, arr3, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 12*n, arr, GL_STATIC_DRAW);
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     
@@ -264,7 +223,7 @@ int main()
     glBindVertexArray(pointVAO);
     glBindBuffer(GL_ARRAY_BUFFER, pointVBO);
     
-    glBufferData(GL_ARRAY_BUFFER, 24*n, arr1, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 12*n, arr1, GL_STATIC_DRAW);
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     
@@ -279,7 +238,7 @@ int main()
     glBindVertexArray(waveVAO);
     glBindBuffer(GL_ARRAY_BUFFER, waveVBO);
     
-    glBufferData(GL_ARRAY_BUFFER, 12*n, arr2, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 6*n, arr2, GL_STATIC_DRAW);
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     
@@ -298,20 +257,19 @@ int main()
         
         ourShader.use();
         glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
-        if (istart<6*n) {
+        if (istart<3*n) {
             drawLine();
         }
         
         pointShader.use();
-        //glBindVertexArray(pointVAO); // 激活VAO表示的顶点缓存
-        glBindVertexArray(testVAO);
-        if (pstart<6*n) {
+        glBindVertexArray(pointVAO); // 激活VAO表示的顶点缓存
+        if (pstart<3*n) {
             drawPoint();
         }
         
         waveShader.use();
         glBindVertexArray(waveVAO); // 激活VAO表示的顶点缓存
-        if (wstart<6*n) {
+        if (wstart<3*n) {
             drawWave();
         }
 
@@ -320,9 +278,6 @@ int main()
     }
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
-    
-    glDeleteVertexArrays(1, &testVAO);
-    glDeleteBuffers(1, &testVBO);
     
     glDeleteVertexArrays(1, &pointVAO);
     glDeleteBuffers(1, &pointVBO);
@@ -348,6 +303,8 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 //绘制频谱
 void drawLine()
 {
+    usleep(99900);
+    
     //颜色随机设置
     float redValue = 0.0f;
     float blueValue = 1.0f;

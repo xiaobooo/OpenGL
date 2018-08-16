@@ -59,7 +59,7 @@ void fileOutput()
         i++;
     }
     
-    n=i;
+    n=2*i;
        // cout<<"数据个数： "<<n<<endl;
     
     fclose(fp);
@@ -105,9 +105,9 @@ int main()
     // ------------------------------------
     Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum3.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum3.0/spectrum.fs");
     
-    float* arr = new float[6*n];
-    float* arr1 = new float[6*n];
-    float* arr2 = new float[3*n];
+    float* arr = new float[3*n];
+    float* arr1 = new float[3*n];
+    float* arr2 = new float[3*n/2];
     
     
     int i=0;
@@ -174,7 +174,7 @@ int main()
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     
-    glBufferData(GL_ARRAY_BUFFER, 24*n, arr, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 12*n, arr, GL_STATIC_DRAW);
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     
@@ -188,7 +188,7 @@ int main()
     glBindVertexArray(pointVAO);
     glBindBuffer(GL_ARRAY_BUFFER, pointVBO);
     
-    glBufferData(GL_ARRAY_BUFFER, 24*n, arr1, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 12*n, arr1, GL_STATIC_DRAW);
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     
@@ -203,7 +203,7 @@ int main()
     glBindVertexArray(waveVAO);
     glBindBuffer(GL_ARRAY_BUFFER, waveVBO);
     
-    glBufferData(GL_ARRAY_BUFFER, 12*n, arr2, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 6*n, arr2, GL_STATIC_DRAW);
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     
@@ -224,17 +224,17 @@ int main()
         ourShader.use();
         
         glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
-        if (istart<6*n) {   //到达终点之前每次绘制一帧的频谱图
+        if (istart<3*n) {   //到达终点之前每次绘制一帧的频谱图
             drawLine();
         }
         
         glBindVertexArray(pointVAO); // 激活VAO表示的顶点缓存
-        if (pstart<6*n) {   //到达终点之前每次绘制一帧的频谱图
+        if (pstart<3*n) {   //到达终点之前每次绘制一帧的频谱图
             drawPoint();
         }
         
         glBindVertexArray(waveVAO); // 激活VAO表示的顶点缓存
-        if (wstart<3*n) {   //到达终点之前每次绘制一帧的频谱图
+        if (wstart<3*n/2) {   //到达终点之前每次绘制一帧的频谱图
             drawWave();
         }
         
