@@ -245,6 +245,9 @@ int main()
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
     
+    glDeleteVertexArrays(1, &pointVAO);
+    glDeleteBuffers(1, &pointVBO);
+    
     glDeleteVertexArrays(1, &waveVAO);
     glDeleteBuffers(1, &waveVBO);
     
