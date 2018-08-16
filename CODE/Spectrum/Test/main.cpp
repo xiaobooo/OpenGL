@@ -55,7 +55,7 @@ void fileOutput()
         i++;
     }
     
-    n=i*2;
+    n=i;
     
     fclose(fp);
 }
@@ -107,8 +107,8 @@ int main()
     //FFTW
     fftw_complex *in,*out;
     fftw_plan p;
-    in = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*n);
-    out = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*n);
+    in = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*n*2);
+    out = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*n*2);
     if (in==NULL||out==NULL) {
         cout<<"ERROR: Fail to memory allocation"<<endl;
     }else{
@@ -119,16 +119,15 @@ int main()
             i++;
         }
     }
-    p = fftw_plan_dft_1d(n, in, out, FFTW_BACKWARD, FFTW_ESTIMATE);
+    p = fftw_plan_dft_1d(2*n, in, out, FFTW_BACKWARD, FFTW_ESTIMATE);
     fftw_execute(p);
     fftw_destroy_plan(p);
     fftw_cleanup();
     
     //顶点数组
-    float* arr = new float[3*n];
-    float* arr1 = new float[3*n];
-    float* arr2 = new float[3*n/2];
-    float* arr3 = new float[3*n];
+    float* arr = new float[6*n];
+    float* arr1 = new float[6*n];
+    float* arr2 = new float[3*n];
     
     float xstart=-1.0;
     int j=1000;
@@ -209,7 +208,7 @@ int main()
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     
-    glBufferData(GL_ARRAY_BUFFER, 12*n, arr, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 24*n, arr, GL_STATIC_DRAW);
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     
@@ -223,7 +222,7 @@ int main()
     glBindVertexArray(pointVAO);
     glBindBuffer(GL_ARRAY_BUFFER, pointVBO);
     
-    glBufferData(GL_ARRAY_BUFFER, 12*n, arr1, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 24*n, arr1, GL_STATIC_DRAW);
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     
@@ -238,7 +237,7 @@ int main()
     glBindVertexArray(waveVAO);
     glBindBuffer(GL_ARRAY_BUFFER, waveVBO);
     
-    glBufferData(GL_ARRAY_BUFFER, 6*n, arr2, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 12*n, arr2, GL_STATIC_DRAW);
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     

@@ -34,7 +34,7 @@ void drawPoint();
 void drawWave();
 
 // settings
-const unsigned int SCR_WIDTH = 800;
+const unsigned int SCR_WIDTH = 1920;
 const unsigned int SCR_HEIGHT = 800;
 
 //PCM文件数据解码保存到数组中
@@ -56,7 +56,7 @@ void fileOutput()
         i++;
     }
     
-    n=i*2;
+    n=i;
     
     fclose(fp);
 }
@@ -108,8 +108,8 @@ int main()
     //FFTW
     fftw_complex *in,*out;
     fftw_plan p;
-    in = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*n);
-    out = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*n);
+    in = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*2*n);
+    out = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*2*n);
     if (in==NULL||out==NULL) {
         cout<<"ERROR: Fail to memory allocation"<<endl;
     }else{
@@ -120,7 +120,7 @@ int main()
             i++;
         }
     }
-    p = fftw_plan_dft_1d(n, in, out, FFTW_BACKWARD, FFTW_ESTIMATE);
+    p = fftw_plan_dft_1d(2*n, in, out, FFTW_BACKWARD, FFTW_ESTIMATE);
     fftw_execute(p);
     fftw_destroy_plan(p);
     fftw_cleanup();
@@ -301,6 +301,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 //绘制频谱
 void drawLine()
 {
+    usleep(99900);
     //颜色随机设置
     float redValue = 0.0f;
     float blueValue = 1.0f;
