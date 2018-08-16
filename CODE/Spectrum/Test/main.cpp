@@ -34,8 +34,8 @@ void drawPoint();
 void drawWave();
 
 // settings
-const unsigned int SCR_WIDTH = 1024;
-const unsigned int SCR_HEIGHT = 600;
+const unsigned int SCR_WIDTH = 1920;
+const unsigned int SCR_HEIGHT = 800;
 
 //PCM文件数据解码保存到数组中
 void fileOutput()
@@ -259,23 +259,20 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
         
         ourShader.use();
-        
         glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
-        if (istart<6*n) {   //到达终点之前每次绘制一帧的频谱图
-       //     drawLine();
-        }
+        
+        drawLine();
         
         pointShader.use();
         glBindVertexArray(pointVAO); // 激活VAO表示的顶点缓存
-        if (pstart<6*n) {   //到达终点之前每次绘制一帧的频谱图
-            drawPoint();
-        }
+        
+        drawPoint();
+        
         
         waveShader.use();
         glBindVertexArray(waveVAO); // 激活VAO表示的顶点缓存
-        if (wstart<3*n) {   //到达终点之前每次绘制一帧的频谱图
-            drawWave();
-        }
+        
+        drawWave();
         
         glfwSwapBuffers(window);
         glfwPollEvents();
@@ -348,11 +345,11 @@ void drawWave()
     //颜色随机设置
     float redValue = 0.0f;
     float blueValue = 1.0f;
-    
+
     for (int i=wstart; i<2000+wstart; i++) {
-        
+
         glUniform4f(0, redValue, 1.0f ,blueValue, 1.0f);
-        
+
         if (i<=500+wstart) {
             redValue=redValue+0.002;
             blueValue=blueValue-0.002;
@@ -360,10 +357,11 @@ void drawWave()
             redValue=redValue-0.002;
             blueValue=blueValue+0.002;
         }
-        
+
         glPointSize(4);
         glDrawArrays(GL_POINTS, i, 1);
     }
+ //   glDrawArrays(GL_POINTS,wstart,2000);
     
     wstart+=2000;
 }
