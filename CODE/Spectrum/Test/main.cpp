@@ -32,7 +32,6 @@ void processInput(GLFWwindow *window);
 void drawLine();
 void drawPoint();
 void drawWave();
-void drawTest();
 
 // settings
 const unsigned int SCR_WIDTH = 1024;
@@ -263,8 +262,7 @@ int main()
         
         glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
         if (istart<6*n) {   //到达终点之前每次绘制一帧的频谱图
-            drawLine();
-            drawTest();
+       //     drawLine();
         }
         
         pointShader.use();
@@ -368,10 +366,4 @@ void drawWave()
     }
     
     wstart+=2000;
-}
-
-//测试
-void drawTest()
-{
-    glDrawArrays(GL_LINES,1000,2);
 }
