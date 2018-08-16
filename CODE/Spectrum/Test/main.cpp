@@ -5,7 +5,6 @@
 //  Created by boone on 2018/7/30.
 //  Copyright © 2018年 boone. All rights reserved.
 //
-
 #define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"     //PCM源文件
 
 #include <iostream>
@@ -134,7 +133,7 @@ int main()
     float* arr2 = new float[3*n];
     
     float xstart=-1.0;
-    int j=0;
+    int j=1000;
     int i=0;
     //直线型频谱图数据存储
     while(j<n){
@@ -157,7 +156,7 @@ int main()
     
     //离散点频谱图数据存储
     xstart=-1.0;
-    j=0;
+    j=10000;
     i=0;
     while(j<n)
     {
@@ -260,19 +259,21 @@ int main()
         
         ourShader.use();
         glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
-        
-        drawLine();
-        
-        pointShader.use();
-        glBindVertexArray(pointVAO); // 激活VAO表示的顶点缓存
-        
-        drawPoint();
-        
+        if (istart<6*n) {
+            drawLine();
+        }
         
         waveShader.use();
         glBindVertexArray(waveVAO); // 激活VAO表示的顶点缓存
-        
-        drawWave();
+        if (wstart<6*n) {
+            drawWave();
+        }
+
+        pointShader.use();
+        glBindVertexArray(pointVAO); // 激活VAO表示的顶点缓存
+        if (pstart<6*n) {
+            drawPoint();
+        }
         
         glfwSwapBuffers(window);
         glfwPollEvents();
