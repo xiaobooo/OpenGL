@@ -187,7 +187,7 @@ int main()
         planetShader.setMat4("projection", projection);
         planetShader.setMat4("view", view);
         
-        // draw planet
+        // draw planet 
         glm::mat4 model;
         model = glm::translate(model, glm::vec3(0.0f, -3.0f, 0.0f));
         model = glm::scale(model, glm::vec3(4.0f, 4.0f, 4.0f));
