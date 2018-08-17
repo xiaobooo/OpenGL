@@ -46,7 +46,7 @@ void drawWave();
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 800;
 
-//PCM文件数据解码保存到数组中
+//PCM文件数据解码保存到数组中  ssh-keygen -t rsa -C "363058661@qq.com" -b 4096
 void fileOutput()
 {
     fstream fs;
