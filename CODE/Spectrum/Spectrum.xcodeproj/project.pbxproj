@@ -39,6 +39,7 @@
 		3E17F74321265AD500FE4332 /* libfftw3f_threads.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A772122B2B3000963BA /* libfftw3f_threads.a */; };
 		3E17F74421265AD500FE4332 /* libfftw3f.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A782122B2B4000963BA /* libfftw3f.a */; };
 		3E17F74621265B2400FE4332 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E17F74521265B2400FE4332 /* glad.c */; };
+		3E17F74921266E5600FE4332 /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E17F74821266E5600FE4332 /* File.cpp */; };
 		3E475AFC21217B64000963BA /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E475AFB21217B64000963BA /* glad.c */; };
 		3E476A702122B292000963BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E476A6F2122B292000963BA /* main.cpp */; };
 		3E476A742122B29E000963BA /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530C5210EA1120086BBEE /* OpenGL.framework */; };
@@ -150,6 +151,8 @@
 		3E17F73721265AAE00FE4332 /* Spectrum6.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Spectrum6.0; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E17F73921265AAE00FE4332 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E17F74521265B2400FE4332 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		3E17F74721266BE900FE4332 /* File.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
+		3E17F74821266E5600FE4332 /* File.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = File.cpp; sourceTree = "<group>"; };
 		3E475AFB21217B64000963BA /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		3E476A6D2122B292000963BA /* Spectrum4.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Spectrum4.0; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E476A6F2122B292000963BA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -351,6 +354,8 @@
 			children = (
 				3E17F73921265AAE00FE4332 /* main.cpp */,
 				3E17F74521265B2400FE4332 /* glad.c */,
+				3E17F74721266BE900FE4332 /* File.h */,
+				3E17F74821266E5600FE4332 /* File.cpp */,
 			);
 			path = Spectrum6.0;
 			sourceTree = "<group>";
@@ -607,6 +612,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E17F74921266E5600FE4332 /* File.cpp in Sources */,
 				3E17F73A21265AAE00FE4332 /* main.cpp in Sources */,
 				3E17F74621265B2400FE4332 /* glad.c in Sources */,
 			);

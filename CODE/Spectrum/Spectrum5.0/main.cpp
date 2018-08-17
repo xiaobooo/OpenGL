@@ -31,7 +31,7 @@ struct wav_struct
 };
 
 vector<float> vertices;    //用于存储pcm文件解析出的数据
-int istart=0;
+int istart=0;              //记录频谱每次绘制的起点、控制频谱的绘制
 int wstart=0;
 int pstart=10000;
 int n;       //记录pcm文件中数据个数
