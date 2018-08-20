@@ -6,7 +6,6 @@
 //  Copyright © 2018年 boone. All rights reserved.
 //
 
-
 #include <iostream>
 #include <vector>
 #include <cmath>
