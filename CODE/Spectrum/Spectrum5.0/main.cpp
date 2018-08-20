@@ -284,19 +284,19 @@ int main()
         
         ourShader.use();
         glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
-       
-        drawLine();
-        
+        if (istart<3*n) {
+            drawLine();
+        }
         
         glBindVertexArray(pointVAO); // 激活VAO表示的顶点缓存
-        
-        drawPoint();
-        
+        if (pstart<3*n) {
+          drawPoint();
+        }
         
         glBindVertexArray(waveVAO); // 激活VAO表示的顶点缓存
-        
-        drawWave();
-        
+        if (wstart<3*n/2) {
+            drawWave();
+        }
         
         glfwSwapBuffers(window);
         glfwPollEvents();
