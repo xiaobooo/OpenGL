@@ -168,18 +168,18 @@ int main()
     i=0;
     j=0;
     k=0;
-    while (j<n&&(i<3*n/2-6){
+    while (j<n&&(i<3*n/2-6)){
         
-        if (*it>0) {
-            *it=-*it;
-        }
-        arr2[i++]=xstart;
-        arr2[i++]=*it;
+        float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
+        j++;
+        
+        arr2[i++]=(R-temp)*cos(2*PI/NUM*k);     //由圆向外延伸的终点，表示频谱
+        arr2[i++]=(R-temp)*sin(2*PI/NUM*k);
         arr2[i++]=0.0f;
         
-        xstart=xstart+0.001;
-        if (xstart>1.0) {
-            xstart=-1.0;
+        k++;
+        if (k>NUM) {
+            k=0;     //循环存储N个圆形频谱
         }
         
     }
@@ -366,7 +366,7 @@ void drawLine()
 void drawPoint()
 {
     
-    for (int i=pstart; i<800+pstart; i++) {
+    for (int i=pstart; i<1600+pstart; i++) {
         
         glUniform4f(0, 0.2f, 0.7f, 1.0f, 1.0f);
         
@@ -374,7 +374,7 @@ void drawPoint()
         glDrawArrays(GL_POINTS, i, 1);
     }
     
-    pstart+=800;
+    pstart+=1600;
 }
 //绘制波形频谱
 void drawWave()
