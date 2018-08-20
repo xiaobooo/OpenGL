@@ -67,7 +67,6 @@ int main()
 #endif
     
     // glfw 创建窗口
-    // --------------------
     GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Music Circular Spectrum", NULL, NULL);
     if (window == NULL)
     {
@@ -79,7 +78,6 @@ int main()
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     
     // glad: 家在所有OpenGL函数指针
-    // ---------------------------------------
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
         std::cout << "Failed to initialize GLAD" << std::endl;
