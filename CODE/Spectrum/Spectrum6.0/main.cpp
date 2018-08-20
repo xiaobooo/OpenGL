@@ -120,7 +120,7 @@ int main()
     int j=1000;
     int k=0;
     //直线型频谱图数据存储
-    while (j<n) {
+    while (j<n&&(i<3*n-6)) {
         
         float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
         j++;
@@ -141,31 +141,35 @@ int main()
     }
     
     //离散点频谱图数据存储
+    i=0;
     j=0;
-    while (j<n) {
+    k=0;
+    NUM=800;
+    while (j<n&&(i<3*n-6)) {
         
         float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
         j++;
         
-        arr1[i++]=xstart;
-        arr1[i++]=-temp;
+        arr1[i++]=(R-temp)*cos(2*PI/NUM*k);     //由圆向外延伸的终点，表示频谱
+        arr1[i++]=(R-temp)*sin(2*PI/NUM*k);
         arr1[i++]=0.0f;
         
-        arr1[i++]=xstart;
-        arr1[i++]=temp;
+        arr1[i++]=(R+temp)*cos(2*PI/NUM*k);     //由圆向外延伸的终点，表示频谱
+        arr1[i++]=(R+temp)*sin(2*PI/NUM*k);
         arr1[i++]=0.0f;
         
-        xstart=xstart+0.005;
-        if (xstart>1.0) {
-            xstart=-1.0;
+        k++;
+        if (k>NUM) {
+            k=0;     //循环存储N个圆形频谱
         }
     }
     
     //波形频谱图数据存储
-    float xstart=-1.0;
     i=0;
-    for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
-    {
+    j=0;
+    k=0;
+    while (j<n&&(i<3*n/2-6){
+        
         if (*it>0) {
             *it=-*it;
         }
