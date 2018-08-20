@@ -191,6 +191,7 @@ int main()
     if (out!=NULL) {
         fftw_free(out);
     }
+    
     //直线型
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
@@ -236,13 +237,11 @@ int main()
     
     
     // 循环渲染
-    // -----------
     while (!glfwWindowShouldClose(window))
     {
         processInput(window);
         
         // 渲染
-        // ------
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         
@@ -261,8 +260,7 @@ int main()
         if (wstart<3*n/2) {
             drawWave();
         }
-        
-        
+    
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
