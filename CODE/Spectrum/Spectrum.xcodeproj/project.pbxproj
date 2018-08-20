@@ -30,6 +30,15 @@
 		3E17F71021250BB200FE4332 /* libfftw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A7A2122B2B4000963BA /* libfftw3.a */; };
 		3E17F71121250BB200FE4332 /* libfftw3f_threads.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A772122B2B3000963BA /* libfftw3f_threads.a */; };
 		3E17F71221250BB200FE4332 /* libfftw3f.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A782122B2B4000963BA /* libfftw3f.a */; };
+		3E17F751212A8A4600FE4332 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E17F750212A8A4600FE4332 /* main.cpp */; };
+		3E17F755212A8A7100FE4332 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530C5210EA1120086BBEE /* OpenGL.framework */; };
+		3E17F757212A8A8D00FE4332 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E17F756212A8A8D00FE4332 /* glad.c */; };
+		3E17F758212A8A9A00FE4332 /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530C7210EA1220086BBEE /* libGLEW.dylib */; };
+		3E17F759212A8A9A00FE4332 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530C9210EA1250086BBEE /* libglfw.dylib */; };
+		3E17F75A212A8AA400FE4332 /* libfftw3_threads.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A792122B2B4000963BA /* libfftw3_threads.a */; };
+		3E17F75B212A8AA400FE4332 /* libfftw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A7A2122B2B4000963BA /* libfftw3.a */; };
+		3E17F75C212A8AA400FE4332 /* libfftw3f_threads.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A772122B2B3000963BA /* libfftw3f_threads.a */; };
+		3E17F75D212A8AA400FE4332 /* libfftw3f.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E476A782122B2B4000963BA /* libfftw3f.a */; };
 		3E475AFC21217B64000963BA /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E475AFB21217B64000963BA /* glad.c */; };
 		3E476A702122B292000963BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E476A6F2122B292000963BA /* main.cpp */; };
 		3E476A742122B29E000963BA /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530C5210EA1120086BBEE /* OpenGL.framework */; };
@@ -88,6 +97,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		3E17F74C212A8A4600FE4332 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		3E476A6B2122B292000963BA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,6 +147,9 @@
 		3E1532122119827A0086BBEE /* spectrum.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.fs; sourceTree = "<group>"; };
 		3E15321B2119BF000086BBEE /* spectrum.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.fs; sourceTree = "<group>"; };
 		3E15321C2119BF000086BBEE /* spectrum.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.vs; sourceTree = "<group>"; };
+		3E17F74E212A8A4600FE4332 /* Soectrum6.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Soectrum6.0; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E17F750212A8A4600FE4332 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E17F756212A8A8D00FE4332 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		3E475AFB21217B64000963BA /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		3E476A6D2122B292000963BA /* Spectrum4.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Spectrum4.0; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E476A6F2122B292000963BA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -195,6 +216,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3E17F74B212A8A4600FE4332 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E17F755212A8A7100FE4332 /* OpenGL.framework in Frameworks */,
+				3E17F75A212A8AA400FE4332 /* libfftw3_threads.a in Frameworks */,
+				3E17F75B212A8AA400FE4332 /* libfftw3.a in Frameworks */,
+				3E17F75C212A8AA400FE4332 /* libfftw3f_threads.a in Frameworks */,
+				3E17F75D212A8AA400FE4332 /* libfftw3f.a in Frameworks */,
+				3E17F758212A8A9A00FE4332 /* libGLEW.dylib in Frameworks */,
+				3E17F759212A8A9A00FE4332 /* libglfw.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3E476A6A2122B292000963BA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -235,6 +270,7 @@
 				3E153206211981CC0086BBEE /* Spectrum3.0 */,
 				3E476A6E2122B292000963BA /* Spectrum4.0 */,
 				3E476A8D2122C738000963BA /* Spectrum5.0 */,
+				3E17F74F212A8A4600FE4332 /* Soectrum6.0 */,
 				3E1530B0210EA0CE0086BBEE /* Products */,
 				3E1530C4210EA1110086BBEE /* Frameworks */,
 			);
@@ -249,6 +285,7 @@
 				3E153205211981CC0086BBEE /* Spectrum3.0 */,
 				3E476A6D2122B292000963BA /* Spectrum4.0 */,
 				3E476A8C2122C738000963BA /* Spectrum5.0 */,
+				3E17F74E212A8A4600FE4332 /* Soectrum6.0 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -307,6 +344,15 @@
 				3E153207211981CC0086BBEE /* main.cpp */,
 			);
 			path = Spectrum3.0;
+			sourceTree = "<group>";
+		};
+		3E17F74F212A8A4600FE4332 /* Soectrum6.0 */ = {
+			isa = PBXGroup;
+			children = (
+				3E17F756212A8A8D00FE4332 /* glad.c */,
+				3E17F750212A8A4600FE4332 /* main.cpp */,
+			);
+			path = Soectrum6.0;
 			sourceTree = "<group>";
 		};
 		3E476A6E2122B292000963BA /* Spectrum4.0 */ = {
@@ -414,6 +460,23 @@
 			productReference = 3E153205211981CC0086BBEE /* Spectrum3.0 */;
 			productType = "com.apple.product-type.tool";
 		};
+		3E17F74D212A8A4600FE4332 /* Soectrum6.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E17F754212A8A4600FE4332 /* Build configuration list for PBXNativeTarget "Soectrum6.0" */;
+			buildPhases = (
+				3E17F74A212A8A4600FE4332 /* Sources */,
+				3E17F74B212A8A4600FE4332 /* Frameworks */,
+				3E17F74C212A8A4600FE4332 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Soectrum6.0;
+			productName = Soectrum6.0;
+			productReference = 3E17F74E212A8A4600FE4332 /* Soectrum6.0 */;
+			productType = "com.apple.product-type.tool";
+		};
 		3E476A6C2122B292000963BA /* Spectrum4.0 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E476A732122B292000963BA /* Build configuration list for PBXNativeTarget "Spectrum4.0" */;
@@ -469,6 +532,9 @@
 					3E153204211981CC0086BBEE = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					3E17F74D212A8A4600FE4332 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 					3E476A6C2122B292000963BA = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -495,6 +561,7 @@
 				3E153204211981CC0086BBEE /* Spectrum3.0 */,
 				3E476A6C2122B292000963BA /* Spectrum4.0 */,
 				3E476A8B2122C738000963BA /* Spectrum5.0 */,
+				3E17F74D212A8A4600FE4332 /* Soectrum6.0 */,
 			);
 		};
 /* End PBXProject section */
@@ -533,6 +600,15 @@
 			files = (
 				3E153208211981CC0086BBEE /* main.cpp in Sources */,
 				3E153210211981F80086BBEE /* glad.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E17F74A212A8A4600FE4332 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E17F751212A8A4600FE4332 /* main.cpp in Sources */,
+				3E17F757212A8A8D00FE4332 /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,6 +822,26 @@
 			};
 			name = Release;
 		};
+		3E17F752212A8A4600FE4332 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3E17F753212A8A4600FE4332 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		3E476A712122B292000963BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -830,6 +926,15 @@
 			buildConfigurations = (
 				3E15320A211981CC0086BBEE /* Debug */,
 				3E15320B211981CC0086BBEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E17F754212A8A4600FE4332 /* Build configuration list for PBXNativeTarget "Soectrum6.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E17F752212A8A4600FE4332 /* Debug */,
+				3E17F753212A8A4600FE4332 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
