@@ -4,7 +4,7 @@
 //
 //  Created by boone on 2018/8/20.
 //  Copyright © 2018年 boone. All rights reserved.
-//test
+//
 
 #include <iostream>
 #include <vector>
@@ -36,8 +36,13 @@ int wstart=0;
 int pstart=10000;
 int n;       //记录pcm文件中数据个数
 
+int NUM=1000;  //一个圆周上分布频谱的个数
+float PI=3.1415926f;
+float R=0.6f;  //半径
+
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
+void fileOutput();
 void drawLine();
 void drawPoint();
 void drawWave();
@@ -45,53 +50,6 @@ void drawWave();
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 800;
-
-//PCM文件数据解码保存到数组中  ssh-keygen -t rsa -C "363058661@qq.com" -b 4096
-void fileOutput()
-{
-    fstream fs;
-    wav_struct WAV;
-    
-    fs.open("/Users/boone/Desktop/Music/Seve.wav", ios::binary | ios::in);
-    
-    fs.seekg(0x28);
-    fs.read((char*)&WAV.data_size, sizeof(WAV.data_size));
-    
-    WAV.data = new unsigned char[WAV.data_size];
-    
-    fs.seekg(0x2c);
-    fs.read((char *)WAV.data, sizeof(char)*WAV.data_size);
-    
-    n=WAV.data_size;
-    
-    for (unsigned long i =0; i<WAV.data_size; i = i + 2)
-    {
-        //右边为大端
-        unsigned long data_low = WAV.data[i];
-        unsigned long data_high = WAV.data[i + 1];
-        double data_true = data_high * 256 + data_low;
-        long data_complement = 0;
-        //取大端的最高位（符号位）
-        int my_sign = (int)(data_high / 128);
-        
-        if (my_sign == 1)
-        {
-            data_complement = data_true - 65536;
-        }
-        else
-        {
-            data_complement = data_true;
-        }
-        
-        double float_data = (double)(data_complement/(double)32768);
-        //printf("%f ", float_data);
-        vertices.push_back(float_data);
-        
-    }
-    fs.close();
-    
-    delete[] WAV.data;
-}
 
 int main()
 {
@@ -158,33 +116,34 @@ int main()
     float* arr1 = new float[3*n];
     float* arr2 = new float[3*n/2];
     
-    float xstart=-1.0;
+    int i=0;
     int j=1000;
+    int k=0;
     //直线型频谱图数据存储
-    for(int i=0;i<n; )    //用迭代器的方式输出容器对象的值
-    {
+    while (j<n) {
+        
         float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
         j++;
         
-        arr[i++]=xstart;
-        arr[i++]=0.0f;
-        arr[i++]=0.0f;
-        
-        arr[i++]=xstart;
-        arr[i++]=temp;
+        arr[i++]=R*cos(2*PI/NUM*k);     //圆上的点
+        arr[i++]=R*sin(2*PI/NUM*k);
         arr[i++]=0.0f;
         
-        xstart=xstart+0.002;
-        if (xstart>1.0) {
-            xstart=-1.0;
+        arr[i++]=(R+temp)*cos(2*PI/NUM*k);     //由圆向外延伸的终点，表示频谱
+        arr[i++]=(R+temp)*sin(2*PI/NUM*k);
+        arr[i++]=0.0f;
+        
+        k++;
+        if (k>NUM) {
+            k=0;     //循环存储N个圆形频谱
         }
+
     }
     
     //离散点频谱图数据存储
-    xstart=-1.0;
     j=0;
-    for(int i=0;i<n;)    //用迭代器的方式输出容器对象的值
-    {
+    while (j<n) {
+        
         float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
         j++;
         
@@ -203,8 +162,8 @@ int main()
     }
     
     //波形频谱图数据存储
-    xstart=-1.0;
-    int i=0;
+    float xstart=-1.0;
+    i=0;
     for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
     {
         if (*it>0) {
@@ -324,6 +283,54 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
 }
+
+//PCM文件数据解码保存到数组中
+void fileOutput()
+{
+    fstream fs;
+    wav_struct WAV;
+    
+    fs.open("/Users/boone/Desktop/Music/Seve.wav", ios::binary | ios::in);
+    
+    fs.seekg(0x28);
+    fs.read((char*)&WAV.data_size, sizeof(WAV.data_size));
+    
+    WAV.data = new unsigned char[WAV.data_size];
+    
+    fs.seekg(0x2c);
+    fs.read((char *)WAV.data, sizeof(char)*WAV.data_size);
+    
+    n=WAV.data_size;
+    
+    for (unsigned long i =0; i<WAV.data_size; i = i + 2)
+    {
+        //右边为大端
+        unsigned long data_low = WAV.data[i];
+        unsigned long data_high = WAV.data[i + 1];
+        double data_true = data_high * 256 + data_low;
+        long data_complement = 0;
+        //取大端的最高位（符号位）
+        int my_sign = (int)(data_high / 128);
+        
+        if (my_sign == 1)
+        {
+            data_complement = data_true - 65536;
+        }
+        else
+        {
+            data_complement = data_true;
+        }
+        
+        double float_data = (double)(data_complement/(double)32768);
+        //printf("%f ", float_data);
+        vertices.push_back(float_data);
+        
+    }
+    fs.close();
+    
+    delete[] WAV.data;
+}
+
 //绘制频谱
 void drawLine()
 {
