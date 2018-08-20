@@ -168,6 +168,7 @@ int main()
     i=0;
     j=0;
     k=0;
+    NUM=1000;
     while (j<n&&(i<3*n/2-6)){
         
         float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
@@ -247,18 +248,19 @@ int main()
         
         ourShader.use();
         glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
-        
-        drawLine();
-        
+        if (istart<3*n) {
+            drawLine();
+        }
         
         glBindVertexArray(pointVAO); // 激活VAO表示的顶点缓存
-        
-        drawPoint();
-        
+        if (pstart<3*n) {
+            drawPoint();
+        }
         
         glBindVertexArray(waveVAO); // 激活VAO表示的顶点缓存
-        
-        drawWave();
+        if (wstart<3*n/2) {
+            drawWave();
+        }
         
         
         glfwSwapBuffers(window);
@@ -383,7 +385,7 @@ void drawWave()
     float redValue = 0.0f;
     float blueValue = 1.0f;
     
-    for (int i=wstart; i<2000+wstart; i++) {
+    for (int i=wstart; i<1000+wstart; i++) {
         
         glUniform4f(0, redValue, blueValue, 1.0f, 1.0f);
         
@@ -400,5 +402,5 @@ void drawWave()
         glDrawArrays(GL_POINTS, i, 1);
     }
     
-    wstart+=2000;
+    wstart+=1000;
 }
