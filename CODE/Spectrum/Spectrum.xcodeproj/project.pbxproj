@@ -150,6 +150,8 @@
 		3E17F74E212A8A4600FE4332 /* Soectrum6.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Soectrum6.0; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E17F750212A8A4600FE4332 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E17F756212A8A8D00FE4332 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		3E17F75E212A8BDF00FE4332 /* spectrum.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.vs; sourceTree = "<group>"; };
+		3E17F75F212A8BE000FE4332 /* spectrum.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = spectrum.fs; sourceTree = "<group>"; };
 		3E475AFB21217B64000963BA /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		3E476A6D2122B292000963BA /* Spectrum4.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Spectrum4.0; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E476A6F2122B292000963BA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -349,6 +351,8 @@
 		3E17F74F212A8A4600FE4332 /* Spectrum6.0 */ = {
 			isa = PBXGroup;
 			children = (
+				3E17F75F212A8BE000FE4332 /* spectrum.fs */,
+				3E17F75E212A8BDF00FE4332 /* spectrum.vs */,
 				3E17F756212A8A8D00FE4332 /* glad.c */,
 				3E17F750212A8A4600FE4332 /* main.cpp */,
 			);
