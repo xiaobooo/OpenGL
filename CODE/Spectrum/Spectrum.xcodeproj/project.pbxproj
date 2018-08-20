@@ -270,7 +270,7 @@
 				3E153206211981CC0086BBEE /* Spectrum3.0 */,
 				3E476A6E2122B292000963BA /* Spectrum4.0 */,
 				3E476A8D2122C738000963BA /* Spectrum5.0 */,
-				3E17F74F212A8A4600FE4332 /* Soectrum6.0 */,
+				3E17F74F212A8A4600FE4332 /* Spectrum6.0 */,
 				3E1530B0210EA0CE0086BBEE /* Products */,
 				3E1530C4210EA1110086BBEE /* Frameworks */,
 			);
@@ -346,13 +346,13 @@
 			path = Spectrum3.0;
 			sourceTree = "<group>";
 		};
-		3E17F74F212A8A4600FE4332 /* Soectrum6.0 */ = {
+		3E17F74F212A8A4600FE4332 /* Spectrum6.0 */ = {
 			isa = PBXGroup;
 			children = (
 				3E17F756212A8A8D00FE4332 /* glad.c */,
 				3E17F750212A8A4600FE4332 /* main.cpp */,
 			);
-			path = Soectrum6.0;
+			path = Spectrum6.0;
 			sourceTree = "<group>";
 		};
 		3E476A6E2122B292000963BA /* Spectrum4.0 */ = {
