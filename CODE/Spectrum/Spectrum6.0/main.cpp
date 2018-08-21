@@ -148,12 +148,6 @@ int main()
         float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
         j++;
         
-        if (R<1.0) {
-            R=R+0.003f;
-        }else{
-            R=0.3;
-        }
-        
         arr1[i++]=(R-temp)*cos(2*PI/NUM*k);     //由圆向外延伸的终点，表示频谱
         arr1[i++]=(R-temp)*sin(2*PI/NUM*k);
         arr1[i++]=0.0f;
@@ -250,15 +244,16 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
         
         ourShader.use();
-        glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
-        if (istart<3*n) {
-            drawLine();
-        }
-        
-        glBindVertexArray(pointVAO); // 激活VAO表示的顶点缓存
-        if (pstart<3*n) {
-            drawPoint();
-        }
+//        
+//        glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
+//        if (istart<3*n) {
+//            drawLine();
+//        }
+//        
+//        glBindVertexArray(pointVAO); // 激活VAO表示的顶点缓存
+//        if (pstart<3*n) {
+//            drawPoint();
+//        }
         
         glBindVertexArray(waveVAO); // 激活VAO表示的顶点缓存
         if (wstart<3*n/2) {
