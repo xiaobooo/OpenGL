@@ -123,12 +123,6 @@ int main()
         float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
         j++;
         
-        if (R<1.0) {
-            R=R+0.003f;
-        }else{
-            R=0.3;
-        }
-
         arr[i++]=R*cos(2*PI/NUM*k);     //圆上的点
         arr[i++]=R*sin(2*PI/NUM*k);
         arr[i++]=0.0f;
@@ -153,6 +147,12 @@ int main()
         
         float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
         j++;
+        
+        if (R<1.0) {
+            R=R+0.003f;
+        }else{
+            R=0.3;
+        }
         
         arr1[i++]=(R-temp)*cos(2*PI/NUM*k);     //由圆向外延伸的终点，表示频谱
         arr1[i++]=(R-temp)*sin(2*PI/NUM*k);
