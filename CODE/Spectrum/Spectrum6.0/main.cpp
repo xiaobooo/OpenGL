@@ -38,7 +38,7 @@ int n;       //记录pcm文件中数据个数
 
 int NUM=1000;  //一个圆周上分布频谱的个数
 float PI=3.1415926f;
-float R=0.3f;  //半径
+float R=0.5f;  //半径
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
