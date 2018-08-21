@@ -85,7 +85,6 @@ int main()
         return -1;
     }
     
-    
     // 构建并编译着色器程序
     // ------------------------------------
     Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum6.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum6.0/spectrum.fs");
