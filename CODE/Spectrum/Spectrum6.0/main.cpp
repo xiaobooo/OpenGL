@@ -254,10 +254,10 @@ int main()
             drawPoint();
         }
         
-        glBindVertexArray(waveVAO); // 激活VAO表示的顶点缓存
-        if (wstart<3*n/2) {
-            drawWave();
-        }
+//        glBindVertexArray(waveVAO); // 激活VAO表示的顶点缓存
+//        if (wstart<3*n/2) {
+//            drawWave();
+//        }
     
         glfwSwapBuffers(window);
         glfwPollEvents();
@@ -355,6 +355,7 @@ void drawLine()
         }
         
         glDrawArrays(GL_LINES, i, 2);
+
     }
     
     istart+=2000;
