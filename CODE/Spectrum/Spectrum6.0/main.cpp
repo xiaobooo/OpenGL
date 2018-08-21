@@ -140,9 +140,8 @@ int main()
     
     //离散点频谱图数据存储
     i=0;
-    j=0;
+    j=1000;
     k=0;
-    NUM=800;
     while (j<n&&(i<3*n-6)) {
         
         float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
@@ -365,15 +364,15 @@ void drawLine()
 void drawPoint()
 {
     
-    for (int i=pstart; i<1600+pstart; i++) {
+    for (int i=pstart; i<2000+pstart; i+=2) {
         
         glUniform4f(0, 0.2f, 0.7f, 1.0f, 1.0f);
         
         glPointSize(3);
-        glDrawArrays(GL_POINTS, i, 1);
+        glDrawArrays(GL_POINTS, i, 2);
     }
     
-    pstart+=1600;
+    pstart+=2000;
 }
 //绘制波形频谱
 void drawWave()
