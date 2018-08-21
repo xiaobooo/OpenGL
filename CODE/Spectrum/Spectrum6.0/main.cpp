@@ -374,7 +374,7 @@ void drawPoint()
     
     pstart+=1600;
 }
-//绘制波形频谱
+//绘制波形频谱 
 void drawWave()
 {
     //颜色随机设置
