@@ -232,6 +232,8 @@ int main()
     
     glEnableVertexAttribArray(0);
     
+    GLint location = glGetUniformLocation("u_hue");
+    cout<<location<<endl;
     
     // 循环渲染
     while (!glfwWindowShouldClose(window))
@@ -387,7 +389,7 @@ void drawWave()
     for (int i=wstart; i<1000+wstart; i++) {
         
         glUniform4f(0, redValue, blueValue, 1.0f, 1.0f);
-        
+        glUniform1f(location,200.0f);
         
         if (i<=500+wstart) {
             redValue=redValue+0.002;
