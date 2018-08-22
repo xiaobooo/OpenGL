@@ -364,10 +364,13 @@ void drawLine()
 void drawPoint()
 {
     usleep(99999);
+    GLint location = glGetUniformLocation(1,"u_hue");
+    cout<<"------------"<<location<<"--------------------------"<<endl;
     
     for (int i=pstart; i<2000+pstart; i+=2) {
         
         glUniform4f(0, 0.2f, 0.7f, 1.0f, 1.0f);
+        glUniform1f(location,200.0f);
         
         glPointSize(3);
         glDrawArrays(GL_POINTS, i, 2);
@@ -382,13 +385,10 @@ void drawWave()
     //颜色随机设置
     float redValue = 0.0f;
     float blueValue = 1.0f;
-    GLint location = glGetUniformLocation(1,"u_hue");
-    cout<<location<<endl;
     
     for (int i=wstart; i<1000+wstart; i++) {
         
         glUniform4f(0, redValue, blueValue, 1.0f, 1.0f);
-        glUniform1f(location,200.0f);
         
         if (i<=500+wstart) {
             redValue=redValue+0.002;
