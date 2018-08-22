@@ -364,13 +364,13 @@ void drawLine()
 void drawPoint()
 {
     usleep(99999);
-//    GLint location = glGetUniformLocation(2,"u_hue");
-//    cout<<"------------"<<location<<"--------------------------"<<endl;
+    GLint location = glGetUniformLocation(2,"u_hue");
+    cout<<"------------"<<location<<"--------------------------"<<endl;
     
     for (int i=pstart; i<2000+pstart; i+=2) {
         
         glUniform4f(0, 0.2f, 0.7f, 1.0f, 1.0f);
-        glUniform1f(15,10.0f);
+        glUniform1f(location,10.0f);
         
         glPointSize(3);
         glDrawArrays(GL_POINTS, i, 2);
