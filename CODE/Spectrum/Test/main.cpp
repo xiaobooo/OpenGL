@@ -5,8 +5,6 @@
 //  Created by boone on 2018/7/30.
 //  Copyright © 2018年 boone. All rights reserved.
 //
-#define OLD_FILE_PATH "/Users/boone/Desktop/Music/Seve.pcm"     //PCM源文件
-
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -20,10 +18,21 @@
 
 using namespace std;
 
-vector<float> vertices;    // 用于存储pcm文件解析出的数据
-int istart=0;
+struct wav_struct
+{
+    unsigned long file_size;        //文件大小
+    unsigned short channel;            //通道数
+    unsigned long frequency;        //采样频率
+    unsigned long Bps;                //Byte率
+    unsigned short sample_num_bit;    //一个样本的位数
+    unsigned long data_size;        //数据大小
+    unsigned char *data;            //音频数据
+};
+
+vector<float> vertices;    //用于存储pcm文件解析出的数据
+int istart=0;              //记录频谱每次绘制的起点、控制频谱的绘制
 int wstart=0;
-int pstart=0;
+int pstart=10000;
 int n;       //记录pcm文件中数据个数
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -33,31 +42,54 @@ void drawPoint();
 void drawWave();
 
 // settings
-const unsigned int SCR_WIDTH = 1920;
+const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 800;
 
-//PCM文件数据解码保存到数组中
+//PCM文件数据解码保存到数组中  ssh-keygen -t rsa -C "363058661@qq.com" -b 4096
 void fileOutput()
 {
-    short pcm_In = 0;
-    int size = 0;
-    FILE *fp = fopen(OLD_FILE_PATH, "rb+");     //为读写打开一个二进制文件 即pcm文件
+    fstream fs;
+    wav_struct WAV;
     
-    int i=0;
-    while(!feof(fp))
+    fs.open("/Users/boone/Desktop/Music/Seve.wav", ios::binary | ios::in);
+    
+    fs.seekg(0x28);
+    fs.read((char*)&WAV.data_size, sizeof(WAV.data_size));
+    
+    WAV.data = new unsigned char[WAV.data_size];
+    
+    fs.seekg(0x2c);
+    fs.read((char *)WAV.data, sizeof(char)*WAV.data_size);
+    
+    n=WAV.data_size;
+    
+    for (unsigned long i =0; i<WAV.data_size; i = i + 2)
     {
-        size = fread(&pcm_In, 2, 1, fp);     //pcm中每个数据大小为2字节，每次读取1个数据
-        if(size>0)
+        //右边为大端
+        unsigned long data_low = WAV.data[i];
+        unsigned long data_high = WAV.data[i + 1];
+        double data_true = data_high * 256 + data_low;
+        long data_complement = 0;
+        //取大端的最高位（符号位）
+        int my_sign = (int)(data_high / 128);
+        
+        if (my_sign == 1)
         {
-            vertices.push_back(pcm_In/(double)32768);
-            //  cout<<pcm_In<<"     ";
+            data_complement = data_true - 65536;
         }
-        i++;
+        else
+        {
+            data_complement = data_true;
+        }
+        
+        double float_data = (double)(data_complement/(double)32768);
+        //printf("%f ", float_data);
+        vertices.push_back(float_data);
+        
     }
+    fs.close();
     
-    n=i;
-    
-    fclose(fp);
+    delete[] WAV.data;
 }
 
 int main()
@@ -98,42 +130,38 @@ int main()
     
     // 构建并编译着色器程序
     // ------------------------------------
-    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum4.0/shader/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum4.0/shader/spectrum.fs");
-    
-    Shader waveShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum4.0/shader/wave.vs","/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum4.0/shader/wave.fs");
-    
-    Shader pointShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum4.0/shader/point.vs","/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum4.0/shader/point.fs");
+    Shader ourShader("/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum5.0/spectrum.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Spectrum/Spectrum5.0/spectrum.fs");
     
     //FFTW
     fftw_complex *in,*out;
     fftw_plan p;
-    in = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*n*2);
-    out = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*n*2);
+    in = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*n);
+    out = (fftw_complex*)fftw_malloc(sizeof(fftw_complex)*n);
     if (in==NULL||out==NULL) {
         cout<<"ERROR: Fail to memory allocation"<<endl;
     }else{
         int  i=0;
         for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 ){
             in[i][0]=*it;
-            in[i][1]=0.0;
+            in[i][1]=0;
             i++;
         }
     }
-    p = fftw_plan_dft_1d(2*n, in, out, FFTW_BACKWARD, FFTW_ESTIMATE);
+    p = fftw_plan_dft_1d(n, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
     fftw_execute(p);
     fftw_destroy_plan(p);
     fftw_cleanup();
     
     //顶点数组
-    float* arr = new float[6*n];
-    float* arr1 = new float[6*n];
-    float* arr2 = new float[3*n];
+    float* arr = new float[3*n];
+    float* arr1 = new float[3*n];
+    float* arr2 = new float[3*n/2];
     
     float xstart=-1.0;
     int j=1000;
-    int i=0;
     //直线型频谱图数据存储
-    while(j<n){
+    for(int i=0;i<n; )    //用迭代器的方式输出容器对象的值
+    {
         float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
         j++;
         
@@ -153,19 +181,18 @@ int main()
     
     //离散点频谱图数据存储
     xstart=-1.0;
-    j=10000;
-    i=0;
-    while(j<n)
+    j=0;
+    for(int i=0;i<n;)    //用迭代器的方式输出容器对象的值
     {
         float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
         j++;
         
         arr1[i++]=xstart;
-        arr1[i++]=temp;
+        arr1[i++]=-temp;
         arr1[i++]=0.0f;
         
         arr1[i++]=xstart;
-        arr1[i++]=-temp;
+        arr1[i++]=temp;
         arr1[i++]=0.0f;
         
         xstart=xstart+0.005;
@@ -176,15 +203,14 @@ int main()
     
     //波形频谱图数据存储
     xstart=-1.0;
-    i=0;
+    int i=0;
     for(vector<float>::iterator it = vertices.begin(); it != vertices.end(); it+=2 )    //用迭代器的方式输出容器对象的值
     {
-        if (*it<0) {
+        if (*it>0) {
             *it=-*it;
         }
-        
         arr2[i++]=xstart;
-        arr2[i++]=-*it;
+        arr2[i++]=*it;
         arr2[i++]=0.0f;
         
         xstart=xstart+0.001;
@@ -208,7 +234,7 @@ int main()
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     
-    glBufferData(GL_ARRAY_BUFFER, 24*n, arr, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 12*n, arr, GL_STATIC_DRAW);
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     
@@ -222,7 +248,7 @@ int main()
     glBindVertexArray(pointVAO);
     glBindBuffer(GL_ARRAY_BUFFER, pointVBO);
     
-    glBufferData(GL_ARRAY_BUFFER, 24*n, arr1, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 12*n, arr1, GL_STATIC_DRAW);
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     
@@ -237,7 +263,7 @@ int main()
     glBindVertexArray(waveVAO);
     glBindBuffer(GL_ARRAY_BUFFER, waveVBO);
     
-    glBufferData(GL_ARRAY_BUFFER, 12*n, arr2, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 6*n, arr2, GL_STATIC_DRAW);
     
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     
@@ -245,6 +271,7 @@ int main()
     
     
     // 循环渲染
+    // -----------
     while (!glfwWindowShouldClose(window))
     {
         processInput(window);
@@ -260,26 +287,22 @@ int main()
             drawLine();
         }
         
-        pointShader.use();
         glBindVertexArray(pointVAO); // 激活VAO表示的顶点缓存
         if (pstart<3*n) {
             drawPoint();
         }
         
-        waveShader.use();
         glBindVertexArray(waveVAO); // 激活VAO表示的顶点缓存
-        if (wstart<3*n) {
+        if (wstart<3*n/2) {
             drawWave();
         }
-
+        
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
+    
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
-    
-    glDeleteVertexArrays(1, &pointVAO);
-    glDeleteBuffers(1, &pointVBO);
     
     glDeleteVertexArrays(1, &waveVAO);
     glDeleteBuffers(1, &waveVBO);
@@ -295,6 +318,7 @@ void processInput(GLFWwindow *window)
 }
 
 // glfw: 每当窗口大小改变时，调用该回调函数
+// ---------------------------------------------------------------------------------------------
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
@@ -302,7 +326,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 //绘制频谱
 void drawLine()
 {
-    usleep(99900);
+    usleep(99900);   //通过延时实现频谱的显示频率
     
     //颜色随机设置
     float redValue = 0.0f;
@@ -324,16 +348,19 @@ void drawLine()
     }
     
     istart+=2000;
-    
 }
 
 //绘制离散型频谱
 void drawPoint()
 {
     
-    glUniform4f(0, 0.2f, 0.7f, 1.0f, 1.0f);
-    glPointSize(3);
-    glDrawArrays(GL_POINTS,pstart,800);
+    for (int i=pstart; i<800+pstart; i++) {
+        
+        glUniform4f(0, 0.2f, 0.7f, 1.0f, 1.0f);
+        
+        glPointSize(3);
+        glDrawArrays(GL_POINTS, i, 1);
+    }
     
     pstart+=800;
 }
@@ -343,11 +370,11 @@ void drawWave()
     //颜色随机设置
     float redValue = 0.0f;
     float blueValue = 1.0f;
-
+    
     for (int i=wstart; i<2000+wstart; i++) {
-
-        glUniform4f(0, redValue, 1.0f ,blueValue, 1.0f);
-
+        
+        glUniform4f(0, redValue, blueValue, 1.0f, 1.0f);
+        
         if (i<=500+wstart) {
             redValue=redValue+0.002;
             blueValue=blueValue-0.002;
@@ -355,11 +382,11 @@ void drawWave()
             redValue=redValue-0.002;
             blueValue=blueValue+0.002;
         }
-
+        
+        //glLineWidth(8);
         glPointSize(4);
         glDrawArrays(GL_POINTS, i, 1);
     }
- //   glDrawArrays(GL_POINTS,wstart,2000);
     
     wstart+=2000;
 }
