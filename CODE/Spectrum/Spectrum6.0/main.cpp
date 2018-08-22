@@ -364,7 +364,7 @@ void drawLine()
 void drawPoint()
 {
     usleep(99999);
-    GLint location = glGetUniformLocation(1,"u_hue");
+    GLint location = glGetUniformLocation(2,"u_hue");
     cout<<"------------"<<location<<"--------------------------"<<endl;
     
     for (int i=pstart; i<2000+pstart; i+=2) {
