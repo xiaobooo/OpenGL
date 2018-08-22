@@ -370,7 +370,7 @@ void drawPoint()
     for (int i=pstart; i<2000+pstart; i+=2) {
         
         glUniform4f(0, 0.2f, 0.7f, 1.0f, 1.0f);
-        glUniform1f(location,200.0f);
+        glUniform1f(location,0.0f);
         
         glPointSize(3);
         glDrawArrays(GL_POINTS, i, 2);
