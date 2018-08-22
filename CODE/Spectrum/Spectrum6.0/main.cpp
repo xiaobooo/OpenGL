@@ -244,10 +244,10 @@ int main()
         
         ourShader.use();
         
-        glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
-        if (istart<3*n) {
-            drawLine();
-        }
+//        glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
+//        if (istart<3*n) {
+//            drawLine();
+//        }
         
         glBindVertexArray(pointVAO); // 激活VAO表示的顶点缓存
         if (pstart<3*n) {
@@ -364,6 +364,7 @@ void drawLine()
 //绘制离散型频谱
 void drawPoint()
 {
+    usleep(99999);
     
     for (int i=pstart; i<2000+pstart; i+=2) {
         
