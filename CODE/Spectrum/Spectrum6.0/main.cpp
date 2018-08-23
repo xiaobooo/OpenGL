@@ -346,7 +346,8 @@ void drawLine()
     //颜色随机设置
     float redValue = 0.0f;
     float blueValue = 1.0f;
-    
+    float alpha = 1.0f;
+
     for (int i=istart; i<2000+istart; i+=2) {
         
         glUniform4f(0, redValue, 1.0f, blueValue, 1.0f);
