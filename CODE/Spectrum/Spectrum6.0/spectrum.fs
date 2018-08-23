@@ -111,6 +111,6 @@ void main()
     
     FragColor = vec4(average, average, average, pixColor.a);
     
-    //FragColor = ourColor*vec4(1.0,1.0,1.0,0.5);
+    //FragColor = ourColor*vec4(1.0,1.0,1.0,0.5); 
 }
 
