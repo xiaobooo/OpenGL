@@ -145,7 +145,7 @@ int main()
     while (j<n&&(i<3*n-6)) {
         
         if (R<1.0) {
-            R=R+0.003f;
+            R=R+0.03f;
         }else{
             R=0.3;
         }
