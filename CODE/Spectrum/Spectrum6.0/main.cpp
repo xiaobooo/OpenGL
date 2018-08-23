@@ -174,12 +174,6 @@ int main()
     NUM=1000;
     while (j<n&&(i<3*n/2-6)){
         
-        if (R<1.0) {
-            R=R+0.03f;
-        }else{
-            R=0.3;
-        }
-        
         float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
         j++;
         
