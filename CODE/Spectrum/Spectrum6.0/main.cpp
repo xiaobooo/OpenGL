@@ -249,20 +249,20 @@ int main()
         
         ourShader.use();
         
-//        glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
-//        if (istart<3*n) {
-//            drawLine();
-//        }
+        glBindVertexArray(VAO); // 激活VAO表示的顶点缓存
+        if (istart<3*n) {
+            drawLine();
+        }
         
         glBindVertexArray(pointVAO); // 激活VAO表示的顶点缓存
         if (pstart<3*n) {
             drawPoint();
         }
         
-//        glBindVertexArray(waveVAO); // 激活VAO表示的顶点缓存
-//        if (wstart<3*n/2) {
-//            drawWave();
-//        }
+        glBindVertexArray(waveVAO); // 激活VAO表示的顶点缓存
+        if (wstart<3*n/2) {
+            drawWave();
+        }
     
         glfwSwapBuffers(window);
         glfwPollEvents();
@@ -369,8 +369,6 @@ void drawLine()
 //绘制离散型频谱
 void drawPoint()
 {
-    usleep(99999);
-    
     for (int i=pstart; i<2000+pstart; i+=2) {
         
         glUniform4f(0, 0.2f, 0.7f, 1.0f, 1.0f);
@@ -385,7 +383,6 @@ void drawPoint()
 //绘制波形频谱
 void drawWave()
 {
-    usleep(99999);
     //颜色随机设置
     float redValue = 0.0f;
     float blueValue = 1.0f;
