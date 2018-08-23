@@ -107,9 +107,9 @@ void main()
     vec3 f_color = hsvtorgb(hsv);
     f_color = ((f_color - 0.5) * max(u_contrast+1.0, 0.0)) + 0.5;
     
-   // float average = 0.2126 * f_color.x + 0.7152 * f_color.y + 0.0722 * f_color.z;
+    float average = 0.8*f_color.r+0.07*f_color.g+0.09*f_color.b;
     
-    FragColor = vec4(f_color.r, f_color.g, f_color.b, pixColor.a);
+    FragColor = vec4(average, average, average, pixColor.a);
     
     //FragColor = ourColor*vec4(1.0,1.0,1.0,0.5);
 }
