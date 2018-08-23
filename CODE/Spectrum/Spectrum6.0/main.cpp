@@ -144,6 +144,12 @@ int main()
     k=0;
     while (j<n&&(i<3*n-6)) {
         
+        if (R<1.0) {
+            R=R+0.003f;
+        }else{
+            R=0.3;
+        }
+
         float temp =sqrt(out[j][0]*out[j][0]+out[j][1]*out[j][1])/30000;
         j++;
         
@@ -364,13 +370,11 @@ void drawLine()
 void drawPoint()
 {
     usleep(99999);
-    GLint location = glGetUniformLocation(2,"u_hue");
-    cout<<"------------"<<location<<"--------------------------"<<endl;
     
     for (int i=pstart; i<2000+pstart; i+=2) {
         
         glUniform4f(0, 0.2f, 0.7f, 1.0f, 1.0f);
-        glUniform1f(location,10.0f);
+       // glUniform1f(location,10.0f);
         
         glPointSize(3);
         glDrawArrays(GL_POINTS, i, 2);

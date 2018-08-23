@@ -7,7 +7,7 @@ uniform vec4 ourColor;
 uniform float u_hue=121.0;
 uniform float u_saturation=2.0;
 uniform float u_value=1.0;
-uniform float u_contrast=0.0;
+uniform float u_contrast=1.0;
 
 vec3 rgbtohsv(vec3 rgb)
 {
@@ -106,6 +106,17 @@ void main()
     hsv.z *= u_value;
     vec3 f_color = hsvtorgb(hsv);
     f_color = ((f_color - 0.5) * max(u_contrast+1.0, 0.0)) + 0.5;
+    
+    //高斯滤波Test
+    vec4 color=vec4(0.0);
+    int coreSize=3;
+    float texelOffset=1/150.0;
+    float kernel[9];
+    
+    kernel[6]=1;kernel[7]=2;kernel[8]=1;
+    kernel[3]=2;kernel[4]=4;kernel[5]=2;
+
+    
     
     FragColor = vec4(f_color, pixColor.a);
     
