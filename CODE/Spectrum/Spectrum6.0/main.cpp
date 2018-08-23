@@ -350,7 +350,7 @@ void drawLine()
 
     for (int i=istart; i<2000+istart; i+=2) {
         
-        glUniform4f(0, redValue, 1.0f, blueValue, 1.0f);
+        glUniform4f(0, redValue, 1.0f, blueValue, alpha);
         
         if (i<=1000+istart) {
             redValue=redValue+0.002;
@@ -359,6 +359,7 @@ void drawLine()
             redValue=redValue-0.002;
             blueValue=blueValue+0.002;
         }
+        alpha-=0.001;
         
         glDrawArrays(GL_LINES, i, 2);
 
