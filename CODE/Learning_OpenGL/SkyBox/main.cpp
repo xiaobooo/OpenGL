@@ -85,8 +85,8 @@ int main()
     
     // build and compile shaders
     // -------------------------
-    Shader shader("6.2.cubemaps.vs", "6.2.cubemaps.fs");
-    Shader skyboxShader("6.2.skybox.vs", "6.2.skybox.fs");
+    Shader shader("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/SkyBox/6.1.cubemaps.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/SkyBox/6.1.cubemaps.fs");
+    Shader skyboxShader("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/SkyBox/6.1.skybox.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/SkyBox/6.1.skybox.fs");
     
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
