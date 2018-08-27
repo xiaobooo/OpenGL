@@ -22,7 +22,7 @@
 		<key>Spectrum.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<key>Spectrum2.0.xcscheme</key>
 		<dict>
@@ -52,7 +52,7 @@
 		<key>Test.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 </dict>
