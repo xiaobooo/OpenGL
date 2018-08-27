@@ -203,16 +203,16 @@ int main()
     
     // load textures
     // -------------
-    unsigned int cubeTexture = loadTexture("/Users/boone/Desktop/CODE/LearnOpenGL-master/resources/textures/marble.jpg");
+    unsigned int cubeTexture = loadTexture("/Users/boone/Desktop/boxiao/pic/awesomeface.png");
     
     vector<std::string> faces
     {
-        "/Users/boone/Pictures/skybox/right.jpg",
-        "/Users/boone/Pictures/skybox/left.jpg",
-        "/Users/boone/Pictures/skybox/top.jpg",
-        "/Users/boone/Pictures/skybox/bottom.jpg",
-        "/Users/boone/Pictures/skybox/front.jpg",
-        "/Users/boone/Pictures/skybox/back.jpg"
+        "/Users/boone/Pictures/ame_nebula/purplenebula_rt.tga",
+        "/Users/boone/Pictures/ame_nebula/purplenebula_lf.tga",
+        "/Users/boone/Pictures/ame_nebula/purplenebula_up.tga",
+        "/Users/boone/Pictures/ame_nebula/purplenebula_dn.tga",
+        "/Users/boone/Pictures/ame_nebula/purplenebula_ft.tga",
+        "/Users/boone/Pictures/ame_nebula/purplenebula_bk.tga"
     };
     unsigned int cubemapTexture = loadCubemap(faces);
     
