@@ -293,6 +293,10 @@
 		3E17F7272125724C00FE4332 /* Instancing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Instancing; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E17F7292125724C00FE4332 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E17F7312125728B00FE4332 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		3E18F3C92133A2420081ADAE /* 6.1.cubemaps.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 6.1.cubemaps.fs; sourceTree = "<group>"; };
+		3E18F3CA2133A2420081ADAE /* 6.1.skybox.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 6.1.skybox.fs; sourceTree = "<group>"; };
+		3E18F3CB2133A2430081ADAE /* 6.1.cubemaps.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 6.1.cubemaps.vs; sourceTree = "<group>"; };
+		3E18F3CC2133A2430081ADAE /* 6.1.skybox.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 6.1.skybox.vs; sourceTree = "<group>"; };
 		3E4757E5212151BF000963BA /* libfftw3f_threads.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f_threads.a; path = "../../../../CODE/OpenGL/fft_conv/arm64-v8a/usr/lib/libfftw3f_threads.a"; sourceTree = "<group>"; };
 		3E4757E6212151BF000963BA /* libfftw3f.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f.a; path = "../../../../CODE/OpenGL/fft_conv/arm64-v8a/usr/lib/libfftw3f.a"; sourceTree = "<group>"; };
 		3E4757E921215F80000963BA /* libfftw3f_threads.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfftw3f_threads.a; path = ../../../../CODE/OpenGL/fft_conv/x86_64/usr/lib/libfftw3f_threads.a; sourceTree = "<group>"; };
@@ -679,6 +683,10 @@
 		3E17F7182125715B00FE4332 /* SkyBox */ = {
 			isa = PBXGroup;
 			children = (
+				3E18F3C92133A2420081ADAE /* 6.1.cubemaps.fs */,
+				3E18F3CB2133A2430081ADAE /* 6.1.cubemaps.vs */,
+				3E18F3CA2133A2420081ADAE /* 6.1.skybox.fs */,
+				3E18F3CC2133A2430081ADAE /* 6.1.skybox.vs */,
 				3E17F7192125715B00FE4332 /* main.cpp */,
 				3E17F721212571D200FE4332 /* glad.c */,
 			);

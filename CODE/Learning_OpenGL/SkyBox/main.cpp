@@ -86,7 +86,7 @@ int main()
     
     // build and compile shaders
     // -------------------------
-    Shader shader("6.1.cubemaps.vs", "6.1.cubemaps.fs");
+    Shader shader("", "");
     Shader skyboxShader("6.1.skybox.vs", "6.1.skybox.fs");
     
     // set up vertex data (and buffer(s)) and configure vertex attributes
@@ -203,16 +203,16 @@ int main()
     
     // load textures
     // -------------
-    unsigned int cubeTexture = loadTexture(FileSystem::getPath("resources/textures/marble.jpg").c_str());
+    unsigned int cubeTexture = loadTexture("/Users/boone/Desktop/CODE/LearnOpenGL-master/resources/textures/marble.jpg");
     
     vector<std::string> faces
     {
-        FileSystem::getPath("resources/textures/skybox/right.jpg"),
-        FileSystem::getPath("resources/textures/skybox/left.jpg"),
-        FileSystem::getPath("resources/textures/skybox/top.jpg"),
-        FileSystem::getPath("resources/textures/skybox/bottom.jpg"),
-        FileSystem::getPath("resources/textures/skybox/front.jpg"),
-        FileSystem::getPath("resources/textures/skybox/back.jpg")
+        "/Users/boone/Pictures/skybox/right.jpg",
+        "/Users/boone/Pictures/skybox/left.jpg",
+        "/Users/boone/Pictures/skybox/top.jpg",
+        "/Users/boone/Pictures/skybox/bottom.jpg",
+        "/Users/boone/Pictures/skybox/front.jpg",
+        "/Users/boone/Pictures/skybox/back.jpg"
     };
     unsigned int cubemapTexture = loadCubemap(faces);
     
