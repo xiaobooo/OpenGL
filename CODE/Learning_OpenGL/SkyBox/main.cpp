@@ -5,11 +5,11 @@
 //  Created by boone on 2018/8/16.
 //  Copyright © 2018年 boone. All rights reserved.
 //
-//#define STB_IMAGE_IMPLEMENTATION
+#define STB_IMAGE_IMPLEMENTATION
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <stb_image.h>
+//#include <stb_image.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
