@@ -257,7 +257,7 @@ int main()
         glBindVertexArray(0);
         
         // draw skybox as last
-        glDepthFunc(GL_LEQUAL);  
+        glDepthFunc(GL_LEQUAL);
         skyboxShader.use();
         view = glm::mat4(glm::mat3(camera.GetViewMatrix())); // remove translation from the view matrix
         skyboxShader.setMat4("view", view);
@@ -308,8 +308,6 @@ void processInput(GLFWwindow *window)
 // ---------------------------------------------------------------------------------------------
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
-    // make sure the viewport matches the new window dimensions; note that width and
-    // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);
 }
 
