@@ -5,11 +5,11 @@
 //  Created by boone on 2018/8/16.
 //  Copyright © 2018年 boone. All rights reserved.
 //
-#define STB_IMAGE_IMPLEMENTATION
+//#define STB_IMAGE_IMPLEMENTATION
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-//#include <stb_image.h>
+#include <stb_image.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -207,13 +207,22 @@ int main()
     
     vector<std::string> faces
     {
-        "/Users/boone/Pictures/ame_nebula/purplenebula_rt.tga",
-        "/Users/boone/Pictures/ame_nebula/purplenebula_lf.tga",
-        "/Users/boone/Pictures/ame_nebula/purplenebula_up.tga",
-        "/Users/boone/Pictures/ame_nebula/purplenebula_dn.tga",
-        "/Users/boone/Pictures/ame_nebula/purplenebula_ft.tga",
-        "/Users/boone/Pictures/ame_nebula/purplenebula_bk.tga"
+        "/Users/boone/Pictures/hw_entropic/entropic_rt.tga",
+        "/Users/boone/Pictures/hw_entropic/entropic_lf.tga",
+        "/Users/boone/Pictures/hw_entropic/entropic_up.tga",
+        "/Users/boone/Pictures/hw_entropic/entropic_dn.tga",
+        "/Users/boone/Pictures/hw_entropic/entropic_ft.tga",
+        "/Users/boone/Pictures/hw_entropic/entropic_bk.tga"
     };
+//    vector<std::string> faces
+//    {
+//        "",
+//        "",
+//        "",
+//        "",
+//        "",
+//        ""
+//    };
     unsigned int cubemapTexture = loadCubemap(faces);
     
     // shader configuration
