@@ -230,6 +230,11 @@
 		3E0E5FC521352125002B77EB /* GLSL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GLSL; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0E5FC721352125002B77EB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E0E5FCF2135218E002B77EB /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		3E0E5FD22135343D002B77EB /* 8.advanced_glsl.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 8.advanced_glsl.vs; sourceTree = "<group>"; };
+		3E0E5FD32135343D002B77EB /* 8.green.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 8.green.fs; sourceTree = "<group>"; };
+		3E0E5FD42135343D002B77EB /* 8.yellow.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 8.yellow.fs; sourceTree = "<group>"; };
+		3E0E5FD52135343D002B77EB /* 8.red.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 8.red.fs; sourceTree = "<group>"; };
+		3E0E5FD62135343D002B77EB /* 8.blue.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 8.blue.fs; sourceTree = "<group>"; };
 		3E1530DD210EF56B0086BBEE /* Learning_OpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Learning_OpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1530E0210EF56B0086BBEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E1530E8210EF5CA0086BBEE /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -500,10 +505,23 @@
 		3E0E5FC621352125002B77EB /* GLSL */ = {
 			isa = PBXGroup;
 			children = (
+				3E0E5FD12135343D002B77EB /* shader */,
 				3E0E5FCF2135218E002B77EB /* glad.c */,
 				3E0E5FC721352125002B77EB /* main.cpp */,
 			);
 			path = GLSL;
+			sourceTree = "<group>";
+		};
+		3E0E5FD12135343D002B77EB /* shader */ = {
+			isa = PBXGroup;
+			children = (
+				3E0E5FD22135343D002B77EB /* 8.advanced_glsl.vs */,
+				3E0E5FD32135343D002B77EB /* 8.green.fs */,
+				3E0E5FD42135343D002B77EB /* 8.yellow.fs */,
+				3E0E5FD52135343D002B77EB /* 8.red.fs */,
+				3E0E5FD62135343D002B77EB /* 8.blue.fs */,
+			);
+			path = shader;
 			sourceTree = "<group>";
 		};
 		3E1530D4210EF56B0086BBEE = {
