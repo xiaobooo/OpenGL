@@ -55,7 +55,7 @@ int main()
 #endif
     
     // glfw window creation
-    // --------------------
+    // ---------------------
     GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
     if (window == NULL)
     {
