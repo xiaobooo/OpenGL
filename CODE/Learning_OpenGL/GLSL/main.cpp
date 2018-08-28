@@ -82,10 +82,10 @@ int main()
     
     // build and compile shaders
     // -------------------------
-    Shader shaderRed("8.advanced_glsl.vs", "8.red.fs");
-    Shader shaderGreen("8.advanced_glsl.vs", "8.green.fs");
-    Shader shaderBlue("8.advanced_glsl.vs", "8.blue.fs");
-    Shader shaderYellow("8.advanced_glsl.vs", "8.yellow.fs");
+    Shader shaderRed("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/GLSL/shader/8.advanced_glsl.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/GLSL/shader/8.red.fs");
+    Shader shaderGreen("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/GLSL/shader/8.advanced_glsl.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/GLSL/shader/8.green.fs");
+    Shader shaderBlue("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/GLSL/shader/8.advanced_glsl.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/GLSL/shader/8.blue.fs");
+    Shader shaderYellow("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/GLSL/shader/8.advanced_glsl.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/GLSL/shader/8.yellow.fs");
     
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
