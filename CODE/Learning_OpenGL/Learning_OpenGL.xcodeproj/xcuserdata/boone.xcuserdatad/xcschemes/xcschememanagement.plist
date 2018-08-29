@@ -22,7 +22,12 @@
 		<key>GLSL.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>13</integer>
+		</dict>
+		<key>GeometryShader.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
 		</dict>
 		<key>HDR.xcscheme</key>
 		<dict>
@@ -32,7 +37,7 @@
 		<key>Instancing.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>14</integer>
 		</dict>
 		<key>Learning_OpenGL.xcscheme</key>
 		<dict>
