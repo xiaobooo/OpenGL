@@ -17,6 +17,11 @@
 		3E0E6038213645B3002B77EB /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530EA210EF5E00086BBEE /* libGLEW.dylib */; };
 		3E0E6039213645B3002B77EB /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530EC210EF5E30086BBEE /* libglfw.dylib */; };
 		3E0E603B213645CD002B77EB /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E603A213645CD002B77EB /* glad.c */; };
+		3E0E604621367701002B77EB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E604521367701002B77EB /* main.cpp */; };
+		3E0E604A21367728002B77EB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530E8210EF5CA0086BBEE /* OpenGL.framework */; };
+		3E0E604B21367735002B77EB /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530EA210EF5E00086BBEE /* libGLEW.dylib */; };
+		3E0E604C21367735002B77EB /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530EC210EF5E30086BBEE /* libglfw.dylib */; };
+		3E0E604E2136774A002B77EB /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E604D2136774A002B77EB /* glad.c */; };
 		3E1530E1210EF56B0086BBEE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E1530E0210EF56B0086BBEE /* main.cpp */; };
 		3E1530E9210EF5CA0086BBEE /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530E8210EF5CA0086BBEE /* OpenGL.framework */; };
 		3E1530EB210EF5E00086BBEE /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530EA210EF5E00086BBEE /* libGLEW.dylib */; };
@@ -104,6 +109,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		3E0E602E21364582002B77EB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		3E0E604121367701002B77EB /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -255,6 +269,9 @@
 		3E0E603C2136461D002B77EB /* 9.1.geometry_shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 9.1.geometry_shader.vs; sourceTree = "<group>"; };
 		3E0E603D2136461D002B77EB /* 9.1.geometry_shader.gs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 9.1.geometry_shader.gs; sourceTree = "<group>"; };
 		3E0E603E2136461D002B77EB /* 9.1.geometry_shader.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 9.1.geometry_shader.fs; sourceTree = "<group>"; };
+		3E0E604321367701002B77EB /* NormalVector */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NormalVector; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E0E604521367701002B77EB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E0E604D2136774A002B77EB /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		3E1530DD210EF56B0086BBEE /* Learning_OpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Learning_OpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1530E0210EF56B0086BBEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E1530E8210EF5CA0086BBEE /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -381,6 +398,16 @@
 				3E0E6037213645A9002B77EB /* OpenGL.framework in Frameworks */,
 				3E0E6038213645B3002B77EB /* libGLEW.dylib in Frameworks */,
 				3E0E6039213645B3002B77EB /* libglfw.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E0E604021367701002B77EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E0E604A21367728002B77EB /* OpenGL.framework in Frameworks */,
+				3E0E604B21367735002B77EB /* libGLEW.dylib in Frameworks */,
+				3E0E604C21367735002B77EB /* libglfw.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +593,15 @@
 			path = GeometryShader;
 			sourceTree = "<group>";
 		};
+		3E0E604421367701002B77EB /* NormalVector */ = {
+			isa = PBXGroup;
+			children = (
+				3E0E604D2136774A002B77EB /* glad.c */,
+				3E0E604521367701002B77EB /* main.cpp */,
+			);
+			path = NormalVector;
+			sourceTree = "<group>";
+		};
 		3E1530D4210EF56B0086BBEE = {
 			isa = PBXGroup;
 			children = (
@@ -585,6 +621,7 @@
 				3E17F7282125724C00FE4332 /* Instancing */,
 				3E0E5FC621352125002B77EB /* GLSL */,
 				3E0E603121364582002B77EB /* GeometryShader */,
+				3E0E604421367701002B77EB /* NormalVector */,
 				3E1530DE210EF56B0086BBEE /* Products */,
 				3E1530E7210EF5CA0086BBEE /* Frameworks */,
 			);
@@ -609,6 +646,7 @@
 				3E17F7272125724C00FE4332 /* Instancing */,
 				3E0E5FC521352125002B77EB /* GLSL */,
 				3E0E603021364582002B77EB /* GeometryShader */,
+				3E0E604321367701002B77EB /* NormalVector */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -845,6 +883,23 @@
 			name = GeometryShader;
 			productName = GeometryShader;
 			productReference = 3E0E603021364582002B77EB /* GeometryShader */;
+			productType = "com.apple.product-type.tool";
+		};
+		3E0E604221367701002B77EB /* NormalVector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E0E604721367701002B77EB /* Build configuration list for PBXNativeTarget "NormalVector" */;
+			buildPhases = (
+				3E0E603F21367701002B77EB /* Sources */,
+				3E0E604021367701002B77EB /* Frameworks */,
+				3E0E604121367701002B77EB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NormalVector;
+			productName = NormalVector;
+			productReference = 3E0E604321367701002B77EB /* NormalVector */;
 			productType = "com.apple.product-type.tool";
 		};
 		3E1530DC210EF56B0086BBEE /* Learning_OpenGL */ = {
@@ -1100,6 +1155,9 @@
 					3E0E602F21364582002B77EB = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					3E0E604221367701002B77EB = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 					3E1530DC210EF56B0086BBEE = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -1172,6 +1230,7 @@
 				3E17F7262125724C00FE4332 /* Instancing */,
 				3E0E5FC421352125002B77EB /* GLSL */,
 				3E0E602F21364582002B77EB /* GeometryShader */,
+				3E0E604221367701002B77EB /* NormalVector */,
 			);
 		};
 /* End PBXProject section */
@@ -1192,6 +1251,15 @@
 			files = (
 				3E0E603321364582002B77EB /* main.cpp in Sources */,
 				3E0E603B213645CD002B77EB /* glad.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E0E603F21367701002B77EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E0E604621367701002B77EB /* main.cpp in Sources */,
+				3E0E604E2136774A002B77EB /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1354,6 +1422,26 @@
 			name = Debug;
 		};
 		3E0E603521364582002B77EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3E0E604821367701002B77EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3E0E604921367701002B77EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -1769,6 +1857,15 @@
 			buildConfigurations = (
 				3E0E603421364582002B77EB /* Debug */,
 				3E0E603521364582002B77EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E0E604721367701002B77EB /* Build configuration list for PBXNativeTarget "NormalVector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E0E604821367701002B77EB /* Debug */,
+				3E0E604921367701002B77EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -69,6 +69,11 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>NormalVector.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
 		<key>Render_to_texture.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
