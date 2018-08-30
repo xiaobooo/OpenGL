@@ -7,6 +7,7 @@ out vec3 fColor;
 
 void main()
 {
+    vec2 pos = aPos * (gl_InstanceID / 100.0);
+    gl_Position = vec4(pos + aOffset, 0.0, 1.0);
     fColor = aColor;
-    gl_Position = vec4(aPos + aOffset, 0.0, 1.0);
 }
