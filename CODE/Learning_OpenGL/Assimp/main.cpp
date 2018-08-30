@@ -87,7 +87,7 @@ int main()
     
     // load models
     // -----------
-    Model ourModel("/Users/boone/Desktop/CODE/LearnOpenGL-master/resources/objects/nanosuit/nanosuit.obj");
+    Model ourModel("/Users/boone/Desktop/CODE/LearnOpenGL-master/resources/objects/planet/planet.obj");
     
     
     // draw in wireframe
