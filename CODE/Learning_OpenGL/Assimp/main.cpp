@@ -5,6 +5,7 @@
 //  Created by boone on 2018/8/30.
 //  Copyright © 2018年 boone. All rights reserved.
 //
+#define STB_IMAGE_IMPLEMENTATION
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -86,7 +87,7 @@ int main()
     
     // load models
     // -----------
-    Model ourModel(FileSystem::getPath("resources/objects/nanosuit/nanosuit.obj"));
+    Model ourModel("resources/objects/nanosuit/nanosuit.obj");
     
     
     // draw in wireframe
