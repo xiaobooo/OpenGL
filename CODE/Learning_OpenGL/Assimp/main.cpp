@@ -82,7 +82,7 @@ int main()
     
     // build and compile shaders
     // -------------------------
-    Shader ourShader("1.model_loading.vs", "1.model_loading.fs");
+    Shader ourShader("/Users/boone/Desktop/CODE/LearnOpenGL-master/src/3.model_loading/1.model_loading/1.model_loading.vs", "/Users/boone/Desktop/CODE/LearnOpenGL-master/src/3.model_loading/1.model_loading/1.model_loading.fs");
     
     // load models
     // -----------
