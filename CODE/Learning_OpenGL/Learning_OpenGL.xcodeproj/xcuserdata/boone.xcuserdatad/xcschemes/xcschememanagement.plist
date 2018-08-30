@@ -74,6 +74,11 @@
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
+		<key>Planet.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>17</integer>
+		</dict>
 		<key>Render_to_texture.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
