@@ -314,6 +314,8 @@
 		3E0E648B2137D40C002B77EB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E0E64932137D512002B77EB /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		3E0E64952137E6F4002B77EB /* libassimp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libassimp.dylib; path = ../../../../CODE/OpenGL/assimp/4.1.0/lib/libassimp.dylib; sourceTree = "<group>"; };
+		3E0E6497213806D5002B77EB /* 1.model_loading.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = 1.model_loading.fs; path = "../../../../../CODE/LearnOpenGL-master/src/3.model_loading/1.model_loading/1.model_loading.fs"; sourceTree = "<group>"; };
+		3E0E6498213806D6002B77EB /* 1.model_loading.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = 1.model_loading.vs; path = "../../../../../CODE/LearnOpenGL-master/src/3.model_loading/1.model_loading/1.model_loading.vs"; sourceTree = "<group>"; };
 		3E1530DD210EF56B0086BBEE /* Learning_OpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Learning_OpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1530E0210EF56B0086BBEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E1530E8210EF5CA0086BBEE /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -681,6 +683,8 @@
 		3E0E648A2137D40C002B77EB /* Assimp */ = {
 			isa = PBXGroup;
 			children = (
+				3E0E6497213806D5002B77EB /* 1.model_loading.fs */,
+				3E0E6498213806D6002B77EB /* 1.model_loading.vs */,
 				3E0E64932137D512002B77EB /* glad.c */,
 				3E0E648B2137D40C002B77EB /* main.cpp */,
 			);
