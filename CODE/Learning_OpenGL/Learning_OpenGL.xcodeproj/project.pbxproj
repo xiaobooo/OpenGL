@@ -39,6 +39,7 @@
 		3E0E64A72138D3BA002B77EB /* libassimp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0E64992138072F002B77EB /* libassimp.dylib */; };
 		3E0E64A82138D3BA002B77EB /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530EA210EF5E00086BBEE /* libGLEW.dylib */; };
 		3E0E64A92138D3BA002B77EB /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530EC210EF5E30086BBEE /* libglfw.dylib */; };
+		3E0E64AB2138D3F5002B77EB /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E64AA2138D3F5002B77EB /* glad.c */; };
 		3E1530E1210EF56B0086BBEE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E1530E0210EF56B0086BBEE /* main.cpp */; };
 		3E1530E9210EF5CA0086BBEE /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530E8210EF5CA0086BBEE /* OpenGL.framework */; };
 		3E1530EB210EF5E00086BBEE /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530EA210EF5E00086BBEE /* libGLEW.dylib */; };
@@ -334,6 +335,7 @@
 		3E0E64992138072F002B77EB /* libassimp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libassimp.dylib; path = ../../../../CODE/OpenGL/libassimp.dylib; sourceTree = "<group>"; };
 		3E0E649F2138D3A0002B77EB /* Debugging */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Debugging; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0E64A12138D3A0002B77EB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E0E64AA2138D3F5002B77EB /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		3E1530DD210EF56B0086BBEE /* Learning_OpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Learning_OpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1530E0210EF56B0086BBEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E1530E8210EF5CA0086BBEE /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -724,6 +726,7 @@
 		3E0E64A02138D3A0002B77EB /* Debugging */ = {
 			isa = PBXGroup;
 			children = (
+				3E0E64AA2138D3F5002B77EB /* glad.c */,
 				3E0E64A12138D3A0002B77EB /* main.cpp */,
 			);
 			path = Debugging;
@@ -1486,6 +1489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E0E64A22138D3A0002B77EB /* main.cpp in Sources */,
+				3E0E64AB2138D3F5002B77EB /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1727,6 +1731,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1735,6 +1741,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
