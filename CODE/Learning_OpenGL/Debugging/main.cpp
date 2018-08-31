@@ -62,6 +62,7 @@ void APIENTRY glDebugOutput(GLenum source,
     std::cout << "---------------" << std::endl;
     std::cout << "Debug message (" << id << "): " <<  message << std::endl;
     
+    
     switch (source)
     {
         case GL_DEBUG_SOURCE_API:             std::cout << "Source: API"; break;
