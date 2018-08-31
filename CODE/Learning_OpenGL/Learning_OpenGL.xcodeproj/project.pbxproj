@@ -34,6 +34,11 @@
 		3E0E64942137D512002B77EB /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E64932137D512002B77EB /* glad.c */; };
 		3E0E64962137E6F4002B77EB /* libassimp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0E64952137E6F4002B77EB /* libassimp.dylib */; };
 		3E0E649A2138072F002B77EB /* libassimp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0E64992138072F002B77EB /* libassimp.dylib */; };
+		3E0E64A22138D3A0002B77EB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E64A12138D3A0002B77EB /* main.cpp */; };
+		3E0E64A62138D3A9002B77EB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530E8210EF5CA0086BBEE /* OpenGL.framework */; };
+		3E0E64A72138D3BA002B77EB /* libassimp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0E64992138072F002B77EB /* libassimp.dylib */; };
+		3E0E64A82138D3BA002B77EB /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530EA210EF5E00086BBEE /* libGLEW.dylib */; };
+		3E0E64A92138D3BA002B77EB /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530EC210EF5E30086BBEE /* libglfw.dylib */; };
 		3E1530E1210EF56B0086BBEE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E1530E0210EF56B0086BBEE /* main.cpp */; };
 		3E1530E9210EF5CA0086BBEE /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530E8210EF5CA0086BBEE /* OpenGL.framework */; };
 		3E1530EB210EF5E00086BBEE /* libGLEW.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1530EA210EF5E00086BBEE /* libGLEW.dylib */; };
@@ -148,6 +153,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		3E0E64872137D40C002B77EB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		3E0E649D2138D3A0002B77EB /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -318,6 +332,8 @@
 		3E0E6497213806D5002B77EB /* 1.model_loading.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = 1.model_loading.fs; path = "../../../../../CODE/LearnOpenGL-master/src/3.model_loading/1.model_loading/1.model_loading.fs"; sourceTree = "<group>"; };
 		3E0E6498213806D6002B77EB /* 1.model_loading.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = 1.model_loading.vs; path = "../../../../../CODE/LearnOpenGL-master/src/3.model_loading/1.model_loading/1.model_loading.vs"; sourceTree = "<group>"; };
 		3E0E64992138072F002B77EB /* libassimp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libassimp.dylib; path = ../../../../CODE/OpenGL/libassimp.dylib; sourceTree = "<group>"; };
+		3E0E649F2138D3A0002B77EB /* Debugging */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Debugging; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E0E64A12138D3A0002B77EB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E1530DD210EF56B0086BBEE /* Learning_OpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Learning_OpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1530E0210EF56B0086BBEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E1530E8210EF5CA0086BBEE /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -476,6 +492,17 @@
 				3E0E64902137D446002B77EB /* libGLEW.dylib in Frameworks */,
 				3E0E649A2138072F002B77EB /* libassimp.dylib in Frameworks */,
 				3E0E64912137D446002B77EB /* libglfw.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E0E649C2138D3A0002B77EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E0E64A62138D3A9002B77EB /* OpenGL.framework in Frameworks */,
+				3E0E64A72138D3BA002B77EB /* libassimp.dylib in Frameworks */,
+				3E0E64A82138D3BA002B77EB /* libGLEW.dylib in Frameworks */,
+				3E0E64A92138D3BA002B77EB /* libglfw.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +721,14 @@
 			path = Assimp;
 			sourceTree = "<group>";
 		};
+		3E0E64A02138D3A0002B77EB /* Debugging */ = {
+			isa = PBXGroup;
+			children = (
+				3E0E64A12138D3A0002B77EB /* main.cpp */,
+			);
+			path = Debugging;
+			sourceTree = "<group>";
+		};
 		3E1530D4210EF56B0086BBEE = {
 			isa = PBXGroup;
 			children = (
@@ -716,6 +751,7 @@
 				3E0E604421367701002B77EB /* NormalVector */,
 				3E0E60562137CEB9002B77EB /* Planet */,
 				3E0E648A2137D40C002B77EB /* Assimp */,
+				3E0E64A02138D3A0002B77EB /* Debugging */,
 				3E1530DE210EF56B0086BBEE /* Products */,
 				3E1530E7210EF5CA0086BBEE /* Frameworks */,
 			);
@@ -743,6 +779,7 @@
 				3E0E604321367701002B77EB /* NormalVector */,
 				3E0E60552137CEB9002B77EB /* Planet */,
 				3E0E64892137D40C002B77EB /* Assimp */,
+				3E0E649F2138D3A0002B77EB /* Debugging */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1036,6 +1073,23 @@
 			productReference = 3E0E64892137D40C002B77EB /* Assimp */;
 			productType = "com.apple.product-type.tool";
 		};
+		3E0E649E2138D3A0002B77EB /* Debugging */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E0E64A52138D3A0002B77EB /* Build configuration list for PBXNativeTarget "Debugging" */;
+			buildPhases = (
+				3E0E649B2138D3A0002B77EB /* Sources */,
+				3E0E649C2138D3A0002B77EB /* Frameworks */,
+				3E0E649D2138D3A0002B77EB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Debugging;
+			productName = Debugging;
+			productReference = 3E0E649F2138D3A0002B77EB /* Debugging */;
+			productType = "com.apple.product-type.tool";
+		};
 		3E1530DC210EF56B0086BBEE /* Learning_OpenGL */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E1530E4210EF56B0086BBEE /* Build configuration list for PBXNativeTarget "Learning_OpenGL" */;
@@ -1298,6 +1352,9 @@
 					3E0E64882137D40C002B77EB = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					3E0E649E2138D3A0002B77EB = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 					3E1530DC210EF56B0086BBEE = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -1373,6 +1430,7 @@
 				3E0E604221367701002B77EB /* NormalVector */,
 				3E0E60542137CEB9002B77EB /* Planet */,
 				3E0E64882137D40C002B77EB /* Assimp */,
+				3E0E649E2138D3A0002B77EB /* Debugging */,
 			);
 		};
 /* End PBXProject section */
@@ -1420,6 +1478,14 @@
 			files = (
 				3E0E648C2137D40C002B77EB /* main.cpp in Sources */,
 				3E0E64942137D512002B77EB /* glad.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E0E649B2138D3A0002B77EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E0E64A22138D3A0002B77EB /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1653,6 +1719,22 @@
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3E0E64A32138D3A0002B77EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3E0E64A42138D3A0002B77EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -2090,6 +2172,15 @@
 			buildConfigurations = (
 				3E0E648E2137D40C002B77EB /* Debug */,
 				3E0E648F2137D40C002B77EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E0E64A52138D3A0002B77EB /* Build configuration list for PBXNativeTarget "Debugging" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E0E64A32138D3A0002B77EB /* Debug */,
+				3E0E64A42138D3A0002B77EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
