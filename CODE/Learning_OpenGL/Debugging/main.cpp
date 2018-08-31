@@ -148,7 +148,7 @@ int main()
     glEnable(GL_CULL_FACE);
     
     // OpenGL initial state
-    Shader shader("", "");
+    Shader shader("/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/Debugging/debugging.vs", "/Users/boone/Desktop/Github/OpenGL/CODE/Learning_OpenGL/Debugging/debugging.fs");
     
     // configure 3D cube
     GLuint cubeVAO, cubeVBO;
