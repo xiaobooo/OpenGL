@@ -8,7 +8,7 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <stb_image.h>
+//#include <stb_image.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -215,7 +215,7 @@ int main()
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
     int width, height, nrComponents;
-    unsigned char *data = stbi_load("resources/textures/wood.png", &width, &height, &nrComponents, 0);
+    unsigned char *data = stbi_load("/Users/boone/Desktop/CODE/LearnOpenGL-master/resources/textures/wood.png", &width, &height, &nrComponents, 0);
     if (data)
     {
         glTexImage2D(GL_FRAMEBUFFER, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
