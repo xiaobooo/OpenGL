@@ -142,8 +142,6 @@ int main()
         glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DONT_CARE, 0, nullptr, GL_TRUE);
     }
     
-    // configure global opengl state
-    // -----------------------------
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
     
