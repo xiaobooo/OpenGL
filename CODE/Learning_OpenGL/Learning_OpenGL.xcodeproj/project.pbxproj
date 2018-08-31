@@ -336,6 +336,8 @@
 		3E0E649F2138D3A0002B77EB /* Debugging */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Debugging; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0E64A12138D3A0002B77EB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E0E64AA2138D3F5002B77EB /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		3E0FB7F921390E2D00038894 /* debugging.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = debugging.fs; sourceTree = "<group>"; };
+		3E0FB7FA21390E2E00038894 /* debugging.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = debugging.vs; sourceTree = "<group>"; };
 		3E1530DD210EF56B0086BBEE /* Learning_OpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Learning_OpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1530E0210EF56B0086BBEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3E1530E8210EF5CA0086BBEE /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -726,6 +728,8 @@
 		3E0E64A02138D3A0002B77EB /* Debugging */ = {
 			isa = PBXGroup;
 			children = (
+				3E0FB7F921390E2D00038894 /* debugging.fs */,
+				3E0FB7FA21390E2E00038894 /* debugging.vs */,
 				3E0E64AA2138D3F5002B77EB /* glad.c */,
 				3E0E64A12138D3A0002B77EB /* main.cpp */,
 			);
